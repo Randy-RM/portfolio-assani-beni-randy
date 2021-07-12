@@ -1,0 +1,20 @@
+.back-to-top {
+    background-color: $blue-gray-2;
+    position: fixed !important;
+    bottom: 1rem !important;
+    right: 1rem !important;
+    z-index: 99;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    border: solid 3px rgba($blue-gray-4, 0.5);
+    opacity: 0.6;
+
+    &:hover {
+        background-color: darken($blue-gray-2, 20%);
+    }
+}
+
+.back-to-top-invisible {
+    display: none;
+    transition: all ease-in-out 0.3s;
+}

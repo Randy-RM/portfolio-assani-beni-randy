@@ -1,0 +1,9 @@
+.card-service {
+    transition: all ease-in-out 0.3s;
+}
+
+.card-service:hover {
+    color: $darky-1 !important;
+    background-color: $blue-gray-1;
+    cursor: pointer;
+}

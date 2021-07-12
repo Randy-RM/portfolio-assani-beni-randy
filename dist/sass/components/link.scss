@@ -1,0 +1,35 @@
+.link-dark {
+    text-decoration: none;
+    color: $darky-1;
+    transition: all ease-in-out 0.3s;
+
+    &:hover,
+    &:focus {
+        color: darken($darky-1, 15%);
+    }
+}
+
+.link-light {
+    text-decoration: none;
+    color: $blue-gray-1;
+    transition: all ease-in-out 0.3s;
+
+    &:hover,
+    &:focus {
+        color: ligthen($blue-gray-1, 40%);
+    }
+}
+
+.link-dark-decored {
+    text-decoration: none;
+    color: $blue-gray-1;
+    background-color: $blue-gray-5;
+    padding: 1%;
+    transition: all ease-in-out 0.3s;
+
+    &:hover,
+    &:focus {
+        color: darken($blue-gray-1, 15%);
+        background-color: darken($blue-gray-5, 15%);
+    }
+}

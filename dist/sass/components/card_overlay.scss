@@ -1,0 +1,38 @@
+.card-overlay-link {
+    text-decoration: none;
+}
+
+.card-overlay {
+    cursor: pointer;
+
+    .overlay {
+        position: relative;
+        height: 70.5vh;
+        // width: 100%;
+        opacity: 0;
+        transition: 0.8s ease;
+        // background-color: rgba($darky-1, 0.5);
+        @include radial-gradient(#555A5F, #000);
+        z-index: 99;
+        margin-top: -72.7vh;
+        margin-bottom: 2vh;
+    }
+
+    &:hover .overlay {
+        opacity: 1;
+    }
+}
+
+.card-text-overlay {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 5%;
+}

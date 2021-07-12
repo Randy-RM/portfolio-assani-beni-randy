@@ -1,0 +1,29 @@
+.navbar-nav {
+    font-weight: bold;
+    text-align: center;
+
+    li {
+        margin: 0 2px;
+    }
+
+    li span {
+        height: 3px;
+        width: 0%;
+        display: block;
+        transition: all 0.5s ease-out;
+    }
+
+    li:hover span {
+        height: 3px;
+        width: 100%;
+        background-color: $blue-gray-3;
+        display: block;
+    }
+
+    li .nav-active {
+        height: 3px;
+        width: 100%;
+        background-color: $blue-gray-3;
+        display: block;
+    }
+}

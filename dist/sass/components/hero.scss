@@ -1,0 +1,75 @@
+.hero {
+    padding: 10vh 0;
+    background-color: $blue-gray-5;
+
+    h1 {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .fond-computer {
+        z-index: 1 !important;
+        width: 100%;
+        margin-top: -70vh;
+        margin-left: -5vw;
+        opacity: 0.5;
+    }
+
+    .gear-back {
+        z-index: 2;
+        width: 30%;
+        margin-bottom: -15vh;
+        margin-left: 5vw;
+    }
+
+    .computer {
+        z-index: 3 !important;
+    }
+
+    .gear-front {
+        z-index: 4;
+        width: 20%;
+        margin-top: -15vh;
+        margin-left: 65%;
+    }
+
+    .blink_me {
+        animation: blinker 0.8s linear infinite;
+        font-weight: 800;
+    }
+
+    @keyframes blinker {
+        50% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes rotation-positiv {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(359deg);
+        }
+    }
+
+    .rotate-positiv {
+        animation: rotation-positiv 5s infinite linear;
+    }
+
+    @keyframes rotation-negativ {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(-359deg);
+        }
+    }
+
+    .rotate-negativ {
+        animation: rotation-negativ 5s infinite linear;
+    }
+
+}
