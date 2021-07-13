@@ -20,7 +20,7 @@ let slideLeft = {
 let scrollSlideLeft = {
     duration: 2000,
     origin: 'left',
-    distance: '6px',
+    distance: '15px',
     viewFactor: 0.5
 };
 
@@ -35,8 +35,8 @@ ScrollReveal().reveal('#navbar', slideTop);
 ScrollReveal().reveal('#computerAnimation', slideTop);
 ScrollReveal().reveal('#typing', slideLeft);
 
-ScrollReveal().reveal('#aboutMe', scrollSlideRight);
-ScrollReveal().reveal('#blocProfilPicture', scrollSlideLeft);
+ScrollReveal().reveal('#aboutMe', scrollSlideLeft);
+ScrollReveal().reveal('#profilPhoto', scrollSlideLeft);
 
 ScrollReveal().reveal('#services', slideDown);
 
