@@ -46,4 +46,7 @@ ScrollReveal().reveal('#graphicDesignTools', slideTop);
 
 ScrollReveal().reveal('#languages', slideTop);
 
+ScrollReveal().reveal('#portfolioHero', slideDown);
+ScrollReveal().reveal('#blocWorkList', slideDown);
+
 ScrollReveal().reveal('#footer', slideDown);
