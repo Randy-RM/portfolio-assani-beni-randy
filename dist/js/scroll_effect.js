@@ -33,7 +33,7 @@ let scrollSlideRight = {
 
 ScrollReveal().reveal('#navbar', slideTop);
 ScrollReveal().reveal('#computerAnimation', slideTop);
-ScrollReveal().reveal('#typing', slideLeft);
+ScrollReveal().reveal('#typing', scrollSlideLeft);
 
 ScrollReveal().reveal('#aboutMe', scrollSlideLeft);
 ScrollReveal().reveal('#profilPhoto', scrollSlideLeft);

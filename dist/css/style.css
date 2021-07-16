@@ -205,6 +205,10 @@ h1 {
   width: 10%;
 }
 
+.logo-techno-card {
+  width: 7%;
+}
+
 .thumb-post img {
   object-fit: cover;
   /* Do not scale the image */
