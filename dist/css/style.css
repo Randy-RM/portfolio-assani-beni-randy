@@ -129,6 +129,24 @@ h1 {
   fill: #ffffff;
 }
 
+#typing h1,
+#typing p {
+  position: relative;
+  z-index: 3;
+}
+
+#typing .back-typing {
+  font-size: 20rem;
+  position: absolute;
+  top: -130px;
+  left: -20px;
+  font-weight: 900;
+  z-index: -1;
+  color: #fff;
+  opacity: 0.1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
+}
+
 .navbar-nav {
   font-weight: bold;
   text-align: center;
