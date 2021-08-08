@@ -15,3 +15,30 @@
   opacity: 0.1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=10)";
 }
+
+@media screen and (max-width: 768px) {
+  #typing .back-typing {
+    font-size: 15rem;
+    top: -110px;
+    left: -10px;
+    font-weight: 900;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #typing .back-typing {
+    font-size: 12rem;
+    top: -50px;
+    left: 0px;
+    font-weight: 900;
+  }
+}
+
+@media screen and (max-width: 398px) {
+  #typing .back-typing {
+    font-size: 10rem;
+    top: -50px;
+    left: -5px;
+    font-weight: 900;
+  }
+}
