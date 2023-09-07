@@ -1,5 +1,0 @@
-{
-    "scripts": {
-        "compile:sass" : "sass dist/sass/main.scss dist/css/style.css --watch"
-    }
-}
