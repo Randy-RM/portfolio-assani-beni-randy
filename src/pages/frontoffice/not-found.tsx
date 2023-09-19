@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 
-const NotFound = () => {
+const NotFound = (): JSX.Element => {
   return (
     <>
       <Helmet>

@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home, Projects, NotFound } from "./pages";
 import { Header } from "./components";
 
-function App() {
+function App(): JSX.Element {
   return (
     <Router>
       <Header />

@@ -1,13 +1,15 @@
 import { Helmet } from "react-helmet";
 
-const Home = () => {
+const Home = (): JSX.Element => {
   return (
     <>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Home | Randy Assani Portfolio</title>
       </Helmet>
-      <h1>Home Page</h1>
+      <main className="container">
+        <h1>Home Page</h1>
+      </main>
     </>
   );
 };

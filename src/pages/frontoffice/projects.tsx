@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 
-const Projects = () => {
+const Projects = (): JSX.Element => {
   return (
     <>
       <Helmet>
