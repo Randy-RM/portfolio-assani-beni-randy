@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet";
+import { Container } from "../../components";
 
 const Home = (): JSX.Element => {
   return (
@@ -9,6 +10,15 @@ const Home = (): JSX.Element => {
       </Helmet>
       <main className="container">
         <h1>Home Page</h1>
+        <Container
+          flexDirection="row"
+          justifyContent="center"
+          alignItems="center"
+          flexWrap="wrap"
+        >
+          <div>LOL 1</div>
+          <div>LOL 2</div>
+        </Container>
       </main>
     </>
   );

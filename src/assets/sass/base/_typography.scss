@@ -1,0 +1,76 @@
+/**
+ * Basic typography style for copy text
+ */
+body {
+  color: $text-color;
+  font: normal 125% / 1.4 $text-font-stack;
+}
+
+/*----font weight----*/
+
+.font-w-extra-thin {
+  font-weight: 100;
+}
+
+.font-w-extra-light {
+  font-weight: 200;
+}
+
+.font-w-light {
+  font-weight: 300;
+}
+
+.font-w-regular {
+  font-weight: 400;
+}
+
+.font-w-semi-medium {
+  font-weight: 500;
+}
+
+.font-w-semi-bold {
+  font-weight: 600;
+}
+
+.font-w-bold {
+  font-weight: 700;
+}
+
+.font-w-extra-bold {
+  font-weight: 800;
+}
+
+.font-w-Black {
+  font-weight: 900;
+}
+
+/*----font color----*/
+.font-light {
+  color: $light-grey;
+}
+
+.font-mid-grey {
+  color: $mid-grey;
+}
+
+.font-brand-gradient-color {
+  @include gradient-text(0deg, $brand-color, $orange-color);
+  font-size: 8.813rem;
+}
+
+/*----font size----*/
+h2 {
+  font-size: 3.813rem;
+}
+
+@media (max-width: 1024px) {
+  h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 431px) {
+  h2 {
+    font-size: 2.5rem;
+  }
+}

@@ -1,5 +1,5 @@
 // import { Link } from "react-router-dom";
-import LogoRM from "../../dist/assets/logo-rm.svg";
+import LogoRM from "../../assets/assets/logo-rm.svg";
 
 const Header = (): JSX.Element => {
   // return (
