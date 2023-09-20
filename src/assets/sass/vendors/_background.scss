@@ -2,6 +2,34 @@ body {
   background: $light-grey;
 }
 
+.special-mark {
+  color: $light-grey;
+  background: $brand-gradient-color;
+  display: inline-block;
+  height: 1em;
+  line-height: 1;
+}
+
+.special-mark::before,
+.special-mark::after {
+  clip-path: inset(100%);
+  clip: rect(10px, 1px, 1px, 1px);
+  white-space: nowrap;
+  width: 1px;
+  overflow: hidden;
+  position: absolute;
+  height: 1px;
+}
+
+/* defining content properties of pseudo-elements in CSS */
+.special-mark::after {
+  content: " [highlight end] ";
+}
+
+.special-mark::before {
+  content: " [highlight start] ";
+}
+
 .bg-light-grey {
   background: $light-grey;
 }

@@ -4,7 +4,8 @@
 @import "abstracts/variables", "abstracts/functions", "abstracts/mixins";
 
 // 2. Vendors
-@import "vendors/normalize", "vendors/background";
+@import "vendors/normalize", "vendors/background", "vendors/width",
+  "vendors/image";
 
 // 3. Base stuff
 @import "base/base", "base/fonts", "base/typography", "base/helpers";
@@ -13,8 +14,7 @@
 @import "layout/header", "layout/footer";
 
 // 5. Components
-// @import
-//   'components/button';
+@import "components/button";
 
 // 6. Page-specific styles
 // @import

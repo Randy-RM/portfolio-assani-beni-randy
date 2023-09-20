@@ -1,3 +1,5 @@
+@use "sass:map";
+
 /**
  * Basic typography style for copy text
  */
@@ -49,28 +51,33 @@ body {
   color: $light-grey;
 }
 
-.font-mid-grey {
+.font-mid-grey-color {
   color: $mid-grey;
 }
 
 .font-brand-gradient-color {
   @include gradient-text(0deg, $brand-color, $orange-color);
-  font-size: 8.813rem;
 }
 
 /*----font size----*/
-h2 {
-  font-size: 3.813rem;
+.font-big-hero {
+  font-size: 6rem;
+  line-height: 0.9;
+  margin: 2rem 0;
 }
 
-@media (max-width: 1024px) {
-  h2 {
-    font-size: 3rem;
+@media (max-width: map.get($breakpoints, "tablet")) {
+  .text-center-on-mobile {
+    text-align: center;
+  }
+
+  .font-big-hero {
+    font-size: 4rem;
   }
 }
 
-@media (max-width: 431px) {
-  h2 {
-    font-size: 2.5rem;
+@media (max-width: map.get($breakpoints, "mobile large")) {
+  .font-big-hero {
+    font-size: 3rem;
   }
 }

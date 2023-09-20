@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // -----------------------------------------------------------------------------
 // This file contains CSS helper classes.
 // -----------------------------------------------------------------------------
@@ -52,4 +54,10 @@
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+@media (max-width: map.get($breakpoints, "tablet")) {
+  .hide-bloc-on-mobile {
+    display: none;
+  }
 }

@@ -1,0 +1,28 @@
+@use "sass:map";
+
+.btn {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.btn:hover {
+  text-decoration: none;
+}
+
+.btn-primary {
+  padding: 0.8rem 1.5rem;
+  background: $brand-color;
+  color: $light-grey;
+  transition: all ease-in-out 0.3s;
+}
+
+.btn-primary:hover {
+  background: darken($brand-color, 15%);
+  color: $light-grey;
+}
+
+@media (max-width: map.get($breakpoints, "mobile large")) {
+  .btn {
+    font-size: 0.8rem;
+  }
+}
