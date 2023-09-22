@@ -56,12 +56,23 @@
   width: 1px;
 }
 
+.badge {
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  display: inline-block;
+}
+
 .p-1 {
   padding: 1rem;
 }
 
 .p-2 {
   padding: 2rem;
+}
+
+.standard-radius {
+  border-radius: 25px;
 }
 
 @media (max-width: map.get($breakpoints, "tablet")) {

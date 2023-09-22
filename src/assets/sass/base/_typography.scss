@@ -7,6 +7,10 @@ body {
   color: $text-color;
   font: normal 125% / 1.4 $text-font-stack;
 }
+/*----text alignement----*/
+.text-center {
+  text-align: center;
+}
 
 /*----font weight----*/
 
@@ -70,7 +74,7 @@ body {
   margin: 2rem 0;
 }
 
-h2 {
+.h2 {
   font-size: 3.5rem;
   margin: 0;
 }
@@ -83,10 +87,18 @@ h2 {
   .font-big-hero {
     font-size: 4rem;
   }
+
+  .h2 {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: map.get($breakpoints, "mobile large")) {
   .font-big-hero {
     font-size: 3rem;
+  }
+
+  .h2 {
+    font-size: 1.8rem;
   }
 }

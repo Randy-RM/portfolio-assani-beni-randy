@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { Container, Spacer } from "../../components";
+import { Container, Spacer, Badge } from "../../components";
 import RandyPicture from "../../assets/images/rm-hero-photo.png";
 import GithubCircleIcon from "../../assets/images/iconoir_github_circle.svg";
 import LinkedinIcon from "../../assets/images/iconoir_linkedin.svg";
@@ -52,7 +52,7 @@ const Home = (): JSX.Element => {
               </p>
             </div>
           </Container>
-          <Spacer height={4} />
+          <Spacer height={6} />
         </section>
         {/**Hero section end */}
         {/**About me section start */}
@@ -65,7 +65,7 @@ const Home = (): JSX.Element => {
             flexWrap="wrap"
           >
             <div className="width-40 text-center-on-mobile">
-              <h2 className="font-w-Black">
+              <h2 className="font-w-Black h2">
                 ABOUT <span className="font-brand-color">ME</span>
               </h2>
               <p>
@@ -101,6 +101,47 @@ const Home = (): JSX.Element => {
           <Spacer height={6} />
         </section>
         {/**About me section end */}
+        {/**Technologies section start */}
+        <section className="bg-light-grey">
+          <Spacer height={6} />
+          <Container
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            flexWrap="wrap"
+          >
+            <div className="width-50 text-center">
+              <h2 className="font-w-Black h2">
+                <span className="font-brand-color">TECH</span>NOLOGIES
+              </h2>
+              <p>Here are a few technologies I’ve been working with recently</p>
+            </div>
+            <div className="width-50 text-center">
+              <Spacer />
+              <Badge badgeText="HTML" />
+              <Badge badgeText="CSS" />
+              <Badge badgeText="Javascript" />
+              <Badge badgeText="Typescript" />
+              <Badge badgeText="Node Js" />
+              <Badge badgeText="Express Js" />
+              <Badge badgeText="Nest Js" />
+              <Badge badgeText="React Js" />
+              <Badge badgeText="React native" />
+              <Badge badgeText="Sass" />
+              <Badge badgeText="PHP" />
+              <Badge badgeText="Wordpress" />
+              <Badge badgeText="Symfony" />
+              <Badge badgeText="Laravel" />
+              <Badge badgeText="MySql" />
+              <Badge badgeText="MongDB" />
+              <Badge badgeText="Postgresql" />
+              <Badge badgeText="Linux" />
+              <Spacer />
+            </div>
+          </Container>
+          <Spacer height={6} />
+        </section>
+        {/**Technologies section end */}
       </main>
     </>
   );
