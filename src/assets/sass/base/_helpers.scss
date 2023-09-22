@@ -56,6 +56,14 @@
   width: 1px;
 }
 
+.p-1 {
+  padding: 1rem;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
 @media (max-width: map.get($breakpoints, "tablet")) {
   .hide-bloc-on-mobile {
     display: none;

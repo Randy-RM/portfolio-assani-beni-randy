@@ -1,5 +1,14 @@
 @use "sass:map";
 
+.link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: none;
+}
+
 .btn {
   font-size: 1rem;
   font-weight: 700;

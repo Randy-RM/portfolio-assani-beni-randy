@@ -51,6 +51,10 @@ body {
   color: $light-grey;
 }
 
+.font-brand-color {
+  color: $brand-color;
+}
+
 .font-mid-grey-color {
   color: $mid-grey;
 }
@@ -64,6 +68,11 @@ body {
   font-size: 6rem;
   line-height: 0.9;
   margin: 2rem 0;
+}
+
+h2 {
+  font-size: 3.5rem;
+  margin: 0;
 }
 
 @media (max-width: map.get($breakpoints, "tablet")) {
