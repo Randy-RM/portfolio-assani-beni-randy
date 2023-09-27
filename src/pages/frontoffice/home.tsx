@@ -8,6 +8,26 @@ import DesignPencilIcon from "../../assets/images/iconoir_design_pencil.svg";
 import LeaderboardStarIcon from "../../assets/images/iconoir_leaderboard_star.svg";
 
 const Home = (): JSX.Element => {
+  const technologies: string[] = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "TypeScript",
+    "Node Js",
+    "Express Js",
+    "Nest Js",
+    "React Js",
+    "React native",
+    "Sass",
+    "PHP",
+    "WordPress",
+    "Symfony",
+    "Laravel",
+    "MySql",
+    "MongDB",
+    "PostgreSql",
+    "Linux",
+  ];
   return (
     <>
       <Helmet>
@@ -121,24 +141,11 @@ const Home = (): JSX.Element => {
             </div>
             <div className="width-50 text-center">
               <Spacer />
-              <Badge badgeText="HTML" />
-              <Badge badgeText="CSS" />
-              <Badge badgeText="Javascript" />
-              <Badge badgeText="Typescript" />
-              <Badge badgeText="Node Js" />
-              <Badge badgeText="Express Js" />
-              <Badge badgeText="Nest Js" />
-              <Badge badgeText="React Js" />
-              <Badge badgeText="React native" />
-              <Badge badgeText="Sass" />
-              <Badge badgeText="PHP" />
-              <Badge badgeText="Wordpress" />
-              <Badge badgeText="Symfony" />
-              <Badge badgeText="Laravel" />
-              <Badge badgeText="MySql" />
-              <Badge badgeText="MongDB" />
-              <Badge badgeText="Postgresql" />
-              <Badge badgeText="Linux" />
+              {technologies.map((technology, index): JSX.Element => {
+                return (
+                  <Badge key={`${index}-technology`} badgeText={technology} />
+                );
+              })}
               <Spacer />
             </div>
           </Container>
