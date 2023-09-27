@@ -3,6 +3,9 @@ import { Container, Spacer, Badge } from "../../components";
 import RandyPicture from "../../assets/images/rm-hero-photo.png";
 import GithubCircleIcon from "../../assets/images/iconoir_github_circle.svg";
 import LinkedinIcon from "../../assets/images/iconoir_linkedin.svg";
+import ToolsIcon from "../../assets/images/iconoir_tools.svg";
+import DesignPencilIcon from "../../assets/images/iconoir_design_pencil.svg";
+import LeaderboardStarIcon from "../../assets/images/iconoir_leaderboard_star.svg";
 
 const Home = (): JSX.Element => {
   return (
@@ -65,7 +68,7 @@ const Home = (): JSX.Element => {
             flexWrap="wrap"
           >
             <div className="width-40 text-center-on-mobile">
-              <h2 className="font-w-Black h2">
+              <h2 className="font-w-Black h2 margin-0">
                 ABOUT <span className="font-brand-color">ME</span>
               </h2>
               <p>
@@ -111,7 +114,7 @@ const Home = (): JSX.Element => {
             flexWrap="wrap"
           >
             <div className="width-50 text-center">
-              <h2 className="font-w-Black h2">
+              <h2 className="font-w-Black h2 margin-0">
                 <span className="font-brand-color">TECH</span>NOLOGIES
               </h2>
               <p>Here are a few technologies I’ve been working with recently</p>
@@ -142,6 +145,77 @@ const Home = (): JSX.Element => {
           <Spacer height={6} />
         </section>
         {/**Technologies section end */}
+        {/**Experience section start */}
+        <section className="bg-light-grey">
+          <Spacer height={6} />
+          <Container
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="flex-start"
+            flexWrap="wrap"
+          >
+            <div className="width-100 text-center-on-mobile">
+              <h2 className="font-w-Black h2 margin-0">
+                <span className="font-brand-color">EXP</span>ERIENCE
+              </h2>
+              <Spacer height={3} />
+            </div>
+            <div className="width-100 text-center-on-mobile">
+              <Container
+                flexDirection="row"
+                justifyContent="space-between"
+                alignItems="flex-start"
+                flexWrap="wrap"
+              >
+                <div className="width-30">
+                  <div className="p-1">
+                    <p>
+                      <img src={ToolsIcon} alt="Github profile" />
+                    </p>
+                    <h3 className="h3 font-w-extra-bold margin-0">
+                      Engineering
+                    </h3>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur. Nec dictumst urna
+                      neque id. Tortor morbi tempor
+                    </p>
+                  </div>
+                  <Spacer height={2} />
+                </div>
+                <div className="width-30">
+                  <div className="p-1">
+                    <p>
+                      <img src={DesignPencilIcon} alt="Github profile" />
+                    </p>
+                    <h3 className="h3 font-w-extra-bold margin-0">
+                      UX/UI design
+                    </h3>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur. Nec dictumst urna
+                      neque id. Tortor morbi tempor
+                    </p>
+                  </div>
+                  <Spacer height={2} />
+                </div>
+                <div className="width-30">
+                  <div className="p-1">
+                    <p>
+                      <img src={LeaderboardStarIcon} alt="Github profile" />
+                    </p>
+                    <h3 className="h3 font-w-extra-bold margin-0">Project</h3>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur. Nec dictumst urna
+                      neque id. Tortor morbi tempor
+                    </p>
+                  </div>
+                  <Spacer height={2} />
+                </div>
+              </Container>
+            </div>
+          </Container>
+          <Spacer height={6} />
+        </section>
+        {/**Experience section end */}
       </main>
     </>
   );

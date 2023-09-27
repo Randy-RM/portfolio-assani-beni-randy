@@ -76,7 +76,10 @@ body {
 
 .h2 {
   font-size: 3.5rem;
-  margin: 0;
+}
+
+.h3 {
+  font-size: 2rem;
 }
 
 @media (max-width: map.get($breakpoints, "tablet")) {
