@@ -6,6 +6,7 @@ import LinkedinIcon from "../../assets/images/iconoir_linkedin.svg";
 import ToolsIcon from "../../assets/images/iconoir_tools.svg";
 import DesignPencilIcon from "../../assets/images/iconoir_design_pencil.svg";
 import LeaderboardStarIcon from "../../assets/images/iconoir_leaderboard_star.svg";
+import PaperPlaneRight from "../../assets/images/paper_plane_right.svg";
 
 const Home = (): JSX.Element => {
   const technologies: string[] = [
@@ -223,6 +224,36 @@ const Home = (): JSX.Element => {
           <Spacer height={6} />
         </section>
         {/**Experience section end */}
+        {/**Send message section start */}
+        <section className="bg-light-grey">
+          <Spacer height={6} />
+          <Container
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            flexWrap="wrap"
+          >
+            <div
+              className="width-100 text-center bg-paper-plane-right"
+              style={{ backgroundImage: `url(${PaperPlaneRight})` }}
+            >
+              <h2 className="font-w-semi-medium h2 margin-0">
+                Send me a message!
+              </h2>
+              <p>
+                Got a question or proposal, or just want <br /> to say hello? Go
+                ahead.
+              </p>
+            </div>
+            <div className="width-50 text-center">
+              <Spacer />
+              <p>Form ici</p>
+              <Spacer />
+            </div>
+          </Container>
+          <Spacer height={6} />
+        </section>
+        {/**Send message section end */}
       </main>
     </>
   );

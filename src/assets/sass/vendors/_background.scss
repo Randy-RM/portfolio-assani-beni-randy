@@ -37,3 +37,20 @@ body {
 .bg-mid-grey {
   background: $mid-grey;
 }
+
+.bg-paper-plane-right {
+  // url not work on sass or scss
+  // use backgroundImage on style attribut in tsx to
+  // add backgroundImage on container
+  //
+  // background: url("../../images/paper-plane-right-thin.svg");
+  // background-repeat: no-repeat;
+  // background-position: right 35% top 45%;
+  // position: relative;
+  // width: 100%;
+  //
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  //
+  // background-size: cover;
+}
