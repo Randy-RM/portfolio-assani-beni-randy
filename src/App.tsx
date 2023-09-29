@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home, Projects, NotFound } from "./pages";
-import { Header } from "./components";
+import { Header, Footer } from "./components";
 
 const App = (): JSX.Element => {
   return (
@@ -11,6 +11,7 @@ const App = (): JSX.Element => {
         <Route path="/projects" element={<Projects />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </Router>
   );
 };
