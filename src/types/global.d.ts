@@ -35,6 +35,27 @@ declare interface BasicInputProps {
 }
 
 /**
+ * Represents Basic Input properties.
+ * @interface
+ * @type {label:  string | undefined }
+ * @type {id: string | undefined }
+ * @type {name:  string | undefined }
+ * @type {placeholder: string | undefined }
+ * @type {inputStatus: InputStatus | undefined }
+ * @type {rows: number | undefined }
+ * @type {cols: number | undefined }
+ */
+declare interface TextareaInputProps {
+  label?: string;
+  id?: string;
+  name?: string;
+  placeholder?: string;
+  inputStatus?: InputStatus;
+  rows?: number;
+  cols?: number;
+}
+
+/**
  * Represents Container properties.
  * @interface
  * @type {flexDirection: "row" | "row-reverse" | "column" | "column-reverse"| undefined }

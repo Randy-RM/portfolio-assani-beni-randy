@@ -12,6 +12,7 @@
 .btn {
   font-size: 1rem;
   font-weight: 700;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -22,12 +23,17 @@
   padding: 0.8rem 1.5rem;
   background: $brand-color;
   color: $light-grey;
+  border: none;
   transition: all ease-in-out 0.2s;
 }
 
 .btn-primary:hover {
   background: darken($brand-color, 15%);
   color: $light-grey;
+}
+
+.btn-size-larg {
+  width: 100%;
 }
 
 @media (max-width: map.get($breakpoints, "mobile large")) {

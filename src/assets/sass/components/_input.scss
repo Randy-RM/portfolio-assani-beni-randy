@@ -6,7 +6,9 @@
   label {
     font-size: 0.8rem;
   }
-  input {
+
+  input,
+  textarea {
     width: 100%;
     background: rgba($light-grey, 0%);
     padding: 0.3rem 0;
@@ -15,13 +17,19 @@
     transition: all ease-in-out 0.2s;
   }
 
-  input::placeholder {
+  input::placeholder,
+  textarea::placeholder {
     color: rgba($dark-grey, 60%);
   }
 
-  input:focus {
+  input:focus,
+  textarea:focus {
     outline: none;
     border-bottom: solid 4px rgba($dark-grey, 60%);
+  }
+
+  textarea {
+    resize: none;
   }
 
   .input-message {

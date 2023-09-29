@@ -1,5 +1,11 @@
 import { Helmet } from "react-helmet";
-import { Container, Spacer, Badge, BasicInput } from "../../components";
+import {
+  Container,
+  Spacer,
+  Badge,
+  BasicInput,
+  TextareaInput,
+} from "../../components";
 import RandyPicture from "../../assets/images/rm-hero-photo.png";
 import GithubCircleIcon from "../../assets/images/iconoir_github_circle.svg";
 import LinkedinIcon from "../../assets/images/iconoir_linkedin.svg";
@@ -281,20 +287,24 @@ const Home = (): JSX.Element => {
                     flexWrap="wrap"
                   >
                     <div className="width-100">
-                      <div className="input">
-                        <label className="font-w-extra-bold" htmlFor="name">
-                          YOUR NAME
-                        </label>
-                        <br />
-                        <input
-                          type="text"
-                          name="name"
-                          id="name"
-                          placeholder="Enter your name"
-                        />
-                        <br />
-                        <span className="input-message">Error</span>
-                      </div>
+                      <TextareaInput
+                        id="contactMessage"
+                        name="contactMessage"
+                        label="YOUR MESSAGE"
+                        placeholder="Enter your message"
+                      />
+                    </div>
+                  </Container>
+                  <Container
+                    flexDirection="row"
+                    justifyContent="center"
+                    alignItems="center"
+                    flexWrap="wrap"
+                  >
+                    <div className="width-100">
+                      <button className="btn btn-primary btn-size-larg">
+                        SEND YOUR MESSAGE
+                      </button>
                     </div>
                   </Container>
                 </form>
