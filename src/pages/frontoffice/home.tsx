@@ -117,11 +117,13 @@ const Home = (): JSX.Element => {
               </p>
             </div>
             <div className="width-50 p-2 bg-mid-grey text-center-on-mobile">
-              <p>HI. I'm Randy Assani Beni (RM).</p>
+              <h1 className="font-h1-unstyled">
+                HI. I'm Randy Assani Beni (RM).
+              </h1>
               <p>
-                I'm Analyst Designer with a Computer Science degree and
-                experience on computer engineering, software development &
-                graphic design.
+                I'm <mark>Software Engineer</mark> with a Computer Science
+                degree and experience on computer engineering, software
+                development & graphic design.
               </p>
               <p>
                 I am always developing my skills and learning something new. I
