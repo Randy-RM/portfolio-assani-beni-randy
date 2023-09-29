@@ -1,19 +1,5 @@
 import InputHelperMessage from "./input-helper-message";
 
-interface InputStatus {
-  status: "none" | "succes" | "error";
-  message: string;
-}
-
-interface BasicInputProps {
-  type?: "text" | "email" | "url" | "number" | "password";
-  label?: string;
-  id?: string;
-  name?: string;
-  placeholder?: string;
-  inputStatus?: InputStatus;
-}
-
 const BasicInput = (props: BasicInputProps): JSX.Element => {
   let { type, id, name, placeholder, inputStatus } = props;
   const { label } = props;

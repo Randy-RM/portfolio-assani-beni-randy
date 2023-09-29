@@ -1,8 +1,3 @@
-interface InputStatus {
-  status?: "none" | "succes" | "error";
-  message?: string;
-}
-
 const InputHelperMessage = (props: InputStatus): JSX.Element => {
   const { status, message } = props;
 

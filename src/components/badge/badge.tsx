@@ -1,7 +1,3 @@
-interface BadgeProps {
-  badgeText?: string;
-}
-
 const Badge = (props: BadgeProps): JSX.Element => {
   let { badgeText } = props;
   badgeText = badgeText || "";

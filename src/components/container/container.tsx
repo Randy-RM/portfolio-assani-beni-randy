@@ -1,27 +1,11 @@
-import { ReactNode, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import useWindowSize from "../../hooks/use-window-size";
-
-interface ContainerProps {
-  flexDirection?: "row" | "row-reverse" | "column" | "column-reverse";
-  justifyContent?:
-    | "flex-start"
-    | "flex-end"
-    | "center"
-    | "space-around"
-    | "space-between"
-    | "space-evenly";
-  alignItems?: "flex-start" | "stretch" | "flex-end" | "center";
-  flexWrap?: "nowrap" | "wrap" | "wrap-reverse";
-  children?: ReactNode;
-}
 
 const Container = (props: ContainerProps): JSX.Element => {
   let { flexDirection, justifyContent, alignItems, flexWrap } = props;
   const { children } = props;
 
-  const [direction, setDirection] = useState<
-    "row" | "row-reverse" | "column" | "column-reverse" | null
-  >(null);
+  const [direction, setDirection] = useState<direction>(null);
 
   const [width] = useWindowSize();
 

@@ -1,0 +1,76 @@
+/**
+ * Represents flex direction.
+ * @type {direction: "row" | "row-reverse" | "column" | "column-reverse" | null }
+ */
+declare type direction = "row" | "row-reverse" | "column" | "column-reverse" | null;
+
+/**
+ * Represents Input Status properties.
+ * @interface
+ * @type {status: "none" | "succes" | "error" }
+ * @type {message:  string }
+ */
+declare interface InputStatus {
+  status: "none" | "succes" | "error";
+  message: string;
+}
+
+/**
+ * Represents Basic Input properties.
+ * @interface
+ * @type {type: "text" | "email" | "url" | "number" | "password"| undefined }
+ * @type {label:  string | undefined }
+ * @type {id: string | undefined }
+ * @type {name:  string | undefined }
+ * @type {placeholder: string | undefined }
+ * @type {inputStatus: InputStatus | undefined }
+ */
+declare interface BasicInputProps {
+  type?: "text" | "email" | "url" | "number" | "password";
+  label?: string;
+  id?: string;
+  name?: string;
+  placeholder?: string;
+  inputStatus?: InputStatus;
+}
+
+/**
+ * Represents Container properties.
+ * @interface
+ * @type {flexDirection: "row" | "row-reverse" | "column" | "column-reverse"| undefined }
+ * @type {justifyContent: "flex-start" | "flex-end"| "center"| "space-around"| "space-between"| "space-evenly"| undefined }
+ * @type {alignItems: "flex-start" | "stretch" | "flex-end" | "center"| undefined }
+ * @type {flexWrap: "nowrap" | "wrap" | "wrap-reverse"| undefined }
+ * @type {children: ReactNode | any}
+ */
+declare interface ContainerProps {
+  flexDirection?: "row" | "row-reverse" | "column" | "column-reverse";
+  justifyContent?:
+    | "flex-start"
+    | "flex-end"
+    | "center"
+    | "space-around"
+    | "space-between"
+    | "space-evenly";
+  alignItems?: "flex-start" | "stretch" | "flex-end" | "center";
+  flexWrap?: "nowrap" | "wrap" | "wrap-reverse";
+  children?: ReactNode;
+}
+
+/**
+ * Represents Badge properties.
+ * @interface
+ * @type {badgeText: string}
+ */
+declare interface BadgeProps {
+  badgeText?: string;
+}
+
+/**
+ * Represents vertical Space properties.
+ * @interface
+ * @type {height: number}
+ */
+declare interface SpacerProps {
+  height?: 1 | 2 | 3 | 4 | 5 | 6;
+}
