@@ -1,0 +1,30 @@
+.input {
+  width: 100%;
+  //   display: inline-block;
+  padding: 0.5rem 1rem;
+
+  label {
+    font-size: 0.8rem;
+  }
+  input {
+    width: 100%;
+    background: rgba($light-grey, 0%);
+    padding: 0.3rem 0;
+    border: none;
+    border-bottom: solid 2px rgba($dark-grey, 60%);
+    transition: all ease-in-out 0.2s;
+  }
+
+  input::placeholder {
+    color: rgba($dark-grey, 60%);
+  }
+
+  input:focus {
+    outline: none;
+    border-bottom: solid 4px rgba($dark-grey, 60%);
+  }
+
+  .input-message {
+    font-size: 0.9rem;
+  }
+}

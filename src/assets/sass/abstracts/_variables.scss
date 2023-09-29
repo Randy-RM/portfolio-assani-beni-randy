@@ -36,9 +36,29 @@ $light-grey: #f3f1ef !default;
 /// @type Color
 $mid-grey: #e4e3e3 !default;
 
+/// Semi Dark grey
+/// @type Color
+$semi-dark-grey: #555555 !default;
+
 /// Dark grey
 /// @type Color
 $dark-grey: #3e3d3d !default;
+
+/// Danger
+/// @type Color
+$danger: #bb2124 !default;
+
+/// Success
+/// @type Color
+$success: #22bb33 !default;
+
+/// Warning
+/// @type Color
+$warning: #f0ad4e !default;
+
+/// Info
+/// @type Color
+$info: #5bc0de !default;
 
 /// Container's maximum width
 /// @type Length

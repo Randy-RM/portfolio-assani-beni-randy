@@ -4,6 +4,10 @@
   width: 100%;
 }
 
+.width-70 {
+  width: 70%;
+}
+
 .width-50 {
   width: 50%;
 }
@@ -21,6 +25,7 @@
 }
 
 @media (max-width: map.get($breakpoints, "tablet")) {
+  .width-70,
   .width-50,
   .width-40,
   .width-30,

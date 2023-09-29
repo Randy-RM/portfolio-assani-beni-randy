@@ -63,6 +63,30 @@ body {
   color: $mid-grey;
 }
 
+.font-semi-dark-grey {
+  color: $semi-dark-grey;
+}
+
+.font-danger-color {
+  color: $danger;
+}
+
+.font-success-color {
+  color: $success;
+}
+
+.font-warning-color {
+  color: $warning;
+}
+
+.font-info-color {
+  color: $info;
+}
+
+.font-none {
+  color: rgba(#3e3d3d, 0%);
+}
+
 .font-brand-gradient-color {
   @include gradient-text(0deg, $brand-color, $orange-color);
 }

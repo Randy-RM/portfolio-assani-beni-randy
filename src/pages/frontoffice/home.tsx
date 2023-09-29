@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { Container, Spacer, Badge } from "../../components";
+import { Container, Spacer, Badge, BasicInput } from "../../components";
 import RandyPicture from "../../assets/images/rm-hero-photo.png";
 import GithubCircleIcon from "../../assets/images/iconoir_github_circle.svg";
 import LinkedinIcon from "../../assets/images/iconoir_linkedin.svg";
@@ -49,7 +49,7 @@ const Home = (): JSX.Element => {
               <p className="font-big-hero font-w-Black">
                 {`Hi! I'm`}
                 <br />
-                <span>{`Software`}</span>
+                <span className="font-semi-dark-grey">{`Software`}</span>
                 <br />
                 <span>
                   <mark className="special-mark">{`Engineer`}</mark>
@@ -245,9 +245,60 @@ const Home = (): JSX.Element => {
                 ahead.
               </p>
             </div>
-            <div className="width-50 text-center">
+            <div className="width-70">
               <Spacer />
-              <p>Form ici</p>
+              <div>
+                <form action="">
+                  <Container
+                    flexDirection="row"
+                    justifyContent="center"
+                    alignItems="center"
+                    flexWrap="wrap"
+                  >
+                    <div className="width-50">
+                      <BasicInput
+                        id="contactName"
+                        name="contactName"
+                        label="YOUR NAME"
+                        placeholder="Enter your name"
+                        type="text"
+                      />
+                    </div>
+                    <div className="width-50">
+                      <BasicInput
+                        id="contactMail"
+                        name="contactMail"
+                        label="EMAIL ADDRESS"
+                        placeholder="Enter your email address"
+                        type="email"
+                      />
+                    </div>
+                  </Container>
+                  <Container
+                    flexDirection="row"
+                    justifyContent="center"
+                    alignItems="center"
+                    flexWrap="wrap"
+                  >
+                    <div className="width-100">
+                      <div className="input">
+                        <label className="font-w-extra-bold" htmlFor="name">
+                          YOUR NAME
+                        </label>
+                        <br />
+                        <input
+                          type="text"
+                          name="name"
+                          id="name"
+                          placeholder="Enter your name"
+                        />
+                        <br />
+                        <span className="input-message">Error</span>
+                      </div>
+                    </div>
+                  </Container>
+                </form>
+              </div>
               <Spacer />
             </div>
           </Container>
