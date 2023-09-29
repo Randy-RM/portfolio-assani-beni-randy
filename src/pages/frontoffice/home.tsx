@@ -102,14 +102,17 @@ const Home = (): JSX.Element => {
                 <span className="font-w-extra-bold">FOLLOW ME ON</span>
                 <br />
                 <a href="https://github.com/Randy-RM" target="_blank">
-                  <img src={GithubCircleIcon} alt="Github profile" />
+                  <img
+                    src={GithubCircleIcon}
+                    alt="Randy Assani Github profile"
+                  />
                 </a>
                 &nbsp;
                 <a
                   href="https://www.linkedin.com/in/randy-assani-beni-ab101216b/"
                   target="_blank"
                 >
-                  <img src={LinkedinIcon} alt="Linkdin profile" />
+                  <img src={LinkedinIcon} alt="Randy Assani Linkdin profile" />
                 </a>
               </p>
             </div>
