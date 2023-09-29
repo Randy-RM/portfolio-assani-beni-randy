@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home, Projects, NotFound } from "./pages";
 import { Header } from "./components";
 
-function App(): JSX.Element {
+const App = (): JSX.Element => {
   return (
     <Router>
       <Header />
@@ -13,6 +13,6 @@ function App(): JSX.Element {
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;

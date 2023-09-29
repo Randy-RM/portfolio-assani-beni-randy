@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import useWindowSize from "../../hooks/use-window-size";
+import { useWindowSize } from "../../hooks";
 
 const Container = (props: ContainerProps): JSX.Element => {
   let { flexDirection, justifyContent, alignItems, flexWrap } = props;
