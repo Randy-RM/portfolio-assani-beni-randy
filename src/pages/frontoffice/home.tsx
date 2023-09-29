@@ -52,7 +52,7 @@ const Home = (): JSX.Element => {
             flexWrap="wrap"
           >
             <div className="width-50 text-center-on-mobile">
-              <p className="font-big-hero font-w-Black">
+              <h2 className="font-big-hero font-w-Black">
                 {`Hi! I'm`}
                 <br />
                 <span className="font-semi-dark-grey">{`Software`}</span>
@@ -60,7 +60,7 @@ const Home = (): JSX.Element => {
                 <span>
                   <mark className="special-mark">{`Engineer`}</mark>
                 </span>
-              </p>
+              </h2>
               <p className="font-lead-hero">
                 {`Technology, software development`}
                 <br />
