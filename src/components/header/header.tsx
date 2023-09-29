@@ -8,7 +8,7 @@ const Header = (): JSX.Element => {
         <nav className="nav-bar">
           <div className="">
             <Link to="/">
-              <img src={LogoRM} className="logo" />
+              <img src={LogoRM} className="logo" alt="RM Randy Assani Logo" />
             </Link>
           </div>
           <div className="">
