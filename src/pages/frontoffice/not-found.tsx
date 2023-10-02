@@ -34,7 +34,7 @@ const NotFound = (): JSX.Element => {
                 <span>Page Not Found</span>
               </p>
               <p className="text-center">
-                <Link to="/">Click here to go back to home page</Link>
+                <Link to="/">Click here to go back home page</Link>
               </p>
             </Container>
             <Spacer />
