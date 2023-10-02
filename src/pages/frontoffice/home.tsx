@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { motion } from "framer-motion";
 import {
   Container,
   Spacer,
@@ -51,7 +52,19 @@ const Home = (): JSX.Element => {
             alignItems="center"
             flexWrap="wrap"
           >
-            <div className="width-50 text-center-on-mobile">
+            <motion.div
+              className="width-50 text-center-on-mobile"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                type: "spring",
+                delay: 0.3,
+                easeInOut: "linear",
+                duration: 2,
+                // bounce: 0.6,
+              }}
+            >
               <h2 className="font-big-hero font-w-Black">
                 {`Hi! I'm`}
                 <br />
@@ -71,8 +84,20 @@ const Home = (): JSX.Element => {
                   CONTACT ME
                 </a>
               </p>
-            </div>
-            <div className="width-40 hide-bloc-on-mobile">
+            </motion.div>
+            <motion.div
+              className="width-40 hide-bloc-on-mobile"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                type: "spring",
+                delay: 0.3,
+                easeInOut: "linear",
+                duration: 2,
+                // bounce: 0.6,
+              }}
+            >
               <p>
                 <img
                   src={RandyPicture}
@@ -80,7 +105,7 @@ const Home = (): JSX.Element => {
                   className="hero-image"
                 />
               </p>
-            </div>
+            </motion.div>
           </Container>
           <Spacer height={6} />
         </section>
@@ -94,7 +119,19 @@ const Home = (): JSX.Element => {
             alignItems="center"
             flexWrap="wrap"
           >
-            <div className="width-40 text-center-on-mobile">
+            <motion.div
+              className="width-40 text-center-on-mobile"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                type: "spring",
+                delay: 0.4,
+                easeInOut: "linear",
+                duration: 2,
+                // bounce: 0.6,
+              }}
+            >
               <h2 className="font-w-Black h2 margin-0">
                 ABOUT <span className="font-brand-color">ME</span>
               </h2>
@@ -115,8 +152,20 @@ const Home = (): JSX.Element => {
                   <img src={LinkedinIcon} alt="Randy Assani Linkdin profile" />
                 </a>
               </p>
-            </div>
-            <div className="width-50 p-2 bg-mid-grey text-center-on-mobile">
+            </motion.div>
+            <motion.div
+              className="width-50 p-2 bg-mid-grey text-center-on-mobile"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{
+                type: "spring",
+                delay: 0.6,
+                easeInOut: "linear",
+                duration: 2,
+                // bounce: 0.6,
+              }}
+            >
               <h1 className="font-h1-unstyled">
                 HI. I'm Randy Assani Beni (RM).
               </h1>
@@ -131,7 +180,7 @@ const Home = (): JSX.Element => {
                 things work; I'm a people person, a tinkerer, a lover of
                 technology/science."
               </p>
-            </div>
+            </motion.div>
           </Container>
           <Spacer height={6} />
         </section>
@@ -145,12 +194,24 @@ const Home = (): JSX.Element => {
             alignItems="center"
             flexWrap="wrap"
           >
-            <div className="width-50 text-center">
+            <motion.div
+              className="width-50 text-center"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                type: "spring",
+                delay: 0.3,
+                easeInOut: "linear",
+                duration: 2,
+                // bounce: 0.6,
+              }}
+            >
               <h2 className="font-w-Black h2 margin-0">
                 <span className="font-brand-color">TECH</span>NOLOGIES
               </h2>
               <p>Here are a few technologies I’ve been working with recently</p>
-            </div>
+            </motion.div>
             <div className="width-50 text-center">
               <Spacer />
               {technologies.map((technology, index): JSX.Element => {
