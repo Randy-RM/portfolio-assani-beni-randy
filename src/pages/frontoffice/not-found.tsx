@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Container, Spacer } from "../../components";
 import EmojiPuzzled from "../../assets/images/iconoir_emoji_puzzled.svg";
