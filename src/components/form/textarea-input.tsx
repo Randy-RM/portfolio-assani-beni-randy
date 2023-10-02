@@ -16,7 +16,7 @@ const TextareaInput = (props: TextareaInputProps): JSX.Element => {
       <div className="input">
         {label && label.length != 0 && (
           <>
-            <label className="font-w-extra-bold" htmlFor="name">
+            <label className="font-w-extra-bold" htmlFor={id}>
               {label}
             </label>
             <br />
