@@ -126,7 +126,7 @@ const Home = (): JSX.Element => {
               viewport={{ once: true }}
               transition={{
                 type: "spring",
-                delay: 0.4,
+                delay: 0.3,
                 easeInOut: "linear",
                 duration: 2,
                 // bounce: 0.6,
@@ -160,7 +160,7 @@ const Home = (): JSX.Element => {
               viewport={{ once: true }}
               transition={{
                 type: "spring",
-                delay: 0.6,
+                delay: 0.5,
                 easeInOut: "linear",
                 duration: 2,
                 // bounce: 0.6,
@@ -247,12 +247,24 @@ const Home = (): JSX.Element => {
             alignItems="flex-start"
             flexWrap="wrap"
           >
-            <div className="width-100 text-center-on-mobile">
+            <motion.div
+              className="width-100 text-center-on-mobile"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                type: "spring",
+                delay: 0.3,
+                easeInOut: "linear",
+                duration: 2,
+                // bounce: 0.6,
+              }}
+            >
               <h2 className="font-w-Black h2 margin-0">
                 <span className="font-brand-color">EXP</span>ERIENCE
               </h2>
               <Spacer height={3} />
-            </div>
+            </motion.div>
             <div className="width-100 text-center-on-mobile">
               <Container
                 flexDirection="row"
@@ -260,7 +272,19 @@ const Home = (): JSX.Element => {
                 alignItems="flex-start"
                 flexWrap="wrap"
               >
-                <div className="width-30">
+                <motion.div
+                  className="width-30"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    type: "spring",
+                    delay: 0.3 * 1,
+                    easeInOut: "linear",
+                    duration: 2,
+                    // bounce: 0.6,
+                  }}
+                >
                   <div className="p-1">
                     <p>
                       <img src={ToolsIcon} alt="Github profile" />
@@ -274,8 +298,20 @@ const Home = (): JSX.Element => {
                     </p>
                   </div>
                   <Spacer height={2} />
-                </div>
-                <div className="width-30">
+                </motion.div>
+                <motion.div
+                  className="width-30"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    type: "spring",
+                    delay: 0.3 * 2,
+                    easeInOut: "linear",
+                    duration: 2,
+                    // bounce: 0.6,
+                  }}
+                >
                   <div className="p-1">
                     <p>
                       <img src={DesignPencilIcon} alt="Github profile" />
@@ -289,8 +325,20 @@ const Home = (): JSX.Element => {
                     </p>
                   </div>
                   <Spacer height={2} />
-                </div>
-                <div className="width-30">
+                </motion.div>
+                <motion.div
+                  className="width-30"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    type: "spring",
+                    delay: 0.3 * 3,
+                    easeInOut: "linear",
+                    duration: 2,
+                    // bounce: 0.6,
+                  }}
+                >
                   <div className="p-1">
                     <p>
                       <img src={LeaderboardStarIcon} alt="Github profile" />
@@ -302,7 +350,7 @@ const Home = (): JSX.Element => {
                     </p>
                   </div>
                   <Spacer height={2} />
-                </div>
+                </motion.div>
               </Container>
             </div>
           </Container>
