@@ -360,85 +360,98 @@ const Home = (): JSX.Element => {
         {/**Send message section start */}
         <section className="bg-light-grey">
           <Spacer height={6} />
-          <Container
-            flexDirection="column"
-            justifyContent="center"
-            alignItems="center"
-            flexWrap="wrap"
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              type: "spring",
+              delay: 0.3,
+              easeInOut: "linear",
+              duration: 2,
+              // bounce: 0.6,
+            }}
           >
-            <div
-              className="width-100 text-center bg-paper-plane-right"
-              style={{ backgroundImage: `url(${PaperPlaneRight})` }}
+            <Container
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="center"
+              flexWrap="wrap"
             >
-              <h2 className="font-w-semi-medium h2 margin-0">
-                Send me a message!
-              </h2>
-              <p>
-                Got a question or proposal, or just want <br /> to say hello? Go
-                ahead.
-              </p>
-            </div>
-            <div className="width-70">
-              <Spacer />
-              <div>
-                <form action="">
-                  <Container
-                    flexDirection="row"
-                    justifyContent="center"
-                    alignItems="center"
-                    flexWrap="wrap"
-                  >
-                    <div className="width-50">
-                      <BasicInput
-                        id="contactName"
-                        name="contactName"
-                        label="YOUR NAME"
-                        placeholder="Enter your name"
-                        type="text"
-                      />
-                    </div>
-                    <div className="width-50">
-                      <BasicInput
-                        id="contactMail"
-                        name="contactMail"
-                        label="EMAIL ADDRESS"
-                        placeholder="Enter your email address"
-                        type="email"
-                      />
-                    </div>
-                  </Container>
-                  <Container
-                    flexDirection="row"
-                    justifyContent="center"
-                    alignItems="center"
-                    flexWrap="wrap"
-                  >
-                    <div className="width-100">
-                      <TextareaInput
-                        id="contactMessage"
-                        name="contactMessage"
-                        label="YOUR MESSAGE"
-                        placeholder="Enter your message"
-                      />
-                    </div>
-                  </Container>
-                  <Container
-                    flexDirection="row"
-                    justifyContent="center"
-                    alignItems="center"
-                    flexWrap="wrap"
-                  >
-                    <div className="width-100">
-                      <button className="btn btn-primary btn-size-larg">
-                        SEND YOUR MESSAGE
-                      </button>
-                    </div>
-                  </Container>
-                </form>
+              <div
+                className="width-100 text-center bg-paper-plane-right"
+                style={{ backgroundImage: `url(${PaperPlaneRight})` }}
+              >
+                <h2 className="font-w-semi-medium h2 margin-0">
+                  Send me a message!
+                </h2>
+                <p>
+                  Got a question or proposal, or just want <br /> to say hello?
+                  Go ahead.
+                </p>
               </div>
-              <Spacer />
-            </div>
-          </Container>
+              <div className="width-70">
+                <Spacer />
+                <div>
+                  <form action="">
+                    <Container
+                      flexDirection="row"
+                      justifyContent="center"
+                      alignItems="center"
+                      flexWrap="wrap"
+                    >
+                      <div className="width-50">
+                        <BasicInput
+                          id="contactName"
+                          name="contactName"
+                          label="YOUR NAME"
+                          placeholder="Enter your name"
+                          type="text"
+                        />
+                      </div>
+                      <div className="width-50">
+                        <BasicInput
+                          id="contactMail"
+                          name="contactMail"
+                          label="EMAIL ADDRESS"
+                          placeholder="Enter your email address"
+                          type="email"
+                        />
+                      </div>
+                    </Container>
+                    <Container
+                      flexDirection="row"
+                      justifyContent="center"
+                      alignItems="center"
+                      flexWrap="wrap"
+                    >
+                      <div className="width-100">
+                        <TextareaInput
+                          id="contactMessage"
+                          name="contactMessage"
+                          label="YOUR MESSAGE"
+                          placeholder="Enter your message"
+                        />
+                      </div>
+                    </Container>
+                    <Container
+                      flexDirection="row"
+                      justifyContent="center"
+                      alignItems="center"
+                      flexWrap="wrap"
+                    >
+                      <div className="width-100">
+                        <button className="btn btn-primary btn-size-larg">
+                          SEND YOUR MESSAGE
+                        </button>
+                      </div>
+                    </Container>
+                  </form>
+                </div>
+                <Spacer />
+              </div>
+            </Container>
+          </motion.div>
           <Spacer height={6} />
         </section>
         {/**Send message section end */}
