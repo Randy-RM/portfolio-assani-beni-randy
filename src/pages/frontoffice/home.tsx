@@ -216,7 +216,20 @@ const Home = (): JSX.Element => {
               <Spacer />
               {technologies.map((technology, index): JSX.Element => {
                 return (
-                  <Badge key={`${index}-technology`} badgeText={technology} />
+                  <motion.span
+                    key={`${index}-technology`}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      type: "spring",
+                      delay: 0.2 * index,
+                      easeInOut: "linear",
+                      duration: 1,
+                    }}
+                  >
+                    <Badge badgeText={technology} />
+                  </motion.span>
                 );
               })}
               <Spacer />
