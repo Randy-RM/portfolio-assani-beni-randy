@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home, Projects, NotFound } from "./pages";
-import { Header, Footer } from "./components";
+import { Header, Footer, ScrollToTopEffect } from "./components";
 
 const App = (): JSX.Element => {
   return (
@@ -12,6 +12,7 @@ const App = (): JSX.Element => {
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
+      <ScrollToTopEffect />
     </Router>
   );
 };

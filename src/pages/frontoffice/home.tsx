@@ -36,6 +36,7 @@ const Home = (): JSX.Element => {
     "PostgreSql",
     "Linux",
   ];
+
   return (
     <>
       <Helmet>
