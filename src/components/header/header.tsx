@@ -114,6 +114,8 @@ const Header = (): JSX.Element => {
               </a>
             </li>
             <li>
+              <span className="font-w-extra-bold h2">FOLLOW ME ON</span>
+              <br />
               <a href="https://github.com/Randy-RM" target="_blank">
                 <img src={GithubCircleIcon} alt="Randy Assani Github profile" />
               </a>

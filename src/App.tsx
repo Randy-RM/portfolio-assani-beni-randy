@@ -1,6 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home, Projects, NotFound } from "./pages";
-import { Header, Footer, ScrollToTopEffect } from "./components";
+import {
+  Header,
+  Footer,
+  ScrollToTopEffect,
+  ScrollToTopButton,
+} from "./components";
 
 const App = (): JSX.Element => {
   return (
@@ -11,6 +16,7 @@ const App = (): JSX.Element => {
         <Route path="/projects" element={<Projects />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <ScrollToTopButton />
       <Footer />
       <ScrollToTopEffect />
     </Router>
