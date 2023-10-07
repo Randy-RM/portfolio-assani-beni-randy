@@ -9,7 +9,7 @@ const NotFound = (): JSX.Element => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>404 | Randy Assani Portfolio</title>
+        <title>404 Page Not Found | Randy Assani RM</title>
       </Helmet>
       <main>
         <section className="bg-light-grey">

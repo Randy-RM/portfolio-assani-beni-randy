@@ -41,7 +41,7 @@ const Home = (): JSX.Element => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Home | Randy Assani Portfolio</title>
+        <title>About me | Randy Assani RM</title>
       </Helmet>
       <main>
         {/**Hero section start */}

@@ -5,7 +5,7 @@ const Projects = (): JSX.Element => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>My project | Randy Assani Portfolio</title>
+        <title>My project | Randy Assani RM</title>
       </Helmet>
       <h1>Projects Page</h1>
     </>
