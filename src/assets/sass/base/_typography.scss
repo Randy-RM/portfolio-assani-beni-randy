@@ -99,6 +99,12 @@ body {
   @include gradient-text(0deg, $brand-color, $orange-color);
 }
 
+.font-outlined {
+  color: $light-grey;
+  text-shadow: -1px -1px 0 $text-color, 1px -1px 0 $text-color,
+    -1px 1px 0 $text-color, 1px 1px 0 $text-color !important;
+}
+
 /*----font size----*/
 .font-big-hero {
   font-size: 6rem;
