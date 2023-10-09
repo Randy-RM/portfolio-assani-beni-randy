@@ -7,7 +7,7 @@ const Projects = (): JSX.Element => {
     <>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>My project | Randy Assani RM</title>
+        <title>Visit my works | Randy Assani RM</title>
       </Helmet>
       <main>
         {/**Hero section start */}
@@ -34,11 +34,11 @@ const Projects = (): JSX.Element => {
                 }}
               >
                 <h1 className="font-big-hero text-center font-w-Black">
-                  <span className="font-outlined">{`Visit my work`}</span>
+                  <span className="font-outlined">{`Visit my works`}</span>
                   <br />
-                  <span className="">{`Visit my work`}</span>
+                  <span className="">{`Visit my works`}</span>
                   <br />
-                  <span className="font-outlined">{`Visit my work`}</span>
+                  <span className="font-outlined">{`Visit my works`}</span>
                 </h1>
               </motion.div>
             </Container>

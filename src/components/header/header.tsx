@@ -99,13 +99,13 @@ const Header = (): JSX.Element => {
             </li>
             <li>
               <NavLink
-                to="/projects"
+                to="/visit-my-works"
                 onClick={handleIsDropdown}
                 className={({ isActive, isPending }) =>
                   isPending ? "pending" : isActive ? "active-menu-link" : ""
                 }
               >
-                My Project
+                Visit my works
               </NavLink>
             </li>
             <li>
