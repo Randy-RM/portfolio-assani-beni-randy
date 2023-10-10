@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, Projects, NotFound } from "./pages";
+import { HomePage, WorksPage, NotFoundPage } from "./pages";
 import {
   Header,
   Footer,
@@ -12,13 +12,13 @@ const App = (): JSX.Element => {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/visit-my-works" element={<Projects />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/visit-my-works" element={<WorksPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <ScrollToTopButton />
-      <Footer />
       <OnLoadScrollToTop />
+      <Footer />
     </Router>
   );
 };

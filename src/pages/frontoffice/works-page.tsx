@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Container, Spacer } from "../../components";
 
-const Projects = (): JSX.Element => {
+const WorksPage = (): JSX.Element => {
   return (
     <>
       <Helmet>
@@ -51,4 +51,4 @@ const Projects = (): JSX.Element => {
   );
 };
 
-export default Projects;
+export default WorksPage;

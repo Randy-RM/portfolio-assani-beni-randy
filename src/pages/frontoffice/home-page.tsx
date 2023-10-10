@@ -15,7 +15,7 @@ import DesignPencilIcon from "../../assets/images/iconoir_design_pencil.svg";
 import LeaderboardStarIcon from "../../assets/images/iconoir_leaderboard_star.svg";
 import PaperPlaneRight from "../../assets/images/paper_plane_right.svg";
 
-const Home = (): JSX.Element => {
+const HomePage = (): JSX.Element => {
   const technologies: string[] = [
     "HTML",
     "CSS",
@@ -476,4 +476,4 @@ const Home = (): JSX.Element => {
   );
 };
 
-export default Home;
+export default HomePage;
