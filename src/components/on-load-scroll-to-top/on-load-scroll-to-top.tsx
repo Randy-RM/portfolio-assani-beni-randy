@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const ScrollToTopEffect = (): JSX.Element => {
+const OnLoadScrollToTop = (): JSX.Element => {
   // Extracts pathname property(key) from an object
   const { pathname } = useLocation();
 
@@ -12,4 +12,4 @@ const ScrollToTopEffect = (): JSX.Element => {
   return <></>;
 };
 
-export default ScrollToTopEffect;
+export default OnLoadScrollToTop;

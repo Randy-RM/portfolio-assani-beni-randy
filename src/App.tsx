@@ -3,7 +3,7 @@ import { Home, Projects, NotFound } from "./pages";
 import {
   Header,
   Footer,
-  ScrollToTopEffect,
+  OnLoadScrollToTop,
   ScrollToTopButton,
 } from "./components";
 
@@ -18,7 +18,7 @@ const App = (): JSX.Element => {
       </Routes>
       <ScrollToTopButton />
       <Footer />
-      <ScrollToTopEffect />
+      <OnLoadScrollToTop />
     </Router>
   );
 };

@@ -5,5 +5,5 @@ export { default as Spacer } from './spacer/spacer';
 export { default as Badge } from './badge/badge';
 export { default as BasicInput } from './form/basic-input';
 export { default as TextareaInput } from './form/textarea-input';
-export { default as ScrollToTopEffect } from './scroll-to-top-effect/scroll-to-top-effect';
+export { default as OnLoadScrollToTop } from './on-load-scroll-to-top/on-load-scroll-to-top';
 export { default as ScrollToTopButton } from './scroll-to-top-button/ScrollToTopButton';
