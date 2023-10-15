@@ -43,7 +43,7 @@ const HomePage = (): JSX.Element => {
         <meta charSet="utf-8" />
         <title>About me | Randy Assani RM</title>
       </Helmet>
-      <main>
+      <main className="font-w-light">
         {/**Hero section start */}
         <section className="bg-light-grey">
           <div className="container">

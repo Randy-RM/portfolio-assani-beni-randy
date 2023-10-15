@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { Container, Spacer } from "../../components";
+import { Container, Spacer, ProjectCardLarge } from "../../components";
 
 const WorksPage = (): JSX.Element => {
   return (
@@ -9,11 +9,11 @@ const WorksPage = (): JSX.Element => {
         <meta charSet="utf-8" />
         <title>Visit my works | Randy Assani RM</title>
       </Helmet>
-      <main>
+      <main className="font-w-light">
         {/**Hero section start */}
         <section className="bg-light-grey">
           <div className="container">
-            <Spacer height={2} />
+            <Spacer height={4} />
             <Container
               flexDirection="column"
               justifyContent="center"
@@ -40,12 +40,30 @@ const WorksPage = (): JSX.Element => {
                   <br />
                   <span className="font-outlined">{`Visit my works`}</span>
                 </h1>
+                <p className="text-center">
+                  Here are some Project I made recently
+                </p>
               </motion.div>
             </Container>
             <Spacer height={6} />
           </div>
         </section>
         {/**Hero section end */}
+        {/**My works section start */}
+        <section className="bg-light-grey">
+          <div className="container">
+            <Spacer height={2} />
+            <ProjectCardLarge />
+            <Spacer height={2} />
+            <Spacer height={2} />
+            <ProjectCardLarge />
+            <Spacer height={2} />
+            <Spacer height={2} />
+            <ProjectCardLarge />
+            <Spacer height={2} />
+          </div>
+        </section>
+        {/**My works section end */}
       </main>
     </>
   );
