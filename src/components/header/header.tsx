@@ -25,12 +25,13 @@ const Header = (): JSX.Element => {
   const handleMenuByLogo = () => {
     if (isDropdown) {
       setIsDropdown(false);
+      document.body.style.overflowY = "scroll";
     }
   };
 
   useEffect(() => {
-    document.body.style.overflowY = "scroll";
     setIsDropdown(false);
+    document.body.style.overflowY = "scroll";
   }, []);
 
   return (
