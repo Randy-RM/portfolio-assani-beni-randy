@@ -1,0 +1,35 @@
+.loader-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  color: $text-color;
+  //   font-family: Consolas, Menlo, Monaco, monospace;
+  font-weight: bold;
+  font-size: 78px;
+  opacity: 0.9;
+}
+.loader:before {
+  // content: "{";
+  //get img on public folder
+  content: url("./loader-img/r.svg");
+  display: inline-block;
+  animation: pulse 0.4s alternate infinite ease-in-out;
+}
+.loader:after {
+  // content: "}";
+  //get img on public folder
+  content: url("./loader-img/m.svg");
+  display: inline-block;
+  animation: pulse 0.4s 0.3s alternate infinite ease-in-out;
+}
+
+@keyframes pulse {
+  to {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+}

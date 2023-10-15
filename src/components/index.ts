@@ -8,3 +8,4 @@ export { default as BasicInput } from './form/basic-input';
 export { default as TextareaInput } from './form/textarea-input';
 export { default as OnLoadScrollToTop } from './on-load-scroll-to-top/on-load-scroll-to-top';
 export { default as ScrollToTopButton } from './scroll-to-top-button/ScrollToTopButton';
+export { default as Loader } from './loader/loader';
