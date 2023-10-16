@@ -1,4 +1,4 @@
-const Loader = () => {
+const Loader = (): JSX.Element => {
   return (
     <main className="loader-page">
       <div>

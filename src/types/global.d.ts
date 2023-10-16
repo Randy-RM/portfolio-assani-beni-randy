@@ -35,7 +35,7 @@ declare interface BasicInputProps {
 }
 
 /**
- * Represents Basic Input properties.
+ * Represents Basic Textarea properties.
  * @interface
  * @type {label:  string | undefined }
  * @type {id: string | undefined }

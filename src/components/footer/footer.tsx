@@ -6,7 +6,7 @@ import LogoRM from "../../assets/images/logo-rm.svg";
 import GithubCircleIcon from "../../assets/images/iconoir_github_circle.svg";
 import LinkedinIcon from "../../assets/images/iconoir_linkedin.svg";
 
-const Footer = () => {
+const Footer = (): JSX.Element => {
   const currentYear = new Date().getFullYear();
 
   return (
