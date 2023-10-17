@@ -36,7 +36,7 @@ const NotFoundPage = (): JSX.Element => {
                   <img
                     src={EmojiPuzzled}
                     className="logo"
-                    alt="RM Randy Assani Logo"
+                    alt="Page not found icon"
                   />
                   <br />
                   <span className="font-big-hero font-w-Black">

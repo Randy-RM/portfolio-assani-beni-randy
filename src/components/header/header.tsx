@@ -57,7 +57,7 @@ const Header = (): JSX.Element => {
                   <img
                     src={LogoRM}
                     className="logo"
-                    alt="RM Randy Assani Logo"
+                    alt="Randy Assani RM Logo"
                   />
                 </NavLink>
               </div>

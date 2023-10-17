@@ -300,7 +300,7 @@ const HomePage = (): JSX.Element => {
                   >
                     <div className="p-1">
                       <p>
-                        <img src={ToolsIcon} alt="Github profile" />
+                        <img src={ToolsIcon} alt="Tools icon" />
                       </p>
                       <h3 className="h3 font-w-extra-bold margin-0">
                         Engineering
@@ -327,7 +327,7 @@ const HomePage = (): JSX.Element => {
                   >
                     <div className="p-1">
                       <p>
-                        <img src={DesignPencilIcon} alt="Github profile" />
+                        <img src={DesignPencilIcon} alt="Design pencil icon" />
                       </p>
                       <h3 className="h3 font-w-extra-bold margin-0">
                         UX/UI design
@@ -354,7 +354,10 @@ const HomePage = (): JSX.Element => {
                   >
                     <div className="p-1">
                       <p>
-                        <img src={LeaderboardStarIcon} alt="Github profile" />
+                        <img
+                          src={LeaderboardStarIcon}
+                          alt="Leaderboard star icon"
+                        />
                       </p>
                       <h3 className="h3 font-w-extra-bold margin-0">Project</h3>
                       <p>

@@ -32,7 +32,7 @@ const Footer = (): JSX.Element => {
           >
             <p>
               <Link to="/">
-                <img src={LogoRM} className="logo" alt="RM Randy Assani Logo" />
+                <img src={LogoRM} className="logo" alt="Randy Assani RM Logo" />
               </Link>
             </p>
             <p className="text-center">
