@@ -7,13 +7,16 @@
  */
 html {
   box-sizing: border-box;
+  //hiding the scrollbar
   scrollbar-width: none;
 }
 
+//hiding the scrollbar
 body::-webkit-scrollbar {
   display: none;
 }
 
+//hiding the scrollbar
 body {
   -ms-overflow-style: none;
 }
