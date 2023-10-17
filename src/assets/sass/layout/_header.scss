@@ -13,45 +13,6 @@ header {
     align-items: center;
   }
 
-  .nav-menu {
-    z-index: 997;
-    width: 100%;
-    height: 90vh;
-
-    ul {
-      height: 90vh;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    li {
-      list-style: none;
-      padding: 1.5rem 0;
-
-      img {
-        width: 6rem;
-      }
-    }
-
-    a {
-      color: $text-color;
-      transition: all ease-in-out 0.2s;
-    }
-
-    a:hover,
-    .active-menu-link {
-      color: $brand-color;
-      text-decoration: none;
-    }
-  }
-
-  .hide-nav-menu {
-    display: none;
-  }
-
   label {
     display: flex;
     flex-direction: column;
@@ -98,6 +59,54 @@ header {
   }
 }
 
+.nav-menu {
+  z-index: 997;
+  position: fixed;
+  top: 2rem;
+  width: 100%;
+  height: 100vh;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+
+  ul {
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  li {
+    font-size: 4rem;
+    line-height: 0.9;
+    list-style: none;
+    padding: 1rem 0;
+
+    img {
+      width: 4rem;
+    }
+  }
+
+  a {
+    color: $text-color;
+    transition: all ease-in-out 0.2s;
+  }
+
+  a:hover,
+  .active-menu-link {
+    color: $brand-color;
+    text-decoration: none;
+  }
+}
+
+.show-nav-menu {
+  transform: translate(0vw, 0vh);
+}
+
+.hide-nav-menu {
+  transform: translate(0vw, -100vh);
+}
+
 @media (max-width: map.get($breakpoints, "tablet")) {
   header {
     padding: 2% 0 !important;
@@ -105,9 +114,14 @@ header {
     .logo {
       width: 4rem;
     }
+  }
 
-    .nav-menu li img {
-      width: 4rem;
+  .nav-menu {
+    li {
+      font-size: 2rem;
+    }
+    li img {
+      width: 3rem;
     }
   }
 }

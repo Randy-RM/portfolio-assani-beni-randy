@@ -75,62 +75,58 @@ const Header = (): JSX.Element => {
             </div>
           </motion.div>
         </div>
-        <motion.nav
-          className={isDropdown ? "nav-menu" : "nav-menu hide-nav-menu"}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{
-            type: "spring",
-            delay: 0.3,
-            easeInOut: "linear",
-            duration: 2,
-          }}
-        >
-          <ul className="font-big-hero text-center">
-            <li>
-              <NavLink
-                to="/"
-                onClick={handleIsDropdown}
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active-menu-link" : ""
-                }
-              >
-                A bout me
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/visit-my-works"
-                onClick={handleIsDropdown}
-                className={({ isActive, isPending }) =>
-                  isPending ? "pending" : isActive ? "active-menu-link" : ""
-                }
-              >
-                Visit my works
-              </NavLink>
-            </li>
-            <li>
-              <a href={RandyAssaniCv} target="_blank">
-                Get my resume
-              </a>
-            </li>
-            <li>
-              <span className="font-w-extra-bold h2">FOLLOW ME ON</span>
-              <br />
-              <a href="https://github.com/Randy-RM" target="_blank">
-                <img src={GithubCircleIcon} alt="Randy Assani Github profile" />
-              </a>
-              &nbsp;
-              <a
-                href="https://www.linkedin.com/in/randy-assani-beni-ab101216b/"
-                target="_blank"
-              >
-                <img src={LinkedinIcon} alt="Randy Assani Linkdin profile" />
-              </a>
-            </li>
-          </ul>
-        </motion.nav>
       </header>
+      <nav
+        className={
+          isDropdown
+            ? "nav-menu bg-light-grey show-nav-menu"
+            : "nav-menu bg-light-grey hide-nav-menu"
+        }
+      >
+        <ul className="text-center">
+          <li>
+            <NavLink
+              to="/"
+              onClick={handleIsDropdown}
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active-menu-link" : ""
+              }
+            >
+              A bout me
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/visit-my-works"
+              onClick={handleIsDropdown}
+              className={({ isActive, isPending }) =>
+                isPending ? "pending" : isActive ? "active-menu-link" : ""
+              }
+            >
+              Visit my works
+            </NavLink>
+          </li>
+          <li>
+            <a href={RandyAssaniCv} target="_blank">
+              Get my resume
+            </a>
+          </li>
+          <li>
+            <span className="font-w-extra-bold h2">FOLLOW ME ON</span>
+            <br />
+            <a href="https://github.com/Randy-RM" target="_blank">
+              <img src={GithubCircleIcon} alt="Randy Assani Github profile" />
+            </a>
+            &nbsp;
+            <a
+              href="https://www.linkedin.com/in/randy-assani-beni-ab101216b/"
+              target="_blank"
+            >
+              <img src={LinkedinIcon} alt="Randy Assani Linkdin profile" />
+            </a>
+          </li>
+        </ul>
+      </nav>
     </>
   );
 };

@@ -7,6 +7,15 @@
  */
 html {
   box-sizing: border-box;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
 }
 
 /**
