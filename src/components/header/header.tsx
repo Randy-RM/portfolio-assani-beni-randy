@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import LogoRM from "../../assets/images/logo-rm.svg";
 import GithubCircleIcon from "../../assets/images/iconoir_github_circle.svg";
 import LinkedinIcon from "../../assets/images/iconoir_linkedin.svg";
-import RandyAssaniCv from "../../assets/documents/CV-EN-Assani-Beni-Randy.pdf";
 
 const Header = (): JSX.Element => {
   const [isDropdown, setIsDropdown] = useState<boolean>(false);
@@ -109,9 +108,9 @@ const Header = (): JSX.Element => {
             </NavLink>
           </li>
           <li>
-            <a href={RandyAssaniCv} target="_blank">
+            <Link to="/documents/CV-EN-Assani-Beni-Randy.pdf" target="_blank">
               Get my resume
-            </a>
+            </Link>
           </li>
           <li>
             <span className="font-w-extra-bold h2">FOLLOW ME ON</span>

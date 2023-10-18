@@ -95,7 +95,11 @@ const HomePage = (): JSX.Element => {
                   </p>
                   <p className="width-40 width-35-on-large">
                     &nbsp;
-                    <a href="#" className="btn">
+                    <a
+                      href="/documents/CV-EN-Assani-Beni-Randy.pdf"
+                      className="btn"
+                      target="_blank"
+                    >
                       GET MY RESUME <Icon icon="iconoir:google-docs" />
                     </a>
                   </p>
