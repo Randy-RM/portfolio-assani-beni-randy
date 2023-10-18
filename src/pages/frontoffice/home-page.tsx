@@ -82,7 +82,7 @@ const HomePage = (): JSX.Element => {
                   {`and design are my passions.`}
                 </p>
                 <p>
-                  <a href="#" className="btn btn-primary">
+                  <a href="#sendMeMessage" className="btn btn-primary">
                     CONTACT ME
                   </a>
                 </p>
@@ -375,7 +375,7 @@ const HomePage = (): JSX.Element => {
         </section>
         {/**Experience section end */}
         {/**Send message section start */}
-        <section className="bg-light-grey">
+        <section className="bg-light-grey" id="sendMeMessage">
           <div className="container">
             <Spacer height={6} />
             <motion.div
