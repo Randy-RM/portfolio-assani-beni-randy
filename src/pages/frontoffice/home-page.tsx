@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
@@ -95,13 +96,13 @@ const HomePage = (): JSX.Element => {
                   </p>
                   <p className="width-40 width-35-on-large">
                     &nbsp;
-                    <a
-                      href="/documents/CV-EN-Assani-Beni-Randy.pdf"
+                    <Link
+                      to="/documents/CV-EN-Assani-Beni-Randy.pdf"
                       className="btn"
                       target="_blank"
                     >
                       GET MY RESUME <Icon icon="iconoir:google-docs" />
-                    </a>
+                    </Link>
                   </p>
                 </Container>
               </motion.div>
