@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
+import { Icon } from "@iconify/react";
 import {
   Container,
   Spacer,
@@ -81,11 +82,24 @@ const HomePage = (): JSX.Element => {
                   <br />
                   {`and design are my passions.`}
                 </p>
-                <p>
-                  <a href="#sendMeMessage" className="btn btn-primary">
-                    CONTACT ME
-                  </a>
-                </p>
+                <Container
+                  flexDirection="row"
+                  // justifyContent="space-between"
+                  alignItems="center"
+                  flexWrap="wrap"
+                >
+                  <p className="width-40 width-35-on-large">
+                    <a href="#sendMeMessage" className="btn btn-primary">
+                      CONTACT ME
+                    </a>
+                  </p>
+                  <p className="width-40 width-35-on-large">
+                    &nbsp;
+                    <a href="#" className="btn">
+                      GET MY RESUME <Icon icon="iconoir:google-docs" />
+                    </a>
+                  </p>
+                </Container>
               </motion.div>
               <motion.div
                 className="width-40 hide-bloc-on-mobile"

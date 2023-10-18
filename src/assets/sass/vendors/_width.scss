@@ -24,6 +24,18 @@
   width: 20%;
 }
 
+@media (min-width: 1024px) {
+  .width-35-on-large {
+    width: 35%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .width-35-on-large {
+    width: 30%;
+  }
+}
+
 @media (max-width: map.get($breakpoints, "tablet")) {
   .width-70,
   .width-50,
