@@ -8,7 +8,7 @@ import metaSocialImageUrl from "../src/assets/images/rm-landing-logo.png";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <HelmetProvider>
-      <Helmet>
+      <Helmet prioritizeSeoTags>
         {/**metaTitle start */}
         <meta name="og:title" key="og:title" content={"Randy Assani RM"} />
         <meta
