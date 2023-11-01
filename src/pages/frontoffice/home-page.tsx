@@ -9,6 +9,7 @@ import {
   BasicInput,
   TextareaInput,
 } from "../../components";
+import { technologies } from "../../db";
 import RandyPicture from "../../assets/images/rm-hero-photo.png";
 import GithubCircleIcon from "../../assets/images/iconoir_github_circle.svg";
 import LinkedinIcon from "../../assets/images/iconoir_linkedin.svg";
@@ -18,27 +19,6 @@ import LeaderboardStarIcon from "../../assets/images/iconoir_leaderboard_star.sv
 import PaperPlaneRight from "../../assets/images/paper_plane_right.svg";
 
 const HomePage = (): JSX.Element => {
-  const technologies: string[] = [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "TypeScript",
-    "Node Js",
-    "Express Js",
-    "Nest Js",
-    "React Js",
-    "React native",
-    "Sass",
-    "PHP",
-    "WordPress",
-    "Symfony",
-    "Laravel",
-    "MySql",
-    "MongDB",
-    "PostgreSql",
-    "Linux",
-  ];
-
   return (
     <>
       <Helmet>

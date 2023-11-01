@@ -2,7 +2,12 @@
  * Represents flex direction.
  * @type {direction: "row" | "row-reverse" | "column" | "column-reverse" | null }
  */
-declare type direction = "row" | "row-reverse" | "column" | "column-reverse" | null;
+declare type direction =
+  | "row"
+  | "row-reverse"
+  | "column"
+  | "column-reverse"
+  | null;
 
 /**
  * Represents Input Status properties.
@@ -94,4 +99,23 @@ declare interface BadgeProps {
  */
 declare interface SpacerProps {
   height?: 1 | 2 | 3 | 4 | 5 | 6;
+}
+
+/**
+ * Represents Project.
+ * @interface
+ * @type {projectName:  string | undefined }
+ * @type {projectDescription: string | undefined }
+ * @type {projectSkills:  string[] | undefined }
+ * @type {projectImageUrl: string | undefined }
+ * @type {flexWrap: "personal"| "other" | undefined }
+ */
+declare interface Project {
+  idProject?: string | null;
+  projectName: string | null;
+  projectDescription: string | null;
+  projectSkills?: string[] | null;
+  projectImageUrl?: string | null;
+  projectType?: "personal" | "other" | null;
+  projectUrl?: string | null;
 }

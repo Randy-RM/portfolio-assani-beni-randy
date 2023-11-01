@@ -1,11 +1,19 @@
-import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import { Container, Spacer, Badge } from "../../components";
-import KadeaOnlineLogo from "../../assets/images/my-works/kda-learning-plateform-landing-logo.png";
+import rmLandingImgUrl from "../../assets/images/my-works/rm-landing-logo.png";
 
-const ProjectCardLarge = (): JSX.Element => {
+const ProjectCardLarge = (props: Project): JSX.Element => {
+  let { projectSkills, projectImageUrl, projectType, projectUrl } = props;
+  const { projectName, projectDescription } = props;
+
+  projectSkills = projectSkills || null;
+  projectImageUrl = projectImageUrl || null;
+  projectType = projectType || null;
+  projectUrl = projectUrl || null;
+
   return (
     <>
+      <Spacer height={2} />
       <Spacer height={6} />
       <Container
         flexDirection="row"
@@ -13,64 +21,41 @@ const ProjectCardLarge = (): JSX.Element => {
         alignItems="flex-start"
         flexWrap="wrap"
       >
-        <motion.div
-          className="width-50 text-center-on-mobile"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{
-            type: "spring",
-            delay: 0.5,
-            easeInOut: "linear",
-            duration: 2,
-            // bounce: 0.6,
-          }}
-        >
+        <div className="width-50 text-center-on-mobile">
           <p>
             <img
-              src={KadeaOnlineLogo}
+              src={projectImageUrl ? projectImageUrl : rmLandingImgUrl}
               alt="Randy Assani Picture"
               className="hero-image"
             />
           </p>
-        </motion.div>
-        <motion.div
-          className="width-40 text-center-on-mobile"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{
-            type: "spring",
-            delay: 0.3,
-            easeInOut: "linear",
-            duration: 2,
-            // bounce: 0.6,
-          }}
-        >
-          <h2 className="font-w-Black h2 margin-0">KADEA ONLINE</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            quod autem necessitatibus soluta quibusdam ab id qui accusamus
-            quaerat harum.
-          </p>
-          <div>
-            <Badge badgeText={"HTML"} />
-            <Badge badgeText={"CSS"} />
-            <Badge badgeText={"JavaScript"} />
-            <Badge badgeText={"TypeScript"} />
-            <Badge badgeText={"Node Js"} />
-            <Badge badgeText={"React Js"} />
-            <Badge badgeText={"Express Js"} />
-            <Badge badgeText={"MongDB"} />
-          </div>
+        </div>
+        <div className="width-40 text-center-on-mobile">
+          <h2 className="font-w-Black h2 margin-0">{`${projectName}`}</h2>
+          <p>{`${projectDescription}`}</p>
+          {projectSkills && (
+            <div>
+              {projectSkills.map((projectSkill, index) => {
+                return <Badge key={index} badgeText={`${projectSkill}`} />;
+              })}
+            </div>
+          )}
           <p className="font-w-extra-bold text-center-on-mobile">
-            <a href="#">
-              SEE MORE <Icon icon="iconoir:arrow-tr-square" />
-            </a>
+            {projectType && (
+              <a
+                href={
+                  projectType == "other" ? (projectUrl ? projectUrl : "") : "#"
+                }
+                target="_blank"
+              >
+                SEE MORE <Icon icon="iconoir:arrow-tr-square" />
+              </a>
+            )}
           </p>
-        </motion.div>
+        </div>
       </Container>
       <Spacer height={6} />
+      <Spacer height={2} />
     </>
   );
 };
