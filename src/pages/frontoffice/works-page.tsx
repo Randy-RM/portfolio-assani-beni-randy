@@ -1,6 +1,10 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { Container, Spacer /*ProjectCardLarge */ } from "../../components";
+import {
+  Container,
+  Spacer,
+  BouncingArrow /*ProjectCardLarge */,
+} from "../../components";
 // import { projects } from "../../db";
 
 const WorksPage = (): JSX.Element => {
@@ -37,7 +41,7 @@ const WorksPage = (): JSX.Element => {
               alignItems="center"
               flexWrap="wrap"
             >
-              <div className="width-100 text-center-on-mobile">
+              <div className="width-100">
                 <h1 className="font-big-hero text-center font-w-Black">
                   {heroText.map((letter, index) => {
                     return (
@@ -83,7 +87,7 @@ const WorksPage = (): JSX.Element => {
                       <motion.span
                         className="font-outlined"
                         key={`${index}-technology`}
-                        initial={{ opacity: 0, y: 200 }}
+                        initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{
@@ -100,12 +104,12 @@ const WorksPage = (): JSX.Element => {
                 </h1>
                 <p className="text-center">
                   <motion.span
-                    initial={{ opacity: 0, y: 200 }}
+                    initial={{ opacity: 0, y: 40 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{
                       type: "spring",
-                      delay: 0.5,
+                      delay: 0.6,
                       easeInOut: "linear",
                       duration: 3,
                     }}
@@ -113,6 +117,19 @@ const WorksPage = (): JSX.Element => {
                     {`Here are some Project I made recently`}
                   </motion.span>
                 </p>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    type: "spring",
+                    delay: 0.9,
+                    easeInOut: "linear",
+                    duration: 3,
+                  }}
+                >
+                  <BouncingArrow />
+                </motion.div>
               </div>
             </Container>
             <Spacer height={6} />
