@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import {
   Container,
   Spacer,
-  BouncingArrow /*ProjectCardLarge */,
+  BouncingArrow,
+  ProjectCardLarge,
 } from "../../components";
-// import { projects } from "../../db";
+import { projects } from "../../db";
 
 const WorksPage = (): JSX.Element => {
   const heroText = [
@@ -137,23 +138,35 @@ const WorksPage = (): JSX.Element => {
         </section>
         {/**Hero section end */}
         {/**My works section start */}
-        {/* <section className="bg-light-grey">
+        <section className="bg-light-grey">
           <div className="container">
             {projects.map((project, index) => {
               return (
-                <ProjectCardLarge
+                <motion.div
                   key={`project-${index}`}
-                  projectName={project.projectName}
-                  projectDescription={project.projectDescription}
-                  projectSkills={project.projectSkills}
-                  projectImageUrl={project.projectImageUrl}
-                  projectType={project.projectType}
-                  projectUrl={project.projectUrl}
-                />
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    type: "spring",
+                    // delay: 0.2,
+                    easeInOut: "linear",
+                    duration: 0.3,
+                  }}
+                >
+                  <ProjectCardLarge
+                    projectName={project.projectName}
+                    projectDescription={project.projectDescription}
+                    projectSkills={project.projectSkills}
+                    projectImageUrl={project.projectImageUrl}
+                    projectType={project.projectType}
+                    projectUrl={project.projectUrl}
+                  />
+                </motion.div>
               );
             })}
           </div>
-        </section> */}
+        </section>
         {/**My works section end */}
       </main>
     </>

@@ -1,6 +1,7 @@
 @use "sass:map";
 
-.hero-image {
+.hero-image,
+.card-img {
   width: 100%;
   margin: auto;
   display: block;
@@ -9,6 +10,10 @@
 @media (max-width: map.get($breakpoints, "tablet")) {
   .hero-image {
     width: 50%;
+  }
+
+  .card-img {
+    width: 100%;
   }
 }
 
