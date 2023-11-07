@@ -305,8 +305,13 @@ const HomePage = (): JSX.Element => {
                         Engineering
                       </h3>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur. Nec dictumst
-                        urna neque id. Tortor morbi tempor
+                        {`
+                        Able to design and develop high-quality web and mobile 
+                        applications using programming languages such as Java, 
+                        JavaScript and Php... My solid understanding of software 
+                        engineering principles enables me to effectively solve complex 
+                        problems and deliver innovative solutions to my customers.
+                        `}
                       </p>
                     </div>
                     <Spacer height={2} />
@@ -332,8 +337,12 @@ const HomePage = (): JSX.Element => {
                         UX/UI design
                       </h3>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur. Nec dictumst
-                        urna neque id. Tortor morbi tempor
+                        {`
+                        Able to create intuitive and attractive user interfaces 
+                        using tools such as Figma... My in-depth understanding of 
+                        user experience enables me to design coherent, fluid user 
+                        journeys that meet users' needs while respecting my clients' business objectives.
+                        `}
                       </p>
                     </div>
                     <Spacer height={2} />
@@ -360,8 +369,12 @@ const HomePage = (): JSX.Element => {
                       </p>
                       <h3 className="h3 font-w-extra-bold margin-0">Project</h3>
                       <p>
-                        Lorem ipsum dolor sit amet consectetur. Nec dictumst
-                        urna neque id. Tortor morbi tempor
+                        {`
+                        Able to lead cross-functional teams in the delivery of 
+                        complex projects using Agile methodologies such as Scrum and Kanban. My ability 
+                        to manage priorities, foster collaboration and solve problems quickly enables me 
+                        to deliver high-quality products on time.
+                        `}
                       </p>
                     </div>
                     <Spacer height={2} />
