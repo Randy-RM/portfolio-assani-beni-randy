@@ -6,9 +6,7 @@ const projects: Project[] = [
   {
     idProject: "01",
     projectName: "KADEA ONLINE",
-    projectDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            quod autem necessitatibus soluta quibusdam ab id qui accusamus
-            quaerat harum.`,
+    projectDescription: `Kadea Online is an interactive online learning platform for digital professions. It's one of my favorite projects. I developed and maintained this project for the Kadea company.`,
     projectSkills: [
       "HTML",
       "CSS",
@@ -27,9 +25,7 @@ const projects: Project[] = [
   {
     idProject: "02",
     projectName: "CAMEOLIVE",
-    projectDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            quod autem necessitatibus soluta quibusdam ab id qui accusamus
-            quaerat harum.`,
+    projectDescription: `Cameolive is an application that lets you search for information on series and films using a device connected to the Internet. This is a personal project.`,
     projectSkills: [
       "HTML",
       "Sass",
@@ -46,9 +42,7 @@ const projects: Project[] = [
   {
     idProject: "03",
     projectName: "HAPPY ROBOT FRIEND TOY",
-    projectDescription: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            quod autem necessitatibus soluta quibusdam ab id qui accusamus
-            quaerat harum.`,
+    projectDescription: `Fun application that displays a list of funny and amusing characters. This application allows you to consult the list of characters and see details about them. This project is an exercise project.`,
     projectSkills: ["HTML", "CSS", "JavaScript", "Node Js", "React Js", "API"],
     projectImageUrl: `${rmLandingImgUrl}`,
     projectType: "other",

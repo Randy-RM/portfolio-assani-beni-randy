@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Container, Spacer } from "../../components";
 
 const ProjectCardLargeSkeleton = (): JSX.Element => {
@@ -11,10 +12,32 @@ const ProjectCardLargeSkeleton = (): JSX.Element => {
         alignItems="flex-start"
         flexWrap="wrap"
       >
-        <div className="width-50">
+        <motion.div
+          className="width-50"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            type: "spring",
+            delay: 0.2,
+            easeInOut: "linear",
+            duration: 1,
+          }}
+        >
           <div className="skeleton-img-project-large margin-t-b-1"></div>
-        </div>
-        <div className="width-40">
+        </motion.div>
+        <motion.div
+          className="width-40"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            type: "spring",
+            delay: 0.2,
+            easeInOut: "linear",
+            duration: 1,
+          }}
+        >
           <div className="skeleton-h2 width-40  margin-t-b-1">Title</div>
           <div className="width-70 skeleton-text margin-t-b-1">Text</div>
           <div className="width-100 skeleton-text margin-t-b-1">Text</div>
@@ -42,8 +65,10 @@ const ProjectCardLargeSkeleton = (): JSX.Element => {
               None
             </span>
           </div>
-          <div className="width-30 skeleton-text margin-t-b-1">SEE MORE</div>
-        </div>
+          <div className="text-center-on-mobile margin-t-b-1">
+            <span className="skeleton-text">SEE MORE</span>
+          </div>
+        </motion.div>
       </Container>
       <Spacer height={6} />
       <Spacer height={2} />

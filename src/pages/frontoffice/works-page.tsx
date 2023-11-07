@@ -1,14 +1,24 @@
+import { useState, useEffect, lazy } from "react";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import {
   Container,
   Spacer,
   BouncingArrow,
-  ProjectCardLarge,
+  ProjectCardLargeSkeleton,
 } from "../../components";
+const ProjectCardLarge = lazy(
+  async () => await import("../../components/cards/project-card-large")
+);
 import { projects } from "../../db";
 
 const WorksPage = (): JSX.Element => {
+  const [isProjectLoading, setIsProjectLoading] = useState<boolean>(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsProjectLoading(false);
+    }, 6000);
+  }, []);
   const heroText = [
     "V",
     "i",
@@ -139,22 +149,18 @@ const WorksPage = (): JSX.Element => {
         {/**Hero section end */}
         {/**My works section start */}
         <section className="bg-light-grey">
-          <div className="container">
-            {projects.map((project, index) => {
-              return (
-                <motion.div
-                  key={`project-${index}`}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    type: "spring",
-                    // delay: 0.2,
-                    easeInOut: "linear",
-                    duration: 0.3,
-                  }}
-                >
+          {isProjectLoading ? (
+            <div className="container">
+              <ProjectCardLargeSkeleton />
+              <ProjectCardLargeSkeleton />
+              <ProjectCardLargeSkeleton />
+            </div>
+          ) : (
+            <div className="container">
+              {projects.map((project, index) => {
+                return (
                   <ProjectCardLarge
+                    key={`${index}-${project.projectName}`}
                     projectName={project.projectName}
                     projectDescription={project.projectDescription}
                     projectSkills={project.projectSkills}
@@ -162,10 +168,10 @@ const WorksPage = (): JSX.Element => {
                     projectType={project.projectType}
                     projectUrl={project.projectUrl}
                   />
-                </motion.div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+          )}
         </section>
         {/**My works section end */}
       </main>
