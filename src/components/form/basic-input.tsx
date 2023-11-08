@@ -1,7 +1,7 @@
 import InputHelperMessage from "./input-helper-message";
 
 const BasicInput = (props: BasicInputProps): JSX.Element => {
-  let { type, id, name, placeholder, inputStatus } = props;
+  let { type, id, name, placeholder, inputStatus, reff } = props;
   const { label } = props;
 
   type = type || "text";
@@ -9,6 +9,7 @@ const BasicInput = (props: BasicInputProps): JSX.Element => {
   name = name || "";
   placeholder = placeholder || "";
   inputStatus = inputStatus || { status: "none", message: "none" };
+  reff = reff || null;
 
   return (
     <>
@@ -21,7 +22,13 @@ const BasicInput = (props: BasicInputProps): JSX.Element => {
             <br />
           </>
         )}
-        <input type={type} name={name} id={id} placeholder={placeholder} />
+        <input
+          type={type}
+          name={name}
+          id={id}
+          placeholder={placeholder}
+          ref={reff}
+        />
         <br />
         <InputHelperMessage
           status={inputStatus.status}

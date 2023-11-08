@@ -37,6 +37,7 @@ declare interface BasicInputProps {
   name?: string;
   placeholder?: string;
   inputStatus?: InputStatus;
+  reff?: MutableRefObject<HTMLInputElement | null>;
 }
 
 /**
@@ -58,6 +59,7 @@ declare interface TextareaInputProps {
   inputStatus?: InputStatus;
   rows?: number;
   cols?: number;
+  reff?: MutableRefObject<HTMLTextAreaElement | null>;
 }
 
 /**

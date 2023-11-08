@@ -1,3 +1,5 @@
+import { useRef, FormEvent, MutableRefObject } from "react";
+import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
@@ -19,6 +21,40 @@ import LeaderboardStarIcon from "../../assets/images/iconoir_leaderboard_star.sv
 import PaperPlaneRight from "../../assets/images/paper_plane_right.svg";
 
 const HomePage = (): JSX.Element => {
+  const nameInputRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
+  const emailInputRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
+  const messageTextAreaRef: MutableRefObject<HTMLTextAreaElement | null> =
+    useRef(null);
+  const sendEmail = (event: FormEvent) => {
+    event.preventDefault();
+    const serviceId = "service_kf9z43b";
+    const templateId = "template_pcrk42q";
+    const publicKey = "39Vp3N_vh5irSP_wo";
+
+    if (nameInputRef.current?.value) {
+      emailjs
+        .send(
+          serviceId,
+          templateId,
+          {
+            to_name: "Randy Assani Beni",
+            from_name: nameInputRef.current?.value,
+            contact_email: emailInputRef.current?.value,
+            message: messageTextAreaRef.current?.value,
+          },
+          publicKey
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    }
+  };
+
   return (
     <>
       <Helmet>
@@ -423,7 +459,7 @@ const HomePage = (): JSX.Element => {
                 <div className="width-70">
                   <Spacer />
                   <div>
-                    <form action="">
+                    <form onSubmit={sendEmail}>
                       <Container
                         flexDirection="row"
                         justifyContent="center"
@@ -437,6 +473,7 @@ const HomePage = (): JSX.Element => {
                             label="YOUR NAME"
                             placeholder="Enter your name"
                             type="text"
+                            reff={nameInputRef}
                           />
                         </div>
                         <div className="width-50">
@@ -446,6 +483,7 @@ const HomePage = (): JSX.Element => {
                             label="EMAIL ADDRESS"
                             placeholder="Enter your email address"
                             type="email"
+                            reff={emailInputRef}
                           />
                         </div>
                       </Container>
@@ -461,6 +499,7 @@ const HomePage = (): JSX.Element => {
                             name="contactMessage"
                             label="YOUR MESSAGE"
                             placeholder="Enter your message"
+                            reff={messageTextAreaRef}
                           />
                         </div>
                       </Container>

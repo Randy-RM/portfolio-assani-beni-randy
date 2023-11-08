@@ -1,7 +1,7 @@
 import InputHelperMessage from "./input-helper-message";
 
 const TextareaInput = (props: TextareaInputProps): JSX.Element => {
-  let { id, name, placeholder, inputStatus, rows, cols } = props;
+  let { id, name, placeholder, inputStatus, rows, cols, reff } = props;
   const { label } = props;
 
   id = id || "";
@@ -10,6 +10,7 @@ const TextareaInput = (props: TextareaInputProps): JSX.Element => {
   inputStatus = inputStatus || { status: "none", message: "none" };
   rows = rows || 4;
   cols = cols || 50;
+  reff = reff || null;
 
   return (
     <>
@@ -28,6 +29,7 @@ const TextareaInput = (props: TextareaInputProps): JSX.Element => {
           rows={rows}
           cols={cols}
           placeholder={placeholder}
+          ref={reff}
         ></textarea>
         <br />
         <InputHelperMessage
