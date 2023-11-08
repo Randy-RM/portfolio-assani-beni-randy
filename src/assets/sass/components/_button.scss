@@ -33,25 +33,25 @@
 }
 
 .back-to-top-btn-container {
-  width: 100%;
-  position: fixed !important;
-  bottom: 1rem;
-  right: auto;
-  left: auto;
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: end;
   align-items: center;
-  z-index: 99;
 }
 
 .back-to-top {
   padding: 0.2rem;
   color: $brand-color;
   background-color: rgba($dark-grey, 0.1);
-  cursor: pointer;
-  transition: all ease-in-out 0.3s;
   border: solid 3px rgba(251, 251, 251, 0.5);
-  // opacity: 0.4;
+  cursor: pointer;
+  display: inline-block;
+  position: fixed !important;
+  bottom: 1rem;
+  right: auto;
+  left: auto;
+  z-index: 99;
+  transition: all ease-in-out 0.3s;
 }
 
 .back-to-top:hover {

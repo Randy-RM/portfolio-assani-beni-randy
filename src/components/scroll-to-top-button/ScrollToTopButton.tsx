@@ -26,18 +26,16 @@ const ScrollToTopButton = (): JSX.Element => {
 
   return (
     <>
-      <div className="back-to-top-btn-container">
-        <div className="container text-right">
-          <button
-            id="backToTop"
-            className={`back-to-top ${!visible && `back-to-top-hide`}`}
-            data-scroll="up"
-            role="button"
-            onClick={scrollToTop}
-          >
-            <Icon icon="iconoir:nav-arrow-up" fontSize={50} />
-          </button>
-        </div>
+      <div className="container back-to-top-btn-container">
+        <button
+          id="backToTop"
+          className={`back-to-top ${!visible && `back-to-top-hide`}`}
+          data-scroll="up"
+          role="button"
+          onClick={scrollToTop}
+        >
+          <Icon icon="iconoir:nav-arrow-up" fontSize={50} />
+        </button>
       </div>
     </>
   );
