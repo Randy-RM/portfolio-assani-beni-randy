@@ -1,16 +1,8 @@
-import { useRef, FormEvent, MutableRefObject } from "react";
-import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
-import {
-  Container,
-  Spacer,
-  Badge,
-  BasicInput,
-  TextareaInput,
-} from "../../components";
+import { Container, Spacer, Badge, ContactMeForm } from "../../components";
 import { technologies } from "../../db";
 import RandyPicture from "../../assets/images/rm-hero-photo.png";
 import GithubCircleIcon from "../../assets/images/iconoir_github_circle.svg";
@@ -21,40 +13,6 @@ import LeaderboardStarIcon from "../../assets/images/iconoir_leaderboard_star.sv
 import PaperPlaneRight from "../../assets/images/paper_plane_right.svg";
 
 const HomePage = (): JSX.Element => {
-  const nameInputRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
-  const emailInputRef: MutableRefObject<HTMLInputElement | null> = useRef(null);
-  const messageTextAreaRef: MutableRefObject<HTMLTextAreaElement | null> =
-    useRef(null);
-  const sendEmail = (event: FormEvent) => {
-    event.preventDefault();
-    const serviceId = "service_kf9z43b";
-    const templateId = "template_pcrk42q";
-    const publicKey = "39Vp3N_vh5irSP_wo";
-
-    if (nameInputRef.current?.value) {
-      emailjs
-        .send(
-          serviceId,
-          templateId,
-          {
-            to_name: "Randy Assani Beni",
-            from_name: nameInputRef.current?.value,
-            contact_email: emailInputRef.current?.value,
-            message: messageTextAreaRef.current?.value,
-          },
-          publicKey
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
-    }
-  };
-
   return (
     <>
       <Helmet>
@@ -458,65 +416,7 @@ const HomePage = (): JSX.Element => {
                 </div>
                 <div className="width-70">
                   <Spacer />
-                  <div>
-                    <form onSubmit={sendEmail}>
-                      <Container
-                        flexDirection="row"
-                        justifyContent="center"
-                        alignItems="center"
-                        flexWrap="wrap"
-                      >
-                        <div className="width-50">
-                          <BasicInput
-                            id="contactName"
-                            name="contactName"
-                            label="YOUR NAME"
-                            placeholder="Enter your name"
-                            type="text"
-                            reff={nameInputRef}
-                          />
-                        </div>
-                        <div className="width-50">
-                          <BasicInput
-                            id="contactMail"
-                            name="contactMail"
-                            label="EMAIL ADDRESS"
-                            placeholder="Enter your email address"
-                            type="email"
-                            reff={emailInputRef}
-                          />
-                        </div>
-                      </Container>
-                      <Container
-                        flexDirection="row"
-                        justifyContent="center"
-                        alignItems="center"
-                        flexWrap="wrap"
-                      >
-                        <div className="width-100">
-                          <TextareaInput
-                            id="contactMessage"
-                            name="contactMessage"
-                            label="YOUR MESSAGE"
-                            placeholder="Enter your message"
-                            reff={messageTextAreaRef}
-                          />
-                        </div>
-                      </Container>
-                      <Container
-                        flexDirection="row"
-                        justifyContent="center"
-                        alignItems="center"
-                        flexWrap="wrap"
-                      >
-                        <div className="width-100">
-                          <button className="btn btn-primary btn-size-larg">
-                            SEND YOUR MESSAGE
-                          </button>
-                        </div>
-                      </Container>
-                    </form>
-                  </div>
+                  <ContactMeForm />
                   <Spacer />
                 </div>
               </Container>

@@ -37,7 +37,7 @@ declare interface BasicInputProps {
   name?: string;
   placeholder?: string;
   inputStatus?: InputStatus;
-  reff?: MutableRefObject<HTMLInputElement | null>;
+  registerToForm?: UseFormRegister<FieldValues>;
 }
 
 /**
@@ -59,7 +59,7 @@ declare interface TextareaInputProps {
   inputStatus?: InputStatus;
   rows?: number;
   cols?: number;
-  reff?: MutableRefObject<HTMLTextAreaElement | null>;
+  registerToForm?: UseFormRegister<FieldValues>;
 }
 
 /**
@@ -121,3 +121,9 @@ declare interface Project {
   projectType?: "personal" | "other" | null;
   projectUrl?: string | null;
 }
+
+type ContactMeFormData = {
+  contactName: string;
+  contactMail: string;
+  contactMessage: string;
+};

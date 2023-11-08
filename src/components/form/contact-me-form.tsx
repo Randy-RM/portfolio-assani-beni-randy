@@ -1,0 +1,131 @@
+import emailjs from "@emailjs/browser";
+import { z, ZodType } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Container, BasicInput, TextareaInput } from "..";
+
+const ContactMeForm = (): JSX.Element => {
+  const schema: ZodType<ContactMeFormData> = z.object({
+    contactName: z.string().min(2).max(50),
+    contactMail: z.string().email(),
+    contactMessage: z.string().min(10),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactMeFormData>({
+    resolver: zodResolver(schema),
+  });
+
+  const sendEmail = (data: ContactMeFormData) => {
+    const serviceId = "service_kf9z43b";
+    const templateId = "template_pcrk42q";
+    const publicKey = "39Vp3N_vh5irSP_wo";
+
+    if (data.contactName && data.contactMail) {
+      emailjs
+        .send(
+          serviceId,
+          templateId,
+          {
+            to_name: "Randy Assani Beni",
+            from_name: data.contactName,
+            contact_email: data.contactMail,
+            message: data.contactMessage,
+          },
+          publicKey
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+      reset();
+    }
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit(sendEmail)}>
+        <Container
+          flexDirection="row"
+          justifyContent="center"
+          alignItems="center"
+          flexWrap="wrap"
+        >
+          <div className="width-50">
+            <BasicInput
+              id="contactName"
+              name="contactName"
+              label="YOUR NAME"
+              placeholder="Enter your name"
+              type="text"
+              registerToForm={register}
+              inputStatus={
+                errors.contactName && errors.contactName.message
+                  ? { status: "error", message: errors.contactName.message }
+                  : undefined
+              }
+            />
+          </div>
+          <div className="width-50">
+            <BasicInput
+              id="contactMail"
+              name="contactMail"
+              label="EMAIL ADDRESS"
+              placeholder="Enter your email address"
+              type="email"
+              registerToForm={register}
+              inputStatus={
+                errors.contactMail && errors.contactMail.message
+                  ? { status: "error", message: errors.contactMail.message }
+                  : undefined
+              }
+            />
+          </div>
+        </Container>
+        <Container
+          flexDirection="row"
+          justifyContent="center"
+          alignItems="center"
+          flexWrap="wrap"
+        >
+          <div className="width-100">
+            <TextareaInput
+              id="contactMessage"
+              name="contactMessage"
+              label="YOUR MESSAGE"
+              placeholder="Enter your message"
+              registerToForm={register}
+              inputStatus={
+                errors.contactMessage && errors.contactMessage.message
+                  ? { status: "error", message: errors.contactMessage.message }
+                  : undefined
+              }
+            />
+          </div>
+        </Container>
+        <Container
+          flexDirection="row"
+          justifyContent="center"
+          alignItems="center"
+          flexWrap="wrap"
+        >
+          <div className="width-100">
+            <button className="btn btn-primary btn-size-larg">
+              SEND YOUR MESSAGE
+            </button>
+          </div>
+        </Container>
+      </form>
+    </div>
+  );
+};
+
+export default ContactMeForm;
