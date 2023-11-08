@@ -302,7 +302,7 @@ const HomePage = (): JSX.Element => {
                         <img src={ToolsIcon} alt="Tools icon" />
                       </p>
                       <h3 className="h3 font-w-extra-bold margin-0">
-                        Engineering
+                        ENGINEERING
                       </h3>
                       <p>
                         {`
@@ -334,7 +334,7 @@ const HomePage = (): JSX.Element => {
                         <img src={DesignPencilIcon} alt="Design pencil icon" />
                       </p>
                       <h3 className="h3 font-w-extra-bold margin-0">
-                        UX/UI design
+                        UX/UI DESIGN
                       </h3>
                       <p>
                         {`
@@ -367,7 +367,7 @@ const HomePage = (): JSX.Element => {
                           alt="Leaderboard star icon"
                         />
                       </p>
-                      <h3 className="h3 font-w-extra-bold margin-0">Project</h3>
+                      <h3 className="h3 font-w-extra-bold margin-0">PROJECT</h3>
                       <p>
                         {`
                         Able to lead cross-functional teams in the delivery of 
