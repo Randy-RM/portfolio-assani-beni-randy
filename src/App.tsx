@@ -7,9 +7,15 @@ import {
   OnLoadScrollToTop,
   ScrollToTopButton,
   Loader,
+  Modal,
 } from "./components";
+import { useEmailStatusStore } from "./store";
 
 const App = (): JSX.Element => {
+  const emailStatus = useEmailStatusStore((state) => state.emailStatus);
+  const emailStatusMessage = useEmailStatusStore(
+    (state) => state.emailStatusMessage
+  );
   const [isAppLoading, setIsAppLoading] = useState<boolean>(true);
   useEffect(() => {
     setTimeout(() => {
@@ -27,6 +33,12 @@ const App = (): JSX.Element => {
 
   return (
     <Router>
+      {emailStatus != "none" ? (
+        <Modal
+          emailStatus={emailStatus}
+          emailStatusMessage={emailStatusMessage}
+        />
+      ) : null}
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />

@@ -12,3 +12,4 @@ export { default as ScrollToTopButton } from "./scroll-to-top-button/ScrollToTop
 export { default as Loader } from "./loader/loader";
 export { default as BouncingArrow } from "./bouncing-arrow/bouncing-arrow";
 export { default as ProjectCardLargeSkeleton } from "./cards/project-card-large-skeleton";
+export { default as Modal } from "./modal/modal";

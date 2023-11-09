@@ -122,8 +122,13 @@ declare interface Project {
   projectUrl?: string | null;
 }
 
-type ContactMeFormData = {
+declare type ContactMeFormData = {
   contactName: string;
   contactMail: string;
   contactMessage: string;
 };
+
+declare interface ModalProps {
+  emailStatus: "none" | "progress" | "succes" | "error";
+  emailStatusMessage: string;
+}

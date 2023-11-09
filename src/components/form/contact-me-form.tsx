@@ -3,8 +3,22 @@ import { z, ZodType } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Container, BasicInput, TextareaInput } from "..";
+import { useEmailStatusStore } from "../../store";
 
 const ContactMeForm = (): JSX.Element => {
+  // "select" the needed state and actions
+  const emailStatus = useEmailStatusStore((state) => state.emailStatus);
+  const emailStatusMessage = useEmailStatusStore(
+    (state) => state.emailStatusMessage
+  );
+  const updateEmailStatus = useEmailStatusStore(
+    (state) => state.updateEmailStatus
+  );
+  const updateEmailStatusMessage = useEmailStatusStore(
+    (state) => state.updateEmailStatusMessage
+  );
+  const resetEmailStatusMessage = useEmailStatusStore((state) => state.reset);
+
   const schema: ZodType<ContactMeFormData> = z.object({
     contactName: z.string().min(2).max(50),
     contactMail: z.string().email(),
@@ -20,35 +34,44 @@ const ContactMeForm = (): JSX.Element => {
     resolver: zodResolver(schema),
   });
 
-  const sendEmail = (data: ContactMeFormData) => {
+  const sendEmail = async (data: ContactMeFormData) => {
     const serviceId = process.env.SERVICE_ID || "";
     const templateId = process.env.TEMPLATE_ID || "";
     const publicKey = process.env.PUBLIC_KEY || "";
 
     if (data.contactName && data.contactMail) {
-      emailjs
-        .send(
-          serviceId,
-          templateId,
-          {
-            to_name: "Randy Assani Beni",
-            from_name: data.contactName,
-            contact_email: data.contactMail,
-            message: data.contactMessage,
-          },
-          publicKey
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
+      updateEmailStatus("progress");
+      const emailSend = await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          to_name: "Randy Assani Beni",
+          from_name: data.contactName,
+          contact_email: data.contactMail,
+          message: data.contactMessage,
+        },
+        publicKey
+      );
+      if (emailSend.text === "ok") {
+        console.log(emailSend.text);
+        console.log(emailSend.status);
+        updateEmailStatus("succes");
+        updateEmailStatusMessage("Your message has been sent successfully.");
+      } else {
+        console.log(emailSend.text);
+        console.log(emailSend.status);
+        updateEmailStatus("error");
+        updateEmailStatusMessage(
+          "An error has occurred while sending your message. Please try again later."
         );
+      }
+      // resetEmailStatusMessage();
       reset();
     }
   };
+
+  console.log("emailStatus : ", emailStatus);
+  console.log("emailStatusMessage : ", emailStatusMessage);
 
   return (
     <div>

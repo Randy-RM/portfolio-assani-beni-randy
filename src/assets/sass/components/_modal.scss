@@ -1,0 +1,63 @@
+@use "sass:map";
+
+.modal-overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 999;
+  background: rgba($dark-grey, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  width: 40vw;
+  height: auto;
+  padding: 1rem;
+  background: $light-grey;
+}
+
+.modal-header {
+  text-align: right;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.close {
+  color: $danger;
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 0;
+  transition: all ease-in-out 0.2s;
+}
+
+.close:hover,
+.close:focus {
+  color: darken($danger, 15%);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: map.get($breakpoints, "tablet")) {
+  .modal {
+    width: 80vw;
+  }
+}
+
+@media (max-width: map.get($breakpoints, "mobile large")) {
+  .modal {
+    width: 100vw;
+  }
+}
