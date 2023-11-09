@@ -21,9 +21,9 @@ const ContactMeForm = (): JSX.Element => {
   });
 
   const sendEmail = (data: ContactMeFormData) => {
-    const serviceId = "service_kf9z43b";
-    const templateId = "template_pcrk42q";
-    const publicKey = "39Vp3N_vh5irSP_wo";
+    const serviceId = process.env.SERVICE_ID || "";
+    const templateId = process.env.TEMPLATE_ID || "";
+    const publicKey = process.env.PUBLIC_KEY || "";
 
     if (data.contactName && data.contactMail) {
       emailjs
