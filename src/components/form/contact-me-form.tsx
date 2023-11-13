@@ -6,11 +6,7 @@ import { Container, BasicInput, TextareaInput } from "..";
 import { useEmailStatusStore } from "../../store";
 
 const ContactMeForm = (): JSX.Element => {
-  // "select" the needed state and actions
-  const emailStatus = useEmailStatusStore((state) => state.emailStatus);
-  const emailStatusMessage = useEmailStatusStore(
-    (state) => state.emailStatusMessage
-  );
+  // "select" the needed actions
   const updateEmailStatus = useEmailStatusStore(
     (state) => state.updateEmailStatus
   );
@@ -41,6 +37,8 @@ const ContactMeForm = (): JSX.Element => {
 
     if (data.contactName && data.contactMail) {
       updateEmailStatus("progress");
+      updateEmailStatusMessage("Sending mail in progress.");
+
       const emailSend = await emailjs.send(
         serviceId,
         templateId,
@@ -52,26 +50,34 @@ const ContactMeForm = (): JSX.Element => {
         },
         publicKey
       );
-      if (emailSend.text === "ok") {
-        console.log(emailSend.text);
-        console.log(emailSend.status);
+      if (emailSend.status == 200) {
+        console.log("Succes");
+        console.log("text : ", emailSend.text);
+        console.log("status : ", emailSend.status);
         updateEmailStatus("succes");
         updateEmailStatusMessage("Your message has been sent successfully.");
+        setTimeout(() => {
+          resetEmailStatusMessage();
+        }, 3000);
       } else {
-        console.log(emailSend.text);
-        console.log(emailSend.status);
+        console.log("Erreur");
+        console.log("text : ", emailSend.text);
+        console.log("status : ", emailSend.status);
         updateEmailStatus("error");
         updateEmailStatusMessage(
           "An error has occurred while sending your message. Please try again later."
         );
+        setTimeout(() => {
+          resetEmailStatusMessage();
+        }, 3000);
       }
       // resetEmailStatusMessage();
       reset();
     }
   };
 
-  console.log("emailStatus : ", emailStatus);
-  console.log("emailStatusMessage : ", emailStatusMessage);
+  // console.log("emailStatus : ", emailStatus);
+  // console.log("emailStatusMessage : ", emailStatusMessage);
 
   return (
     <div>

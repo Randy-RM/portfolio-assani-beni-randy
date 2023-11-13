@@ -1,25 +1,25 @@
-.loader-page {
+.starting-loader-page {
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.loader {
+.starting-loader {
   color: $text-color;
   //   font-family: Consolas, Menlo, Monaco, monospace;
   font-weight: bold;
   font-size: 78px;
   opacity: 0.9;
 }
-.loader:before {
+.starting-loader:before {
   // content: "{";
   //get img on public folder
   content: url("./loader-img/r.svg");
   display: inline-block;
   animation: pulse 0.4s alternate infinite ease-in-out;
 }
-.loader:after {
+.starting-loader:after {
   // content: "}";
   //get img on public folder
   content: url("./loader-img/m.svg");
@@ -31,5 +31,41 @@
   to {
     transform: scale(0.9);
     opacity: 0.5;
+  }
+}
+
+/**/
+
+.spiral-puls-loader {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+}
+.spiral-puls-loader::after,
+.spiral-puls-loader::before {
+  content: "";
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid $dark-grey;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: animspiralpulsloader 2s linear infinite;
+}
+.spiral-puls-loader::after {
+  animation-delay: 1s;
+}
+
+@keyframes animspiralpulsloader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
   }
 }

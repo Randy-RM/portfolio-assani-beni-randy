@@ -23,23 +23,68 @@ const Modal = (props: ModalProps): JSX.Element => {
             <span className="close">&times;</span>
           </div>
           <div className="modal-body">
-            <div className="text-center">
-              {emailStatus === "error" && (
-                <Icon
-                  icon="iconoir:warning-triangle"
-                  fontSize={50}
-                  className="font-danger-color"
-                />
-              )}
-              {emailStatus === "succes" && (
-                <Icon
-                  icon="iconoir:check-circle"
-                  fontSize={50}
-                  className="font-success-color"
-                />
-              )}
-            </div>
-            <div className="text-center">{`${emailStatusMessage}`}</div>
+            {emailStatus === "progress" && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false }}
+                transition={{
+                  type: "spring",
+                  // delay: 0.3,
+                  easeInOut: "linear",
+                  duration: 1.5,
+                }}
+              >
+                <div className="text-center">
+                  <span className="spiral-puls-loader"></span>
+                </div>
+                <div className="text-center">{`${emailStatusMessage}`}</div>
+              </motion.div>
+            )}
+            {emailStatus === "error" && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false }}
+                transition={{
+                  type: "spring",
+                  // delay: 0.3,
+                  easeInOut: "linear",
+                  duration: 1.5,
+                }}
+              >
+                <div className="text-center">
+                  <Icon
+                    icon="iconoir:warning-triangle"
+                    fontSize={50}
+                    className="font-danger-color"
+                  />
+                </div>
+                <div className="text-center">{`${emailStatusMessage}`}</div>
+              </motion.div>
+            )}
+            {emailStatus === "succes" && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false }}
+                transition={{
+                  type: "spring",
+                  // delay: 0.3,
+                  easeInOut: "linear",
+                  duration: 1.5,
+                }}
+              >
+                <div className="text-center">
+                  <Icon
+                    icon="iconoir:check-circle"
+                    fontSize={50}
+                    className="font-success-color"
+                  />
+                </div>
+                <div className="text-center">{`${emailStatusMessage}`}</div>
+              </motion.div>
+            )}
           </div>
           <Spacer />
         </div>

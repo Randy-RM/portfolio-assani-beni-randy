@@ -24,13 +24,13 @@ const useEmailStatusStore = create<EmailStatusState & EmailStatusAction>(
   (set) => ({
     ...initialEmailStatusState,
     updateEmailStatus: (emailStatus) => {
-      set(() => ({ emailStatus: emailStatus }));
+      return set(() => ({ emailStatus: emailStatus }));
     },
     updateEmailStatusMessage: (emailStatusMessage) => {
-      set(() => ({ emailStatusMessage: emailStatusMessage }));
+      return set(() => ({ emailStatusMessage: emailStatusMessage }));
     },
     reset: () => {
-      set(initialEmailStatusState);
+      return set(initialEmailStatusState);
     },
   })
 );

@@ -1,8 +1,8 @@
 const Loader = (): JSX.Element => {
   return (
-    <main className="loader-page">
+    <main className="starting-loader-page">
       <div>
-        <span className="loader"></span>
+        <span className="starting-loader"></span>
       </div>
     </main>
   );

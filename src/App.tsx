@@ -12,6 +12,7 @@ import {
 import { useEmailStatusStore } from "./store";
 
 const App = (): JSX.Element => {
+  // "select" the needed state
   const emailStatus = useEmailStatusStore((state) => state.emailStatus);
   const emailStatusMessage = useEmailStatusStore(
     (state) => state.emailStatusMessage
