@@ -44,9 +44,9 @@ const ContactMeForm = (): JSX.Element => {
         templateId,
         {
           to_name: "Randy Assani Beni",
-          from_name: data.contactName,
-          contact_email: data.contactMail,
-          message: data.contactMessage,
+          from_name: `${data.contactName}`,
+          contact_email: `${data.contactMail}`,
+          message: `${data.contactMessage}`,
         },
         publicKey
       );
@@ -71,13 +71,9 @@ const ContactMeForm = (): JSX.Element => {
           resetEmailStatusMessage();
         }, 3000);
       }
-      // resetEmailStatusMessage();
       reset();
     }
   };
-
-  // console.log("emailStatus : ", emailStatus);
-  // console.log("emailStatusMessage : ", emailStatusMessage);
 
   return (
     <div>
