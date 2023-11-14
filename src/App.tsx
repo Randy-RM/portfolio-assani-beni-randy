@@ -21,7 +21,7 @@ const App = (): JSX.Element => {
   useEffect(() => {
     setTimeout(() => {
       setIsAppLoading(false);
-    }, 3000);
+    }, 1000);
   }, []);
 
   if (isAppLoading) {
@@ -34,12 +34,12 @@ const App = (): JSX.Element => {
 
   return (
     <Router>
-      {emailStatus != "none" ? (
+      {emailStatus != "none" && (
         <Modal
           emailStatus={emailStatus}
           emailStatusMessage={emailStatusMessage}
         />
-      ) : null}
+      )}
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />

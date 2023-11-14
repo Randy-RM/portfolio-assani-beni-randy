@@ -5,7 +5,9 @@ import App from "./App.tsx";
 import "./assets/sass/main.scss";
 import metaSocialImageUrl from "../src/assets/images/rm-landing-logo.png";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(
+const htmlRootTag = document.getElementById("root");
+const root = ReactDOM.createRoot(htmlRootTag!);
+root.render(
   <React.StrictMode>
     <HelmetProvider>
       <Helmet prioritizeSeoTags>
