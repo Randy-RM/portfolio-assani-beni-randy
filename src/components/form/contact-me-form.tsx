@@ -7,6 +7,7 @@ import { Container, BasicInput, TextareaInput } from "..";
 import { useEmailStatusStore } from "../../store";
 
 const ContactMeForm = (): JSX.Element => {
+  // Honey pot security on form
   const beingType = useRef<HTMLInputElement>(null);
   // "select" the needed actions
   const updateEmailStatus = useEmailStatusStore(
