@@ -1,7 +1,7 @@
 @use "sass:map";
 
 header {
-  z-index: 998;
+  z-index: 90;
   width: 100%;
   position: sticky;
   top: -1px;
@@ -60,7 +60,7 @@ header {
 }
 
 .nav-menu {
-  z-index: 997;
+  z-index: 89;
   position: fixed;
   top: 2rem;
   width: 100%;

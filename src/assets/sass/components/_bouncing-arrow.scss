@@ -1,7 +1,8 @@
 .bouncing-arrow-container {
   text-align: center;
+  color: $brand-color;
   animation: 0.8s bouncingArrows ease-out alternate infinite;
-  z-index: 4;
+  z-index: 10;
 }
 
 @keyframes bouncingArrows {
