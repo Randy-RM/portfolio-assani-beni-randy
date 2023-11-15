@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { z, ZodType } from "zod";
 import { useForm } from "react-hook-form";
@@ -6,6 +7,7 @@ import { Container, BasicInput, TextareaInput } from "..";
 import { useEmailStatusStore } from "../../store";
 
 const ContactMeForm = (): JSX.Element => {
+  const beingType = useRef<HTMLInputElement>(null);
   // "select" the needed actions
   const updateEmailStatus = useEmailStatusStore(
     (state) => state.updateEmailStatus
@@ -34,8 +36,10 @@ const ContactMeForm = (): JSX.Element => {
     const serviceId = process.env.SERVICE_ID || "";
     const templateId = process.env.TEMPLATE_ID || "";
     const publicKey = process.env.PUBLIC_KEY || "";
+    const { contactName, contactMail, contactMessage } = data;
+    const beingTypeValue = beingType.current?.value;
 
-    if (data.contactName && data.contactMail) {
+    if (contactName && contactMail && !beingTypeValue) {
       updateEmailStatus("progress");
       updateEmailStatusMessage("Sending mail in progress.");
 
@@ -44,9 +48,9 @@ const ContactMeForm = (): JSX.Element => {
         templateId,
         {
           to_name: "Randy Assani Beni",
-          from_name: `${data.contactName}`,
-          contact_email: `${data.contactMail}`,
-          message: `${data.contactMessage}`,
+          from_name: `${contactName}`,
+          contact_email: `${contactMail}`,
+          message: `${contactMessage}`,
         },
         publicKey
       );
@@ -103,7 +107,7 @@ const ContactMeForm = (): JSX.Element => {
             <BasicInput
               id="contactMail"
               name="contactMail"
-              label="EMAIL ADDRESS"
+              label="YOUR EMAIL"
               placeholder="Enter your email address"
               type="email"
               registerToForm={register}
@@ -148,6 +152,13 @@ const ContactMeForm = (): JSX.Element => {
             </button>
           </div>
         </Container>
+        <input
+          ref={beingType}
+          type="hidden"
+          id="beingType"
+          name="beingType"
+          value=""
+        />
       </form>
     </div>
   );
