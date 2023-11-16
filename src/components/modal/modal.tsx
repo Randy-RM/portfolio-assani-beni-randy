@@ -1,8 +1,15 @@
 import { Icon } from "@iconify/react";
 import { Spacer } from "..";
 import { motion } from "framer-motion";
+import { useEmailStatusStore } from "../../store";
 
 const Modal = (props: ModalProps): JSX.Element => {
+  const resetEmailStatus = useEmailStatusStore((state) => state.reset);
+
+  const closeModal = () => {
+    resetEmailStatus();
+  };
+
   const { emailStatus, emailStatusMessage } = props;
   return (
     <motion.div
@@ -20,7 +27,9 @@ const Modal = (props: ModalProps): JSX.Element => {
       <div className="container modal-container">
         <div className="modal">
           <div className="modal-header">
-            <span className="close">&times;</span>
+            <span className="close" onClick={closeModal}>
+              &times;
+            </span>
           </div>
           <div className="modal-body">
             {emailStatus === "progress" && (
