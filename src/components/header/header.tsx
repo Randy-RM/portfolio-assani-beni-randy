@@ -9,7 +9,7 @@ const Header = (): JSX.Element => {
   const [isDropdown, setIsDropdown] = useState<boolean>(false);
 
   const handleIsDropdown = () => {
-    setIsDropdown(isDropdown ? false : true);
+    setIsDropdown(!isDropdown);
     if (isDropdown) {
       //activ scrollbar when menu is close
       document.body.style.overflowY = "scroll";
