@@ -1,24 +1,24 @@
 import { Icon } from "@iconify/react";
 import { Spacer } from "..";
 import { motion } from "framer-motion";
-import { useEmailStatusStore } from "../../store";
+import { useModalStatusStore } from "../../store";
 
 const Modal = (): JSX.Element => {
   // "select" the needed state and action
-  const emailStatus = useEmailStatusStore((state) => state.emailStatus);
-  const emailStatusMessage = useEmailStatusStore(
-    (state) => state.emailStatusMessage
+  const modalStatus = useModalStatusStore((state) => state.modalStatus);
+  const modalMessage = useModalStatusStore((state) => state.modalMessage);
+  const resetModalStatusStore = useModalStatusStore(
+    (state) => state.resetModalStatusStore
   );
-  const resetEmailStatus = useEmailStatusStore((state) => state.reset);
 
   const closeModal = () => {
-    resetEmailStatus();
+    resetModalStatusStore();
   };
 
   return (
     <div
       className={
-        emailStatus != "none"
+        modalStatus != "none"
           ? "modal-overlay show-modal-overlay"
           : "modal-overlay hide-modal-overlay"
       }
@@ -31,7 +31,7 @@ const Modal = (): JSX.Element => {
             </span>
           </div>
           <div className="modal-body">
-            {emailStatus === "progress" && (
+            {modalStatus === "progress" && (
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -46,10 +46,10 @@ const Modal = (): JSX.Element => {
                 <div className="text-center">
                   <span className="spiral-puls-loader"></span>
                 </div>
-                <div className="text-center">{`${emailStatusMessage}`}</div>
+                <div className="text-center">{`${modalMessage}`}</div>
               </motion.div>
             )}
-            {emailStatus === "error" && (
+            {modalStatus === "error" && (
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -68,10 +68,10 @@ const Modal = (): JSX.Element => {
                     className="font-danger-color"
                   />
                 </div>
-                <div className="text-center">{`${emailStatusMessage}`}</div>
+                <div className="text-center">{`${modalMessage}`}</div>
               </motion.div>
             )}
-            {emailStatus === "succes" && (
+            {modalStatus === "succes" && (
               <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -90,7 +90,7 @@ const Modal = (): JSX.Element => {
                     className="font-success-color"
                   />
                 </div>
-                <div className="text-center">{`${emailStatusMessage}`}</div>
+                <div className="text-center">{`${modalMessage}`}</div>
               </motion.div>
             )}
           </div>

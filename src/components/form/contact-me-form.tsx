@@ -4,19 +4,21 @@ import { z, ZodType } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Container, BasicInput, TextareaInput } from "..";
-import { useEmailStatusStore } from "../../store";
+import { useModalStatusStore } from "../../store";
 
 const ContactMeForm = (): JSX.Element => {
   // Honey pot security on form
   const beingType = useRef<HTMLInputElement>(null);
   // "select" the needed actions
-  const updateEmailStatus = useEmailStatusStore(
-    (state) => state.updateEmailStatus
+  const updateModalStatus = useModalStatusStore(
+    (state) => state.updateModalStatus
   );
-  const updateEmailStatusMessage = useEmailStatusStore(
-    (state) => state.updateEmailStatusMessage
+  const updateModalMessage = useModalStatusStore(
+    (state) => state.updateModalMessage
   );
-  const resetEmailStatusMessage = useEmailStatusStore((state) => state.reset);
+  const resetModalStatusStore = useModalStatusStore(
+    (state) => state.resetModalStatusStore
+  );
 
   const schema: ZodType<ContactMeFormData> = z.object({
     contactName: z.string().min(2).max(50),
@@ -41,8 +43,8 @@ const ContactMeForm = (): JSX.Element => {
     const beingTypeValue = beingType.current?.value;
 
     if (contactName && contactMail && !beingTypeValue) {
-      updateEmailStatus("progress");
-      updateEmailStatusMessage("Sending mail in progress.");
+      updateModalStatus("progress");
+      updateModalMessage("Sending mail in progress.");
 
       const emailSend = await emailjs.send(
         serviceId,
@@ -59,21 +61,21 @@ const ContactMeForm = (): JSX.Element => {
         console.log("Succes");
         console.log("text : ", emailSend.text);
         console.log("status : ", emailSend.status);
-        updateEmailStatus("succes");
-        updateEmailStatusMessage("Your message has been sent successfully.");
+        updateModalStatus("succes");
+        updateModalMessage("Your message has been sent successfully.");
         setTimeout(() => {
-          resetEmailStatusMessage();
+          resetModalStatusStore();
         }, 3000);
       } else {
         console.log("Erreur");
         console.log("text : ", emailSend.text);
         console.log("status : ", emailSend.status);
-        updateEmailStatus("error");
-        updateEmailStatusMessage(
+        updateModalStatus("error");
+        updateModalMessage(
           "An error has occurred while sending your message. Please try again later."
         );
         setTimeout(() => {
-          resetEmailStatusMessage();
+          resetModalStatusStore();
         }, 3000);
       }
       reset();
