@@ -9,6 +9,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.4s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+}
+
+.show-modal-overlay {
+  transform: scale(1);
+}
+
+.hide-modal-overlay {
+  transform: scale(0);
 }
 
 .modal-container {

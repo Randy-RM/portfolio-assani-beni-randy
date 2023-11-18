@@ -3,26 +3,25 @@ import { Spacer } from "..";
 import { motion } from "framer-motion";
 import { useEmailStatusStore } from "../../store";
 
-const Modal = (props: ModalProps): JSX.Element => {
+const Modal = (): JSX.Element => {
+  // "select" the needed state and action
+  const emailStatus = useEmailStatusStore((state) => state.emailStatus);
+  const emailStatusMessage = useEmailStatusStore(
+    (state) => state.emailStatusMessage
+  );
   const resetEmailStatus = useEmailStatusStore((state) => state.reset);
 
   const closeModal = () => {
     resetEmailStatus();
   };
 
-  const { emailStatus, emailStatusMessage } = props;
   return (
-    <motion.div
-      className="modal-overlay"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: false }}
-      transition={{
-        type: "spring",
-        delay: 0.3,
-        easeInOut: "linear",
-        duration: 2,
-      }}
+    <div
+      className={
+        emailStatus != "none"
+          ? "modal-overlay show-modal-overlay"
+          : "modal-overlay hide-modal-overlay"
+      }
     >
       <div className="container modal-container">
         <div className="modal">
@@ -98,7 +97,7 @@ const Modal = (props: ModalProps): JSX.Element => {
           <Spacer />
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
