@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { MouseEventHandler, useState } from "react";
 import { Icon } from "@iconify/react";
 
 const ScrollToTopButton = (): JSX.Element => {
@@ -13,7 +13,8 @@ const ScrollToTopButton = (): JSX.Element => {
     }
   };
 
-  const scrollToTop = () => {
+  const scrollToTop: MouseEventHandler = (event) => {
+    event.preventDefault;
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -32,7 +33,7 @@ const ScrollToTopButton = (): JSX.Element => {
           className={`back-to-top ${!visible && `back-to-top-hide`}`}
           data-scroll="up"
           role="button"
-          onClick={scrollToTop}
+          onClick={(event) => scrollToTop(event)}
         >
           <Icon icon="iconoir:nav-arrow-up" fontSize={50} />
         </button>
