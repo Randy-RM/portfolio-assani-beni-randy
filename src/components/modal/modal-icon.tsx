@@ -32,6 +32,16 @@ const ModalIcon = ({
           />
         </div>
       );
+    case "warning":
+      return (
+        <div className="text-center">
+          <Icon
+            icon="iconoir:warning-triangle"
+            fontSize={50}
+            className="font-warning-color"
+          />
+        </div>
+      );
 
     default:
       return <></>;

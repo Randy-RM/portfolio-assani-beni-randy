@@ -128,4 +128,4 @@ declare type ContactMeFormData = {
   contactMessage: string;
 };
 
-declare type modalStatus = "none" | "progress" | "succes" | "error";
+declare type modalStatus = "none" | "progress" | "succes" | "warning" | "error";

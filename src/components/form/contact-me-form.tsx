@@ -4,12 +4,21 @@ import { z, ZodType } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Container, BasicInput, TextareaInput } from "..";
-import { useModalStatusStore } from "../../store";
+import { useModalStatusStore, useMailPerDayStore } from "../../store";
 
 const ContactMeForm = (): JSX.Element => {
   // Honey pot security on form
   const beingType = useRef<HTMLInputElement>(null);
+  // "select" the needed state and action
+  const mailPerDay = useMailPerDayStore((state) => state.mailPerDay);
+  const numberOfMailSent = useMailPerDayStore(
+    (state) => state.numberOfMailSent
+  );
   // "select" the needed actions
+  const updateNumberOfMailSent = useMailPerDayStore(
+    (state) => state.updateNumberOfMailSent
+  );
+
   const updateModalStatus = useModalStatusStore(
     (state) => state.updateModalStatus
   );
@@ -46,37 +55,48 @@ const ContactMeForm = (): JSX.Element => {
       updateModalStatus("progress");
       updateModalMessage("Sending mail in progress.");
 
-      const emailSend = await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          to_name: "Randy Assani Beni",
-          from_name: `${contactName}`,
-          contact_email: `${contactMail}`,
-          message: `${contactMessage}`,
-        },
-        publicKey
-      );
-      if (emailSend.status == 200) {
-        console.log("Succes");
-        console.log("text : ", emailSend.text);
-        console.log("status : ", emailSend.status);
-        updateModalStatus("succes");
-        updateModalMessage("Your message has been sent successfully.");
-        setTimeout(() => {
-          resetModalStatusStore();
-        }, 3000);
+      if (numberOfMailSent < mailPerDay) {
+        const emailSend = await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            to_name: "Randy Assani Beni",
+            from_name: `${contactName}`,
+            contact_email: `${contactMail}`,
+            message: `${contactMessage}`,
+          },
+          publicKey
+        );
+        if (emailSend.status == 200) {
+          console.log("Succes");
+          console.log("text : ", emailSend.text);
+          console.log("status : ", emailSend.status);
+          updateModalStatus("succes");
+          updateModalMessage("Your message has been sent successfully.");
+          updateNumberOfMailSent(numberOfMailSent + 1);
+          setTimeout(() => {
+            resetModalStatusStore();
+          }, 4000);
+        } else {
+          console.log("Erreur");
+          console.log("text : ", emailSend.text);
+          console.log("status : ", emailSend.status);
+          updateModalStatus("error");
+          updateModalMessage(
+            "An error has occurred while sending your message. Please try again later."
+          );
+          setTimeout(() => {
+            resetModalStatusStore();
+          }, 4000);
+        }
       } else {
-        console.log("Erreur");
-        console.log("text : ", emailSend.text);
-        console.log("status : ", emailSend.status);
-        updateModalStatus("error");
+        updateModalStatus("warning");
         updateModalMessage(
-          "An error has occurred while sending your message. Please try again later."
+          "You have already exceeded the limit of three e-mails per day."
         );
         setTimeout(() => {
           resetModalStatusStore();
-        }, 3000);
+        }, 4000);
       }
       reset();
     }
