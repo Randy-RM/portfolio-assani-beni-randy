@@ -14,10 +14,12 @@
 
 .show-modal-overlay {
   transform: scale(1);
+  opacity: 1;
 }
 
 .hide-modal-overlay {
   transform: scale(0);
+  opacity: 0;
 }
 
 .modal-container {

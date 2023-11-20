@@ -1,14 +1,12 @@
 import { create } from "zustand";
 
 type ModalStatusState = {
-  modalStatus: "none" | "progress" | "succes" | "error";
+  modalStatus: modalStatus;
   modalMessage: string;
 };
 
 type ModalStatusAction = {
-  updateModalStatus: (
-    modalStatus: "none" | "progress" | "succes" | "error"
-  ) => void;
+  updateModalStatus: (modalStatus: modalStatus) => void;
   updateModalMessage: (modalMessage: string) => void;
   resetModalStatusStore: () => void;
 };

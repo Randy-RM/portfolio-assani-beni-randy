@@ -128,7 +128,4 @@ declare type ContactMeFormData = {
   contactMessage: string;
 };
 
-declare interface ModalProps {
-  emailStatus: "none" | "progress" | "succes" | "error";
-  emailStatusMessage: string;
-}
+declare type modalStatus = "none" | "progress" | "succes" | "error";
