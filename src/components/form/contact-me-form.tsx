@@ -14,6 +14,8 @@ const ContactMeForm = (): JSX.Element => {
   const numberOfMailSent = useMailPerDayStore(
     (state) => state.numberOfMailSent
   );
+  // const mailSendingDate = useMailPerDayStore((state) => state.mailSendingDate);
+
   // "select" the needed actions
   const updateNumberOfMailSent = useMailPerDayStore(
     (state) => state.updateNumberOfMailSent

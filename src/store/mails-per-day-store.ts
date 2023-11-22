@@ -4,6 +4,7 @@ import { createJSONStorage, persist } from "zustand/middleware";
 type MailPerDayState = {
   mailPerDay: number;
   numberOfMailSent: number;
+  mailSendingDate: Date;
 };
 
 type MailPerDayAction = {
@@ -15,6 +16,7 @@ type MailPerDayAction = {
 const initialMailPerDayState: MailPerDayState = {
   mailPerDay: 3,
   numberOfMailSent: 0,
+  mailSendingDate: new Date(),
 };
 
 // Create store, which includes both state and (optionally) actions
