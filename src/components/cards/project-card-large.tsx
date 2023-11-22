@@ -25,7 +25,7 @@ const ProjectCardLarge = (props: Project): JSX.Element => {
           <p>
             <img
               src={projectImageUrl ? projectImageUrl : rmLandingImgUrl}
-              alt="Randy Assani Picture"
+              alt={`${projectName}`}
               className="card-img"
             />
           </p>
