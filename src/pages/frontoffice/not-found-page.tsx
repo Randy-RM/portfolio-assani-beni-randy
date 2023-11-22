@@ -43,7 +43,9 @@ const NotFoundPage = (): JSX.Element => {
                     4<span className="font-brand-color">0</span>4
                   </span>
                   <br />
-                  <span>Page Not Found</span>
+                  <span>
+                    <i>Page Not Found</i>
+                  </span>
                 </p>
                 <p className="text-center">
                   <Link to="/">Click here to go back home page</Link>
