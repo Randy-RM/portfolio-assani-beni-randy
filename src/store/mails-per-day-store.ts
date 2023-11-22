@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { createJSONStorage, persist } from "zustand/middleware";
 
 type MailPerDayState = {
   mailPerDay: number;
@@ -20,13 +20,10 @@ const initialMailPerDayState: MailPerDayState = {
 // Create store, which includes both state and (optionally) actions
 const useMailPerDayStore = create<MailPerDayState & MailPerDayAction>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       ...initialMailPerDayState,
       updateNumberOfMailSent: (numberOfMailSent) => {
-        if (
-          numberOfMailSent >= 0 &&
-          numberOfMailSent <= initialMailPerDayState.mailPerDay
-        ) {
+        if (numberOfMailSent >= 0 && numberOfMailSent <= get().mailPerDay) {
           return set(() => ({
             numberOfMailSent: numberOfMailSent,
           }));
@@ -37,7 +34,10 @@ const useMailPerDayStore = create<MailPerDayState & MailPerDayAction>()(
         return set(initialMailPerDayState);
       },
     }),
-    { name: "Mail per day store" }
+    {
+      name: "Mail per day store", // name of the item in the storage (must be unique)
+      storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
+    }
   )
 );
 

@@ -92,7 +92,7 @@ const ContactMeForm = (): JSX.Element => {
       } else {
         updateModalStatus("warning");
         updateModalMessage(
-          "You have already exceeded the limit of three e-mails per day."
+          "You have already exceeded the limit of 3 e-mails for this session"
         );
         setTimeout(() => {
           resetModalStatusStore();
