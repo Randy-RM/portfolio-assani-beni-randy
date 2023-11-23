@@ -32,9 +32,15 @@ const ContactMeForm = (): JSX.Element => {
   );
 
   const schema: ZodType<ContactMeFormData> = z.object({
-    contactName: z.string().min(2).max(50),
+    contactName: z
+      .string()
+      .min(2, `Name must contain at least 2 character(s)`)
+      .max(50, `Name must contain at most 50 character(s)`),
     contactMail: z.string().email(),
-    contactMessage: z.string().min(10),
+    contactMessage: z
+      .string()
+      .min(10, `Message must contain at least 10 character(s)`)
+      .min(1000, `Message must contain at most 1000 character(s)`),
   });
 
   const {
