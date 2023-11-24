@@ -125,6 +125,15 @@ body {
   font-size: 2rem;
 }
 
+.font-big-braket-top {
+  font-size: 10rem;
+  line-height: 0;
+}
+
+.font-big-braket-bottom {
+  font-size: 10rem;
+}
+
 @media (max-width: map.get($breakpoints, "tablet")) {
   .text-center-on-mobile {
     text-align: center;

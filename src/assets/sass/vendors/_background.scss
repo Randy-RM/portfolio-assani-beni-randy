@@ -42,15 +42,57 @@ body {
   // url not work on sass or scss
   // use backgroundImage on style attribut in tsx to
   // add backgroundImage on container
-  //
-  // background: url("../../images/paper-plane-right-thin.svg");
+  // or
+  // put your image on public folder and use
+  // background url on sass
+  // like this
+  background: url("./background-img/paper_plane_right.svg");
   // background-repeat: no-repeat;
   // background-position: right 35% top 45%;
-  // position: relative;
   // width: 100%;
   //
-  background-position: right bottom;
+  background-position: right top;
   background-repeat: no-repeat;
   //
   // background-size: cover;
+}
+
+.bg-graduation-group-image {
+  // url not work on sass or scss
+  // use backgroundImage on style attribut in tsx to
+  // add backgroundImage on container
+  // or
+  // put your image on public folder and use
+  // background url on sass
+  // like this
+  background: url("./background-img/graduation-group-image.svg"),
+    url("./background-img/code-group-image.svg");
+  // background-repeat: no-repeat;
+  // background-position: right 35% top 45%;
+  // width: 100%;
+  //
+  background-position: left center, right center;
+  background-repeat: no-repeat;
+  //
+  // background-size: cover;
+}
+
+.bg-graduation-image {
+  // url not work on sass or scss
+  // use backgroundImage on style attribut in tsx to
+  // add backgroundImage on container
+  // or
+  // put your image on public folder and use
+  // background url on sass
+  // like this
+  background: url("./background-img/graduation-cap.svg");
+  // background-repeat: no-repeat;
+  // background-position: right 35% top 45%;
+  // width: 100%;
+  //
+  background-position: center center;
+  background-repeat: no-repeat;
+  //
+  // background-size: cover;
+  background-size: contain;
 }

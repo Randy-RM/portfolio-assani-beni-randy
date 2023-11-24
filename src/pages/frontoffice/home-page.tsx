@@ -10,7 +10,6 @@ import LinkedinIcon from "../../assets/images/iconoir_linkedin.svg";
 import ToolsIcon from "../../assets/images/iconoir_tools.svg";
 import DesignPencilIcon from "../../assets/images/iconoir_design_pencil.svg";
 import LeaderboardStarIcon from "../../assets/images/iconoir_leaderboard_star.svg";
-import PaperPlaneRight from "../../assets/images/paper_plane_right.svg";
 
 const HomePage = (): JSX.Element => {
   return (
@@ -109,6 +108,7 @@ const HomePage = (): JSX.Element => {
         {/**About me section start */}
         <section className="bg-light-grey">
           <div className="container">
+            <Spacer height={3} />
             <Spacer height={6} />
             <Container
               flexDirection="row"
@@ -172,7 +172,7 @@ const HomePage = (): JSX.Element => {
                 <p>
                   I'm <mark>Software Engineer</mark> with a Computer Science
                   degree and experience on computer engineering, software
-                  development & graphic design.
+                  development, graphic design & teaching.
                 </p>
                 <p>
                   I am always developing my skills and learning something new. I
@@ -183,9 +183,54 @@ const HomePage = (): JSX.Element => {
               </motion.div>
             </Container>
             <Spacer height={6} />
+            <Spacer height={3} />
           </div>
         </section>
         {/**About me section end */}
+        {/**About me teaching section start */}
+        <section className="bg-light-grey">
+          <motion.div
+            className=""
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              type: "spring",
+              delay: 0.3,
+              easeInOut: "linear",
+              duration: 2,
+              // bounce: 0.6,
+            }}
+          >
+            <div className="container bg-graduation-image">
+              <Spacer height={6} />
+              <Spacer height={6} />
+              <Container
+                flexDirection="column"
+                justifyContent="center"
+                alignItems="center"
+                flexWrap="wrap"
+              >
+                <div className="width-70">
+                  <p className="text-left font-big-braket-top font-w-Black margin-0">
+                    "
+                  </p>
+                  <p className="text-center font-w-light margin-0">
+                    Teaching programming and software engineering was a very
+                    rewarding experience. I was able to share my passion for
+                    these subjects with students of different levels and
+                    backgrounds.
+                  </p>
+                  <p className="text-right font-big-braket-bottom font-w-Black margin-0">
+                    "
+                  </p>
+                </div>
+              </Container>
+              <Spacer height={2} />
+            </div>
+          </motion.div>
+        </section>
+        {/**About me teaching section end */}
         {/**Technologies section start */}
         <section className="bg-light-grey">
           <div className="container">
@@ -402,10 +447,7 @@ const HomePage = (): JSX.Element => {
                 alignItems="center"
                 flexWrap="wrap"
               >
-                <div
-                  className="width-100 text-center bg-paper-plane-right"
-                  style={{ backgroundImage: `url(${PaperPlaneRight})` }}
-                >
+                <div className="width-100 text-center bg-paper-plane-right">
                   <h2 className="font-w-semi-medium h2 margin-0">
                     Send me a message!
                   </h2>
