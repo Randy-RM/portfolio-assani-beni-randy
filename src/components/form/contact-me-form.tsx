@@ -40,7 +40,7 @@ const ContactMeForm = (): JSX.Element => {
     contactMessage: z
       .string()
       .min(10, `Message must contain at least 10 character(s)`)
-      .min(1000, `Message must contain at most 1000 character(s)`),
+      .max(3000, `Message must contain at most 3000 character(s)`),
   });
 
   const {
