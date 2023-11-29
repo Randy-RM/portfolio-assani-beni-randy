@@ -40,6 +40,10 @@ const WorksPage = (): JSX.Element => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Visit my works | Randy Assani RM</title>
+        <meta
+          name="description"
+          content={`Here are some Project I made recently`}
+        />
       </Helmet>
       <main className="font-w-light">
         {/**Hero section start */}
