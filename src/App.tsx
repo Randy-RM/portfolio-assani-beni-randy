@@ -15,7 +15,7 @@ const App = (): JSX.Element => {
   useEffect(() => {
     setTimeout(() => {
       setIsAppLoading(false);
-    }, 1000);
+    }, 2000);
   }, []);
 
   if (isAppLoading) {

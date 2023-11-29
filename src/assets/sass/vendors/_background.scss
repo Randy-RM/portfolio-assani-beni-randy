@@ -46,7 +46,7 @@ body {
   // put your image on public folder and use
   // background url on sass
   // like this
-  background: url("../background-img/paper_plane_right.svg");
+  background: url("/background-img/paper_plane_right.svg");
   // background-repeat: no-repeat;
   // background-position: right 35% top 45%;
   // width: 100%;
@@ -65,8 +65,8 @@ body {
   // put your image on public folder and use
   // background url on sass
   // like this
-  background: url("./background-img/graduation-group-image.svg"),
-    url("./background-img/code-group-image.svg");
+  background: url("/background-img/graduation-group-image.svg"),
+    url("/background-img/code-group-image.svg");
   // background-repeat: no-repeat;
   // background-position: right 35% top 45%;
   // width: 100%;
