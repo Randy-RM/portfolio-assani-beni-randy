@@ -44,7 +44,15 @@ const ModalIcon = ({
       );
 
     default:
-      return <></>;
+      return (
+        <div className="text-center">
+          <Icon
+            icon="iconoir:check-circle"
+            fontSize={50}
+            className="font-none"
+          />
+        </div>
+      );
   }
 };
 
