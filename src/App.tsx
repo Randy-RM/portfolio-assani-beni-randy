@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { HomePage, WorksPage, NotFoundPage } from "./pages";
+import { HomePage, WorksPage, ErrorPage } from "./pages";
 import { FrontOfficeLayout, Loader, Modal } from "./components";
 
 const router = createBrowserRouter([
@@ -11,16 +11,16 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <HomePage />,
-        errorElement: <NotFoundPage />,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/visit-my-works",
         element: <WorksPage />,
-        errorElement: <NotFoundPage />,
+        errorElement: <ErrorPage />,
       },
       {
         path: "*",
-        element: <NotFoundPage />,
+        element: <ErrorPage />,
       },
     ],
   },

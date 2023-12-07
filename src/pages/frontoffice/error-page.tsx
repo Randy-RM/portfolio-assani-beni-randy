@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Container, Spacer } from "../../components";
 import EmojiPuzzled from "../../assets/images/iconoir_emoji_puzzled.svg";
 
-const NotFoundPage = (): JSX.Element => {
+const ErrorPage = (): JSX.Element => {
   return (
     <>
       <Helmet>
@@ -60,4 +60,4 @@ const NotFoundPage = (): JSX.Element => {
   );
 };
 
-export default NotFoundPage;
+export default ErrorPage;
