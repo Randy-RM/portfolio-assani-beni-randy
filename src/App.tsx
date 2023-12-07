@@ -1,14 +1,30 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage, WorksPage, NotFoundPage } from "./pages";
-import {
-  Header,
-  Footer,
-  OnLoadScrollToTop,
-  ScrollToTopButton,
-  Loader,
-  Modal,
-} from "./components";
+import { FrontOfficeLayout, Loader, Modal } from "./components";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <FrontOfficeLayout />,
+    children: [
+      {
+        path: "",
+        element: <HomePage />,
+        errorElement: <NotFoundPage />,
+      },
+      {
+        path: "/visit-my-works",
+        element: <WorksPage />,
+        errorElement: <NotFoundPage />,
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />,
+      },
+    ],
+  },
+]);
 
 const App = (): JSX.Element => {
   const [isAppLoading, setIsAppLoading] = useState<boolean>(true);
@@ -27,18 +43,10 @@ const App = (): JSX.Element => {
   }
 
   return (
-    <Router>
+    <>
       <Modal />
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/visit-my-works" element={<WorksPage />} />
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
-      <ScrollToTopButton />
-      <OnLoadScrollToTop />
-      <Footer />
-    </Router>
+      <RouterProvider router={router} />
+    </>
   );
 };
 
