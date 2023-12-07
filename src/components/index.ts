@@ -13,4 +13,4 @@ export { default as Loader } from "./loader/loader";
 export { default as BouncingArrow } from "./bouncing-arrow/bouncing-arrow";
 export { default as ProjectCardLargeSkeleton } from "./cards/project-card-large-skeleton";
 export { default as Modal } from "./modal/modal";
-export { default as FrontOfficeLayout } from "./layout/front-office-layout";
+export { default as FrontOfficeLayout } from "./layout/frontoffice-layout";
