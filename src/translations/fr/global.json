@@ -1,0 +1,78 @@
+{
+  "header": {
+    "AboutMeLink": "A propos de moi",
+    "projectsLink": "Visitez mes travaux",
+    "resumeLink": "Obtenir mon CV"
+  },
+  "followMe": "SUIVEZ-MOI SUR",
+  "contactMe": "CONTACTEZ-MOI",
+  "logoDesc": "Randy Assani RM Logo",
+  "githubIconDesc": "Randy Assani profil Github",
+  "LinkdinIconDesc": "Randy Assani profil Linkdin",
+  "homePage": {
+    "heroSection": {
+      "iAm": "Bonjour, je suis",
+      "myPassions": "La technologie, le développement de logiciels et la conception sont mes passions.",
+      "contactBtn": "CONTACTEZ-MOI",
+      "myResume": "OBTENIR MON CV"
+    },
+    "aboutMeSection": {
+      "aboutMeTitleP1": "À PROPOS",
+      "aboutMeTitleP2": "DE MOI",
+      "aboutMeDescriptionP1": "BONJOUR ! Je suis Randy Assani Beni (RM).",
+      "aboutMeDescriptionP2": "Je suis",
+      "aboutMeDescriptionP3": "Software Engineer",
+      "aboutMeDescriptionP4": "avec un diplôme en informatique et une expérience en ingénierie informatique, développement de logiciels, conception UX/UI, gestion de projet et enseignement.",
+      "aboutMeDescriptionP5": "Je suis toujours en train de développer mes compétences et d'apprendre quelque chose de nouveau. J'ai une soif de connaissances et un désir de comprendre comment les choses fonctionnent ; je suis un homme de contact, un bricoleur, un amoureux de la technologie et des sciences."
+    },
+    "teachingExperience": "Enseigner la programmation et le génie logiciel a été une expérience très enrichissante. J'ai pu partager ma passion pour ces matières avec des étudiants de niveaux et d'horizons différents.",
+    "technologiesSection": {
+      "technologiesTitleP1": "TECH",
+      "technologiesTitleP2": "NOLOGIES",
+      "technologiesDesc": "Voici quelques technologies avec lesquelles j'ai travaillé récemment"
+    },
+    "experienceSection": {
+      "experienceTitleP1": "EXP",
+      "experienceTitleP2": "ERIENCE",
+      "engineeringCard": {
+        "engineeringCardTitle": "INGENIERIE",
+        "engineeringCardIconDesc": "Icône d'outils",
+        "engineeringCardDesc": "Capable de concevoir et de développer des applications web et mobiles de haute qualité en utilisant des langages de programmation tels que Java, JavaScript et Php... Ma solide compréhension des principes de l'ingénierie logicielle me permet de résoudre efficacement des problèmes complexes et de fournir des solutions innovantes à mes clients."
+      },
+      "designCard": {
+        "designCardTitle": "UX/UI DESIGN",
+        "designCardIconDesc": "Icône de crayon de design",
+        "designCardDesc": "Capable de créer des interfaces utilisateur intuitives et attrayantes à l'aide d'outils tels que Figma... Ma compréhension approfondie de l'expérience utilisateur me permet de concevoir des parcours cohérents et fluides qui répondent aux besoins des utilisateurs tout en respectant les objectifs commerciaux de mes clients."
+      },
+      "projectCard": {
+        "projectCardTitle": "PROJET",
+        "projectCardIconDesc": "Icône d'étoile du classement",
+        "projectCardDesc": "Je suis capable de diriger des équipes interfonctionnelles dans la réalisation de projets complexes en utilisant des méthodologies agiles telles que Scrum et Kanban. Ma capacité à gérer les priorités, à favoriser la collaboration et à résoudre les problèmes rapidement me permet de fournir des produits de haute qualité dans les délais impartis."
+      }
+    },
+    "sendMessageSection": {
+      "sendMessageTitle": "Envoyez-moi un message !",
+      "sendMessageDescP1": "Vous avez une question ou une proposition, ou vous souhaitez simplement",
+      "sendMessageDescP2": "dire bonjour ? Allez-y.",
+      "inputName": {
+        "label": "VOTRE NOM",
+        "placeholder": "Entrez votre nom",
+        "errorMin": "Le nom doit contenir au moins 2 caractère(s)",
+        "errorMax": "Le nom doit contenir au maximum 50 caractères."
+      },
+      "inputEmail": {
+        "label": "VOTRE EMAIL",
+        "placeholder": "Entrez votre adresse e-mail",
+        "emailError": "Email invalide"
+      },
+      "inputMessage": {
+        "label": "VOTRE MESSAGE",
+        "placeholder": "Entrez votre message",
+        "errorMin": "Le message doit contenir au moins 10 caractère(s)",
+        "errorMax": "Le message doit contenir au maximum 3000 caractères."
+      },
+      "sendMessageBtn": "ENVOYEZ VOTRE MESSAGE"
+    }
+  },
+  "projectPage": {}
+}
