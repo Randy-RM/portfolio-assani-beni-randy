@@ -36,7 +36,7 @@ const ContactMeForm = (): JSX.Element => {
       .string()
       .min(2, `Name must contain at least 2 character(s)`)
       .max(50, `Name must contain at most 50 character(s)`),
-    contactMail: z.string().email(),
+    contactMail: z.string().email(`Invalid email`),
     contactMessage: z
       .string()
       .min(10, `Message must contain at least 10 character(s)`)
