@@ -1,0 +1,78 @@
+{
+  "header": {
+    "AboutMeLink": "A bout me",
+    "projectsLink": "Visit my works",
+    "resumeLink": "Get my resume"
+  },
+  "followMe": "FOLLOW ME ON",
+  "contactMe": "CONTACT ME",
+  "logoDesc": "Randy Assani RM Logo",
+  "githubIconDesc": "Randy Assani Github profile",
+  "LinkdinIconDesc": "Randy Assani Linkdin profile",
+  "homePage": {
+    "heroSection": {
+      "iAm": "Hi! I'm",
+      "myPassions": "Technology, software development and design are my passions.",
+      "contactBtn": "CONTACT ME",
+      "myResume": "GET MY RESUME"
+    },
+    "aboutMeSection": {
+      "aboutMeTitleP1": "ABOUT",
+      "aboutMeTitleP2": "ME",
+      "aboutMeDescriptionP1": "HI. I'm Randy Assani Beni (RM).",
+      "aboutMeDescriptionP2": "I'm",
+      "aboutMeDescriptionP3": "Software Engineer",
+      "aboutMeDescriptionP4": "with a Computer Science degree and experience on computer engineering, software development, UX/UI design & teaching.",
+      "aboutMeDescriptionP5": "I am always developing my skills and learning something new. I have a thirst for knowledge and a desire to understand how things work; I'm a people person, a tinkerer, a lover of technology/science."
+    },
+    "teachingExperience": "Teaching programming and software engineering was a very rewarding experience. I was able to share my passion for these subjects with students of different levels and backgrounds.",
+    "technologiesSection": {
+      "technologiesTitleP1": "TECH",
+      "technologiesTitleP2": "NOLOGIES",
+      "technologiesDesc": "Here are a few technologies I’ve been working with recently"
+    },
+    "experienceSection": {
+      "experienceTitleP1": "EXP",
+      "experienceTitleP2": "ERIENCE",
+      "engineeringCard": {
+        "engineeringCardTitle": "ENGINEERING",
+        "engineeringCardIconDesc": "Tools icon",
+        "engineeringCardDesc": "Able to design and develop high-quality web and mobile applications using programming languages such as Java, JavaScript and Php... My solid understanding of software engineering principles enables me to effectively solve complex problems and deliver innovative solutions to my customers."
+      },
+      "designCard": {
+        "designCardTitle": "UX/UI DESIGN",
+        "designCardIconDesc": "Design pencil icon",
+        "designCardDesc": "Able to create intuitive and attractive user interfaces using tools such as Figma... My in-depth understanding of user experience enables me to design coherent, fluid user journeys that meet users' needs while respecting my clients' business objectives."
+      },
+      "projectCard": {
+        "projectCardTitle": "PROJECT",
+        "projectCardIconDesc": "Leaderboard star icon",
+        "projectCardDesc": "Able to lead cross-functional teams in the delivery of complex projects using Agile methodologies such as Scrum and Kanban. My ability to manage priorities, foster collaboration and solve problems quickly enables me to deliver high-quality products on time."
+      }
+    },
+    "sendMessageSection": {
+      "sendMessageTitle": "Send me a message!",
+      "sendMessageDescP1": "Got a question or proposal, or just want",
+      "sendMessageDescP2": "to say hello? Go ahead.",
+      "inputName": {
+        "label": "YOUR NAME",
+        "placeholder": "Enter your name",
+        "errorMin": "Name must contain at least 2 character(s)",
+        "errorMax": "Name must contain at most 50 character(s)"
+      },
+      "inputEmail": {
+        "label": "YOUR EMAIL",
+        "placeholder": "Enter your email address",
+        "emailError": "Invalid email"
+      },
+      "inputMessage": {
+        "label": "YOUR MESSAGE",
+        "placeholder": "Enter your message",
+        "errorMin": "Message must contain at least 10 character(s)",
+        "errorMax": "Message must contain at most 3000 character(s)"
+      },
+      "sendMessageBtn": "SEND YOUR MESSAGE"
+    }
+  },
+  "projectPage": {}
+}
