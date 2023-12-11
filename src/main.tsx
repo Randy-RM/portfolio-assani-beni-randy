@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { HelmetProvider, Helmet } from "react-helmet-async";
+import "./translations/i18n";
 import App from "./App.tsx";
 import "./assets/sass/main.scss";
 import metaSocialImageUrl from "../src/assets/images/rm-landing-logo.png";
