@@ -12,7 +12,8 @@
   "homePage": {
     "heroSection": {
       "iAm": "Je suis",
-      "myPassions": "La technologie, le développement de logiciels et la conception sont mes passions.",
+      "myPassionsP1": "La technologie, le développement de logiciels",
+      "myPassionsP2": "et la conception sont mes passions.",
       "contactBtn": "CONTACTEZ-MOI",
       "myResume": "OBTENIR MON CV"
     },

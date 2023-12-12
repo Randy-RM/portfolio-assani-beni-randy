@@ -12,7 +12,8 @@
   "homePage": {
     "heroSection": {
       "iAm": "Hi! I'm",
-      "myPassions": "Technology, software development and design are my passions.",
+      "myPassionsP1": "Technology, software development",
+      "myPassionsP2": "and design are my passions.",
       "contactBtn": "CONTACT ME",
       "myResume": "GET MY RESUME"
     },
