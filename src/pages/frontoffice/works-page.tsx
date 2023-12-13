@@ -19,22 +19,10 @@ const WorksPage = (): JSX.Element => {
       setIsProjectLoading(false);
     }, 6000);
   }, []);
-  const heroText = [
-    "V",
-    "i",
-    "s",
-    "i",
-    "t",
-    " ",
-    "m",
-    "y",
-    " ",
-    "w",
-    "o",
-    "r",
-    "k",
-    "s",
-  ];
+
+  // Split the characters, including spaces
+  const heroText = `Visit my works`.split("");
+
   return (
     <>
       <Helmet>
