@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 import { z, ZodType } from "zod";
 import { useForm } from "react-hook-form";
@@ -7,6 +8,8 @@ import { Container, BasicInput, TextareaInput } from "..";
 import { useModalStatusStore, useMailPerDayStore } from "../../store";
 
 const ContactMeForm = (): JSX.Element => {
+  const { t } = useTranslation();
+
   // Honey pot security on form
   const beingType = useRef<HTMLInputElement>(null);
   // "select" the needed state and action
@@ -34,13 +37,15 @@ const ContactMeForm = (): JSX.Element => {
   const schema: ZodType<ContactMeFormData> = z.object({
     contactName: z
       .string()
-      .min(2, `Name must contain at least 2 character(s)`)
-      .max(50, `Name must contain at most 50 character(s)`),
-    contactMail: z.string().email(`Invalid email`),
+      .min(2, t(`homePage.sendMessageSection.inputName.errorMin`))
+      .max(50, t(`homePage.sendMessageSection.inputName.errorMax`)),
+    contactMail: z
+      .string()
+      .email(t(`homePage.sendMessageSection.inputEmail.emailError`)),
     contactMessage: z
       .string()
-      .min(10, `Message must contain at least 10 character(s)`)
-      .max(3000, `Message must contain at most 3000 character(s)`),
+      .min(10, t(`homePage.sendMessageSection.inputMessage.errorMin`))
+      .max(3000, t(`homePage.sendMessageSection.inputMessage.errorMax`)),
   });
 
   const {
@@ -123,8 +128,10 @@ const ContactMeForm = (): JSX.Element => {
             <BasicInput
               id="contactName"
               name="contactName"
-              label="YOUR NAME"
-              placeholder="Enter your name"
+              label={t(`homePage.sendMessageSection.inputName.label`)}
+              placeholder={t(
+                `homePage.sendMessageSection.inputName.placeholder`
+              )}
               type="text"
               registerToForm={register}
               inputStatus={
@@ -138,8 +145,10 @@ const ContactMeForm = (): JSX.Element => {
             <BasicInput
               id="contactMail"
               name="contactMail"
-              label="YOUR EMAIL"
-              placeholder="Enter your email address"
+              label={t(`homePage.sendMessageSection.inputEmail.label`)}
+              placeholder={t(
+                `homePage.sendMessageSection.inputEmail.placeholder`
+              )}
               type="email"
               registerToForm={register}
               inputStatus={
@@ -160,8 +169,10 @@ const ContactMeForm = (): JSX.Element => {
             <TextareaInput
               id="contactMessage"
               name="contactMessage"
-              label="YOUR MESSAGE"
-              placeholder="Enter your message"
+              label={t(`homePage.sendMessageSection.inputMessage.label`)}
+              placeholder={t(
+                `homePage.sendMessageSection.inputMessage.placeholder`
+              )}
               registerToForm={register}
               inputStatus={
                 errors.contactMessage && errors.contactMessage.message
@@ -179,7 +190,7 @@ const ContactMeForm = (): JSX.Element => {
         >
           <div className="width-100">
             <button className="btn btn-primary btn-size-larg">
-              SEND YOUR MESSAGE
+              {t(`homePage.sendMessageSection.sendMessageBtn`)}
             </button>
           </div>
         </Container>
