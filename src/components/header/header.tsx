@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import LogoRM from "../../assets/images/logo-rm.svg";
@@ -7,6 +8,7 @@ import LinkedinIcon from "../../assets/images/iconoir_linkedin.svg";
 
 const Header = (): JSX.Element => {
   const [isDropdown, setIsDropdown] = useState<boolean>(false);
+  const { t } = useTranslation();
 
   const handleIsDropdown = () => {
     setIsDropdown(!isDropdown);
@@ -53,11 +55,7 @@ const Header = (): JSX.Element => {
             <div className="nav-bar">
               <div className="">
                 <NavLink to="/" onClick={handleMenuByLogo}>
-                  <img
-                    src={LogoRM}
-                    className="logo"
-                    alt="Randy Assani RM Logo"
-                  />
+                  <img src={LogoRM} className="logo" alt={t(`logoDesc`)} />
                 </NavLink>
               </div>
               <div className="">
@@ -93,7 +91,7 @@ const Header = (): JSX.Element => {
                 isPending ? "pending" : isActive ? "active-menu-link" : ""
               }
             >
-              A bout me
+              {t(`header.AboutMeLink`)}
             </NavLink>
           </li>
           <li>
@@ -104,26 +102,26 @@ const Header = (): JSX.Element => {
                 isPending ? "pending" : isActive ? "active-menu-link" : ""
               }
             >
-              Visit my works
+              {t(`header.projectsLink`)}
             </NavLink>
           </li>
           <li>
             <Link to="/documents/CV-EN-Assani-Beni-Randy.pdf" target="_blank">
-              Get my resume
+              {t(`header.resumeLink`)}
             </Link>
           </li>
           <li>
-            <span className="font-w-extra-bold h2">FOLLOW ME ON</span>
+            <span className="font-w-extra-bold h2">{t(`followMe`)}</span>
             <br />
             <a href="https://github.com/Randy-RM" target="_blank">
-              <img src={GithubCircleIcon} alt="Randy Assani Github profile" />
+              <img src={GithubCircleIcon} alt={t(`githubIconDesc`)} />
             </a>
             &nbsp;
             <a
               href="https://www.linkedin.com/in/randy-assani-beni-ab101216b/"
               target="_blank"
             >
-              <img src={LinkedinIcon} alt="Randy Assani Linkdin profile" />
+              <img src={LinkedinIcon} alt={t(`LinkdinIconDesc`)} />
             </a>
           </li>
         </ul>
