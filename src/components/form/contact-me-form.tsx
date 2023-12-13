@@ -66,7 +66,9 @@ const ContactMeForm = (): JSX.Element => {
 
     if (contactName && contactMail && !beingTypeValue) {
       updateModalStatus("progress");
-      updateModalMessage("Sending mail in progress.");
+      updateModalMessage(
+        t(`homePage.sendMessageSection.emailMessageInProgress`)
+      );
 
       if (numberOfMailSent < mailPerDay) {
         const emailSend = await emailjs.send(
@@ -85,7 +87,9 @@ const ContactMeForm = (): JSX.Element => {
           console.log("text : ", emailSend.text);
           console.log("status : ", emailSend.status);
           updateModalStatus("succes");
-          updateModalMessage("Your message has been sent successfully.");
+          updateModalMessage(
+            t(`homePage.sendMessageSection.emailMessageInSucces`)
+          );
           updateNumberOfMailSent(numberOfMailSent + 1);
           setTimeout(() => {
             resetModalStatusStore();
@@ -96,7 +100,7 @@ const ContactMeForm = (): JSX.Element => {
           console.log("status : ", emailSend.status);
           updateModalStatus("error");
           updateModalMessage(
-            "An error has occurred while sending your message. Please try again later."
+            t(`homePage.sendMessageSection.emailMessageInErreur`)
           );
           setTimeout(() => {
             resetModalStatusStore();
@@ -105,7 +109,7 @@ const ContactMeForm = (): JSX.Element => {
       } else {
         updateModalStatus("warning");
         updateModalMessage(
-          "You have already exceeded the limit of 3 e-mails for this session"
+          t(`homePage.sendMessageSection.emailMessageInWarning`)
         );
         setTimeout(() => {
           resetModalStatusStore();
