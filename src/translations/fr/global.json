@@ -14,13 +14,13 @@
       "iAm": "Je suis",
       "myPassionsP1": "La technologie, le développement de logiciels",
       "myPassionsP2": "et la conception sont mes passions.",
-      "contactBtn": "CONTACTEZ-MOI",
-      "myResume": "OBTENIR MON CV"
+      "contactBtn": "ÉCRIVEZ-MOI",
+      "myResume": "MON CV"
     },
     "aboutMeSection": {
-      "aboutMeTitleP1": "À PROPOS",
-      "aboutMeTitleP2": "DE MOI",
-      "aboutMeDescriptionP1": "BONJOUR ! Je suis Randy Assani Beni (RM).",
+      "aboutMeTitleP1": "À PROPOS DE",
+      "aboutMeTitleP2": "MOI",
+      "aboutMeDescriptionP1": "SALUT ! Je suis Randy Assani Beni (RM).",
       "aboutMeDescriptionP2": "Je suis",
       "aboutMeDescriptionP3": "Software Engineer",
       "aboutMeDescriptionP4": "avec un diplôme en informatique et une expérience en ingénierie informatique, développement de logiciels, conception UX/UI, gestion de projet et enseignement.",
@@ -48,18 +48,18 @@
       "projectCard": {
         "projectCardTitle": "PROJET",
         "projectCardIconDesc": "Icône d'étoile du classement",
-        "projectCardDesc": "Je suis capable de diriger des équipes interfonctionnelles dans la réalisation de projets complexes en utilisant des méthodologies agiles telles que Scrum et Kanban. Ma capacité à gérer les priorités, à favoriser la collaboration et à résoudre les problèmes rapidement me permet de fournir des produits de haute qualité dans les délais impartis."
+        "projectCardDesc": "Capable de diriger des équipes interfonctionnelles dans la réalisation de projets complexes en utilisant des méthodologies agiles telles que Scrum et Kanban. Ma capacité à gérer les priorités, à favoriser la collaboration et à résoudre les problèmes rapidement me permet de fournir des produits de haute qualité dans les délais impartis."
       }
     },
     "sendMessageSection": {
-      "sendMessageTitle": "Envoyez-moi un message !",
+      "sendMessageTitle": "Envoyez un message !",
       "sendMessageDescP1": "Vous avez une question ou une proposition, ou vous souhaitez simplement",
       "sendMessageDescP2": "dire bonjour ? Allez-y.",
       "inputName": {
         "label": "VOTRE NOM",
         "placeholder": "Entrez votre nom",
-        "errorMin": "Le nom doit contenir au moins 2 caractère(s)",
-        "errorMax": "Le nom doit contenir au maximum 50 caractères."
+        "errorMin": "Il faut au moins 2 caractère(s)",
+        "errorMax": "Il faut au maximum 50 caractères."
       },
       "inputEmail": {
         "label": "VOTRE EMAIL",
