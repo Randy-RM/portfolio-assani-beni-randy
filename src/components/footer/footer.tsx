@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import Container from "../container/container";
 import Spacer from "../spacer/spacer";
@@ -7,6 +8,7 @@ import GithubCircleIcon from "../../assets/images/iconoir_github_circle.svg";
 import LinkedinIcon from "../../assets/images/iconoir_linkedin.svg";
 
 const Footer = (): JSX.Element => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -32,26 +34,26 @@ const Footer = (): JSX.Element => {
           >
             <p>
               <Link to="/">
-                <img src={LogoRM} className="logo" alt="Randy Assani RM Logo" />
+                <img src={LogoRM} className="logo" alt={t(`logoDesc`)} />
               </Link>
             </p>
             <p className="text-center">
-              <span className="font-w-extra-bold">CONTACT ME</span>
+              <span className="font-w-extra-bold">{t(`contactMe`)}</span>
               <br />
               randymuhema@gmail.com
             </p>
             <p className="text-center">
-              <span className="font-w-extra-bold">FOLLOW ME ON</span>
+              <span className="font-w-extra-bold">{t(`followMe`)}</span>
               <br />
               <a href="https://github.com/Randy-RM" target="_blank">
-                <img src={GithubCircleIcon} alt="Randy Assani Github profile" />
+                <img src={GithubCircleIcon} alt={t(`githubIconDesc`)} />
               </a>
               &nbsp;
               <a
                 href="https://www.linkedin.com/in/randy-assani-beni-ab101216b/"
                 target="_blank"
               >
-                <img src={LinkedinIcon} alt="Randy Assani Linkdin profile" />
+                <img src={LinkedinIcon} alt={t(`LinkdinIconDesc`)} />
               </a>
             </p>
           </Container>
