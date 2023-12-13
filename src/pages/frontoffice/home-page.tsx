@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import { Container, Spacer, Badge, ContactMeForm } from "../../components";
@@ -12,6 +13,8 @@ import DesignPencilIcon from "../../assets/images/iconoir_design_pencil.svg";
 import LeaderboardStarIcon from "../../assets/images/iconoir_leaderboard_star.svg";
 
 const HomePage = (): JSX.Element => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Helmet>
@@ -43,7 +46,7 @@ const HomePage = (): JSX.Element => {
                 }}
               >
                 <h2 className="font-big-hero font-w-Black">
-                  {`Hi! I'm`}
+                  {t(`homePage.heroSection.iAm`)}
                   <br />
                   <span className="font-semi-dark-grey">{`Software`}</span>
                   <br />
@@ -52,9 +55,9 @@ const HomePage = (): JSX.Element => {
                   </span>
                 </h2>
                 <p className="font-lead-hero">
-                  {`Technology, software development`}
+                  {t(`homePage.heroSection.myPassionsP1`)}
                   <br />
-                  {`and design are my passions.`}
+                  {t(`homePage.heroSection.myPassionsP2`)}
                 </p>
                 <Container
                   flexDirection="row"
@@ -64,7 +67,7 @@ const HomePage = (): JSX.Element => {
                 >
                   <p className="width-40 width-35-on-large">
                     <a href="#sendMeMessage" className="btn btn-primary">
-                      CONTACT ME
+                      {t(`homePage.heroSection.contactBtn`)}
                     </a>
                   </p>
                   <p className="width-40 width-35-on-large">
@@ -74,7 +77,8 @@ const HomePage = (): JSX.Element => {
                       className="btn"
                       target="_blank"
                     >
-                      GET MY RESUME <Icon icon="iconoir:google-docs" />
+                      {t(`homePage.heroSection.myResume`)}{" "}
+                      <Icon icon="iconoir:google-docs" />
                     </Link>
                   </p>
                 </Container>
@@ -130,26 +134,23 @@ const HomePage = (): JSX.Element => {
                 }}
               >
                 <h2 className="font-w-Black h2 margin-0">
-                  ABOUT <span className="font-brand-color">ME</span>
+                  {t(`homePage.aboutMeSection.aboutMeTitleP1`)}{" "}
+                  <span className="font-brand-color">
+                    {t(`homePage.aboutMeSection.aboutMeTitleP2`)}
+                  </span>
                 </h2>
                 <p>
-                  <span className="font-w-extra-bold">FOLLOW ME ON</span>
+                  <span className="font-w-extra-bold">{t(`followMe`)}</span>
                   <br />
                   <a href="https://github.com/Randy-RM" target="_blank">
-                    <img
-                      src={GithubCircleIcon}
-                      alt="Randy Assani Github profile"
-                    />
+                    <img src={GithubCircleIcon} alt={t(`githubIconDesc`)} />
                   </a>
                   &nbsp;
                   <a
                     href="https://www.linkedin.com/in/randy-assani-beni-ab101216b/"
                     target="_blank"
                   >
-                    <img
-                      src={LinkedinIcon}
-                      alt="Randy Assani Linkdin profile"
-                    />
+                    <img src={LinkedinIcon} alt={t(`LinkdinIconDesc`)} />
                   </a>
                 </p>
               </motion.div>
@@ -167,19 +168,16 @@ const HomePage = (): JSX.Element => {
                 }}
               >
                 <h1 className="font-h1-unstyled">
-                  HI. I'm Randy Assani Beni (RM).
+                  {t(`homePage.aboutMeSection.aboutMeDescriptionP1`)}
                 </h1>
                 <p>
-                  I'm <mark>Software Engineer</mark> with a Computer Science
-                  degree and experience on computer engineering, software
-                  development, graphic design & teaching.
+                  {t(`homePage.aboutMeSection.aboutMeDescriptionP2`)}{" "}
+                  <mark>
+                    {t(`homePage.aboutMeSection.aboutMeDescriptionP3`)}
+                  </mark>{" "}
+                  {t(`homePage.aboutMeSection.aboutMeDescriptionP4`)}
                 </p>
-                <p>
-                  I am always developing my skills and learning something new. I
-                  have a thirst for knowledge and a desire to understand how
-                  things work; I'm a people person, a tinkerer, a lover of
-                  technology/science."
-                </p>
+                <p>{t(`homePage.aboutMeSection.aboutMeDescriptionP5`)}</p>
               </motion.div>
             </Container>
             <Spacer height={6} />
@@ -216,10 +214,7 @@ const HomePage = (): JSX.Element => {
                     "
                   </p>
                   <p className="text-center font-w-light margin-0">
-                    Teaching programming and software engineering was a very
-                    rewarding experience. I was able to share my passion for
-                    these subjects with students of different levels and
-                    backgrounds.
+                    {t(`homePage.teachingExperience`)}
                   </p>
                   <p className="text-right font-big-braket-bottom font-w-Black margin-0">
                     "
@@ -255,11 +250,12 @@ const HomePage = (): JSX.Element => {
                 }}
               >
                 <h2 className="font-w-Black h2 margin-0">
-                  <span className="font-brand-color">TECH</span>NOLOGIES
+                  <span className="font-brand-color">
+                    {t(`homePage.technologiesSection.technologiesTitleP1`)}
+                  </span>
+                  {t(`homePage.technologiesSection.technologiesTitleP2`)}
                 </h2>
-                <p>
-                  Here are a few technologies I’ve been working with recently
-                </p>
+                <p>{t(`homePage.technologiesSection.technologiesDesc`)}</p>
               </motion.div>
               <div className="width-50 text-center">
                 <Spacer />
@@ -312,7 +308,10 @@ const HomePage = (): JSX.Element => {
                 }}
               >
                 <h2 className="font-w-Black h2 margin-0">
-                  <span className="font-brand-color">EXP</span>ERIENCE
+                  <span className="font-brand-color">
+                    {t(`homePage.experienceSection.experienceTitleP1`)}
+                  </span>
+                  {t(`homePage.experienceSection.experienceTitleP2`)}
                 </h2>
                 <Spacer height={3} />
               </motion.div>
@@ -338,19 +337,22 @@ const HomePage = (): JSX.Element => {
                   >
                     <div className="p-1">
                       <p>
-                        <img src={ToolsIcon} alt="Tools icon" />
+                        <img
+                          src={ToolsIcon}
+                          alt={t(
+                            `homePage.experienceSection.engineeringCard.engineeringCardIconDesc`
+                          )}
+                        />
                       </p>
                       <h3 className="h3 font-w-extra-bold margin-0">
-                        ENGINEERING
+                        {t(
+                          `homePage.experienceSection.engineeringCard.engineeringCardTitle`
+                        )}
                       </h3>
                       <p>
-                        {`
-                        Able to design and develop high-quality web and mobile 
-                        applications using programming languages such as Java, 
-                        JavaScript and Php... My solid understanding of software 
-                        engineering principles enables me to effectively solve complex 
-                        problems and deliver innovative solutions to my customers.
-                        `}
+                        {t(
+                          `homePage.experienceSection.engineeringCard.engineeringCardDesc`
+                        )}
                       </p>
                     </div>
                     <Spacer height={2} />
@@ -370,18 +372,22 @@ const HomePage = (): JSX.Element => {
                   >
                     <div className="p-1">
                       <p>
-                        <img src={DesignPencilIcon} alt="Design pencil icon" />
+                        <img
+                          src={DesignPencilIcon}
+                          alt={t(
+                            `homePage.experienceSection.designCard.designCardIconDesc`
+                          )}
+                        />
                       </p>
                       <h3 className="h3 font-w-extra-bold margin-0">
-                        UX/UI DESIGN
+                        {t(
+                          `homePage.experienceSection.designCard.designCardTitle`
+                        )}
                       </h3>
                       <p>
-                        {`
-                        Able to create intuitive and attractive user interfaces 
-                        using tools such as Figma... My in-depth understanding of 
-                        user experience enables me to design coherent, fluid user 
-                        journeys that meet users' needs while respecting my clients' business objectives.
-                        `}
+                        {t(
+                          `homePage.experienceSection.designCard.designCardDesc`
+                        )}
                       </p>
                     </div>
                     <Spacer height={2} />
@@ -403,17 +409,20 @@ const HomePage = (): JSX.Element => {
                       <p>
                         <img
                           src={LeaderboardStarIcon}
-                          alt="Leaderboard star icon"
+                          alt={t(
+                            `homePage.experienceSection.projectCard.projectCardIconDesc`
+                          )}
                         />
                       </p>
-                      <h3 className="h3 font-w-extra-bold margin-0">PROJECT</h3>
+                      <h3 className="h3 font-w-extra-bold margin-0">
+                        {t(
+                          `homePage.experienceSection.projectCard.projectCardTitle`
+                        )}
+                      </h3>
                       <p>
-                        {`
-                        Able to lead cross-functional teams in the delivery of 
-                        complex projects using Agile methodologies such as Scrum and Kanban. My ability 
-                        to manage priorities, foster collaboration and solve problems quickly enables me 
-                        to deliver high-quality products on time.
-                        `}
+                        {t(
+                          `homePage.experienceSection.projectCard.projectCardDesc`
+                        )}
                       </p>
                     </div>
                     <Spacer height={2} />
@@ -449,11 +458,11 @@ const HomePage = (): JSX.Element => {
               >
                 <div className="width-100 text-center bg-paper-plane-right">
                   <h2 className="font-w-semi-medium h2 margin-0">
-                    Send me a message!
+                    {t(`homePage.sendMessageSection.sendMessageTitle`)}
                   </h2>
                   <p>
-                    Got a question or proposal, or just want <br /> to say
-                    hello? Go ahead.
+                    {t(`homePage.sendMessageSection.sendMessageDescP1`)} <br />{" "}
+                    {t(`homePage.sendMessageSection.sendMessageDescP2`)}
                   </p>
                 </div>
                 <div className="width-70">
