@@ -26,10 +26,11 @@ i18n
     // language resources
     resources,
     detection: options,
-    fallbackLng: "en",
+    fallbackLng: {
+      default: ["en"],
+    },
     ns: ["common"],
     defaultNS: "common",
-    supportedLngs: ["en", "fr"],
     nonExplicitSupportedLngs: true,
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
