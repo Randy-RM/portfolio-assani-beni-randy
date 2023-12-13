@@ -38,7 +38,7 @@ const ContactMeForm = (): JSX.Element => {
     contactName: z
       .string()
       .min(2, t(`homePage.sendMessageSection.inputName.errorMin`))
-      .max(50, t(`homePage.sendMessageSection.inputName.errorMax`)),
+      .max(100, t(`homePage.sendMessageSection.inputName.errorMax`)),
     contactMail: z
       .string()
       .email(t(`homePage.sendMessageSection.inputEmail.emailError`)),
