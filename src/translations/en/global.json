@@ -72,7 +72,11 @@
         "errorMin": "Message must contain at least 10 character(s)",
         "errorMax": "Message must contain at most 3000 character(s)"
       },
-      "sendMessageBtn": "SEND YOUR MESSAGE"
+      "sendMessageBtn": "SEND YOUR MESSAGE",
+      "emailMessageInProgress": "Sending mail in progress.",
+      "emailMessageInSucces": "Your message has been sent successfully.",
+      "emailMessageInErreur": "An error has occurred while sending your message. Please try again later.",
+      "emailMessageInWarning": "You have already exceeded the limit of 3 e-mails for this session"
     }
   },
   "projectPage": {}
