@@ -59,7 +59,7 @@
         "label": "YOUR NAME",
         "placeholder": "Enter your name",
         "errorMin": "Name must contain at least 2 character(s)",
-        "errorMax": "Name must contain at most 50 character(s)"
+        "errorMax": "Name must contain at most 100 character(s)"
       },
       "inputEmail": {
         "label": "YOUR EMAIL",
