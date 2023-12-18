@@ -1,3 +1,4 @@
+import i18next from "i18next";
 import kadeaLandingImgUrl from "../assets/images/my-works/kadea-online-landing-logo.png";
 import cameoLiveLandingImgUrl from "../assets/images/my-works/cameolive-landing-logo.png";
 import rmLandingImgUrl from "../assets/images/my-works/rm-landing-logo.png";
@@ -6,7 +7,7 @@ const projects: Project[] = [
   {
     idProject: "01",
     projectName: "KADEA ONLINE",
-    projectDescription: `Kadea Online is an interactive online learning platform for digital professions. It's one of my favorite projects. I developed and maintained this project for the Kadea company.`,
+    projectDescription: i18next.t("projects.kadeaOnlineDesc"),
     projectSkills: [
       "HTML",
       "CSS",
@@ -25,7 +26,7 @@ const projects: Project[] = [
   {
     idProject: "02",
     projectName: "CAMEOLIVE",
-    projectDescription: `Cameolive is an application that lets you search for information on series and films using a device connected to the Internet. This is a personal project.`,
+    projectDescription: i18next.t("projects.kameoliveDesc"),
     projectSkills: [
       "HTML",
       "Sass",
@@ -41,8 +42,8 @@ const projects: Project[] = [
   },
   {
     idProject: "03",
-    projectName: "HAPPY ROBOT FRIEND TOY",
-    projectDescription: `Fun application that displays a list of funny and amusing characters. This application allows you to consult the list of characters and see details about them. This project is an exercise project.`,
+    projectName: "HAPPY ROBOT FRIEND",
+    projectDescription: i18next.t("projects.robotFrindDesc"),
     projectSkills: ["HTML", "CSS", "JavaScript", "Node Js", "React Js", "API"],
     projectImageUrl: `${rmLandingImgUrl}`,
     projectType: "other",
