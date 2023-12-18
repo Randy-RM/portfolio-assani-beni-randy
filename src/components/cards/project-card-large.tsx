@@ -1,10 +1,12 @@
 import { Icon } from "@iconify/react";
+import { useTranslation } from "react-i18next";
 import { Container, Spacer, Badge } from "../../components";
 import rmLandingImgUrl from "../../assets/images/my-works/rm-landing-logo.png";
 
 const ProjectCardLarge = (props: Project): JSX.Element => {
   let { projectSkills, projectImageUrl, projectType, projectUrl } = props;
   const { projectName, projectDescription } = props;
+  const { t } = useTranslation();
 
   projectSkills = projectSkills || null;
   projectImageUrl = projectImageUrl || null;
@@ -48,7 +50,7 @@ const ProjectCardLarge = (props: Project): JSX.Element => {
                 }
                 target="_blank"
               >
-                SEE MORE <Icon icon="iconoir:arrow-tr-square" />
+                {t(`seeMore`)} <Icon icon="iconoir:arrow-tr-square" />
               </a>
             )}
           </p>
