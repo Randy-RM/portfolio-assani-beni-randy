@@ -1,7 +1,7 @@
 {
   "header": {
-    "AboutMeLink": "A bout me",
-    "projectsLink": "Visit my works",
+    "AboutMeLink": "About",
+    "projectsLink": "My works",
     "resumeLink": "Get my resume"
   },
   "followMe": "FOLLOW ME ON",
@@ -9,6 +9,7 @@
   "logoDesc": "Randy Assani RM Logo",
   "githubIconDesc": "Randy Assani Github profile",
   "LinkdinIconDesc": "Randy Assani Linkdin profile",
+  "seeMore": "SEE MORE",
   "homePage": {
     "heroSection": {
       "iAm": "Hi! I'm",
@@ -79,5 +80,20 @@
       "emailMessageInWarning": "You have already exceeded the limit of 3 e-mails for this session"
     }
   },
-  "projectPage": {}
+  "projectPage": {
+    "heroSection": {
+      "visitMyWorks": "Visit my works",
+      "leadText": "Here are some Project I made recently"
+    }
+  },
+  "errorPage": {
+    "errorIcon": "Page not found icon",
+    "errorPageMessage": "Page Not Found",
+    "goBackHome": "Click here to go back home page"
+  },
+  "projects": {
+    "kadeaOnlineDesc": "Kadea Online is an interactive online learning platform for digital professions. It's one of my favorite projects. I developed and maintained this project for the Kadea company.",
+    "kameoliveDesc": "Cameolive is an application that lets you search for information on series and films using a device connected to the Internet. This is a personal project.",
+    "robotFrindDesc": "Fun application that displays a list of funny and amusing characters. This application allows you to consult the list of characters and see details about them. This project is an exercise project."
+  }
 }

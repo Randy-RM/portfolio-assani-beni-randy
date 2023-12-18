@@ -1,7 +1,7 @@
 {
   "header": {
-    "AboutMeLink": "A propos de moi",
-    "projectsLink": "Visitez mes travaux",
+    "AboutMeLink": "A propos",
+    "projectsLink": "Mes œuvres",
     "resumeLink": "Obtenir mon CV"
   },
   "followMe": "SUIVEZ-MOI SUR",
@@ -9,6 +9,7 @@
   "logoDesc": "Randy Assani RM Logo",
   "githubIconDesc": "Randy Assani profil Github",
   "LinkdinIconDesc": "Randy Assani profil Linkdin",
+  "seeMore": "VOIR PLUS",
   "homePage": {
     "heroSection": {
       "iAm": "Je suis",
@@ -79,5 +80,20 @@
       "emailMessageInWarning": "Vous avez déjà dépassé la limite de 3 e-mails pour cette session"
     }
   },
-  "projectPage": {}
+  "projectPage": {
+    "heroSection": {
+      "visitMyWorks": "Mes œuvres",
+      "leadText": "Voici quelques projets que j'ai réalisés récemment"
+    }
+  },
+  "errorPage": {
+    "errorIcon": "Icône de page non trouvée",
+    "errorPageMessage": "La page n'est pas trouvée",
+    "goBackHome": "Cliquez ici pour retourner à la page d'accueil"
+  },
+  "projects": {
+    "kadeaOnlineDesc": "Kadea Online est une plateforme interactive d'apprentissage en ligne pour les métiers du numérique. C'est l'un de mes projets préférés. J'ai développé et maintenu ce projet pour la société Kadea.",
+    "kameoliveDesc": "Cameolive est une application qui permet de rechercher des informations sur les séries et les films à l'aide d'un appareil connecté à Internet. Il s'agit d'un projet personnel.",
+    "robotFrindDesc": "Application ludique qui affiche une liste de personnages drôles et amusants. Cette application permet de consulter la liste des personnages et de voir les détails les concernant. Ce projet est un projet d'exercice."
+  }
 }
