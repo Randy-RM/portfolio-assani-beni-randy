@@ -1,10 +1,13 @@
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { Container, Spacer } from "../../components";
 import EmojiPuzzled from "../../assets/images/iconoir_emoji_puzzled.svg";
 
 const ErrorPage = (): JSX.Element => {
+  const { t } = useTranslation();
+
   return (
     <>
       <Helmet>
@@ -36,7 +39,7 @@ const ErrorPage = (): JSX.Element => {
                   <img
                     src={EmojiPuzzled}
                     className="logo"
-                    alt="Page not found icon"
+                    alt={t(`errorPage.errorIcon`)}
                   />
                   <br />
                   <span className="font-big-hero font-w-Black">
@@ -44,11 +47,11 @@ const ErrorPage = (): JSX.Element => {
                   </span>
                   <br />
                   <span>
-                    <i>Page Not Found</i>
+                    <i>{t(`errorPage.errorPageMessage`)}</i>
                   </span>
                 </p>
                 <p className="text-center">
-                  <Link to="/">Click here to go back home page</Link>
+                  <Link to="/">{t(`errorPage.goBackHome`)}</Link>
                 </p>
               </Container>
             </motion.div>
