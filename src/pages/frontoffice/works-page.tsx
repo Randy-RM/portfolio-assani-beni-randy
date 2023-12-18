@@ -1,4 +1,5 @@
 import { useState, useEffect, lazy } from "react";
+import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import {
@@ -14,6 +15,7 @@ import { projects } from "../../db";
 
 const WorksPage = (): JSX.Element => {
   const [isProjectLoading, setIsProjectLoading] = useState<boolean>(true);
+  const { t } = useTranslation();
   useEffect(() => {
     setTimeout(() => {
       setIsProjectLoading(false);
@@ -21,7 +23,7 @@ const WorksPage = (): JSX.Element => {
   }, []);
 
   // Split the characters, including spaces
-  const heroText = `Visit my works`.split("");
+  const heroText = t(`projectPage.heroSection.visitMyWorks`).split("");
 
   return (
     <>
@@ -117,7 +119,7 @@ const WorksPage = (): JSX.Element => {
                       duration: 3,
                     }}
                   >
-                    {`Here are some Project I made recently`}
+                    {t(`projectPage.heroSection.leadText`)}
                   </motion.span>
                 </p>
                 <motion.div
