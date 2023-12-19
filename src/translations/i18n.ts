@@ -22,7 +22,7 @@ i18n
   .use(detector) // Registering the detection plugin
   .use(initReactI18next)
   .init({
-    debug: true,
+    debug: false,
     // language resources
     resources,
     detection: options,
