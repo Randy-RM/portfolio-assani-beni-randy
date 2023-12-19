@@ -91,3 +91,38 @@
   text-fill-color: transparent;
   -webkit-text-fill-color: transparent;
 }
+
+/// Make a text gradient colored with four color
+/// @author Randy Assani Beni
+/// @param {String} $colorOne
+/// @param {String} $colorTow
+/// @param {String} $colorThree
+/// @param {String} $colorFour
+/// @param {String} $angle
+///
+@mixin gradient-text-four-color(
+  $angle,
+  $colorOne,
+  $colorTow,
+  $colorThree,
+  $colorFour
+) {
+  background: linear-gradient(
+    $angle,
+    $colorOne,
+    $colorTow,
+    $colorThree,
+    $colorFour
+  );
+  background: -webkit-linear-gradient(
+    $angle,
+    $colorOne,
+    $colorTow,
+    $colorThree,
+    $colorFour
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+}
