@@ -310,7 +310,7 @@ const HomePage = (): JSX.Element => {
                 }}
               >
                 <h2 className="font-w-Black h2 margin-0">
-                  Want to discover my work?
+                  {t(`homePage.visitWorkSection.visitWorkTitle`)}
                 </h2>
                 <Spacer />
                 <p>
@@ -318,7 +318,7 @@ const HomePage = (): JSX.Element => {
                     to="/visit-my-works"
                     className="btn btn-outlined-secondary border-ripple-animation"
                   >
-                    Please click here
+                    {t(`homePage.visitWorkSection.visitWorkButton`)}
                   </NavLink>
                 </p>
                 <Spacer />
