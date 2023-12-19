@@ -33,6 +33,10 @@
       "technologiesTitleP2": "NOLOGIES",
       "technologiesDesc": "Voici quelques technologies avec lesquelles j'ai travaillé récemment"
     },
+    "visitWorkSection": {
+      "visitWorkTitle": "Envie de découvrir mes œuvres ?",
+      "visitWorkButton": "Cliquez ici"
+    },
     "experienceSection": {
       "experienceTitleP1": "EXP",
       "experienceTitleP2": "ERIENCE",
