@@ -286,6 +286,41 @@ const HomePage = (): JSX.Element => {
           </div>
         </section>
         {/**Technologies section end */}
+        {/**Visit work section start */}
+        <section className="bg-light-grey">
+          <div className="container">
+            <Spacer height={6} />
+            <Container
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="center"
+              flexWrap="wrap"
+            >
+              <motion.div
+                className="width-50 text-center"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  type: "spring",
+                  delay: 0.3,
+                  easeInOut: "linear",
+                  duration: 2,
+                  // bounce: 0.6,
+                }}
+              >
+                <h2 className="font-w-Black h2 margin-0">
+                  Want to discover my work?
+                </h2>
+                <Spacer />
+                <p>Please click here</p>
+                <Spacer />
+              </motion.div>
+            </Container>
+            <Spacer height={6} />
+          </div>
+        </section>
+        {/**Visit work section end */}
         {/**Experience section start */}
         <section className="bg-light-grey">
           <div className="container">
