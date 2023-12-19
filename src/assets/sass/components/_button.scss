@@ -32,6 +32,19 @@
   color: $light-grey;
 }
 
+.btn-outlined-secondary {
+  padding: 0.8rem 1.5rem;
+  background: rgba($dark-grey, 0);
+  color: $dark-grey;
+  border: solid 2px $dark-grey;
+  transition: all ease-in-out 0.2s;
+}
+
+.btn-outlined-secondary:hover {
+  background: rgba($dark-grey, 1);
+  color: $light-grey;
+}
+
 .back-to-top-btn-container {
   display: flex;
   flex-direction: row;
