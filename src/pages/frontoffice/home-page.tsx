@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
@@ -313,7 +313,14 @@ const HomePage = (): JSX.Element => {
                   Want to discover my work?
                 </h2>
                 <Spacer />
-                <p>Please click here</p>
+                <p>
+                  <NavLink
+                    to="/visit-my-works"
+                    className="btn btn-outlined-secondary border-ripple-animation"
+                  >
+                    Please click here
+                  </NavLink>
+                </p>
                 <Spacer />
               </motion.div>
             </Container>
