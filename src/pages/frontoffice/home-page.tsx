@@ -317,15 +317,15 @@ const HomePage = (): JSX.Element => {
               </motion.div>
               <div className="width-100 text-center-on-mobile">
                 <Container
-                  flexDirection="row"
+                  flexDirection="column"
                   justifyContent="space-between"
                   alignItems="flex-start"
                   flexWrap="wrap"
                 >
                   <motion.div
-                    className="width-30"
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    className="width-100"
+                    initial={{ opacity: 0, x: -40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{
                       type: "spring",
@@ -335,96 +335,129 @@ const HomePage = (): JSX.Element => {
                       // bounce: 0.6,
                     }}
                   >
-                    <div className="p-1">
-                      <p>
-                        <img
-                          src={ToolsIcon}
-                          alt={t(
-                            `homePage.experienceSection.engineeringCard.engineeringCardIconDesc`
+                    <Spacer height={2} />
+                    <Container
+                      flexDirection="row"
+                      justifyContent="space-evenly"
+                      alignItems="center"
+                      flexWrap="wrap"
+                    >
+                      <div className="width-20 p-2">
+                        <p>
+                          <img
+                            src={ToolsIcon}
+                            alt={t(
+                              `homePage.experienceSection.engineeringCard.engineeringCardIconDesc`
+                            )}
+                            className="card-img-responsive"
+                          />
+                        </p>
+                      </div>
+                      <div className="width-50">
+                        <h3 className="h3 font-w-extra-bold margin-0">
+                          {t(
+                            `homePage.experienceSection.engineeringCard.engineeringCardTitle`
                           )}
-                        />
-                      </p>
-                      <h3 className="h3 font-w-extra-bold margin-0">
-                        {t(
-                          `homePage.experienceSection.engineeringCard.engineeringCardTitle`
-                        )}
-                      </h3>
-                      <p>
-                        {t(
-                          `homePage.experienceSection.engineeringCard.engineeringCardDesc`
-                        )}
-                      </p>
-                    </div>
+                        </h3>
+                        <p>
+                          {t(
+                            `homePage.experienceSection.engineeringCard.engineeringCardDesc`
+                          )}
+                        </p>
+                      </div>
+                    </Container>
                     <Spacer height={2} />
                   </motion.div>
                   <motion.div
-                    className="width-30"
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    className="width-100"
+                    initial={{ opacity: 0, x: 40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{
                       type: "spring",
-                      delay: 0.3 * 2,
+                      delay: 0.3 * 1,
                       easeInOut: "linear",
                       duration: 2,
                       // bounce: 0.6,
                     }}
                   >
-                    <div className="p-1">
-                      <p>
-                        <img
-                          src={DesignPencilIcon}
-                          alt={t(
-                            `homePage.experienceSection.designCard.designCardIconDesc`
+                    <Spacer height={2} />
+                    <Container
+                      flexDirection="row"
+                      justifyContent="space-evenly"
+                      alignItems="center"
+                      flexWrap="wrap"
+                    >
+                      <div className="width-20 p-2">
+                        <p>
+                          <img
+                            src={DesignPencilIcon}
+                            alt={t(
+                              `homePage.experienceSection.designCard.designCardIconDesc`
+                            )}
+                            className="card-img-responsive"
+                          />
+                        </p>
+                      </div>
+                      <div className="width-50">
+                        <h3 className="h3 font-w-extra-bold margin-0">
+                          {t(
+                            `homePage.experienceSection.designCard.designCardTitle`
                           )}
-                        />
-                      </p>
-                      <h3 className="h3 font-w-extra-bold margin-0">
-                        {t(
-                          `homePage.experienceSection.designCard.designCardTitle`
-                        )}
-                      </h3>
-                      <p>
-                        {t(
-                          `homePage.experienceSection.designCard.designCardDesc`
-                        )}
-                      </p>
-                    </div>
+                        </h3>
+                        <p>
+                          {t(
+                            `homePage.experienceSection.designCard.designCardDesc`
+                          )}
+                        </p>
+                      </div>
+                    </Container>
                     <Spacer height={2} />
                   </motion.div>
                   <motion.div
-                    className="width-30"
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    className="width-100"
+                    initial={{ opacity: 0, x: -40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{
                       type: "spring",
-                      delay: 0.3 * 3,
+                      delay: 0.3 * 1,
                       easeInOut: "linear",
                       duration: 2,
                       // bounce: 0.6,
                     }}
                   >
-                    <div className="p-1">
-                      <p>
-                        <img
-                          src={LeaderboardStarIcon}
-                          alt={t(
-                            `homePage.experienceSection.projectCard.projectCardIconDesc`
+                    <Spacer height={2} />
+                    <Container
+                      flexDirection="row"
+                      justifyContent="space-evenly"
+                      alignItems="center"
+                      flexWrap="wrap"
+                    >
+                      <div className="width-20 p-2">
+                        <p>
+                          <img
+                            src={LeaderboardStarIcon}
+                            alt={t(
+                              `homePage.experienceSection.projectCard.projectCardIconDesc`
+                            )}
+                            className="card-img-responsive"
+                          />
+                        </p>
+                      </div>
+                      <div className="width-50">
+                        <h3 className="h3 font-w-extra-bold margin-0">
+                          {t(
+                            `homePage.experienceSection.projectCard.projectCardTitle`
                           )}
-                        />
-                      </p>
-                      <h3 className="h3 font-w-extra-bold margin-0">
-                        {t(
-                          `homePage.experienceSection.projectCard.projectCardTitle`
-                        )}
-                      </h3>
-                      <p>
-                        {t(
-                          `homePage.experienceSection.projectCard.projectCardDesc`
-                        )}
-                      </p>
-                    </div>
+                        </h3>
+                        <p>
+                          {t(
+                            `homePage.experienceSection.projectCard.projectCardDesc`
+                          )}
+                        </p>
+                      </div>
+                    </Container>
                     <Spacer height={2} />
                   </motion.div>
                 </Container>

@@ -1,7 +1,8 @@
 @use "sass:map";
 
 .hero-image,
-.card-img {
+.card-img,
+.card-img-responsive {
   width: 100%;
   margin: auto;
   display: block;
@@ -15,10 +16,18 @@
   .card-img {
     width: 100%;
   }
+
+  .card-img-responsive {
+    width: 20%;
+  }
 }
 
 @media (max-width: map.get($breakpoints, "mobile large")) {
   .hero-image {
     width: 100%;
+  }
+
+  .card-img-responsive {
+    width: 40%;
   }
 }
