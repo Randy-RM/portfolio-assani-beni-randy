@@ -83,6 +83,33 @@
   border-radius: 25px;
 }
 
+.border-ripple-animation {
+  animation: at-ripple 0.6s linear infinite;
+}
+
+@-webkit-keyframes at-ripple {
+  0% {
+    box-shadow: 0 4px 10px rgba($dark-grey, 0.1), 0 0 0 0 rgba($dark-grey, 0.1),
+      0 0 0 5px rgba($dark-grey, 0.1), 0 0 0 10px rgba($dark-grey, 0.1);
+  }
+  100% {
+    box-shadow: 0 4px 10px rgba($dark-grey, 0.1),
+      0 0 0 5px rgba($dark-grey, 0.1), 0 0 0 10px rgba($dark-grey, 0.1),
+      0 0 0 20px rgba($dark-grey, 0);
+  }
+}
+@keyframes at-ripple {
+  0% {
+    box-shadow: 0 4px 10px rgba($dark-grey, 0.1), 0 0 0 0 rgba($dark-grey, 0.1),
+      0 0 0 5px rgba($dark-grey, 0.1), 0 0 0 10px rgba($dark-grey, 0.1);
+  }
+  100% {
+    box-shadow: 0 4px 10px rgba($dark-grey, 0.1),
+      0 0 0 5px rgba($dark-grey, 0.1), 0 0 0 10px rgba($dark-grey, 0.1),
+      0 0 0 20px rgba($dark-grey, 0);
+  }
+}
+
 @media (max-width: map.get($breakpoints, "tablet")) {
   .hide-bloc-on-mobile {
     display: none;
