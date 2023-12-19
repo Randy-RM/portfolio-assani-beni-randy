@@ -46,12 +46,14 @@ const HomePage = (): JSX.Element => {
                 }}
               >
                 <h2 className="font-big-hero font-w-Black">
-                  {t(`homePage.heroSection.iAm`)}
+                  <span className="font-outlined">
+                    {t(`homePage.heroSection.iAm`)}
+                  </span>
                   <br />
-                  <span className="font-semi-dark-grey">{`Software`}</span>
+                  <span className="">{`Software`}</span>
                   <br />
-                  <span>
-                    <mark className="special-mark">{`Engineer`}</mark>
+                  <span className="font-animated-gradient-color">
+                    {`Engineer`}
                   </span>
                 </h2>
                 <p className="font-lead-hero">
@@ -135,7 +137,7 @@ const HomePage = (): JSX.Element => {
               >
                 <h2 className="font-w-Black h2 margin-0">
                   {t(`homePage.aboutMeSection.aboutMeTitleP1`)}{" "}
-                  <span className="font-brand-color">
+                  <span className="">
                     {t(`homePage.aboutMeSection.aboutMeTitleP2`)}
                   </span>
                 </h2>
@@ -250,7 +252,7 @@ const HomePage = (): JSX.Element => {
                 }}
               >
                 <h2 className="font-w-Black h2 margin-0">
-                  <span className="font-brand-color">
+                  <span className="">
                     {t(`homePage.technologiesSection.technologiesTitleP1`)}
                   </span>
                   {t(`homePage.technologiesSection.technologiesTitleP2`)}
@@ -308,7 +310,7 @@ const HomePage = (): JSX.Element => {
                 }}
               >
                 <h2 className="font-w-Black h2 margin-0">
-                  <span className="font-brand-color">
+                  <span className="">
                     {t(`homePage.experienceSection.experienceTitleP1`)}
                   </span>
                   {t(`homePage.experienceSection.experienceTitleP2`)}
