@@ -105,6 +105,24 @@ body {
     -1px 1px 0 $text-color, 1px 1px 0 $text-color !important;
 }
 
+.font-animated-gradient-color {
+  @include gradient-text-four-colors(20deg, #ee5425, #e71364, #089acf, #0bcea0);
+  background-size: 200% 200%;
+  animation: gradient-bg 10s ease infinite;
+}
+
+@keyframes gradient-bg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 /*----font size----*/
 .font-big-hero {
   font-size: 6rem;
