@@ -24,12 +24,13 @@
   //get img on public folder
   content: url("/loader-img/m.svg");
   display: inline-block;
-  animation: pulse 0.4s 0.3s alternate infinite ease-in-out;
+  // animation: pulse 0.4s 0.3s alternate infinite ease-in-out;
+  animation: pulse 0.4s alternate infinite ease-in-out;
 }
 
 @keyframes pulse {
   to {
-    transform: scale(0.9);
+    // transform: scale(0.9);
     opacity: 0.5;
   }
 }
