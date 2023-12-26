@@ -1,0 +1,56 @@
+$themes: (
+  "dark": (
+    primary-color: $dark-blue,
+    secondary-color: $light-grey,
+    tertiary-color: lighten($dark-blue, 60%),
+    base3: #002b36,
+    base00: #657b83,
+    base01: #586e75,
+    base02: #eee8d5,
+    base03: #fdf6e3,
+  ),
+  "light": (
+    primary-color: $light-grey,
+    secondary-color: $dark-grey,
+    tertiary-color: darken($light-grey, 60%),
+    base3: #fdf6e3,
+    base00: #839496,
+    base01: #93a1a1,
+    base02: #073642,
+    base03: #002b36,
+  ),
+);
+
+// génère un nouveau mixin nommé themed.
+// L'idée est que toutes les règles css définie à l'interieur
+// seront dupliquée en dark et light.
+@mixin themed() {
+  // pour chaque thème défini dans la variable $themes
+  @each $theme, $map in $themes {
+    // défini un nouveau matcher .theme--nomdutheme le-matcheur-courant
+    .theme--#{$theme} & {
+      // defini une variable globale contenant un hash
+      // de toutes les valeurs courantes du theme
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+      // execute le contenu original du mixin
+      @content;
+      // supprime la variable globale
+      $theme-map: null !global;
+    }
+  }
+}
+
+// Nouvelle fonction theme qui va aller lire la valeur
+// de la clé dans le hash temporaire défini par le mixin
+@function t($key: "base0") {
+  @return map-get($theme-map, $key);
+}
