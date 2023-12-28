@@ -35,9 +35,9 @@ const WorksPage = (): JSX.Element => {
           content={`Here are some Project I made recently`}
         />
       </Helmet>
-      <main className="font-w-light">
+      <main className="font-w-light font-secondary-color">
         {/**Hero section start */}
-        <section className="bg-light-grey">
+        <section className="bg-primary-color">
           <div className="container">
             <Spacer height={4} />
             <Container
@@ -142,7 +142,7 @@ const WorksPage = (): JSX.Element => {
         </section>
         {/**Hero section end */}
         {/**My works section start */}
-        <section className="bg-light-grey">
+        <section className="bg-primary-color">
           {isProjectLoading ? (
             <div className="container">
               <ProjectCardLargeSkeleton />
