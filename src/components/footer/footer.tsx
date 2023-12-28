@@ -3,9 +3,7 @@ import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import Container from "../container/container";
 import Spacer from "../spacer/spacer";
-import LogoRM from "../../assets/images/logo-rm.svg";
-import GithubCircleIcon from "../../assets/images/iconoir_github_circle.svg";
-import LinkedinIcon from "../../assets/images/iconoir_linkedin.svg";
+import { LogoRm, GithubIcon, LinkedinIcon } from "../../assets/images";
 
 const Footer = (): JSX.Element => {
   const { t } = useTranslation();
@@ -13,7 +11,7 @@ const Footer = (): JSX.Element => {
 
   return (
     <>
-      <footer className="bg-light-grey">
+      <footer className="bg-primary-color font-secondary-color">
         <Spacer height={6} />
         <motion.div
           initial={{ opacity: 0 }}
@@ -34,7 +32,7 @@ const Footer = (): JSX.Element => {
           >
             <p>
               <Link to="/">
-                <img src={LogoRM} className="logo" alt={t(`logoDesc`)} />
+                <LogoRm className="logo" alt={t(`logoDesc`)} />
               </Link>
             </p>
             <p className="text-center">
@@ -46,14 +44,20 @@ const Footer = (): JSX.Element => {
               <span className="font-w-extra-bold">{t(`followMe`)}</span>
               <br />
               <a href="https://github.com/Randy-RM" target="_blank">
-                <img src={GithubCircleIcon} alt={t(`githubIconDesc`)} />
+                <GithubIcon
+                  className="themed-stroke-icon"
+                  alt={t(`githubIconDesc`)}
+                />
               </a>
               &nbsp;
               <a
                 href="https://www.linkedin.com/in/randy-assani-beni-ab101216b/"
                 target="_blank"
               >
-                <img src={LinkedinIcon} alt={t(`LinkdinIconDesc`)} />
+                <LinkedinIcon
+                  className="themed-stroke-icon"
+                  alt={t(`LinkdinIconDesc`)}
+                />
               </a>
             </p>
           </Container>
