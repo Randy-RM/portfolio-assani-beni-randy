@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
-import { Container, Spacer, Badge } from "../../components";
+import { Container, Spacer, Badge } from "../";
 import rmLandingImgUrl from "../../assets/images/my-works/rm-landing-logo.png";
 
 const ProjectCardLarge = (props: Project): JSX.Element => {

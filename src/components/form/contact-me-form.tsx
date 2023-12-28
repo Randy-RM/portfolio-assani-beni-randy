@@ -4,7 +4,7 @@ import emailjs from "@emailjs/browser";
 import { z, ZodType } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Container, BasicInput, TextareaInput } from "..";
+import { Container, BasicInput, TextareaInput } from "../";
 import { useModalStatusStore, useMailPerDayStore } from "../../store";
 
 const ContactMeForm = (): JSX.Element => {

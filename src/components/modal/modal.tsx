@@ -1,4 +1,4 @@
-import { Spacer } from "..";
+import { Spacer } from "../";
 import { motion } from "framer-motion";
 import { useModalStatusStore } from "../../store";
 import ModalIcon from "./modal-icon";

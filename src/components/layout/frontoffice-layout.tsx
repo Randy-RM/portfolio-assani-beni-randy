@@ -1,4 +1,4 @@
-import { Header, ScrollToTopButton, OnLoadScrollToTop, Footer } from "..";
+import { Header, ScrollToTopButton, OnLoadScrollToTop, Footer } from "../";
 import { Outlet } from "react-router-dom";
 
 const FrontOfficeLayout = (): JSX.Element => {

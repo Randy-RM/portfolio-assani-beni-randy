@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import Container from "../container/container";
-import Spacer from "../spacer/spacer";
+import { Spacer, Container } from "../";
 import { LogoRm, GithubIcon, LinkedinIcon } from "../../assets/images";
 
 const Footer = (): JSX.Element => {
