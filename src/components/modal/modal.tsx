@@ -23,7 +23,7 @@ const Modal = (): JSX.Element => {
           : "modal-overlay hide-modal-overlay"
       }
     >
-      <div className="container modal-container">
+      <div className="container modal-container font-secondary-color">
         <div className="modal">
           <div className="modal-header">
             <span className="close" onClick={closeModal}>
