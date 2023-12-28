@@ -39,6 +39,7 @@ body {
 a {
   color: $brand-color;
   text-decoration: none;
+  transition: all ease-in-out 0.2s;
 
   @include on-event {
     @include themed {
