@@ -78,7 +78,7 @@ const HomePage = (): JSX.Element => {
                     &nbsp;
                     <Link
                       to="/documents/CV-EN-Assani-Beni-Randy.pdf"
-                      className="btn link"
+                      className="btn"
                       target="_blank"
                     >
                       {t(`homePage.heroSection.myResume`)}{" "}
