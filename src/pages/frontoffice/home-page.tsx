@@ -5,12 +5,14 @@ import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import { Container, Spacer, Badge, ContactMeForm } from "../../components";
 import { technologies } from "../../db";
+import {
+  GithubIcon,
+  LinkedinIcon,
+  ToolsIcon,
+  DesignPencilIcon,
+  LeaderboardStarIcon,
+} from "../../assets/images";
 import RandyPicture from "../../assets/images/rm-hero-photo.png";
-import GithubCircleIcon from "../../assets/images/iconoir_github_circle.svg";
-import LinkedinIcon from "../../assets/images/iconoir_linkedin.svg";
-import ToolsIcon from "../../assets/images/iconoir_tools.svg";
-import DesignPencilIcon from "../../assets/images/iconoir_design_pencil.svg";
-import LeaderboardStarIcon from "../../assets/images/iconoir_leaderboard_star.svg";
 
 const HomePage = (): JSX.Element => {
   const { t } = useTranslation();
@@ -21,9 +23,9 @@ const HomePage = (): JSX.Element => {
         <meta charSet="utf-8" />
         <title>About me | Randy Assani RM</title>
       </Helmet>
-      <main className="font-w-light">
+      <main className="font-w-light font-secondary-color">
         {/**Hero section start */}
-        <section className="bg-light-grey">
+        <section className="bg-primary-color">
           <div className="container">
             <Spacer height={2} />
             <Container
@@ -76,7 +78,7 @@ const HomePage = (): JSX.Element => {
                     &nbsp;
                     <Link
                       to="/documents/CV-EN-Assani-Beni-Randy.pdf"
-                      className="btn"
+                      className="btn link"
                       target="_blank"
                     >
                       {t(`homePage.heroSection.myResume`)}{" "}
@@ -112,7 +114,7 @@ const HomePage = (): JSX.Element => {
         </section>
         {/**Hero section end */}
         {/**About me section start */}
-        <section className="bg-light-grey">
+        <section className="bg-primary-color">
           <div className="container">
             <Spacer height={3} />
             <Spacer height={6} />
@@ -145,19 +147,25 @@ const HomePage = (): JSX.Element => {
                   <span className="font-w-extra-bold">{t(`followMe`)}</span>
                   <br />
                   <a href="https://github.com/Randy-RM" target="_blank">
-                    <img src={GithubCircleIcon} alt={t(`githubIconDesc`)} />
+                    <GithubIcon
+                      className="themed-stroke-icon"
+                      alt={t(`githubIconDesc`)}
+                    />
                   </a>
                   &nbsp;
                   <a
                     href="https://www.linkedin.com/in/randy-assani-beni-ab101216b/"
                     target="_blank"
                   >
-                    <img src={LinkedinIcon} alt={t(`LinkdinIconDesc`)} />
+                    <LinkedinIcon
+                      className="themed-stroke-icon"
+                      alt={t(`LinkdinIconDesc`)}
+                    />
                   </a>
                 </p>
               </motion.div>
               <motion.div
-                className="width-50 p-2 bg-mid-grey text-center-on-mobile"
+                className="width-50 p-2 bg-tertiary-color text-center-on-mobile"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -188,7 +196,7 @@ const HomePage = (): JSX.Element => {
         </section>
         {/**About me section end */}
         {/**About me teaching section start */}
-        <section className="bg-light-grey">
+        <section className="bg-primary-color">
           <motion.div
             className=""
             initial={{ opacity: 0, y: 40 }}
@@ -229,7 +237,7 @@ const HomePage = (): JSX.Element => {
         </section>
         {/**About me teaching section end */}
         {/**Technologies section start */}
-        <section className="bg-light-grey">
+        <section className="bg-primary-color">
           <div className="container">
             <Spacer height={6} />
             <Container
@@ -287,7 +295,7 @@ const HomePage = (): JSX.Element => {
         </section>
         {/**Technologies section end */}
         {/**Visit work section start */}
-        <section className="bg-light-grey">
+        <section className="bg-primary-color">
           <div className="container">
             <Spacer height={6} />
             <Container
@@ -329,7 +337,7 @@ const HomePage = (): JSX.Element => {
         </section>
         {/**Visit work section end */}
         {/**Experience section start */}
-        <section className="bg-light-grey">
+        <section className="bg-primary-color">
           <div className="container">
             <Spacer height={6} />
             <Container
@@ -388,12 +396,11 @@ const HomePage = (): JSX.Element => {
                     >
                       <div className="width-20 p-2">
                         <p>
-                          <img
-                            src={ToolsIcon}
+                          <ToolsIcon
+                            className="themed-stroke-icon card-img-responsive"
                             alt={t(
                               `homePage.experienceSection.engineeringCard.engineeringCardIconDesc`
                             )}
-                            className="card-img-responsive"
                           />
                         </p>
                       </div>
@@ -434,12 +441,11 @@ const HomePage = (): JSX.Element => {
                     >
                       <div className="width-20 p-2">
                         <p>
-                          <img
-                            src={DesignPencilIcon}
+                          <DesignPencilIcon
                             alt={t(
                               `homePage.experienceSection.designCard.designCardIconDesc`
                             )}
-                            className="card-img-responsive"
+                            className="themed-stroke-icon card-img-responsive"
                           />
                         </p>
                       </div>
@@ -480,12 +486,11 @@ const HomePage = (): JSX.Element => {
                     >
                       <div className="width-20 p-2">
                         <p>
-                          <img
-                            src={LeaderboardStarIcon}
+                          <LeaderboardStarIcon
                             alt={t(
                               `homePage.experienceSection.projectCard.projectCardIconDesc`
                             )}
-                            className="card-img-responsive"
+                            className="themed-stroke-icon card-img-responsive"
                           />
                         </p>
                       </div>
@@ -512,7 +517,7 @@ const HomePage = (): JSX.Element => {
         </section>
         {/**Experience section end */}
         {/**Send message section start */}
-        <section className="bg-light-grey" id="sendMeMessage">
+        <section className="bg-primary-color" id="sendMeMessage">
           <div className="container">
             <Spacer height={6} />
             <motion.div
