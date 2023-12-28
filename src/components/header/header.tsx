@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import LogoRM from "../../assets/images/logo-rm.svg";
-import GithubCircleIcon from "../../assets/images/iconoir_github_circle.svg";
-import LinkedinIcon from "../../assets/images/iconoir_linkedin.svg";
+import { LogoRm, GithubIcon, LinkedinIcon } from "../../assets/images";
 
 const Header = (): JSX.Element => {
   const [isDropdown, setIsDropdown] = useState<boolean>(false);
@@ -39,7 +37,7 @@ const Header = (): JSX.Element => {
 
   return (
     <>
-      <header className="bg-light-grey">
+      <header className="bg-primary-color">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -55,7 +53,7 @@ const Header = (): JSX.Element => {
             <div className="nav-bar">
               <div className="">
                 <NavLink to="/" onClick={handleMenuByLogo}>
-                  <img src={LogoRM} className="logo" alt={t(`logoDesc`)} />
+                  <LogoRm className="logo" alt={t(`logoDesc`)} />
                 </NavLink>
               </div>
               <div className="">
@@ -78,11 +76,11 @@ const Header = (): JSX.Element => {
       <nav
         className={
           isDropdown
-            ? "nav-menu bg-light-grey show-nav-menu"
-            : "nav-menu bg-light-grey hide-nav-menu"
+            ? "nav-menu bg-primary-color show-nav-menu"
+            : "nav-menu bg-primary-color hide-nav-menu"
         }
       >
-        <ul className="text-center">
+        <ul className="text-center font-secondary-color">
           <li>
             <NavLink
               to="/"
@@ -114,14 +112,20 @@ const Header = (): JSX.Element => {
             <span className="font-w-extra-bold h2">{t(`followMe`)}</span>
             <br />
             <a href="https://github.com/Randy-RM" target="_blank">
-              <img src={GithubCircleIcon} alt={t(`githubIconDesc`)} />
+              <GithubIcon
+                className="themed-stroke-icon"
+                alt={t(`githubIconDesc`)}
+              />
             </a>
             &nbsp;
             <a
               href="https://www.linkedin.com/in/randy-assani-beni-ab101216b/"
               target="_blank"
             >
-              <img src={LinkedinIcon} alt={t(`LinkdinIconDesc`)} />
+              <LinkedinIcon
+                className="themed-stroke-icon"
+                alt={t(`LinkdinIconDesc`)}
+              />
             </a>
           </li>
         </ul>
