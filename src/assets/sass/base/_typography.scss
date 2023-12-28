@@ -4,7 +4,6 @@
  * Basic typography style for copy text
  */
 body {
-  color: $text-color;
   font: normal 125% / 1.4 $text-font-stack;
 }
 /*----text alignement----*/
@@ -59,40 +58,44 @@ body {
 }
 
 /*----font color----*/
-.font-light {
-  color: $light-grey;
+.font-secondary-color {
+  @include themed {
+    color: t("secondary-color");
+  }
 }
 
 .font-brand-color {
   color: $brand-color;
 }
 
-.font-mid-grey-color {
-  color: $mid-grey;
-}
-
-.font-semi-dark-grey {
-  color: $semi-dark-grey;
-}
-
 .font-danger-color {
-  color: $danger;
+  @include themed {
+    color: t("danger-color");
+  }
 }
 
 .font-success-color {
-  color: $success;
+  @include themed {
+    color: t("success-color");
+  }
 }
 
 .font-warning-color {
-  color: $warning;
+  @include themed {
+    color: t("warning-color");
+  }
 }
 
 .font-info-color {
-  color: $info;
+  @include themed {
+    color: t("info-color");
+  }
 }
 
 .font-none {
-  color: rgba(#3e3d3d, 0%);
+  @include themed {
+    color: rgba(t("secondary-color"), 0%);
+  }
 }
 
 .font-brand-gradient-color {
@@ -100,9 +103,12 @@ body {
 }
 
 .font-outlined {
-  color: $light-grey;
-  text-shadow: -1px -1px 0 $text-color, 1px -1px 0 $text-color,
-    -1px 1px 0 $text-color, 1px 1px 0 $text-color !important;
+  @include themed {
+    color: t("primary-color");
+    text-shadow: -1px -1px 0 t("secondary-color"),
+      1px -1px 0 t("secondary-color"), -1px 1px 0 t("secondary-color"),
+      1px 1px 0 t("secondary-color") !important;
+  }
 }
 
 .font-animated-gradient-color {

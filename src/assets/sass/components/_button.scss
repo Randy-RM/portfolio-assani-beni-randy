@@ -3,10 +3,13 @@
 .link {
   cursor: pointer;
   text-decoration: none;
+  color: $brand-color;
+  transition: all ease-in-out 0.2s;
 }
 
 .link:hover {
   text-decoration: none;
+  color: darken($brand-color, 15%);
 }
 
 .btn {
@@ -34,15 +37,19 @@
 
 .btn-outlined-secondary {
   padding: 0.8rem 1.5rem;
-  background: rgba($dark-grey, 0);
-  color: $dark-grey;
-  border: solid 2px $dark-grey;
+  @include themed {
+    background: rgba(t("secondary-color"), 0);
+    color: t("secondary-color");
+    border: solid 2px t("secondary-color");
+  }
   transition: all ease-in-out 0.2s;
 }
 
 .btn-outlined-secondary:hover {
-  background: rgba($dark-grey, 1);
-  color: $light-grey;
+  @include themed {
+    background: rgba(t("secondary-color"), 1);
+    color: t("primary-color");
+  }
 }
 
 .back-to-top-btn-container {
@@ -55,8 +62,11 @@
 .back-to-top {
   padding: 0.2rem;
   color: $brand-color;
-  background-color: rgba($dark-grey, 0.1);
-  border: solid 3px rgba(251, 251, 251, 0.5);
+  @include themed {
+    background: rgba(t("secondary-color"), 0.1);
+    border: solid 3px rgba(t("secondary-color"), 0.5);
+  }
+
   cursor: pointer;
   display: inline-block;
   position: fixed !important;
@@ -68,7 +78,9 @@
 }
 
 .back-to-top:hover {
-  background-color: #c8c8c8;
+  @include themed {
+    background: rgba(t("primary-color"), 1);
+  }
 }
 
 .back-to-top-hide {

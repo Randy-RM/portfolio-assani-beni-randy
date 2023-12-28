@@ -8,6 +8,19 @@
   display: block;
 }
 
+.themed-stroke-icon {
+  rect {
+    @include themed {
+      stroke: t("secondary-color");
+    }
+  }
+  path {
+    @include themed {
+      stroke: t("secondary-color");
+    }
+  }
+}
+
 @media (max-width: map.get($breakpoints, "tablet")) {
   .hero-image {
     width: 50%;

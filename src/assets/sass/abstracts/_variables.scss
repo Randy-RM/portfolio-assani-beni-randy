@@ -12,9 +12,7 @@ $text-font-stack: "Poppins", "Source Sans Pro", "Open Sans",
 $code-font-stack: "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
   "Monaco", monospace !default;
 
-/// Copy text color
-/// @type Color
-$text-color: #3e3d3d !default;
+/// Colors
 
 /// Main brand color
 /// @type Color
@@ -32,17 +30,13 @@ $brand-gradient-color: linear-gradient(90deg, #c63e35, #e27053) !default;
 /// @type Color
 $light-grey: #f3f1ef !default;
 
-/// Medium grey
-/// @type Color
-$mid-grey: #e4e3e3 !default;
-
-/// Semi Dark grey
-/// @type Color
-$semi-dark-grey: #555555 !default;
-
 /// Dark grey
 /// @type Color
 $dark-grey: #3e3d3d !default;
+
+/// Dark blue
+/// @type Color
+$dark-blue: #2d383c !default;
 
 /// Danger
 /// @type Color

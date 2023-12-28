@@ -3,5 +3,10 @@ footer {
     width: 7rem;
     margin: auto;
     display: block;
+    rect {
+      @include themed {
+        fill: t("secondary-color");
+      }
+    }
   }
 }

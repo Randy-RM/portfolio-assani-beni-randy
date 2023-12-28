@@ -5,7 +5,9 @@
   height: 100vh;
   position: fixed;
   z-index: 100;
-  background: rgba($dark-grey, 0.3);
+  @include themed {
+    background: rgba(t("secondary-color"), 0.3);
+  }
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,7 +34,9 @@
   width: 40vw;
   height: auto;
   padding: 1rem;
-  background: $light-grey;
+  @include themed {
+    background: t("primary-color");
+  }
 }
 
 .modal-header {
@@ -47,7 +51,7 @@
 }
 
 .close {
-  color: $danger;
+  color: $brand-color;
   font-size: 2.5rem;
   font-weight: bold;
   line-height: 0;
@@ -56,7 +60,7 @@
 
 .close:hover,
 .close:focus {
-  color: darken($danger, 15%);
+  color: darken($brand-color, 15%);
   text-decoration: none;
   cursor: pointer;
 }

@@ -4,9 +4,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @include themed {
+    background: t("primary-color");
+  }
 }
 .starting-loader {
-  color: $text-color;
+  @include themed {
+    color: t("secondary-color");
+  }
   //   font-family: Consolas, Menlo, Monaco, monospace;
   font-weight: bold;
   font-size: 78px;
@@ -50,7 +55,9 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 2px solid $dark-grey;
+  @include themed {
+    border: 2px solid t("secondary-color");
+  }
   position: absolute;
   left: 0;
   top: 0;

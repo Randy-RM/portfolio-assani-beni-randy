@@ -1,6 +1,5 @@
 .input {
   width: 100%;
-  //   display: inline-block;
   padding: 0.5rem 1rem;
 
   label {
@@ -13,19 +12,26 @@
     background: rgba($light-grey, 0%);
     padding: 0.3rem 0;
     border: none;
-    border-bottom: solid 2px rgba($dark-grey, 60%);
+    @include themed {
+      color: t("secondary-color");
+      border-bottom: solid 2px rgba(t("secondary-color"), 60%);
+    }
     transition: all ease-in-out 0.2s;
   }
 
   input::placeholder,
   textarea::placeholder {
-    color: rgba($dark-grey, 60%);
+    @include themed {
+      color: rgba(t("secondary-color"), 60%);
+    }
   }
 
   input:focus,
   textarea:focus {
     outline: none;
-    border-bottom: solid 4px rgba($dark-grey, 60%);
+    @include themed {
+      border-bottom: solid 4px rgba(t("secondary-color"), 60%);
+    }
   }
 
   textarea {

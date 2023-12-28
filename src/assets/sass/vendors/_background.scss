@@ -1,7 +1,3 @@
-body {
-  background: $light-grey;
-}
-
 .special-mark {
   color: $light-grey;
   background: $brand-gradient-color;
@@ -30,12 +26,22 @@ body {
   content: " [highlight start] ";
 }
 
-.bg-light-grey {
-  background: $light-grey;
+.bg-primary-color {
+  @include themed {
+    background: t("primary-color");
+  }
 }
 
-.bg-mid-grey {
-  background: $mid-grey;
+.bg-secondary-color {
+  @include themed {
+    background: t("secondary-color");
+  }
+}
+
+.bg-tertiary-color {
+  @include themed {
+    background: t("tertiary-color");
+  }
 }
 
 .bg-paper-plane-right {
