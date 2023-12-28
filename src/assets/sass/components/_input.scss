@@ -26,8 +26,12 @@
     }
   }
 
+  input:active,
   input:focus,
-  textarea:focus {
+  input:focus-within,
+  textarea:active,
+  textarea:focus,
+  textarea:focus-within {
     outline: none;
     @include themed {
       border-bottom: solid 4px rgba(t("secondary-color"), 60%);
