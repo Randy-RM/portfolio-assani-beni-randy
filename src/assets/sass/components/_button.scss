@@ -5,34 +5,32 @@
   text-decoration: none;
   color: $brand-color;
   transition: all ease-in-out 0.2s;
-}
 
-.link:hover {
-  text-decoration: none;
-  color: darken($brand-color, 15%);
+  @include on-event {
+    text-decoration: none;
+    color: darken($brand-color, 15%);
+  }
 }
 
 .btn {
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-}
-
-.btn:hover {
-  text-decoration: none;
+  @include on-event {
+    text-decoration: none;
+  }
 }
 
 .btn-primary {
   padding: 0.8rem 1.5rem;
-  background: $brand-color;
   color: $light-grey;
+  background: $brand-color;
   border: none;
   transition: all ease-in-out 0.2s;
-}
-
-.btn-primary:hover {
-  background: darken($brand-color, 15%);
-  color: $light-grey;
+  @include on-event {
+    color: $light-grey !important;
+    background: darken($brand-color, 15%);
+  }
 }
 
 .btn-outlined-secondary {
@@ -43,12 +41,11 @@
     border: solid 2px t("secondary-color");
   }
   transition: all ease-in-out 0.2s;
-}
-
-.btn-outlined-secondary:hover {
-  @include themed {
-    background: rgba(t("secondary-color"), 1);
-    color: t("primary-color");
+  @include on-event {
+    @include themed {
+      background: rgba(t("secondary-color"), 1);
+      color: t("primary-color");
+    }
   }
 }
 
@@ -75,11 +72,11 @@
   left: auto;
   z-index: 10;
   transition: all ease-in-out 0.3s;
-}
 
-.back-to-top:hover {
-  @include themed {
-    background: rgba(t("primary-color"), 1);
+  @include on-event {
+    @include themed {
+      background: rgba(t("primary-color"), 1);
+    }
   }
 }
 
