@@ -122,10 +122,33 @@ declare interface Project {
   projectUrl?: string | null;
 }
 
+/**
+ * Represents contact form data message.
+ * @type
+ * @type {contactName:  string }
+ * @type {contactMail: string }
+ * @type {contactMessage: string }
+ */
 declare type ContactMeFormData = {
   contactName: string;
   contactMail: string;
   contactMessage: string;
 };
 
+/**
+ * Represents Modal status message response.
+ * @type
+ * @type {modalStatus: "none" | "progress" | "succes" | "warning" | "error" }
+ */
 declare type modalStatus = "none" | "progress" | "succes" | "warning" | "error";
+
+/**
+ * Represents theme icon style.
+ * @type
+ * @type {className:  string | undefined }
+ * @type {alt: string | undefined }
+ */
+declare type ThemedIconProps = {
+  className?: string;
+  alt?: string;
+};
