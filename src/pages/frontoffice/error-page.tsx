@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Container, Spacer } from "../../components";
-import EmojiPuzzled from "../../assets/images/iconoir_emoji_puzzled.svg";
+import { EmojiPuzzledIcon } from "../../assets/images";
 
 const ErrorPage = (): JSX.Element => {
   const { t } = useTranslation();
@@ -15,7 +15,7 @@ const ErrorPage = (): JSX.Element => {
         <title>404 Page Not Found | Randy Assani RM</title>
       </Helmet>
       <main>
-        <section className="bg-light-grey">
+        <section className="bg-primary-color font-secondary-color">
           <div className="container">
             <Spacer height={6} />
             <motion.div
@@ -36,9 +36,8 @@ const ErrorPage = (): JSX.Element => {
                 flexWrap="wrap"
               >
                 <p className="text-center">
-                  <img
-                    src={EmojiPuzzled}
-                    className="logo"
+                  <EmojiPuzzledIcon
+                    className="themed-stroke-icon logo"
                     alt={t(`errorPage.errorIcon`)}
                   />
                   <br />
