@@ -4,7 +4,7 @@ const Badge = (props: BadgeProps): JSX.Element => {
 
   return (
     <>
-      <span className="bg-mid-grey text-center badge font-w-semi-bold standard-radius">
+      <span className="bg-tertiary-color text-center badge font-w-semi-bold standard-radius">
         {`${badgeText}`}
       </span>
     </>
