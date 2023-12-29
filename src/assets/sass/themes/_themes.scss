@@ -7,6 +7,8 @@ $themes: (
     success-color: $success,
     warning-color: $warning,
     info-color: $info,
+    loader-img-r: $r-img-light-url,
+    loader-img-m: $m-img-light-url,
   ),
   "light": (
     primary-color: $light-grey,
@@ -16,6 +18,8 @@ $themes: (
     success-color: $success,
     warning-color: $warning,
     info-color: $info,
+    loader-img-r: $r-img-dark-url,
+    loader-img-m: $m-img-dark-url,
   ),
 );
 
