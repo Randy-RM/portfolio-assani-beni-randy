@@ -91,14 +91,16 @@
   // put your image on public folder and use
   // background url on sass
   // like this
-  background: url("/background-img/graduation-cap.svg");
-  // background-repeat: no-repeat;
-  // background-position: right 35% top 45%;
-  // width: 100%;
-  //
-  background-position: center center;
-  background-repeat: no-repeat;
-  //
-  // background-size: cover;
-  background-size: contain;
+  @include themed {
+    background: t("graduation-cap-img");
+    // background-repeat: no-repeat;
+    // background-position: right 35% top 45%;
+    // width: 100%;
+    //
+    background-position: center center;
+    background-repeat: no-repeat;
+    //
+    // background-size: cover;
+    background-size: contain;
+  }
 }
