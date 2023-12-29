@@ -20,14 +20,18 @@
 .starting-loader:before {
   // content: "{";
   //get img on public folder
-  content: url("/loader-img/r.svg");
+  @include themed {
+    content: t("loader-img-r");
+  }
   display: inline-block;
   animation: pulse 0.4s alternate infinite ease-in-out;
 }
 .starting-loader:after {
   // content: "}";
   //get img on public folder
-  content: url("/loader-img/m.svg");
+  @include themed {
+    content: t("loader-img-m");
+  }
   display: inline-block;
   // animation: pulse 0.4s 0.3s alternate infinite ease-in-out;
   animation: pulse 0.4s alternate infinite ease-in-out;
