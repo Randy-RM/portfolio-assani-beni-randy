@@ -76,3 +76,10 @@ $breakpoints: (
 /// @example scss - When using a CDN
 ///   $base-url: 'https://cdn.example.com/assets/';
 $base-url: "/assets/" !default;
+
+/// Background images
+/// Loader
+$m-img-light-url: url("/loader-img/m-light.svg");
+$m-img-dark-url: url("/loader-img/m-dark.svg");
+$r-img-light-url: url("/loader-img/r-light.svg");
+$r-img-dark-url: url("/loader-img/r-dark.svg");
