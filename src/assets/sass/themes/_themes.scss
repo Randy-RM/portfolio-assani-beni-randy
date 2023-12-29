@@ -9,6 +9,7 @@ $themes: (
     info-color: $info,
     loader-img-r: $r-img-light-url,
     loader-img-m: $m-img-light-url,
+    graduation-cap-img: $graduation-cap-img-dark-url,
   ),
   "light": (
     primary-color: $light-grey,
@@ -20,6 +21,7 @@ $themes: (
     info-color: $info,
     loader-img-r: $r-img-dark-url,
     loader-img-m: $m-img-dark-url,
+    graduation-cap-img: $graduation-cap-img-light-url,
   ),
 );
 
