@@ -52,15 +52,17 @@
   // put your image on public folder and use
   // background url on sass
   // like this
-  background: url("/background-img/paper_plane_right.svg");
-  // background-repeat: no-repeat;
-  // background-position: right 35% top 45%;
-  // width: 100%;
-  //
-  background-position: right top;
-  background-repeat: no-repeat;
-  //
-  // background-size: cover;
+  @include themed {
+    background: t("paper-plane-right-img");
+    // background-repeat: no-repeat;
+    // background-position: right 35% top 45%;
+    // width: 100%;
+    //
+    background-position: right top;
+    background-repeat: no-repeat;
+    //
+    // background-size: cover;
+  }
 }
 
 .bg-graduation-group-image {
