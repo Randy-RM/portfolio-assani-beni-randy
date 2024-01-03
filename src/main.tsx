@@ -50,9 +50,7 @@ root.render(
         />
         {/**metaSocialImageUrl end */}
       </Helmet>
-      <div className="theme--dark">
-        <App />
-      </div>
+      <App />
     </HelmetProvider>
   </React.StrictMode>
 );
