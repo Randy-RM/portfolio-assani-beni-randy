@@ -14,3 +14,4 @@ export { default as BouncingArrow } from "./bouncing-arrow/bouncing-arrow";
 export { default as ProjectCardLargeSkeleton } from "./cards/project-card-large-skeleton";
 export { default as Modal } from "./modal/modal";
 export { default as FrontOfficeLayout } from "./layout/frontoffice-layout";
+export { default as ThemeSwitcher } from "./theme-switcher/theme-switcher";
