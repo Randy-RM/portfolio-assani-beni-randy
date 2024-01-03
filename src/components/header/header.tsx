@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { ThemeSwitcher } from "../";
 import { LogoRm, GithubIcon, LinkedinIcon } from "../../assets/images";
 
 const Header = (): JSX.Element => {
@@ -56,18 +57,21 @@ const Header = (): JSX.Element => {
                   <LogoRm className="logo" alt={t(`logoDesc`)} />
                 </NavLink>
               </div>
-              <div className="">
-                <label htmlFor="menuButton">
-                  <input
-                    type="checkbox"
-                    id="menuButton"
-                    onClick={handleIsDropdown}
-                    onChange={handleMenuButton}
-                    checked={isDropdown}
-                  />
-                  <span></span>
-                  <span></span>
-                </label>
+              <div className="menu">
+                <ThemeSwitcher />
+                <div className="menu-icon-bloc">
+                  <label htmlFor="menuButton" className="menu-icon">
+                    <input
+                      type="checkbox"
+                      id="menuButton"
+                      onClick={handleIsDropdown}
+                      onChange={handleMenuButton}
+                      checked={isDropdown}
+                    />
+                    <span></span>
+                    <span></span>
+                  </label>
+                </div>
               </div>
             </div>
           </motion.div>
