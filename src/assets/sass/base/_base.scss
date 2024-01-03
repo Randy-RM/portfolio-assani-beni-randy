@@ -23,9 +23,9 @@ body {
 
 body {
   @include themed {
-    background: t("primary-color");
+    background-color: t("primary-color") !important;
+    transition: background-color 0.5s, background 0.5s, color 0.5s;
   }
-  transition: background-color 0.5s, background 0.5s, color 0.5s;
 }
 
 /**
