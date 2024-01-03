@@ -12,16 +12,21 @@ type ThemeAction = {
 
 // define the initial state
 const initialThemeState: themeState = {
-  themeState: "light",
+  themeState: "dark",
 };
 
 // Create store, which includes both state and (optionally) actions
 const useThemeStore = create<themeState & ThemeAction>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       ...initialThemeState,
       updateTheme: (themeState) => {
-        return set(() => themeState);
+        return set(() => {
+          return {
+            ...themeState,
+            themeState: get().themeState === "dark" ? "light" : "dark",
+          };
+        });
       },
       resetThemeStore: () => {
         return set(initialThemeState);
