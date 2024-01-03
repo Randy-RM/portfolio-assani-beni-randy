@@ -11,23 +11,55 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .menu {
+      width: 8rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .menu-icon-bloc {
+      .menu-icon span {
+        @include themed {
+          background: t("secondary-color");
+        }
+        border-radius: 0px;
+        height: 0.5rem;
+        margin: 0.2rem 0;
+        transition: 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+      }
+
+      span:nth-of-type(1) {
+        width: 100%;
+      }
+
+      span:nth-of-type(2) {
+        width: 100%;
+      }
+
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      input[type="checkbox"]:checked ~ span:nth-of-type(1) {
+        transform-origin: bottom;
+        // transform: rotate(45deg) translate(0.5rem, 0.4rem);
+        transform: rotatez(45deg) translate(0.5rem, 0rem);
+      }
+
+      input[type="checkbox"]:checked ~ span:nth-of-type(2) {
+        transform-origin: top;
+        // transform: rotate(-45deg);
+        transform: rotatez(-45deg) translate(0.5rem, 0rem);
+      }
+    }
   }
 
-  label {
+  .menu-icon {
     display: flex;
     flex-direction: column;
     width: 2.5rem;
     cursor: pointer;
-  }
-
-  label span {
-    @include themed {
-      background: t("secondary-color");
-    }
-    border-radius: 0px;
-    height: 0.5rem;
-    margin: 0.2rem 0;
-    transition: 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
   }
 
   .logo {
@@ -40,30 +72,6 @@ header {
         fill: t("secondary-color");
       }
     }
-  }
-
-  span:nth-of-type(1) {
-    width: 100%;
-  }
-
-  span:nth-of-type(2) {
-    width: 100%;
-  }
-
-  input[type="checkbox"] {
-    display: none;
-  }
-
-  input[type="checkbox"]:checked ~ span:nth-of-type(1) {
-    transform-origin: bottom;
-    // transform: rotate(45deg) translate(0.5rem, 0.4rem);
-    transform: rotatez(45deg) translate(0.5rem, 0rem);
-  }
-
-  input[type="checkbox"]:checked ~ span:nth-of-type(2) {
-    transform-origin: top;
-    // transform: rotate(-45deg);
-    transform: rotatez(-45deg) translate(0.5rem, 0rem);
   }
 }
 
@@ -139,8 +147,13 @@ header {
 @media (max-width: map.get($breakpoints, "mobile large")) {
   header {
     padding: 5% 0 !important;
+    .nav-bar {
+      .menu {
+        width: 6.5rem;
+      }
+    }
 
-    label {
+    .menu-icon {
       width: 2rem;
     }
 
