@@ -92,7 +92,7 @@
   },
   "errorPage": {
     "errorIcon": "Icône de page non trouvée",
-    "errorPageMessage": "La page n'est pas trouvée",
+    "errorPageMessage": "La page n'a pas été trouvée",
     "goBackHome": "Cliquez ici pour retourner à la page d'accueil"
   },
   "projects": {
