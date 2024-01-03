@@ -1,0 +1,121 @@
+.switch-bloc {
+  width: auto;
+}
+.switch,
+.switch__input {
+  display: block;
+  -webkit-tap-highlight-color: transparent;
+}
+.switch {
+  margin: auto;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+.switch__icon {
+  @include themed {
+    color: rgba(t("secondary-color"), 0.8);
+  }
+  pointer-events: none;
+  position: absolute;
+  top: 0.375em;
+  left: 0.375em;
+  width: 0.75em;
+  height: 0.75em;
+  transition: color 0.5s, transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.switch__icon:nth-of-type(2) {
+  right: 0.375em;
+  left: auto;
+}
+.switch__inner,
+.switch__inner-icons {
+  border-radius: 0.5em;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  top: 0.25em;
+  left: 0.25em;
+  width: 2.25em;
+  height: 1em;
+}
+.switch__inner:before,
+.switch__inner-icons {
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+  transform: translateX(-1.25em);
+}
+.switch__inner:before {
+  @include themed {
+    background: rgba(t("secondary-color"), 1);
+  }
+  border-radius: inherit;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.switch__inner-icons {
+  pointer-events: none;
+}
+.switch__inner-icons .switch__icon {
+  @include themed {
+    color: rgba(t("primary-color"), 1);
+  }
+  top: 0.125em;
+  left: 0.125em;
+  transform: translateX(1.25em);
+}
+.switch__inner-icons .switch__icon:nth-child(2) {
+  right: 0.125em;
+  left: auto;
+}
+.switch__input {
+  @include themed {
+    background: rgba(t("secondary-color"), 0.2);
+  }
+  border-radius: 0.75em;
+  box-shadow: 0 0 0 0.0625em hsla(223, 90%, 50%, 0),
+    0 0.125em 0.5em hsla(223, 10%, 10%, 0.1);
+  outline: transparent;
+  width: 2.75em;
+  height: 1.5em;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: background-color 0.5s, box-shadow 0.5s;
+}
+.switch__input:checked {
+  @include themed {
+    background: darken(t("primary-color"), 5%);
+  }
+}
+.switch__input:checked ~ .switch__icon {
+  @include themed {
+    color: rgba(t("secondary-color"), 0.8);
+  }
+}
+.switch__input:checked ~ .switch__inner:before,
+.switch__input:checked ~ .switch__inner-icons {
+  transform: translateX(1.25em);
+}
+.switch__input:not(:checked) ~ .switch__icon:first-of-type,
+.switch__input:checked ~ .switch__icon:nth-of-type(2) {
+  transform: rotate(360deg);
+}
+.switch__input:checked ~ .switch__inner-icons .switch__icon:first-of-type {
+  transform: translateX(-1.25em) rotate(-360deg);
+}
+.switch__input:checked ~ .switch__inner-icons .switch__icon:nth-of-type(2) {
+  transform: translateX(-1.25em) rotate(360deg);
+}
+.switch__input:focus-visible {
+  box-shadow: 0 0 0 0.0625em hsla(223, 90%, 50%, 1),
+    0 0.125em 0.5em hsla(223, 10%, 10%, 0.1) !important;
+}
+.switch__sr {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
