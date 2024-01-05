@@ -376,8 +376,8 @@ const HomePage = (): JSX.Element => {
                 >
                   <motion.div
                     className="width-100"
-                    initial={{ opacity: 0, x: -40 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{
                       type: "spring",
@@ -421,8 +421,8 @@ const HomePage = (): JSX.Element => {
                   </motion.div>
                   <motion.div
                     className="width-100"
-                    initial={{ opacity: 0, x: 40 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{
                       type: "spring",
@@ -466,8 +466,8 @@ const HomePage = (): JSX.Element => {
                   </motion.div>
                   <motion.div
                     className="width-100"
-                    initial={{ opacity: 0, x: -40 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{
                       type: "spring",
