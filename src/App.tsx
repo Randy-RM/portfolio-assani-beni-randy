@@ -42,15 +42,19 @@ const App = (): JSX.Element => {
   if (isAppLoading) {
     return (
       <div className={`theme--${themeState}`}>
-        <Loader />
+        <div className="bg-primary-color">
+          <Loader />
+        </div>
       </div>
     );
   }
 
   return (
     <div className={`theme--${themeState}`}>
-      <Modal />
-      <RouterProvider router={router} />
+      <div className="bg-primary-color">
+        <Modal />
+        <RouterProvider router={router} />
+      </div>
     </div>
   );
 };
