@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { HelmetProvider, Helmet } from "react-helmet-async";
-import "./translations/i18n";
+import { Helmet, HelmetProvider } from "react-helmet-async";
+import metaSocialImageUrl from "../src/assets/images/rm-landing-logo.png";
 import App from "./App.tsx";
 import "./assets/sass/main.scss";
-import metaSocialImageUrl from "../src/assets/images/rm-landing-logo.png";
+import "./translations/i18n";
 
 const htmlRootTag = document.getElementById("root");
 const root = ReactDOM.createRoot(htmlRootTag!);
@@ -20,22 +20,6 @@ root.render(
           content={"Randy Assani RM"}
         />
         {/**metaTitle end */}
-        {/**metaDescription start */}
-        <meta
-          name="description"
-          content={`I'm Software Engineer with a Computer Science degree and experience on computer engineering, software development & graphic design.`}
-        />
-        <meta
-          name="og:description"
-          key="og:description"
-          content={`I'm Software Engineer with a Computer Science degree and experience on computer engineering, software development & graphic design.`}
-        />
-        <meta
-          name="twitter:description"
-          key="twitter:description"
-          content={`I'm Software Engineer with a Computer Science degree and experience on computer engineering, software development & graphic design.`}
-        />
-        {/**metaDescription end */}
         {/**metaSocialImageUrl start */}
         <meta property="og:image" key="og:image" content={metaSocialImageUrl} />
         <meta
