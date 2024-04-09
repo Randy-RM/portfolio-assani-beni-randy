@@ -20,7 +20,6 @@ const HomePage = (): JSX.Element => {
   return (
     <>
       <Helmet prioritizeSeoTags>
-        <meta charSet="utf-8" />
         <title>About me | Randy Assani RM</title>
         {/**metaDescription start */}
         <meta
