@@ -12,6 +12,7 @@ root.render(
   <React.StrictMode>
     <HelmetProvider>
       <Helmet prioritizeSeoTags htmlAttributes={{ lang: i18n.language }}>
+        <meta charSet="UTF-8" />
         {/**metaTitle start */}
         <meta name="og:title" key="og:title" content={"Randy Assani RM"} />
         <meta
