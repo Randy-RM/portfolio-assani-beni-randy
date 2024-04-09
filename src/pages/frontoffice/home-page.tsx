@@ -22,6 +22,22 @@ const HomePage = (): JSX.Element => {
       <Helmet prioritizeSeoTags>
         <meta charSet="utf-8" />
         <title>About me | Randy Assani RM</title>
+        {/**metaDescription start */}
+        <meta
+          name="description"
+          content={`I'm Software Engineer with a Computer Science degree and experience on computer engineering, software development & graphic design.`}
+        />
+        <meta
+          name="og:description"
+          key="og:description"
+          content={`I'm Software Engineer with a Computer Science degree and experience on computer engineering, software development & graphic design.`}
+        />
+        <meta
+          name="twitter:description"
+          key="twitter:description"
+          content={`I'm Software Engineer with a Computer Science degree and experience on computer engineering, software development & graphic design.`}
+        />
+        {/**metaDescription end */}
       </Helmet>
       <main className="font-w-light font-secondary-color">
         {/**Hero section start */}
