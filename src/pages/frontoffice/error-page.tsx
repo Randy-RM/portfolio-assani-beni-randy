@@ -1,9 +1,9 @@
-import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
-import { Container, Spacer } from "../../components";
+import { Link } from "react-router-dom";
 import { EmojiPuzzledIcon } from "../../assets/images";
+import { Container, Spacer } from "../../components";
 
 const ErrorPage = (): JSX.Element => {
   const { t } = useTranslation();
@@ -11,7 +11,6 @@ const ErrorPage = (): JSX.Element => {
   return (
     <>
       <Helmet>
-        <meta charSet="utf-8" />
         <title>404 Page Not Found | Randy Assani RM</title>
       </Helmet>
       <main>
