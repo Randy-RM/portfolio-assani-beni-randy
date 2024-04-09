@@ -30,10 +30,22 @@ const WorksPage = (): JSX.Element => {
       <Helmet prioritizeSeoTags>
         <meta charSet="utf-8" />
         <title>Visit my works | Randy Assani RM</title>
+        {/**metaDescription start */}
         <meta
           name="description"
           content={`Here are some Project I made recently`}
         />
+        <meta
+          name="og:description"
+          key="og:description"
+          content={`Here are some Project I made recently`}
+        />
+        <meta
+          name="twitter:description"
+          key="twitter:description"
+          content={`Here are some Project I made recently`}
+        />
+        {/**metaDescription end */}
       </Helmet>
       <main className="font-w-light font-secondary-color">
         {/**Hero section start */}
