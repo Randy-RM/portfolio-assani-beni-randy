@@ -1,17 +1,17 @@
-import { useState, useEffect, lazy } from "react";
-import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
+import { lazy, useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { useTranslation } from "react-i18next";
 import {
-  Container,
-  Spacer,
   BouncingArrow,
+  Container,
   ProjectCardLargeSkeleton,
+  Spacer,
 } from "../../components";
+import { projects } from "../../db";
 const ProjectCardLarge = lazy(
   async () => await import("../../components/cards/project-card-large")
 );
-import { projects } from "../../db";
 
 const WorksPage = (): JSX.Element => {
   const [isProjectLoading, setIsProjectLoading] = useState<boolean>(true);
@@ -27,13 +27,25 @@ const WorksPage = (): JSX.Element => {
 
   return (
     <>
-      <Helmet>
+      <Helmet prioritizeSeoTags>
         <meta charSet="utf-8" />
         <title>Visit my works | Randy Assani RM</title>
+        {/**metaDescription start */}
         <meta
           name="description"
           content={`Here are some Project I made recently`}
         />
+        <meta
+          name="og:description"
+          key="og:description"
+          content={`Here are some Project I made recently`}
+        />
+        <meta
+          name="twitter:description"
+          key="twitter:description"
+          content={`Here are some Project I made recently`}
+        />
+        {/**metaDescription end */}
       </Helmet>
       <main className="font-w-light font-secondary-color">
         {/**Hero section start */}
