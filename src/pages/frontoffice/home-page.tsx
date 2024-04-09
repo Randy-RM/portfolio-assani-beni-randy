@@ -1,27 +1,43 @@
-import { Link, NavLink } from "react-router-dom";
+import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
-import { Icon } from "@iconify/react";
-import { Container, Spacer, Badge, ContactMeForm } from "../../components";
-import { technologies } from "../../db";
+import { Link, NavLink } from "react-router-dom";
 import {
+  DesignPencilIcon,
   GithubIcon,
+  LeaderboardStarIcon,
   LinkedinIcon,
   ToolsIcon,
-  DesignPencilIcon,
-  LeaderboardStarIcon,
 } from "../../assets/images";
 import RandyPicture from "../../assets/images/rm-hero-photo.png";
+import { Badge, ContactMeForm, Container, Spacer } from "../../components";
+import { technologies } from "../../db";
 
 const HomePage = (): JSX.Element => {
   const { t } = useTranslation();
 
   return (
     <>
-      <Helmet>
+      <Helmet prioritizeSeoTags>
         <meta charSet="utf-8" />
         <title>About me | Randy Assani RM</title>
+        {/**metaDescription start */}
+        <meta
+          name="description"
+          content={`I'm Software Engineer with a Computer Science degree and experience on computer engineering, software development & graphic design.`}
+        />
+        <meta
+          name="og:description"
+          key="og:description"
+          content={`I'm Software Engineer with a Computer Science degree and experience on computer engineering, software development & graphic design.`}
+        />
+        <meta
+          name="twitter:description"
+          key="twitter:description"
+          content={`I'm Software Engineer with a Computer Science degree and experience on computer engineering, software development & graphic design.`}
+        />
+        {/**metaDescription end */}
       </Helmet>
       <main className="font-w-light font-secondary-color">
         {/**Hero section start */}
