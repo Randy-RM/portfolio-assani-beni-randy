@@ -4,14 +4,15 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import metaSocialImageUrl from "../src/assets/images/rm-landing-logo.png";
 import App from "./App.tsx";
 import "./assets/sass/main.scss";
-import "./translations/i18n";
+import i18n from "./translations/i18n";
 
 const htmlRootTag = document.getElementById("root");
 const root = ReactDOM.createRoot(htmlRootTag!);
 root.render(
   <React.StrictMode>
     <HelmetProvider>
-      <Helmet prioritizeSeoTags>
+      <Helmet prioritizeSeoTags htmlAttributes={{ lang: i18n.language }}>
+        <meta charSet="UTF-8" />
         {/**metaTitle start */}
         <meta name="og:title" key="og:title" content={"Randy Assani RM"} />
         <meta
