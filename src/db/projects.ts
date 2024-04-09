@@ -1,13 +1,13 @@
-import i18next from "i18next";
-import kadeaLandingImgUrl from "../assets/images/my-works/kadea-online-landing-logo.png";
 import cameoLiveLandingImgUrl from "../assets/images/my-works/cameolive-landing-logo.png";
+import kadeaLandingImgUrl from "../assets/images/my-works/kadea-online-landing-logo.png";
 import rmLandingImgUrl from "../assets/images/my-works/rm-landing-logo.png";
+import i18n from "../translations/i18n";
 
 const projects: Project[] = [
   {
     idProject: "01",
     projectName: "KADEA ONLINE",
-    projectDescription: i18next.t("projects.kadeaOnlineDesc"),
+    projectDescription: i18n.t("projects.kadeaOnlineDesc"),
     projectSkills: [
       "HTML",
       "CSS",
@@ -26,7 +26,7 @@ const projects: Project[] = [
   {
     idProject: "02",
     projectName: "CAMEOLIVE",
-    projectDescription: i18next.t("projects.kameoliveDesc"),
+    projectDescription: i18n.t("projects.kameoliveDesc"),
     projectSkills: [
       "HTML",
       "Sass",
@@ -43,7 +43,7 @@ const projects: Project[] = [
   {
     idProject: "03",
     projectName: "HAPPY ROBOT FRIEND",
-    projectDescription: i18next.t("projects.robotFrindDesc"),
+    projectDescription: i18n.t("projects.robotFrindDesc"),
     projectSkills: ["HTML", "CSS", "JavaScript", "Node Js", "React Js", "API"],
     projectImageUrl: `${rmLandingImgUrl}`,
     projectType: "other",
