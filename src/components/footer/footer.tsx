@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { Spacer, Container } from "../";
-import { LogoRm, GithubIcon, LinkedinIcon } from "../../assets/images";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { Container, Spacer } from "../";
+import { GithubIcon, LinkedinIcon, LogoRm } from "../../assets/images";
 
 const Footer = (): JSX.Element => {
   const { t } = useTranslation();
@@ -30,7 +30,7 @@ const Footer = (): JSX.Element => {
             flexWrap="wrap"
           >
             <p>
-              <Link to="/">
+              <Link to="/" aria-label="Go to about me">
                 <LogoRm className="logo" alt={t(`logoDesc`)} />
               </Link>
             </p>
@@ -42,7 +42,11 @@ const Footer = (): JSX.Element => {
             <p className="text-center">
               <span className="font-w-extra-bold">{t(`followMe`)}</span>
               <br />
-              <a href="https://github.com/Randy-RM" target="_blank">
+              <a
+                href="https://github.com/Randy-RM"
+                target="_blank"
+                aria-label="Go to my github"
+              >
                 <GithubIcon
                   className="themed-stroke-icon"
                   alt={t(`githubIconDesc`)}
@@ -52,6 +56,7 @@ const Footer = (): JSX.Element => {
               <a
                 href="https://www.linkedin.com/in/randy-assani-beni-ab101216b/"
                 target="_blank"
+                aria-label="Go to my linkedin"
               >
                 <LinkedinIcon
                   className="themed-stroke-icon"

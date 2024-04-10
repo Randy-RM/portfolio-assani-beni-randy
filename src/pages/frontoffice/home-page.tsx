@@ -162,7 +162,11 @@ const HomePage = (): JSX.Element => {
                 <p>
                   <span className="font-w-extra-bold">{t(`followMe`)}</span>
                   <br />
-                  <a href="https://github.com/Randy-RM" target="_blank">
+                  <a
+                    href="https://github.com/Randy-RM"
+                    target="_blank"
+                    aria-label="Go to my github"
+                  >
                     <GithubIcon
                       className="themed-stroke-icon"
                       alt={t(`githubIconDesc`)}
@@ -172,6 +176,7 @@ const HomePage = (): JSX.Element => {
                   <a
                     href="https://www.linkedin.com/in/randy-assani-beni-ab101216b/"
                     target="_blank"
+                    aria-label="Go to my linkedin"
                   >
                     <LinkedinIcon
                       className="themed-stroke-icon"
