@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import { NavLink, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Link, NavLink } from "react-router-dom";
 import { ThemeSwitcher } from "../";
-import { LogoRm, GithubIcon, LinkedinIcon } from "../../assets/images";
+import { GithubIcon, LinkedinIcon, LogoRm } from "../../assets/images";
 
 const Header = (): JSX.Element => {
   const [isDropdown, setIsDropdown] = useState<boolean>(false);
@@ -53,7 +53,11 @@ const Header = (): JSX.Element => {
           >
             <div className="nav-bar">
               <div className="">
-                <NavLink to="/" onClick={handleMenuByLogo}>
+                <NavLink
+                  to="/"
+                  onClick={handleMenuByLogo}
+                  aria-label="Go to about me"
+                >
                   <LogoRm className="logo" alt={t(`logoDesc`)} />
                 </NavLink>
               </div>
@@ -115,7 +119,11 @@ const Header = (): JSX.Element => {
           <li>
             <span className="font-w-extra-bold h2">{t(`followMe`)}</span>
             <br />
-            <a href="https://github.com/Randy-RM" target="_blank">
+            <a
+              href="https://github.com/Randy-RM"
+              target="_blank"
+              aria-label="Go to my github"
+            >
               <GithubIcon
                 className="themed-stroke-icon"
                 alt={t(`githubIconDesc`)}
@@ -125,6 +133,7 @@ const Header = (): JSX.Element => {
             <a
               href="https://www.linkedin.com/in/randy-assani-beni-ab101216b/"
               target="_blank"
+              aria-label="Go to my linkedin"
             >
               <LinkedinIcon
                 className="themed-stroke-icon"
