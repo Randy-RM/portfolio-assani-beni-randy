@@ -117,6 +117,7 @@ const HomePage = (): JSX.Element => {
               >
                 <p>
                   <img
+                    loading="lazy"
                     src={RandyPicture}
                     alt="Randy Assani Picture"
                     className="hero-image"

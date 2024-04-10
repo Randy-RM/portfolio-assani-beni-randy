@@ -13,6 +13,12 @@ root.render(
     <HelmetProvider>
       <Helmet prioritizeSeoTags htmlAttributes={{ lang: i18n.language }}>
         <meta charSet="UTF-8" />
+        {/**metaKeywords  start */}
+        <meta
+          name="keywords"
+          content="randy assani beni, randy assani, randy muhema, assani beni, randy, assani, muhema, software engineer, ux/ui design, ux/ui, ui/ux, ux design, ui design, html, css, javascript, typescript, node, node js, nodejs, express js, expressjs, express, nest, nest js, nestjs, react js, reactjs, react, react native, reactnative, sass, php, wordpress, symfony, laravel, java, fullstack developer, fullstack, full-stack, developer, rm, randy-rm, randy rm, developer kinshasa, developer congo, designer, ui/ux designer, ux/ui designer, ux designer, ui designer"
+        />
+        {/**metaKeywords  end */}
         {/**metaTitle start */}
         <meta name="og:title" key="og:title" content={"Randy Assani RM"} />
         <meta
