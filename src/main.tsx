@@ -12,7 +12,6 @@ root.render(
   <React.StrictMode>
     <HelmetProvider>
       <Helmet prioritizeSeoTags htmlAttributes={{ lang: i18n.language }}>
-        <meta charSet="UTF-8" />
         {/**metaKeywords  start */}
         <meta
           name="keywords"
