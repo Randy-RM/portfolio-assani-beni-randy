@@ -13,9 +13,10 @@ import {
 import RandyPicture from "../../assets/images/rm-hero-photo.png";
 import { Badge, ContactMeForm, Container, Spacer } from "../../components";
 import { technologies } from "../../db";
+import { returnResumeInCorrectLanguage } from "../../utils";
 
 const HomePage = (): JSX.Element => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <>
@@ -92,7 +93,7 @@ const HomePage = (): JSX.Element => {
                   <p className="width-40 width-35-on-large">
                     &nbsp;
                     <Link
-                      to="/documents/CV-EN-Assani-Beni-Randy.pdf"
+                      to={returnResumeInCorrectLanguage(i18n.language)}
                       className="btn"
                       target="_blank"
                     >
