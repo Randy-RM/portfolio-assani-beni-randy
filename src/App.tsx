@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { HomePage, WorksPage, ErrorPage } from "./pages";
+import { useEffect, useState } from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { FrontOfficeLayout, Loader, Modal } from "./components";
+import { ErrorPage, HomePage, WorksPage } from "./pages";
 import { useThemeStore } from "./store";
 
 const router = createBrowserRouter([
