@@ -4,10 +4,11 @@ import { useTranslation } from "react-i18next";
 import { Link, NavLink } from "react-router-dom";
 import { ThemeSwitcher } from "../";
 import { GithubIcon, LinkedinIcon, LogoRm } from "../../assets/images";
+import { returnResumeInCorrectLanguage } from "../../utils";
 
 const Header = (): JSX.Element => {
   const [isDropdown, setIsDropdown] = useState<boolean>(false);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const handleIsDropdown = () => {
     setIsDropdown(!isDropdown);
@@ -112,7 +113,10 @@ const Header = (): JSX.Element => {
             </NavLink>
           </li>
           <li>
-            <Link to="/documents/CV-EN-Assani-Beni-Randy.pdf" target="_blank">
+            <Link
+              to={returnResumeInCorrectLanguage(i18n.language)}
+              target="_blank"
+            >
               {t(`header.resumeLink`)}
             </Link>
           </li>
