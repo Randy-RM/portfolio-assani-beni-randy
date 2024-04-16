@@ -1,11 +1,11 @@
-import { useRef } from "react";
-import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
-import { z, ZodType } from "zod";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Container, BasicInput, TextareaInput } from "../";
-import { useModalStatusStore, useMailPerDayStore } from "../../store";
+import { useRef } from "react";
+import { useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
+import { z, ZodType } from "zod";
+import { BasicInput, Container, TextareaInput } from "../";
+import { useMailPerDayStore, useModalStatusStore } from "../../store";
 
 const ContactMeForm = (): JSX.Element => {
   const { t } = useTranslation();

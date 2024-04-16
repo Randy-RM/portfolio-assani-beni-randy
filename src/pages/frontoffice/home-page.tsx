@@ -339,10 +339,13 @@ const HomePage = (): JSX.Element => {
                   // bounce: 0.6,
                 }}
               >
-                <h2 className="font-w-Black h2 margin-0">
+                <h2
+                  className="secondary-font dashed-shadow-text dashed-shadow margin-0"
+                  data-text={t(`homePage.visitWorkSection.visitWorkTitle`)}
+                >
                   {t(`homePage.visitWorkSection.visitWorkTitle`)}
                 </h2>
-                <Spacer />
+                <Spacer height={2} />
                 <p>
                   <NavLink
                     to="/visit-my-works"
