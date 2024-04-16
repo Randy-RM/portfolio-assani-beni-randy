@@ -3,6 +3,9 @@
 // ../../fonts/
 // -----------------------------------------------------------------------------
 
+// -----
+// Main font
+// -----
 @font-face {
   font-family: "Poppins";
   src: url("/fonts/Poppins-Thin.woff2") format("woff2");
@@ -71,6 +74,18 @@
   font-family: "Poppins";
   src: url("/fonts/Poppins-Black.woff2") format("woff2");
   font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+// -----
+// Secondary font
+// -----
+
+@font-face {
+  font-family: "Cookie";
+  src: url("/fonts/secondary-font/Cookie-Regular.woff2") format("woff2");
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
