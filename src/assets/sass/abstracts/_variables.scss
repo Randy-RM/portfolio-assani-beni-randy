@@ -9,6 +9,10 @@ $text-font-stack: "Poppins", "Source Sans Pro", "Open Sans",
 
 /// Code (monospace) font family
 /// @type List
+$secondary-font-stack: "Cookie", sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
 $code-font-stack: "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono",
   "Monaco", monospace !default;
 
