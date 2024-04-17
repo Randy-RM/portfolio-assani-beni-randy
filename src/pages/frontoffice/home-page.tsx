@@ -320,43 +320,43 @@ const HomePage = (): JSX.Element => {
         <section className="bg-primary-color">
           <div className="container">
             <Spacer height={6} />
-            <Container
-              flexDirection="column"
-              justifyContent="center"
-              alignItems="center"
-              flexWrap="wrap"
+
+            <motion.div
+              className=""
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                type: "spring",
+                delay: 0.3,
+                easeInOut: "linear",
+                duration: 2,
+                // bounce: 0.6,
+              }}
             >
-              <motion.div
-                className="width-50 text-center"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  type: "spring",
-                  delay: 0.3,
-                  easeInOut: "linear",
-                  duration: 2,
-                  // bounce: 0.6,
-                }}
+              <Container
+                flexDirection="column"
+                justifyContent="center"
+                alignItems="center"
+                flexWrap="wrap"
               >
-                <h2
-                  className="secondary-font dashed-shadow-text dashed-shadow margin-0"
-                  data-text={t(`homePage.visitWorkSection.visitWorkTitle`)}
-                >
-                  {t(`homePage.visitWorkSection.visitWorkTitle`)}
-                </h2>
-                <Spacer height={2} />
-                <p>
-                  <NavLink
-                    to="/visit-my-works"
-                    className="btn btn-outlined-secondary border-ripple-animation"
+                <div className="width-50 text-center">
+                  <h2
+                    className="secondary-font dashed-shadow-text dashed-shadow margin-0"
+                    data-text={t(`homePage.visitWorkSection.visitWorkTitle`)}
                   >
-                    {t(`homePage.visitWorkSection.visitWorkButton`)}
-                  </NavLink>
-                </p>
-                <Spacer />
-              </motion.div>
-            </Container>
+                    {t(`homePage.visitWorkSection.visitWorkTitle`)}
+                  </h2>
+                  <Spacer height={2} />
+                  <p>
+                    <NavLink to="/visit-my-works" className="btn btn-primary">
+                      {t(`homePage.visitWorkSection.visitWorkButton`)}
+                    </NavLink>
+                  </p>
+                  <Spacer />
+                </div>
+              </Container>
+            </motion.div>
             <Spacer height={6} />
           </div>
         </section>
@@ -372,7 +372,7 @@ const HomePage = (): JSX.Element => {
               flexWrap="wrap"
             >
               <motion.div
-                className="width-100 text-center-on-mobile"
+                className="width-100 text-center"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -390,9 +390,9 @@ const HomePage = (): JSX.Element => {
                   </span>
                   {t(`homePage.experienceSection.experienceTitleP2`)}
                 </h2>
-                <Spacer height={3} />
+                <Spacer height={1} />
               </motion.div>
-              <div className="width-100 text-center-on-mobile">
+              <div className="width-100 text-center">
                 <Container
                   flexDirection="column"
                   justifyContent="space-between"
@@ -414,7 +414,7 @@ const HomePage = (): JSX.Element => {
                   >
                     <Spacer height={2} />
                     <Container
-                      flexDirection="row"
+                      flexDirection="column"
                       justifyContent="space-evenly"
                       alignItems="center"
                       flexWrap="wrap"
@@ -429,7 +429,7 @@ const HomePage = (): JSX.Element => {
                           />
                         </p>
                       </div>
-                      <div className="width-50">
+                      <div className="width-70">
                         <h3 className="h3 font-w-extra-bold margin-0">
                           {t(
                             `homePage.experienceSection.engineeringCard.engineeringCardTitle`
@@ -457,9 +457,9 @@ const HomePage = (): JSX.Element => {
                       // bounce: 0.6,
                     }}
                   >
-                    <Spacer height={2} />
+                    <Spacer height={6} />
                     <Container
-                      flexDirection="row"
+                      flexDirection="column"
                       justifyContent="space-evenly"
                       alignItems="center"
                       flexWrap="wrap"
@@ -474,7 +474,7 @@ const HomePage = (): JSX.Element => {
                           />
                         </p>
                       </div>
-                      <div className="width-50">
+                      <div className="width-70">
                         <h3 className="h3 font-w-extra-bold margin-0">
                           {t(
                             `homePage.experienceSection.designCard.designCardTitle`
@@ -487,7 +487,7 @@ const HomePage = (): JSX.Element => {
                         </p>
                       </div>
                     </Container>
-                    <Spacer height={2} />
+                    <Spacer height={6} />
                   </motion.div>
                   <motion.div
                     className="width-100"
@@ -504,7 +504,7 @@ const HomePage = (): JSX.Element => {
                   >
                     <Spacer height={2} />
                     <Container
-                      flexDirection="row"
+                      flexDirection="column"
                       justifyContent="space-evenly"
                       alignItems="center"
                       flexWrap="wrap"
@@ -519,7 +519,7 @@ const HomePage = (): JSX.Element => {
                           />
                         </p>
                       </div>
-                      <div className="width-50">
+                      <div className="width-70">
                         <h3 className="h3 font-w-extra-bold margin-0">
                           {t(
                             `homePage.experienceSection.projectCard.projectCardTitle`
