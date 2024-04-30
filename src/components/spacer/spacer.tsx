@@ -1,3 +1,5 @@
+import * as React from "react";
+
 const Spacer = (props: SpacerProps): JSX.Element => {
   let { height } = props;
   height = height || 1;

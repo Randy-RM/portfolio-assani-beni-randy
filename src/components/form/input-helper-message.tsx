@@ -1,3 +1,5 @@
+import * as React from "react";
+
 const InputHelperMessage = (props: InputStatus): JSX.Element => {
   const { status, message } = props;
 

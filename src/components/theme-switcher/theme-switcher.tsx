@@ -1,3 +1,4 @@
+import * as React from "react";
 import { ChangeEvent } from "react";
 import { useThemeStore } from "../../store";
 
@@ -91,7 +92,7 @@ const ThemeSwitcher = () => {
           role="switch"
           name="dark"
           checked={themeState == "dark" ? true : false}
-          onChange={(e) => handleChange(e)}
+          onChange={(event) => handleChange(event)}
         />
         <svg
           className="switch__icon"

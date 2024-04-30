@@ -26,14 +26,15 @@ const useMailPerDayStore = create<MailPerDayState & MailPerDayAction>()(
       ...initialMailPerDayState,
       updateNumberOfMailSent: (numberOfMailSent) => {
         if (numberOfMailSent >= 0 && numberOfMailSent <= get().mailPerDay) {
-          return set(() => ({
+          set(() => ({
             numberOfMailSent: numberOfMailSent,
           }));
         }
         return;
       },
       resetMailPerDayStatusStore: () => {
-        return set(initialMailPerDayState);
+        set(initialMailPerDayState);
+        return;
       },
     }),
     {

@@ -11,6 +11,9 @@ node_modules
 dist
 dist-ssr
 *.local
+.cache/
+public
+src/gatsby-types.d.ts
 
 # Editor directories and files
 .vscode/*

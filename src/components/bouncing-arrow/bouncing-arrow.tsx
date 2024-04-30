@@ -1,4 +1,5 @@
 import { Icon } from "@iconify/react";
+import * as React from "react";
 
 const BouncingArrow = (): JSX.Element => {
   return (

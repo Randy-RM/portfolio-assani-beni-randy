@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import * as React from "react";
 import { Container, Spacer } from "../";
 
 const ProjectCardLargeSkeleton = (): JSX.Element => {

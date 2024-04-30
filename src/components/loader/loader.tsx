@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
+import * as React from "react";
 import { useTranslation } from "react-i18next";
 
 const Loader = (): JSX.Element => {
   const { t } = useTranslation();
 
   return (
-    <main className="starting-loader-page font-secondary-color">
+    <div className="starting-loader-page font-secondary-color">
       <div>
         <span className="starting-loader"></span>
       </div>
@@ -24,7 +25,7 @@ const Loader = (): JSX.Element => {
       >
         {t(`greetings`)}
       </motion.p>
-    </main>
+    </div>
   );
 };
 

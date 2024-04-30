@@ -1,15 +1,41 @@
-import { Header, ScrollToTopButton, OnLoadScrollToTop, Footer } from "../";
-import { Outlet } from "react-router-dom";
+import * as React from "react";
+import { useEffect } from "react";
+import { Footer, Header, Loader, Modal, ScrollToTopButton } from "../";
+import { useLoaderStore } from "../../store";
+import "../../styles/sass/main.scss";
 
-const FrontOfficeLayout = (): JSX.Element => {
+type FrontOfficeLayoutProps = {
+  children: JSX.Element;
+};
+
+const FrontOfficeLayout = ({
+  children,
+}: FrontOfficeLayoutProps): JSX.Element => {
+  // "select" the needed state and action
+  const loaderState = useLoaderStore((state) => state.isLoading);
+  const setLoaderState = useLoaderStore((state) => state.updateLoader);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoaderState(false);
+    }, 2000);
+  }, []);
+
+  if (loaderState) {
+    return (
+      <main className="bg-primary-color">
+        <Loader />
+      </main>
+    );
+  }
+
   return (
     <>
+      <Modal />
       <Header />
-      <>
-        <Outlet />
-      </>
+      <main className="bg-primary-color font-w-light font-secondary-color">
+        {children}
+      </main>
       <ScrollToTopButton />
-      <OnLoadScrollToTop />
       <Footer />
     </>
   );

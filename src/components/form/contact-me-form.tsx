@@ -1,5 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
+import * as React from "react";
 import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -58,9 +59,9 @@ const ContactMeForm = (): JSX.Element => {
   });
 
   const sendEmail = async (data: ContactMeFormData) => {
-    const serviceId = process.env.SERVICE_ID || "";
-    const templateId = process.env.TEMPLATE_ID || "";
-    const publicKey = process.env.PUBLIC_KEY || "";
+    const serviceId = process.env.GATSBY_EMAILJS_SERVICE_ID || "";
+    const templateId = process.env.GATSBY_EMAILJS_TEMPLATE_ID || "";
+    const publicKey = process.env.GATSBY_EMAILJS_PUBLIC_KEY || "";
     const { contactName, contactMail, contactMessage } = data;
     const beingTypeValue = beingType.current?.value;
 
