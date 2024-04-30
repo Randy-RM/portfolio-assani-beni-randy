@@ -1,5 +1,6 @@
-import { MouseEventHandler, useState } from "react";
 import { Icon } from "@iconify/react";
+import * as React from "react";
+import { MouseEventHandler, useState } from "react";
 
 const ScrollToTopButton = (): JSX.Element => {
   const [visible, setVisible] = useState<boolean>(false);

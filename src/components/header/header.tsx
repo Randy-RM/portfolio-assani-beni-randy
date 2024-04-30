@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
+import { Link } from "gatsby";
+import * as React from "react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link, NavLink } from "react-router-dom";
 import { ThemeSwitcher } from "../";
-import { GithubIcon, LinkedinIcon, LogoRm } from "../../assets/images";
+import { GithubIcon, LinkedinIcon, LogoRm } from "../../images";
 import { returnResumeInCorrectLanguage } from "../../utils";
 
 const Header = (): JSX.Element => {
@@ -54,13 +55,13 @@ const Header = (): JSX.Element => {
           >
             <div className="nav-bar">
               <div className="">
-                <NavLink
+                <Link
                   to="/"
                   onClick={handleMenuByLogo}
                   aria-label="Go to about me"
                 >
                   <LogoRm className="logo" alt={t(`logoDesc`)} />
-                </NavLink>
+                </Link>
               </div>
               <div className="menu">
                 <ThemeSwitcher />
@@ -91,34 +92,30 @@ const Header = (): JSX.Element => {
       >
         <ul className="text-center font-secondary-color">
           <li>
-            <NavLink
+            <Link
               to="/"
               onClick={handleIsDropdown}
-              className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active-menu-link" : ""
-              }
+              activeClassName="active-menu-link"
             >
               {t(`header.AboutMeLink`)}
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/visit-my-works"
-              onClick={handleIsDropdown}
-              className={({ isActive, isPending }) =>
-                isPending ? "pending" : isActive ? "active-menu-link" : ""
-              }
-            >
-              {t(`header.projectsLink`)}
-            </NavLink>
+            </Link>
           </li>
           <li>
             <Link
-              to={returnResumeInCorrectLanguage(i18n.language)}
+              to="/visit-my-works"
+              onClick={handleIsDropdown}
+              activeClassName="active-menu-link"
+            >
+              {t(`header.projectsLink`)}
+            </Link>
+          </li>
+          <li>
+            <a
+              href={returnResumeInCorrectLanguage(i18n.language)}
               target="_blank"
             >
               {t(`header.resumeLink`)}
-            </Link>
+            </a>
           </li>
           <li>
             <span className="font-w-extra-bold h2">{t(`followMe`)}</span>

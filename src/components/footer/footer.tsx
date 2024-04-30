@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
+import { Link } from "gatsby";
+import * as React from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import { Container, Spacer } from "../";
-import { GithubIcon, LinkedinIcon, LogoRm } from "../../assets/images";
+import { GithubIcon, LinkedinIcon, LogoRm } from "../../images";
 
 const Footer = (): JSX.Element => {
   const { t } = useTranslation();

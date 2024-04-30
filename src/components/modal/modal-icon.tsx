@@ -1,9 +1,10 @@
 import { Icon } from "@iconify/react";
+import * as React from "react";
 
 const ModalIcon = ({
   modalStatus,
 }: {
-  modalStatus: modalStatus;
+  modalStatus: ModalStatus;
 }): JSX.Element => {
   switch (modalStatus) {
     case "progress":
