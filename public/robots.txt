@@ -1,8 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://randyassani.dev/sitemap.xml
-Sitemap: https://www.randyassani.dev/sitemap.xml
-Sitemap: http://randyassani.dev/sitemap.xml
-Sitemap: http://www.randyassani.dev/sitemap.xml
-

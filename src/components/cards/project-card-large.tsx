@@ -1,7 +1,8 @@
 import { Icon } from "@iconify/react";
+import { GatsbyImage } from "gatsby-plugin-image";
+import * as React from "react";
 import { useTranslation } from "react-i18next";
 import { Badge, Container, Spacer } from "../";
-import rmLandingImgUrl from "../../assets/images/my-works/rm-landing-logo.png";
 
 const ProjectCardLarge = (props: Project): JSX.Element => {
   let { projectSkills, projectImageUrl, projectType, projectUrl } = props;
@@ -24,14 +25,13 @@ const ProjectCardLarge = (props: Project): JSX.Element => {
         flexWrap="wrap"
       >
         <div className="width-50 text-center-on-mobile">
-          <p>
-            <img
-              loading="lazy"
-              src={projectImageUrl ? projectImageUrl : rmLandingImgUrl}
+          <div>
+            <GatsbyImage
+              image={projectImageUrl}
               alt={`${projectName}`}
               className="card-img"
             />
-          </p>
+          </div>
         </div>
         <div className="width-40 text-center-on-mobile">
           <h2 className="font-w-Black h2 margin-0">{`${projectName}`}</h2>
@@ -44,13 +44,8 @@ const ProjectCardLarge = (props: Project): JSX.Element => {
             </div>
           )}
           <p className="font-w-extra-bold text-center-on-mobile">
-            {projectType && (
-              <a
-                href={
-                  projectType == "other" ? (projectUrl ? projectUrl : "") : "#"
-                }
-                target="_blank"
-              >
+            {projectUrl && (
+              <a href={projectUrl} target="_blank">
                 {t(`seeMore`)} <Icon icon="iconoir:arrow-tr-square" />
               </a>
             )}

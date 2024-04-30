@@ -1,3 +1,4 @@
+import * as React from "react";
 import InputHelperMessage from "./input-helper-message";
 
 const BasicInput = (props: BasicInputProps): JSX.Element => {

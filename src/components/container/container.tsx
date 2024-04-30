@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import * as React from "react";
+import { useEffect, useState } from "react";
 import { useWindowSize } from "../../hooks";
 
 const Container = (props: ContainerProps): JSX.Element => {

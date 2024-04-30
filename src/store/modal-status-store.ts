@@ -1,12 +1,12 @@
 import { create } from "zustand";
 
 type ModalStatusState = {
-  modalStatus: modalStatus;
+  modalStatus: ModalStatus;
   modalMessage: string;
 };
 
 type ModalStatusAction = {
-  updateModalStatus: (modalStatus: modalStatus) => void;
+  updateModalStatus: (modalStatus: ModalStatus) => void;
   updateModalMessage: (modalMessage: string) => void;
   resetModalStatusStore: () => void;
 };
@@ -22,13 +22,16 @@ const useModalStatusStore = create<ModalStatusState & ModalStatusAction>(
   (set) => ({
     ...initialModalStatusState,
     updateModalStatus: (modalStatus) => {
-      return set(() => ({ modalStatus: modalStatus }));
+      set(() => ({ modalStatus: modalStatus }));
+      return;
     },
     updateModalMessage: (modalMessage) => {
-      return set(() => ({ modalMessage: modalMessage }));
+      set(() => ({ modalMessage: modalMessage }));
+      return;
     },
     resetModalStatusStore: () => {
-      return set(initialModalStatusState);
+      set(initialModalStatusState);
+      return;
     },
   })
 );

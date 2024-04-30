@@ -106,19 +106,21 @@ declare interface SpacerProps {
 /**
  * Represents Project.
  * @interface
+ * @type {idProject:  string | undefined }
  * @type {projectName:  string | undefined }
  * @type {projectDescription: string | undefined }
  * @type {projectSkills:  string[] | undefined }
  * @type {projectImageUrl: string | undefined }
- * @type {flexWrap: "personal"| "other" | undefined }
+ * @type {projectType: "personal"| "other" | undefined }
+ * @type {projectUrl: string | undefined }
  */
 declare interface Project {
   idProject?: string | null;
   projectName: string | null;
   projectDescription: string | null;
   projectSkills?: string[] | null;
-  projectImageUrl?: string | null;
-  projectType?: "personal" | "other" | null;
+  projectImageUrl?: IGatsbyImageData | null;
+  projectType?: "personal" | "customer" | "other" | null;
   projectUrl?: string | null;
 }
 
@@ -140,7 +142,7 @@ declare type ContactMeFormData = {
  * @type
  * @type {modalStatus: "none" | "progress" | "succes" | "warning" | "error" }
  */
-declare type modalStatus = "none" | "progress" | "succes" | "warning" | "error";
+declare type ModalStatus = "none" | "progress" | "succes" | "warning" | "error";
 
 /**
  * Represents theme icon style.
@@ -152,3 +154,39 @@ declare type ThemedIconProps = {
   className?: string;
   alt?: string;
 };
+
+declare type ContentProps = {
+  allMarkdownRemark: {
+    edges: IEdge[];
+  };
+};
+
+/**
+ * Type Inference for ProjectType
+ * @type
+ * @type {projectType = "personal"| "other" | undefined }
+ */
+const projectType = ["personal", "customer", "other"] as const;
+type ProjectType = (typeof projectType)[number];
+
+declare interface IEdge {
+  node: {
+    frontmatter: {
+      contentId: string;
+      contentType: string;
+      contentSlug: string;
+      projectType?: ProjectType;
+      date: string;
+      language: string;
+      featuredImage: {
+        childImageSharp: {
+          gatsbyImageData: IGatsbyImageData;
+        };
+      };
+      liveProjectPreview: string;
+      contentTitle: string;
+      projectSkills: string[];
+      contentDescription: string;
+    };
+  };
+}
