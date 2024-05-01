@@ -1,13 +1,19 @@
 import { motion } from "framer-motion";
 import { Link } from "gatsby";
 import * as React from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Container, Spacer } from "../";
 import { GithubIcon, LinkedinIcon, LogoRm } from "../../images";
 
 const Footer = (): JSX.Element => {
   const { t } = useTranslation();
-  const currentYear = new Date().getFullYear();
+
+  const [currentYear, setCurrentYear] = useState<number | null>(null);
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   return (
     <>
@@ -74,9 +80,9 @@ const Footer = (): JSX.Element => {
             flexWrap="wrap"
           >
             <p className="text-center">
-              Designed & Built by Randy Assani
+              Designed & Built by Randy Assani RM
               <br />
-              Copyright © {`${currentYear}`} Randy Assani
+              Copyright © {`${currentYear}`} Randy Assani RM
             </p>
           </Container>
         </motion.div>
