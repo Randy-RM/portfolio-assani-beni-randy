@@ -9,6 +9,7 @@ export { default as BasicInput } from "./form/basic-input";
 export { default as ContactMeForm } from "./form/contact-me-form";
 export { default as TextareaInput } from "./form/textarea-input";
 export { default as Header } from "./header/header";
+export { default as BaseLayout } from "./layout/base-layout";
 export { default as FrontOfficeLayout } from "./layout/frontoffice-layout";
 export { default as Loader } from "./loader/loader";
 export { default as Modal } from "./modal/modal";
