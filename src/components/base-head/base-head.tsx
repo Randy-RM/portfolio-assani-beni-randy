@@ -1,6 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
-import { useEffect } from "react";
 import { useThemeStore } from "../../store";
 import i18n from "../../translations/i18n";
 
@@ -19,7 +18,9 @@ interface SiteMetadata {
 const BaseHead = ({ children }: BaseHeadProps) => {
   // "select" the needed state and action
   const themeState = useThemeStore((state) => state.themeState);
-  useEffect(() => {}, [themeState]);
+  console.log("BaseHead themeState :", themeState);
+
+  // useEffect(() => {}, [themeState]);
 
   const data: SiteMetadata = useStaticQuery(query);
 
