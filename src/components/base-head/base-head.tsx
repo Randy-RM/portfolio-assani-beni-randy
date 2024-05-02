@@ -1,6 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
-import { useThemeStore } from "../../store";
 import i18n from "../../translations/i18n";
 
 type BaseHeadProps = {
@@ -16,12 +15,6 @@ interface SiteMetadata {
 }
 
 const BaseHead = ({ children }: BaseHeadProps) => {
-  // "select" the needed state and action
-  const themeState = useThemeStore((state) => state.themeState);
-  console.log("BaseHead themeState :", themeState);
-
-  // useEffect(() => {}, [themeState]);
-
   const data: SiteMetadata = useStaticQuery(query);
 
   return (
@@ -58,7 +51,6 @@ const BaseHead = ({ children }: BaseHeadProps) => {
         content={`${data.site.siteMetadata.siteUrl}/rm-landing-logo.png`}
       />
       {/**metaSocialImageUrl end */}
-      <body className={`theme--${themeState}`} />
       {children}
     </>
   );
