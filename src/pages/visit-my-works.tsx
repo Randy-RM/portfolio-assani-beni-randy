@@ -6,9 +6,9 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   BaseHead,
+  BaseLayout,
   BouncingArrow,
   Container,
-  FrontOfficeLayout,
   ProjectCardLarge,
   ProjectCardLargeSkeleton,
   Spacer,
@@ -60,153 +60,152 @@ const VisitMyWorks = ({ data }: VisitMyWorksProps): JSX.Element => {
   const heroText = t(`projectPage.heroSection.visitMyWorks`).split("");
 
   return (
-    <FrontOfficeLayout>
-      <div>
-        {/**Hero section start */}
-        <section className="bg-primary-color">
-          <div className="container">
-            <Spacer height={4} />
-            <Container
-              flexDirection="column"
-              justifyContent="center"
-              alignItems="center"
-              flexWrap="wrap"
-            >
-              <div className="width-100">
-                <h1 className="font-big-hero text-center font-w-Black">
-                  {heroText.map((letter, index) => {
-                    return (
-                      <motion.span
-                        className="font-outlined"
-                        key={`${index}-technology`}
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{
-                          type: "spring",
-                          delay: 0.1 * index,
-                          easeInOut: "linear",
-                          // duration: 0.5,
-                        }}
-                      >
-                        {`${letter}`}
-                      </motion.span>
-                    );
-                  })}
-                  <br />
-                  {heroText.map((letter, index) => {
-                    return (
-                      <motion.span
-                        key={`${index}-technology`}
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{
-                          type: "spring",
-                          delay: 0.1 * index,
-                          easeInOut: "linear",
-                          // duration: 0.5,
-                        }}
-                      >
-                        {`${letter}`}
-                      </motion.span>
-                    );
-                  })}
-                  <br />
-                  {heroText.map((letter, index) => {
-                    return (
-                      <motion.span
-                        className="font-outlined"
-                        key={`${index}-technology`}
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{
-                          type: "spring",
-                          delay: 0.1 * index,
-                          easeInOut: "linear",
-                          // duration: 0.5,
-                        }}
-                      >
-                        {`${letter}`}
-                      </motion.span>
-                    );
-                  })}
-                </h1>
-                <p className="text-center">
-                  <motion.span
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      type: "spring",
-                      delay: 0.6,
-                      easeInOut: "linear",
-                      duration: 3,
-                    }}
-                  >
-                    {t(`projectPage.heroSection.leadText`)}
-                  </motion.span>
-                </p>
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
+    <>
+      {/**Hero section start */}
+      <section className="bg-primary-color">
+        <div className="container">
+          <Spacer height={4} />
+          <Container
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            flexWrap="wrap"
+          >
+            <div className="width-100">
+              <h1 className="font-big-hero text-center font-w-Black">
+                {heroText.map((letter, index) => {
+                  return (
+                    <motion.span
+                      className="font-outlined"
+                      key={`${index}-technology`}
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        type: "spring",
+                        delay: 0.1 * index,
+                        easeInOut: "linear",
+                        // duration: 0.5,
+                      }}
+                    >
+                      {`${letter}`}
+                    </motion.span>
+                  );
+                })}
+                <br />
+                {heroText.map((letter, index) => {
+                  return (
+                    <motion.span
+                      key={`${index}-technology`}
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        type: "spring",
+                        delay: 0.1 * index,
+                        easeInOut: "linear",
+                        // duration: 0.5,
+                      }}
+                    >
+                      {`${letter}`}
+                    </motion.span>
+                  );
+                })}
+                <br />
+                {heroText.map((letter, index) => {
+                  return (
+                    <motion.span
+                      className="font-outlined"
+                      key={`${index}-technology`}
+                      initial={{ opacity: 0, y: 40 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        type: "spring",
+                        delay: 0.1 * index,
+                        easeInOut: "linear",
+                        // duration: 0.5,
+                      }}
+                    >
+                      {`${letter}`}
+                    </motion.span>
+                  );
+                })}
+              </h1>
+              <p className="text-center">
+                <motion.span
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{
                     type: "spring",
-                    delay: 0.9,
+                    delay: 0.6,
                     easeInOut: "linear",
                     duration: 3,
                   }}
                 >
-                  <BouncingArrow />
-                </motion.div>
-              </div>
-            </Container>
-            <Spacer height={6} />
+                  {t(`projectPage.heroSection.leadText`)}
+                </motion.span>
+              </p>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                  type: "spring",
+                  delay: 0.9,
+                  easeInOut: "linear",
+                  duration: 3,
+                }}
+              >
+                <BouncingArrow />
+              </motion.div>
+            </div>
+          </Container>
+          <Spacer height={6} />
+        </div>
+      </section>
+      {/**Hero section end */}
+      {/**My works section start */}
+      <section className="bg-primary-color">
+        {isProjectLoading ? (
+          <div className="container">
+            {projects.map((project, index) => {
+              return (
+                <ProjectCardLargeSkeleton
+                  key={`${index}-${project.contentId}-skeleton`}
+                />
+              );
+            })}
           </div>
-        </section>
-        {/**Hero section end */}
-        {/**My works section start */}
-        <section className="bg-primary-color">
-          {isProjectLoading ? (
-            <div className="container">
-              {projects.map((project, index) => {
-                return (
-                  <ProjectCardLargeSkeleton
-                    key={`${index}-${project.contentId}-skeleton`}
-                  />
-                );
-              })}
-            </div>
-          ) : (
-            <div className="container">
-              {projects.map((project, index) => {
-                const image = getImage(project.featuredImage);
-                const projectType = isProjectType(project.contentType)
-                  ? project.contentType
-                  : null;
-                return (
-                  <ProjectCardLarge
-                    key={`${index}-${project.contentId}`}
-                    projectName={project.contentTitle}
-                    projectDescription={project.contentDescription}
-                    projectSkills={project.projectSkills}
-                    projectImageUrl={image}
-                    projectType={projectType}
-                    projectUrl={project.liveProjectPreview}
-                  />
-                );
-              })}
-            </div>
-          )}
-        </section>
-        {/**My works section end */}
-      </div>
-    </FrontOfficeLayout>
+        ) : (
+          <div className="container">
+            {projects.map((project, index) => {
+              const image = getImage(project.featuredImage);
+              const projectType = isProjectType(project.contentType)
+                ? project.contentType
+                : null;
+              return (
+                <ProjectCardLarge
+                  key={`${index}-${project.contentId}`}
+                  projectName={project.contentTitle}
+                  projectDescription={project.contentDescription}
+                  projectSkills={project.projectSkills}
+                  projectImageUrl={image}
+                  projectType={projectType}
+                  projectUrl={project.liveProjectPreview}
+                />
+              );
+            })}
+          </div>
+        )}
+      </section>
+      {/**My works section end */}
+    </>
   );
 };
 
+VisitMyWorks.Layout = BaseLayout;
 export default VisitMyWorks;
 
 export const query = graphql`
