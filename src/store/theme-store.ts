@@ -1,22 +1,22 @@
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 
-type themeState = {
+type ThemeState = {
   themeState: "light" | "dark";
 };
 
 type ThemeAction = {
-  updateTheme: (themeState: themeState) => void;
+  updateTheme: (themeState: ThemeState) => void;
   resetThemeStore: () => void;
 };
 
 // define the initial state
-const initialThemeState: themeState = {
+const initialThemeState: ThemeState = {
   themeState: "dark",
 };
 
 // Create store, which includes both state and (optionally) actions
-const useThemeStore = create<themeState & ThemeAction>()(
+const useThemeStore = create<ThemeState & ThemeAction>()(
   persist(
     (set, get) => ({
       ...initialThemeState,
