@@ -12,12 +12,14 @@ const FrontOfficeLayout = ({
   children,
 }: FrontOfficeLayoutProps): JSX.Element => {
   // "select" the needed state and action
-  const loaderState = useLoaderStore((state) => state.isLoading);
+  const loaderState = useLoaderStore((state) => state.isAppLoading);
   const setLoaderState = useLoaderStore((state) => state.updateLoader);
   useEffect(() => {
-    setTimeout(() => {
-      setLoaderState(false);
-    }, 2000);
+    if (loaderState) {
+      setTimeout(() => {
+        setLoaderState(false);
+      }, 2000);
+    }
   }, []);
 
   if (loaderState) {

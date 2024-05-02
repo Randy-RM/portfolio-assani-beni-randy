@@ -7,8 +7,8 @@ const ThemeSwitcher = () => {
   const themeState = useThemeStore((state) => state.themeState);
   const setThemeState = useThemeStore((state) => state.updateTheme);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const isDarkTheme = e.target.checked;
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const isDarkTheme = event.target.checked;
     if (isDarkTheme && themeState == "light") {
       setThemeState({
         themeState: "dark",
