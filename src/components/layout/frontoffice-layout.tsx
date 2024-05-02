@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useEffect } from "react";
 import { Footer, Header, Loader, Modal, ScrollToTopButton } from "../";
-import { useLoaderStore } from "../../store";
+import { useLoaderStore, useThemeStore } from "../../store";
 import "../../styles/sass/main.scss";
 
 type FrontOfficeLayoutProps = {
@@ -12,6 +12,7 @@ const FrontOfficeLayout = ({
   children,
 }: FrontOfficeLayoutProps): JSX.Element => {
   // "select" the needed state and action
+  const themeState = useThemeStore((state) => state.themeState);
   const loaderState = useLoaderStore((state) => state.isAppLoading);
   const setLoaderState = useLoaderStore((state) => state.updateLoader);
   useEffect(() => {
@@ -24,21 +25,25 @@ const FrontOfficeLayout = ({
 
   if (loaderState) {
     return (
-      <main className="bg-primary-color">
-        <Loader />
-      </main>
+      <div className={`theme--${themeState}`}>
+        <main className="bg-primary-color">
+          <Loader />
+        </main>
+      </div>
     );
   }
 
   return (
     <>
-      <Modal />
-      <Header />
-      <main className="bg-primary-color font-w-light font-secondary-color">
-        {children}
-      </main>
-      <ScrollToTopButton />
-      <Footer />
+      <div className={`theme--${themeState}`}>
+        <Modal />
+        <Header />
+        <main className="bg-primary-color font-w-light font-secondary-color">
+          {children}
+        </main>
+        <ScrollToTopButton />
+        <Footer />
+      </div>
     </>
   );
 };
