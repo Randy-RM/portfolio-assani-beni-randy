@@ -47,14 +47,16 @@ type VisitMyWorksProps = {
 
 const VisitMyWorks = ({ data }: VisitMyWorksProps): JSX.Element => {
   const [isProjectLoading, setIsProjectLoading] = useState<boolean>(true);
+  const [projects, setProjects] = useState<ProjectGraphQLData[] | null>([]);
   const { t } = useTranslation();
   useEffect(() => {
+    setProjects(extractDataFromAllMarkdownRemark(data));
     setTimeout(() => {
       setIsProjectLoading(false);
     }, 6000);
   }, []);
 
-  const projects = extractDataFromAllMarkdownRemark(data);
+  // const projects = extractDataFromAllMarkdownRemark(data);
 
   // Split the characters, including spaces
   const heroText = t(`projectPage.heroSection.visitMyWorks`).split("");
@@ -168,13 +170,11 @@ const VisitMyWorks = ({ data }: VisitMyWorksProps): JSX.Element => {
       {/**Hero section end */}
       {/**My works section start */}
       <section className="bg-primary-color">
-        {isProjectLoading ? (
+        {isProjectLoading || !projects ? (
           <div className="container">
-            {projects.map((project, index) => {
+            {[1, 2, 3].map((index) => {
               return (
-                <ProjectCardLargeSkeleton
-                  key={`${index}-${project.contentId}-skeleton`}
-                />
+                <ProjectCardLargeSkeleton key={`${index}-project-skeleton`} />
               );
             })}
           </div>
