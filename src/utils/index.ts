@@ -9,7 +9,7 @@ export const returnResumeInCorrectLanguage = (languageCode: string): string => {
 
 export const extractDataFromAllMarkdownRemark = (datas: {
   allMarkdownRemark: { edges: IEdge[] };
-}) => {
+}): ProjectGraphQLData[] | null => {
   const dataExtracted = datas.allMarkdownRemark.edges.map((data) => {
     return data.node.frontmatter;
   });
