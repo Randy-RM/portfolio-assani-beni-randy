@@ -190,3 +190,36 @@ declare interface IEdge {
     };
   };
 }
+
+/**
+ * Represent Project data form GraphQL querry
+ * @type
+ * @type {contentId: string }
+ * @type {contentType: string }
+ * @type {contentSlug: string }
+ * @type {projectType: ProjectType | undefined }
+ * @type {date: string }
+ * @type {language: string }
+ * @type {featuredImage: { childImageSharp: { gatsbyImageData: IGatsbyImageData } } }
+ * @type {liveProjectPreview: string }
+ * @type {contentTitle: string }
+ * @type {projectSkills: string[] }
+ * @type {contentDescription: string }
+ */
+declare interface ProjectGraphQLData {
+  contentId: string;
+  contentType: string;
+  contentSlug: string;
+  projectType?: ProjectType;
+  date: string;
+  language: string;
+  featuredImage: {
+    childImageSharp: {
+      gatsbyImageData: IGatsbyImageData;
+    };
+  };
+  liveProjectPreview: string;
+  contentTitle: string;
+  projectSkills: string[];
+  contentDescription: string;
+}
