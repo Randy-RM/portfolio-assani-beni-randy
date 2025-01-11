@@ -1,6 +1,9 @@
+@use "../abstracts/variables";
+@use "../themes/themes";
+
 .special-mark {
-  color: $light-grey;
-  background: $brand-gradient-color;
+  color: variables.$light-grey;
+  background: variables.$brand-gradient-color;
   display: inline-block;
   height: 1em;
   line-height: 1;
@@ -27,20 +30,20 @@
 }
 
 .bg-primary-color {
-  @include themed {
-    background: t("primary-color");
+  @include themes.themed {
+    background: themes.t("primary-color");
   }
 }
 
 .bg-secondary-color {
-  @include themed {
-    background: t("secondary-color");
+  @include themes.themed {
+    background: themes.t("secondary-color");
   }
 }
 
 .bg-tertiary-color {
-  @include themed {
-    background: t("tertiary-color");
+  @include themes.themed {
+    background: themes.t("tertiary-color");
   }
 }
 
@@ -52,8 +55,8 @@
   // put your image on public folder and use
   // background url on sass
   // like this
-  @include themed {
-    background: t("paper-plane-right-img");
+  @include themes.themed {
+    background: themes.t("paper-plane-right-img");
     // background-repeat: no-repeat;
     // background-position: right 35% top 45%;
     // width: 100%;
@@ -93,8 +96,8 @@
   // put your image on public folder and use
   // background url on sass
   // like this
-  @include themed {
-    background: t("graduation-cap-img");
+  @include themes.themed {
+    background: themes.t("graduation-cap-img");
     // background-repeat: no-repeat;
     // background-position: right 35% top 45%;
     // width: 100%;

@@ -1,3 +1,6 @@
+@use "../abstracts/variables";
+@use "../themes/themes";
+
 @use "sass:map";
 
 header {
@@ -20,8 +23,8 @@ header {
 
     .menu-icon-bloc {
       .menu-icon span {
-        @include themed {
-          background: t("secondary-color");
+        @include themes.themed {
+          background: themes.t("secondary-color");
         }
         border-radius: 0px;
         height: 0.5rem;
@@ -68,8 +71,8 @@ header {
     display: block;
 
     rect {
-      @include themed {
-        fill: t("secondary-color");
+      @include themes.themed {
+        fill: themes.t("secondary-color");
       }
     }
   }
@@ -104,15 +107,15 @@ header {
   }
 
   a {
-    @include themed {
-      color: t("secondary-color");
+    @include themes.themed {
+      color: themes.t("secondary-color");
     }
     transition: all ease-in-out 0.2s;
   }
 
   a:hover,
   .active-menu-link {
-    color: $brand-color !important;
+    color: variables.$brand-color !important;
     text-decoration: none;
   }
 }
@@ -125,7 +128,7 @@ header {
   transform: translate(0vw, -100vh);
 }
 
-@media (max-width: map.get($breakpoints, "tablet")) {
+@media (max-width: map.get(variables.$breakpoints, "tablet")) {
   header {
     padding: 2% 0 !important;
 
@@ -144,7 +147,7 @@ header {
   }
 }
 
-@media (max-width: map.get($breakpoints, "mobile large")) {
+@media (max-width: map.get(variables.$breakpoints, "mobile large")) {
   header {
     padding: 5% 0 !important;
     .nav-bar {

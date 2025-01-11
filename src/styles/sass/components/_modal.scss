@@ -1,3 +1,7 @@
+@use "sass:color";
+@use "../abstracts/variables";
+@use "../themes/themes";
+
 @use "sass:map";
 
 .modal-overlay {
@@ -5,8 +9,8 @@
   height: 100vh;
   position: fixed;
   z-index: 100;
-  @include themed {
-    background: rgba(t("secondary-color"), 0.3);
+  @include themes.themed {
+    background: rgba(themes.t("secondary-color"), 0.3);
   }
   display: flex;
   justify-content: center;
@@ -34,8 +38,8 @@
   width: 40vw;
   height: auto;
   padding: 1rem;
-  @include themed {
-    background: t("primary-color");
+  @include themes.themed {
+    background: themes.t("primary-color");
   }
 }
 
@@ -51,7 +55,7 @@
 }
 
 .close {
-  color: $brand-color;
+  color: variables.$brand-color;
   font-size: 2.5rem;
   font-weight: bold;
   line-height: 0;
@@ -60,18 +64,18 @@
 
 .close:hover,
 .close:focus {
-  color: darken($brand-color, 15%);
+  color: color.adjust(variables.$brand-color, $lightness: -15%);
   text-decoration: none;
   cursor: pointer;
 }
 
-@media (max-width: map.get($breakpoints, "tablet")) {
+@media (max-width: map.get(variables.$breakpoints, "tablet")) {
   .modal {
     width: 80vw;
   }
 }
 
-@media (max-width: map.get($breakpoints, "mobile large")) {
+@media (max-width: map.get(variables.$breakpoints, "mobile large")) {
   .modal {
     width: 100vw;
   }

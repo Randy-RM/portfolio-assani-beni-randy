@@ -1,15 +1,19 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+@use "../themes/themes";
+
 @use "sass:map";
 
 /**
  * Basic typography style for copy text
  */
 body {
-  font: normal 125% / 1.4 $text-font-stack;
+  font: normal 125% / 1.4 variables.$text-font-stack;
 }
 /*----Secondary font text----*/
 
 .secondary-font {
-  font-family: $secondary-font-stack;
+  font-family: variables.$secondary-font-stack;
 }
 
 /*----text alignement----*/
@@ -65,60 +69,60 @@ body {
 
 /*----font color----*/
 .font-secondary-color {
-  @include themed {
-    color: t("secondary-color");
+  @include themes.themed {
+    color: themes.t("secondary-color");
   }
 }
 
 .font-brand-color {
-  color: $brand-color;
+  color: variables.$brand-color;
 }
 
 .font-danger-color {
-  @include themed {
-    color: t("danger-color");
+  @include themes.themed {
+    color: themes.t("danger-color");
   }
 }
 
 .font-success-color {
-  @include themed {
-    color: t("success-color");
+  @include themes.themed {
+    color: themes.t("success-color");
   }
 }
 
 .font-warning-color {
-  @include themed {
-    color: t("warning-color");
+  @include themes.themed {
+    color: themes.t("warning-color");
   }
 }
 
 .font-info-color {
-  @include themed {
-    color: t("info-color");
+  @include themes.themed {
+    color: themes.t("info-color");
   }
 }
 
 .font-none {
-  @include themed {
-    color: rgba(t("secondary-color"), 0%);
+  @include themes.themed {
+    color: rgba(themes.t("secondary-color"), 0%);
   }
 }
 
 .font-brand-gradient-color {
-  @include gradient-text(0deg, $brand-color, $orange-color);
+  @include mixins.gradient-text(0deg, variables.$brand-color, variables.$orange-color);
 }
 
 .font-outlined {
-  @include themed {
-    color: t("primary-color");
-    text-shadow: -1px -1px 0 t("secondary-color"),
-      1px -1px 0 t("secondary-color"), -1px 1px 0 t("secondary-color"),
-      1px 1px 0 t("secondary-color") !important;
+  @include themes.themed {
+    color: themes.t("primary-color");
+    text-shadow: -1px -1px 0 themes.t("secondary-color"),
+      1px -1px 0 themes.t("secondary-color"), -1px 1px 0 themes.t("secondary-color"),
+      1px 1px 0 themes.t("secondary-color") !important;
   }
 }
 
 .font-animated-gradient-color {
-  @include gradient-text-four-colors(20deg, #ee5425, #e71364, #089acf, #0bcea0);
+  @include mixins.gradient-text-four-colors(20deg, #ee5425, #e71364, #089acf, #0bcea0);
   background-size: 200% 200%;
   animation: gradient-bg 10s ease infinite;
 }
@@ -128,8 +132,8 @@ body {
   top: 8px;
   left: 8px;
   display: inline-block;
-  @include themed {
-    color: t("secondary-color");
+  @include themes.themed {
+    color: themes.t("secondary-color");
   }
 
   &:before {
@@ -143,39 +147,39 @@ body {
     z-index: 1;
     background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjEuMCIgeDI9IjEuMCIgeTI9IjAuMCI+PHN0b3Agb2Zmc2V0PSIxMi41JSIgc3RvcC1jb2xvcj0iI2U4ZTNjNyIvPjxzdG9wIG9mZnNldD0iMTIuNSUiIHN0b3AtY29sb3I9IiNlOGUzYzciIHN0b3Atb3BhY2l0eT0iMC4wIi8+PHN0b3Agb2Zmc2V0PSIzNy41JSIgc3RvcC1jb2xvcj0iI2U4ZTNjNyIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjM3LjUlIiBzdG9wLWNvbG9yPSIjZThlM2M3Ii8+PHN0b3Agb2Zmc2V0PSI2Mi41JSIgc3RvcC1jb2xvcj0iI2U4ZTNjNyIvPjxzdG9wIG9mZnNldD0iNjIuNSUiIHN0b3AtY29sb3I9IiNlOGUzYzciIHN0b3Atb3BhY2l0eT0iMC4wIi8+PHN0b3Agb2Zmc2V0PSI4Ny41JSIgc3RvcC1jb2xvcj0iI2U4ZTNjNyIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9Ijg3LjUlIiBzdG9wLWNvbG9yPSIjZThlM2M3Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g");
     background-size: 100%;
-    @include themed {
+    @include themes.themed {
       background-image: -moz-linear-gradient(
         45deg,
-        t("primary-color") 12.5%,
-        rgba(t("primary-color"), 0) 12.5%,
-        rgba(t("primary-color"), 0) 37.5%,
-        t("primary-color") 37.5%,
-        t("primary-color") 62.5%,
-        rgba(t("primary-color"), 0) 62.5%,
-        rgba(t("primary-color"), 0) 87.5%,
-        t("primary-color") 87.5%
+        themes.t("primary-color") 12.5%,
+        rgba(themes.t("primary-color"), 0) 12.5%,
+        rgba(themes.t("primary-color"), 0) 37.5%,
+        themes.t("primary-color") 37.5%,
+        themes.t("primary-color") 62.5%,
+        rgba(themes.t("primary-color"), 0) 62.5%,
+        rgba(themes.t("primary-color"), 0) 87.5%,
+        themes.t("primary-color") 87.5%
       );
       background-image: -webkit-linear-gradient(
         45deg,
-        t("primary-color") 12.5%,
-        rgba(t("primary-color"), 0) 12.5%,
-        rgba(t("primary-color"), 0) 37.5%,
-        t("primary-color") 37.5%,
-        t("primary-color") 62.5%,
-        rgba(t("primary-color"), 0) 62.5%,
-        rgba(t("primary-color"), 0) 87.5%,
-        t("primary-color") 87.5%
+        themes.t("primary-color") 12.5%,
+        rgba(themes.t("primary-color"), 0) 12.5%,
+        rgba(themes.t("primary-color"), 0) 37.5%,
+        themes.t("primary-color") 37.5%,
+        themes.t("primary-color") 62.5%,
+        rgba(themes.t("primary-color"), 0) 62.5%,
+        rgba(themes.t("primary-color"), 0) 87.5%,
+        themes.t("primary-color") 87.5%
       );
       background-image: linear-gradient(
         45deg,
-        t("primary-color") 12.5%,
-        rgba(t("primary-color"), 0) 12.5%,
-        rgba(t("primary-color"), 0) 37.5%,
-        t("primary-color") 37.5%,
-        t("primary-color") 62.5%,
-        rgba(t("primary-color"), 0) 62.5%,
-        rgba(t("primary-color"), 0) 87.5%,
-        t("primary-color") 87.5%
+        themes.t("primary-color") 12.5%,
+        rgba(themes.t("primary-color"), 0) 12.5%,
+        rgba(themes.t("primary-color"), 0) 37.5%,
+        themes.t("primary-color") 37.5%,
+        themes.t("primary-color") 62.5%,
+        rgba(themes.t("primary-color"), 0) 62.5%,
+        rgba(themes.t("primary-color"), 0) 87.5%,
+        themes.t("primary-color") 87.5%
       );
     }
     background-size: 6px 6px;
@@ -191,9 +195,9 @@ body {
     position: absolute;
     left: -8px;
     top: -8px;
-    @include themed {
-      color: t("secondary-color");
-      text-shadow: 3px 3px t("primary-color");
+    @include themes.themed {
+      color: themes.t("secondary-color");
+      text-shadow: 3px 3px themes.t("primary-color");
     }
   }
 }
@@ -253,7 +257,7 @@ body {
   line-height: 0.7em;
 }
 
-@media (max-width: map.get($breakpoints, "tablet")) {
+@media (max-width: map.get(variables.$breakpoints, "tablet")) {
   .text-center-on-mobile {
     text-align: center;
   }
@@ -271,7 +275,7 @@ body {
   }
 }
 
-@media (max-width: map.get($breakpoints, "mobile large")) {
+@media (max-width: map.get(variables.$breakpoints, "mobile large")) {
   .font-big-hero {
     font-size: 3rem;
   }

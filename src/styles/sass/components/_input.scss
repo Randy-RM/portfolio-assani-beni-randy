@@ -1,3 +1,6 @@
+@use "../abstracts/variables";
+@use "../themes/themes";
+
 .input {
   width: 100%;
   padding: 0.5rem 1rem;
@@ -9,20 +12,20 @@
   input,
   textarea {
     width: 100%;
-    background: rgba($light-grey, 0%);
+    background: rgba(variables.$light-grey, 0%);
     padding: 0.3rem 0;
     border: none;
-    @include themed {
-      color: t("secondary-color");
-      border-bottom: solid 2px rgba(t("secondary-color"), 60%);
+    @include themes.themed {
+      color: themes.t("secondary-color");
+      border-bottom: solid 2px rgba(themes.t("secondary-color"), 60%);
     }
     transition: all ease-in-out 0.2s;
   }
 
   input::placeholder,
   textarea::placeholder {
-    @include themed {
-      color: rgba(t("secondary-color"), 60%);
+    @include themes.themed {
+      color: rgba(themes.t("secondary-color"), 60%);
     }
   }
 
@@ -33,8 +36,8 @@
   textarea:focus,
   textarea:focus-within {
     outline: none;
-    @include themed {
-      border-bottom: solid 4px rgba(t("secondary-color"), 60%);
+    @include themes.themed {
+      border-bottom: solid 4px rgba(themes.t("secondary-color"), 60%);
     }
   }
 
