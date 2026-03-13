@@ -188,6 +188,22 @@ Il :
 - `ScrollToTopButton`
 - `Footer`
 
+## 5.1 Transition entre pages
+
+La navigation interne attend une animation de sortie avant de changer d'URL.
+
+Réglage principal :
+- `PAGE_LEAVE_DURATION_MS` dans `src/components/layout/app-shell.tsx`
+
+Propagation automatique :
+- la valeur est utilisée par la logique JS (délai avant `window.location.href`),
+- la même valeur est injectée en variable CSS `--page-leave-duration`,
+- `src/styles/sass/layout/_page-transition.scss` consomme cette variable.
+
+Effet :
+- un seul endroit à modifier pour garder synchronisés
+  le timing React + le timing SCSS.
+
 ## 6. Gestion du thème
 
 Le thème est géré via Zustand.

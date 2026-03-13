@@ -21,6 +21,7 @@
 // 4. Layout-related sections
 @use "layout/header";
 @use "layout/footer";
+@use "layout/page-transition";
 
 // 5. Components
 @use "components/button";
