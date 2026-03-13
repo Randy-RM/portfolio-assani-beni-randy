@@ -1,6 +1,5 @@
 import { Icon } from "@iconify/react";
-import { GatsbyImage } from "gatsby-plugin-image";
-import * as React from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import { Badge, Container, Spacer } from "../";
 
@@ -26,11 +25,14 @@ const ProjectCardLarge = (props: Project): JSX.Element => {
       >
         <div className="width-50 text-center-on-mobile">
           <div>
-            <GatsbyImage
-              image={projectImageUrl}
-              alt={`${projectName}`}
-              className="card-img"
-            />
+            {projectImageUrl && (
+              <img
+                src={projectImageUrl}
+                alt={`${projectName}`}
+                className="card-img"
+                loading="lazy"
+              />
+            )}
           </div>
         </div>
         <div className="width-40 text-center-on-mobile">

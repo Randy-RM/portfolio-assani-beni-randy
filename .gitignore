@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 .cache/
+.astro/
 public
 src/gatsby-types.d.ts
 

@@ -13,19 +13,24 @@ const resources = {
   },
 };
 
-const options = {
-  order: ["navigator"],
-  // lookupQuerystring: "lng",
+/**
+ * Ordre de détection de la langue :
+ * 1. localStorage  → pour la persistance du choix utilisateur
+ * 2. navigator     → langue du navigateur (fallback automatique)
+ */
+const detectionOptions = {
+  order: ["localStorage", "navigator"],
+  lookupLocalStorage: "i18nextLng",
+  caches: ["localStorage"],
 };
 
 i18n
-  .use(detector) // Registering the detection plugin
+  .use(detector)
   .use(initReactI18next)
   .init({
     debug: false,
-    // language resources
     resources,
-    detection: options,
+    detection: detectionOptions,
     fallbackLng: {
       default: ["en"],
     },
@@ -33,7 +38,7 @@ i18n
     defaultNS: "common",
     nonExplicitSupportedLngs: true,
     interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
+      escapeValue: false,
     },
   });
 

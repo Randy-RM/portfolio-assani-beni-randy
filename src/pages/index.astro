@@ -1,0 +1,16 @@
+---
+/**
+ * Page d'accueil — /
+ * Astro fournit le shell HTML (SEO, fonts, SCSS),
+ * HomeApp (React, client:load) gère tout le rendu interactif.
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HomeApp from "../react-pages/HomeApp";
+---
+
+<BaseLayout
+  title="About me | Randy Assani RM"
+  description="I'm Software Engineer with a Computer Science degree and experience on computer engineering, software development & graphic design."
+>
+  <HomeApp client:load />
+</BaseLayout>

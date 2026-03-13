@@ -1,24 +1,20 @@
-import i18n from "../translations/i18n";
-
-export const returnResumeInCorrectLanguage = (languageCode: string): string => {
-  if (languageCode === "fr") {
+/**
+ * Retourne l'URL du CV dans la bonne langue selon le code langue.
+ * Gestion défensive : si languageCode est undefined/null, fallback sur 'en'.
+ */
+export const returnResumeInCorrectLanguage = (
+  languageCode?: string,
+): string => {
+  if (languageCode?.startsWith("fr")) {
     return "/documents/CV-FR-Assani-Beni-Randy.pdf";
   }
   return "/documents/CV-EN-Assani-Beni-Randy.pdf";
 };
 
-export const extractDataFromAllMarkdownRemark = (datas: {
-  allMarkdownRemark: { edges: IEdge[] };
-}): ProjectGraphQLData[] | null => {
-  const dataExtracted = datas.allMarkdownRemark.edges.map((data) => {
-    return data.node.frontmatter;
-  });
-  return dataExtracted.filter((data) => {
-    return data.language == i18n.language;
-  });
-};
-
-// Type Guard for ProjectType
-const projectType = ["personal", "customer", "other"] as const;
-export const isProjectType = (x: any): x is ProjectType =>
-  projectType.includes(x);
+/**
+ * Type Guard pour ProjectType.
+ * Vérifie qu'une valeur inconnue est bien de type ProjectType.
+ */
+const projectTypes = ["personal", "customer", "other"] as const;
+export const isProjectType = (x: unknown): x is ProjectType =>
+  projectTypes.includes(x as ProjectType);

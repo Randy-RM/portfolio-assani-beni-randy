@@ -4,7 +4,7 @@ import { Footer, Header, Loader, Modal, ScrollToTopButton } from "../";
 import { useLoaderStore } from "../../store";
 
 type FrontOfficeLayoutProps = {
-  children?: JSX.Element;
+  children?: React.ReactNode;
 };
 
 const FrontOfficeLayout = ({

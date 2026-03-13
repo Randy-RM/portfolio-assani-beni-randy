@@ -1,52 +1,42 @@
 {
   "name": "portfolio-assani-beni-randy",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "portfolio-assani-beni-randy",
+  "description": "Portfolio Assani Beni Randy - Astro",
   "author": "Randy-RM",
   "keywords": [
-    "gatsby"
+    "astro"
   ],
+  "type": "module",
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "typecheck": "tsc --noEmit"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "typecheck": "astro check && tsc --noEmit"
   },
   "dependencies": {
+    "@astrojs/react": "^3.6.0",
     "@emailjs/browser": "^4.3.3",
     "@hookform/resolvers": "^3.3.4",
     "@iconify/react": "^4.1.1",
-    "dotenv": "^16.4.5",
-    "emailjs": "^4.0.3",
+    "astro": "^4.16.0",
     "framer-motion": "^11.1.5",
-    "gatsby": "^5.13.3",
-    "gatsby-plugin-anchor-links": "^1.2.1",
-    "gatsby-plugin-image": "^3.13.1",
-    "gatsby-plugin-manifest": "^5.13.1",
-    "gatsby-plugin-netlify": "^5.1.1",
-    "gatsby-plugin-sass": "^6.13.1",
-    "gatsby-plugin-sharp": "^5.13.1",
-    "gatsby-plugin-sitemap": "^6.13.1",
-    "gatsby-source-filesystem": "^5.13.1",
-    "gatsby-transformer-remark": "^6.13.1",
-    "gatsby-transformer-sharp": "^5.13.1",
     "i18next": "^23.11.2",
     "i18next-browser-languagedetector": "^7.2.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-hook-form": "^7.51.3",
     "react-i18next": "^14.1.0",
     "sass": "^1.75.0",
-    "zod": "^3.22.5",
+    "zod": "^3.25.76",
     "zustand": "^4.5.2"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.0",
     "@types/node": "^20.11.19",
-    "@types/react": "^18.2.55",
-    "@types/react-dom": "^18.2.19",
-    "typescript": "^5.3.3"
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.5.4"
   }
 }

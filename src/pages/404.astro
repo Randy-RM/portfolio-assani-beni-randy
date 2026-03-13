@@ -1,0 +1,12 @@
+---
+/**
+ * Page 404 — /404
+ * Astro reconnaît automatiquement ce fichier comme la page 404 du site.
+ */
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NotFoundApp from "../react-pages/NotFoundApp";
+---
+
+<BaseLayout title="404 Page Not Found | Randy Assani RM">
+  <NotFoundApp client:load />
+</BaseLayout>

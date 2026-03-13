@@ -1,23 +1,18 @@
 import { motion } from "framer-motion";
-import { HeadFC, Link } from "gatsby";
-import * as React from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
-import { BaseHead, BaseLayout, Container, Spacer } from "../components";
+import { Container, Spacer } from "../components";
 import { EmojiPuzzledIcon } from "../images";
+import AppShell from "../components/layout/app-shell";
 
-export const Head: HeadFC = () => {
-  return (
-    <BaseHead>
-      <title>404 Page Not Found | Randy Assani RM</title>
-    </BaseHead>
-  );
-};
-
-const NotFoundPage = (): JSX.Element => {
+/**
+ * NotFoundApp - Application React pour la page 404.
+ */
+const NotFoundApp = (): JSX.Element => {
   const { t } = useTranslation();
 
   return (
-    <>
+    <AppShell>
       <section className="bg-primary-color font-secondary-color">
         <div className="container">
           <Spacer height={6} />
@@ -25,12 +20,7 @@ const NotFoundPage = (): JSX.Element => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{
-              type: "spring",
-              delay: 0.3,
-              easeInOut: "linear",
-              duration: 2,
-            }}
+            transition={{ type: "spring", delay: 0.3, duration: 2 }}
           >
             <Container
               flexDirection="column"
@@ -41,7 +31,7 @@ const NotFoundPage = (): JSX.Element => {
               <p className="text-center">
                 <EmojiPuzzledIcon
                   className="themed-stroke-icon logo"
-                  alt={t(`errorPage.errorIcon`)}
+                  alt={t("errorPage.errorIcon")}
                 />
                 <br />
                 <span className="font-big-hero font-w-Black">
@@ -49,20 +39,19 @@ const NotFoundPage = (): JSX.Element => {
                 </span>
                 <br />
                 <span>
-                  <i>{t(`errorPage.errorPageMessage`)}</i>
+                  <i>{t("errorPage.errorPageMessage")}</i>
                 </span>
               </p>
               <p className="text-center">
-                <Link to="/">{t(`errorPage.goBackHome`)}</Link>
+                <a href="/">{t("errorPage.goBackHome")}</a>
               </p>
             </Container>
           </motion.div>
           <Spacer />
         </div>
       </section>
-    </>
+    </AppShell>
   );
 };
 
-NotFoundPage.Layout = BaseLayout;
-export default NotFoundPage;
+export default NotFoundApp;

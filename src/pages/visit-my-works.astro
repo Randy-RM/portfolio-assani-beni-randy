@@ -1,0 +1,26 @@
+---
+/**
+ * Page des travaux — /visit-my-works
+ *
+ * Lecture des projets via Astro Content Collections (build-time).
+ * Les données sérialisées sont passées en props à VisitMyWorksApp (React).
+ * Le filtrage par langue est effectué côté client selon react-i18next.
+ */
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import VisitMyWorksApp from "../react-pages/VisitMyWorksApp";
+
+const allProjects = await getCollection("projects");
+
+// Sérialisation : extraction des données du frontmatter
+const projects = allProjects.map((entry: { data: any }) => ({
+  ...entry.data,
+}));
+---
+
+<BaseLayout
+  title="Visit my works | Randy Assani RM"
+  description="Here are some projects I made recently."
+>
+  <VisitMyWorksApp client:load projects={projects} />
+</BaseLayout>

@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "gatsby";
-import * as React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Container, Spacer } from "../";
 import { GithubIcon, LinkedinIcon, LogoRm } from "../../images";
@@ -37,9 +35,9 @@ const Footer = (): JSX.Element => {
             flexWrap="wrap"
           >
             <p>
-              <Link to="/" aria-label="Go to about me">
+              <a href="/" aria-label="Go to about me">
                 <LogoRm className="logo" alt={t(`logoDesc`)} />
-              </Link>
+              </a>
             </p>
             <p className="text-center">
               <span className="font-w-extra-bold">{t(`contactMe`)}</span>

@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "gatsby";
-import * as React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ThemeSwitcher } from "../";
 import { GithubIcon, LinkedinIcon, LogoRm } from "../../images";
@@ -55,13 +53,13 @@ const Header = (): JSX.Element => {
           >
             <div className="nav-bar">
               <div className="">
-                <Link
-                  to="/"
+                <a
+                  href="/"
                   onClick={handleMenuByLogo}
                   aria-label="Go to about me"
                 >
                   <LogoRm className="logo" alt={t(`logoDesc`)} />
-                </Link>
+                </a>
               </div>
               <div className="menu">
                 <ThemeSwitcher />
@@ -92,22 +90,32 @@ const Header = (): JSX.Element => {
       >
         <ul className="text-center font-secondary-color">
           <li>
-            <Link
-              to="/"
+            <a
+              href="/"
               onClick={handleIsDropdown}
-              activeClassName="active-menu-link"
+              className={
+                typeof window !== "undefined" &&
+                window.location.pathname === "/"
+                  ? "active-menu-link"
+                  : ""
+              }
             >
               {t(`header.AboutMeLink`)}
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
-              to="/visit-my-works"
+            <a
+              href="/visit-my-works"
               onClick={handleIsDropdown}
-              activeClassName="active-menu-link"
+              className={
+                typeof window !== "undefined" &&
+                window.location.pathname === "/visit-my-works"
+                  ? "active-menu-link"
+                  : ""
+              }
             >
               {t(`header.projectsLink`)}
-            </Link>
+            </a>
           </li>
           <li>
             <a

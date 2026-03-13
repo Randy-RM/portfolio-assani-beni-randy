@@ -8,7 +8,7 @@ const technologies: string[] = [
   "Nest Js",
   "React Js",
   "Next Js",
-  "Gatsby Js",
+  "Astro Js",
   "React native",
   "Sass",
   "PHP",

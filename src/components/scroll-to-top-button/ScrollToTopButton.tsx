@@ -1,6 +1,5 @@
 import { Icon } from "@iconify/react";
-import * as React from "react";
-import { MouseEventHandler, useState } from "react";
+import React, { useState } from "react";
 
 const ScrollToTopButton = (): JSX.Element => {
   const [visible, setVisible] = useState<boolean>(false);
@@ -14,7 +13,7 @@ const ScrollToTopButton = (): JSX.Element => {
     }
   };
 
-  const scrollToTop: MouseEventHandler = (event) => {
+  const scrollToTop = (event: React.MouseEvent) => {
     event.preventDefault;
     window.scrollTo({
       top: 0,
