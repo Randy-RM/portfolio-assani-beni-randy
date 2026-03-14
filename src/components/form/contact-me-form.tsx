@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { z } from "zod";
-import { BasicInput, Container, TextareaInput } from "../";
+import { BasicInput, ButtonInput, Container, TextareaInput } from "../";
 import { useMailPerDayStore, useModalStatusStore } from "../../store";
 
 const ContactMeForm = (): JSX.Element => {
@@ -194,9 +194,14 @@ const ContactMeForm = (): JSX.Element => {
           flexWrap="wrap"
         >
           <div className="width-100">
-            <button className="btn btn-primary btn-size-larg">
-              {t(`homePage.sendMessageSection.sendMessageBtn`)}
-            </button>
+            <ButtonInput
+              type="submit"
+              className="btn btn-primary btn-size-larg"
+              label={t(`homePage.sendMessageSection.sendMessageBtn`)}
+              tapScale={0.92}
+              tapStiffness={500}
+              tapDamping={22}
+            />
           </div>
         </Container>
         <input
