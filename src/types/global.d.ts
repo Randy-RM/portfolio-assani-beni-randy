@@ -44,6 +44,20 @@ declare interface TextareaInputProps {
 }
 
 /**
+ * Represents reusable Button input properties.
+ */
+declare interface ButtonInputProps {
+  label?: string;
+  className?: string;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+  ariaLabel?: string;
+  tapScale?: number;
+  tapStiffness?: number;
+  tapDamping?: number;
+}
+
+/**
  * Represents Container properties.
  */
 declare interface ContainerProps {
@@ -114,4 +128,3 @@ declare type ThemedIconProps = {
  * Type union for project classification.
  */
 type ProjectType = "personal" | "customer" | "other";
-
