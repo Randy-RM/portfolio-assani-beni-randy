@@ -10,6 +10,11 @@ const Header = (): JSX.Element => {
   const headerRef = useRef<HTMLElement | null>(null);
   const { t, i18n } = useTranslation();
 
+  const currentPath =
+    typeof window !== "undefined"
+      ? window.location.pathname.replace(/\/+$/, "") || "/"
+      : "/";
+
   const toggleDropdown = () => setIsDropdown((prevState) => !prevState);
   const closeDropdown = () => setIsDropdown(false);
 
@@ -90,12 +95,7 @@ const Header = (): JSX.Element => {
             <a
               href="/"
               onClick={closeDropdown}
-              className={
-                typeof window !== "undefined" &&
-                window.location.pathname === "/"
-                  ? "active-menu-link"
-                  : ""
-              }
+              className={currentPath === "/" ? "active-menu-link" : ""}
             >
               {t(`header.AboutMeLink`)}
             </a>
@@ -105,10 +105,7 @@ const Header = (): JSX.Element => {
               href="/visit-my-works"
               onClick={closeDropdown}
               className={
-                typeof window !== "undefined" &&
-                window.location.pathname === "/visit-my-works"
-                  ? "active-menu-link"
-                  : ""
+                currentPath === "/visit-my-works" ? "active-menu-link" : ""
               }
             >
               {t(`header.projectsLink`)}
