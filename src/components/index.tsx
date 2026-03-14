@@ -1,5 +1,6 @@
 export { default as Badge } from "./badge/badge";
 export { default as BouncingArrow } from "./bouncing-arrow/bouncing-arrow";
+export { default as GsapScrollBanner } from "./animations/gsap-scroll-banner";
 export { default as ProjectCardLarge } from "./cards/project-card-large";
 export { default as ProjectCardLargeSkeleton } from "./cards/project-card-large-skeleton";
 export { default as Container } from "./container/container";

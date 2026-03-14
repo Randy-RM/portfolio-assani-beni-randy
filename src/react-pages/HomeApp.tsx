@@ -2,7 +2,13 @@ import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Badge, ContactMeForm, Container, Spacer } from "../components";
+import {
+  Badge,
+  ContactMeForm,
+  Container,
+  GsapScrollBanner,
+  Spacer,
+} from "../components";
 import { technologies } from "../constants";
 import {
   DesignPencilIcon,
@@ -95,6 +101,22 @@ const HomeApp = (): JSX.Element => {
             </motion.div>
           </Container>
           <Spacer height={6} />
+        </div>
+      </section>
+
+      {/* Hybrid animation sample (GSAP only on this block) */}
+      <section className="bg-primary-color">
+        <div className="container">
+          <Spacer height={2} />
+          <Container
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+            flexWrap="wrap"
+          >
+            <GsapScrollBanner text={t("homePage.visitWorkSection.visitWorkTitle")} />
+          </Container>
+          <Spacer height={2} />
         </div>
       </section>
 
