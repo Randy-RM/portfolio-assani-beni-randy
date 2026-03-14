@@ -15,11 +15,15 @@ const resources = {
 
 /**
  * Ordre de détection de la langue :
- * 1. localStorage  → pour la persistance du choix utilisateur
- * 2. navigator     → langue du navigateur (fallback automatique)
+ * 1. navigator     → langue actuelle du navigateur (source de vérité)
+ * 2. localStorage  → fallback si navigator est indisponible
+ *
+ * NOTE:
+ * On place `navigator` en premier pour que changer la langue du navigateur
+ * soit pris en compte immédiatement au prochain chargement.
  */
 const detectionOptions = {
-  order: ["localStorage", "navigator"],
+  order: ["navigator", "localStorage"],
   lookupLocalStorage: "i18nextLng",
   caches: ["localStorage"],
 };
