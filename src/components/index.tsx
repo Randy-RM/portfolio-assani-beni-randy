@@ -5,6 +5,7 @@ export { default as ProjectCardLargeSkeleton } from "./cards/project-card-large-
 export { default as Container } from "./container/container";
 export { default as Footer } from "./footer/footer";
 export { default as BasicInput } from "./form/basic-input";
+export { default as ButtonInput } from "./form/button-input";
 export { default as ContactMeForm } from "./form/contact-me-form";
 export { default as TextareaInput } from "./form/textarea-input";
 export { default as Header } from "./header/header";
