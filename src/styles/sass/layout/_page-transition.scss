@@ -1,9 +1,5 @@
 $page-leave-duration: var(--page-leave-duration, 2000ms);
 
-.page-transition-root {
-  will-change: opacity, transform, filter;
-}
-
 html.page-leaving {
   .page-transition-root {
     pointer-events: none;
@@ -22,13 +18,11 @@ html.page-leaving {
 @keyframes page-leave {
   0% {
     opacity: 1;
-    transform: translateY(0);
     filter: blur(0);
   }
 
   100% {
     opacity: 0;
-    transform: translateY(-12px);
     filter: blur(2px);
   }
 }
