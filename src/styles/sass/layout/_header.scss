@@ -1,10 +1,13 @@
+@use "../abstracts/variables";
+@use "../themes/themes";
+
 @use "sass:map";
 
 header {
   z-index: 90;
   width: 100%;
   position: sticky;
-  top: -1px;
+  top: 0px;
   padding: 1.5% 0 !important;
 
   .nav-bar {
@@ -20,8 +23,8 @@ header {
 
     .menu-icon-bloc {
       .menu-icon span {
-        @include themed {
-          background: t("secondary-color");
+        @include themes.themed {
+          background: themes.t("secondary-color");
         }
         border-radius: 0px;
         height: 0.5rem;
@@ -68,8 +71,8 @@ header {
     display: block;
 
     rect {
-      @include themed {
-        fill: t("secondary-color");
+      @include themes.themed {
+        fill: themes.t("secondary-color");
       }
     }
   }
@@ -78,13 +81,18 @@ header {
 .nav-menu {
   z-index: 89;
   position: fixed;
-  top: 2rem;
+  top: var(--header-height, 2px);
+  bottom: 0;
+  left: 0;
   width: 100%;
-  height: 100vh;
-  transition: 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  height: auto;
+  min-height: 0;
+  transition:
+    transform 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6),
+    opacity 0.3s ease-in-out;
 
   ul {
-    height: 100vh;
+    height: 100%;
     padding: 0;
     margin: 0;
     display: flex;
@@ -104,28 +112,32 @@ header {
   }
 
   a {
-    @include themed {
-      color: t("secondary-color");
+    @include themes.themed {
+      color: themes.t("secondary-color");
     }
     transition: all ease-in-out 0.2s;
   }
 
   a:hover,
   .active-menu-link {
-    color: $brand-color !important;
+    color: variables.$brand-color !important;
     text-decoration: none;
   }
 }
 
 .show-nav-menu {
   transform: translate(0vw, 0vh);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .hide-nav-menu {
-  transform: translate(0vw, -100vh);
+  transform: translate(0vw, -100%);
+  opacity: 0;
+  pointer-events: none;
 }
 
-@media (max-width: map.get($breakpoints, "tablet")) {
+@media (max-width: map.get(variables.$breakpoints, "tablet")) {
   header {
     padding: 2% 0 !important;
 
@@ -144,7 +156,7 @@ header {
   }
 }
 
-@media (max-width: map.get($breakpoints, "mobile large")) {
+@media (max-width: map.get(variables.$breakpoints, "mobile large")) {
   header {
     padding: 5% 0 !important;
     .nav-bar {

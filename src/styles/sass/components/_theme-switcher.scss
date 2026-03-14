@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "../themes/themes";
+
 .switch-bloc {
   width: auto;
 }
@@ -15,8 +18,8 @@
   cursor: pointer;
 }
 .switch__icon {
-  @include themed {
-    color: rgba(t("secondary-color"), 0.8);
+  @include themes.themed {
+    color: rgba(themes.t("secondary-color"), 0.8);
   }
   pointer-events: none;
   position: absolute;
@@ -47,8 +50,8 @@
   transform: translateX(-1.25em);
 }
 .switch__inner:before {
-  @include themed {
-    background: rgba(t("secondary-color"), 1);
+  @include themes.themed {
+    background: rgba(themes.t("secondary-color"), 1);
   }
   border-radius: inherit;
   content: "";
@@ -60,8 +63,8 @@
   pointer-events: none;
 }
 .switch__inner-icons .switch__icon {
-  @include themed {
-    color: rgba(t("primary-color"), 1);
+  @include themes.themed {
+    color: rgba(themes.t("primary-color"), 1);
   }
   top: 0.125em;
   left: 0.125em;
@@ -72,8 +75,8 @@
   left: auto;
 }
 .switch__input {
-  @include themed {
-    background: rgba(t("secondary-color"), 0.2);
+  @include themes.themed {
+    background: rgba(themes.t("secondary-color"), 0.2);
   }
   border-radius: 0.75em;
   box-shadow: 0 0 0 0.0625em hsla(223, 90%, 50%, 0),
@@ -86,13 +89,13 @@
   transition: background-color 0.5s, box-shadow 0.5s;
 }
 .switch__input:checked {
-  @include themed {
-    background: darken(t("primary-color"), 5%);
+  @include themes.themed {
+    background: color.adjust(themes.t("primary-color"), $lightness: -5%);
   }
 }
 .switch__input:checked ~ .switch__icon {
-  @include themed {
-    color: rgba(t("secondary-color"), 0.8);
+  @include themes.themed {
+    color: rgba(themes.t("secondary-color"), 0.8);
   }
 }
 .switch__input:checked ~ .switch__inner:before,

@@ -1,11 +1,10 @@
 import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as React from "react";
-import { useRef } from "react";
+import React, { useRef } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { z, ZodType } from "zod";
-import { BasicInput, Container, TextareaInput } from "../";
+import { z } from "zod";
+import { BasicInput, ButtonInput, Container, TextareaInput } from "../";
 import { useMailPerDayStore, useModalStatusStore } from "../../store";
 
 const ContactMeForm = (): JSX.Element => {
@@ -16,26 +15,26 @@ const ContactMeForm = (): JSX.Element => {
   // "select" the needed state and action
   const mailPerDay = useMailPerDayStore((state) => state.mailPerDay);
   const numberOfMailSent = useMailPerDayStore(
-    (state) => state.numberOfMailSent
+    (state) => state.numberOfMailSent,
   );
   // const mailSendingDate = useMailPerDayStore((state) => state.mailSendingDate);
 
   // "select" the needed actions
   const updateNumberOfMailSent = useMailPerDayStore(
-    (state) => state.updateNumberOfMailSent
+    (state) => state.updateNumberOfMailSent,
   );
 
   const updateModalStatus = useModalStatusStore(
-    (state) => state.updateModalStatus
+    (state) => state.updateModalStatus,
   );
   const updateModalMessage = useModalStatusStore(
-    (state) => state.updateModalMessage
+    (state) => state.updateModalMessage,
   );
   const resetModalStatusStore = useModalStatusStore(
-    (state) => state.resetModalStatusStore
+    (state) => state.resetModalStatusStore,
   );
 
-  const schema: ZodType<ContactMeFormData> = z.object({
+  const schema: z.ZodType<ContactMeFormData> = z.object({
     contactName: z
       .string()
       .min(2, t(`homePage.sendMessageSection.inputName.errorMin`))
@@ -59,16 +58,17 @@ const ContactMeForm = (): JSX.Element => {
   });
 
   const sendEmail = async (data: ContactMeFormData) => {
-    const serviceId = process.env.GATSBY_EMAILJS_SERVICE_ID || "";
-    const templateId = process.env.GATSBY_EMAILJS_TEMPLATE_ID || "";
-    const publicKey = process.env.GATSBY_EMAILJS_PUBLIC_KEY || "";
+    // Variables d'environnement publiques Astro (préfixe PUBLIC_)
+    const serviceId = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID ?? "";
+    const templateId = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID ?? "";
+    const publicKey = import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY ?? "";
     const { contactName, contactMail, contactMessage } = data;
     const beingTypeValue = beingType.current?.value;
 
     if (contactName && contactMail && !beingTypeValue) {
       updateModalStatus("progress");
       updateModalMessage(
-        t(`homePage.sendMessageSection.emailMessageInProgress`)
+        t(`homePage.sendMessageSection.emailMessageInProgress`),
       );
 
       if (numberOfMailSent < mailPerDay) {
@@ -81,7 +81,7 @@ const ContactMeForm = (): JSX.Element => {
             contact_email: `${contactMail}`,
             message: `${contactMessage}`,
           },
-          publicKey
+          publicKey,
         );
         if (emailSend.status == 200) {
           console.log("Succes");
@@ -89,7 +89,7 @@ const ContactMeForm = (): JSX.Element => {
           console.log("status : ", emailSend.status);
           updateModalStatus("succes");
           updateModalMessage(
-            t(`homePage.sendMessageSection.emailMessageInSucces`)
+            t(`homePage.sendMessageSection.emailMessageInSucces`),
           );
           updateNumberOfMailSent(numberOfMailSent + 1);
           setTimeout(() => {
@@ -101,7 +101,7 @@ const ContactMeForm = (): JSX.Element => {
           console.log("status : ", emailSend.status);
           updateModalStatus("error");
           updateModalMessage(
-            t(`homePage.sendMessageSection.emailMessageInErreur`)
+            t(`homePage.sendMessageSection.emailMessageInErreur`),
           );
           setTimeout(() => {
             resetModalStatusStore();
@@ -110,7 +110,7 @@ const ContactMeForm = (): JSX.Element => {
       } else {
         updateModalStatus("warning");
         updateModalMessage(
-          t(`homePage.sendMessageSection.emailMessageInWarning`)
+          t(`homePage.sendMessageSection.emailMessageInWarning`),
         );
         setTimeout(() => {
           resetModalStatusStore();
@@ -135,7 +135,7 @@ const ContactMeForm = (): JSX.Element => {
               name="contactName"
               label={t(`homePage.sendMessageSection.inputName.label`)}
               placeholder={t(
-                `homePage.sendMessageSection.inputName.placeholder`
+                `homePage.sendMessageSection.inputName.placeholder`,
               )}
               type="text"
               registerToForm={register}
@@ -152,7 +152,7 @@ const ContactMeForm = (): JSX.Element => {
               name="contactMail"
               label={t(`homePage.sendMessageSection.inputEmail.label`)}
               placeholder={t(
-                `homePage.sendMessageSection.inputEmail.placeholder`
+                `homePage.sendMessageSection.inputEmail.placeholder`,
               )}
               type="email"
               registerToForm={register}
@@ -176,7 +176,7 @@ const ContactMeForm = (): JSX.Element => {
               name="contactMessage"
               label={t(`homePage.sendMessageSection.inputMessage.label`)}
               placeholder={t(
-                `homePage.sendMessageSection.inputMessage.placeholder`
+                `homePage.sendMessageSection.inputMessage.placeholder`,
               )}
               registerToForm={register}
               inputStatus={
@@ -194,9 +194,14 @@ const ContactMeForm = (): JSX.Element => {
           flexWrap="wrap"
         >
           <div className="width-100">
-            <button className="btn btn-primary btn-size-larg">
-              {t(`homePage.sendMessageSection.sendMessageBtn`)}
-            </button>
+            <ButtonInput
+              type="submit"
+              className="btn btn-primary btn-size-larg"
+              label={t(`homePage.sendMessageSection.sendMessageBtn`)}
+              tapScale={0.92}
+              tapStiffness={500}
+              tapDamping={22}
+            />
           </div>
         </Container>
         <input

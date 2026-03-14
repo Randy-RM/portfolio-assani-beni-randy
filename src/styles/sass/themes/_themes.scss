@@ -1,31 +1,37 @@
+@use "sass:color";
+@use "sass:map";
+@use "../abstracts/variables";
+
 $themes: (
   "dark": (
-    primary-color: $dark-blue,
-    secondary-color: $light-grey,
-    tertiary-color: lighten($dark-blue, 5%),
-    danger-color: lighten($danger, 20%),
-    success-color: $success,
-    warning-color: $warning,
-    info-color: $info,
-    loader-img-r: $r-img-light-url,
-    loader-img-m: $m-img-light-url,
-    graduation-cap-img: $graduation-cap-img-dark-url,
-    paper-plane-right-img: $paper-plane-right-img-dark-url,
+    primary-color: variables.$dark-blue,
+    secondary-color: variables.$light-grey,
+    tertiary-color: color.adjust(variables.$dark-blue, $lightness: 5%),
+    danger-color: color.adjust(variables.$danger, $lightness: 20%),
+    success-color: variables.$success,
+    warning-color: variables.$warning,
+    info-color: variables.$info,
+    loader-img-r: variables.$r-img-light-url,
+    loader-img-m: variables.$m-img-light-url,
+    graduation-cap-img: variables.$graduation-cap-img-dark-url,
+    paper-plane-right-img: variables.$paper-plane-right-img-dark-url,
   ),
   "light": (
-    primary-color: $light-grey,
-    secondary-color: $dark-grey,
-    tertiary-color: darken($light-grey, 5%),
-    danger-color: $danger,
-    success-color: $success,
-    warning-color: $warning,
-    info-color: $info,
-    loader-img-r: $r-img-dark-url,
-    loader-img-m: $m-img-dark-url,
-    graduation-cap-img: $graduation-cap-img-light-url,
-    paper-plane-right-img: $paper-plane-right-img-light-url,
+    primary-color: variables.$light-grey,
+    secondary-color: variables.$dark-grey,
+    tertiary-color: color.adjust(variables.$light-grey, $lightness: -5%),
+    danger-color: variables.$danger,
+    success-color: variables.$success,
+    warning-color: variables.$warning,
+    info-color: variables.$info,
+    loader-img-r: variables.$r-img-dark-url,
+    loader-img-m: variables.$m-img-dark-url,
+    graduation-cap-img: variables.$graduation-cap-img-light-url,
+    paper-plane-right-img: variables.$paper-plane-right-img-light-url,
   ),
 );
+
+$theme-map: null;
 
 // génère un nouveau mixin nommé themed.
 // L'idée est que toutes les règles css définie à l'interieur
@@ -37,10 +43,11 @@ $themes: (
     .theme--#{$theme} & {
       // defini une variable globale contenant un hash
       // de toutes les valeurs courantes du theme
+      // $theme-map: () !global;
       $theme-map: () !global;
       @each $key, $submap in $map {
-        $value: map-get(map-get($themes, $theme), "#{$key}");
-        $theme-map: map-merge(
+        $value: map.get(map.get($themes, $theme), "#{$key}");
+        $theme-map: map.merge(
           $theme-map,
           (
             $key: $value,
@@ -58,5 +65,5 @@ $themes: (
 // Nouvelle fonction theme qui va aller lire la valeur
 // de la clé dans le hash temporaire défini par le mixin
 @function t($key: "base0") {
-  @return map-get($theme-map, $key);
+  @return map.get($theme-map, $key);
 }

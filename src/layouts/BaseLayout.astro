@@ -1,0 +1,75 @@
+---
+/**
+ * BaseLayout - Shell HTML principal pour toutes les pages.
+ * Responsabilités : meta tags SEO, import SCSS global, prévention FOUC du thème.
+ * Le rendu du contenu (Header, Footer, theme, etc.) est délégué à AppShell (React).
+ */
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "I'm Software Engineer with a Computer Science degree and experience on computer engineering, software development & graphic design.",
+} = Astro.props;
+
+const siteUrl = import.meta.env.HOME_LOCATION ?? "";
+const ogImageUrl = `${siteUrl}/rm-landing-logo.png`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- SEO : Keywords -->
+    <meta
+      name="keywords"
+      content="randy assani beni, randy assani, randy muhema, assani beni, software engineer, ux/ui design, html, css, javascript, typescript, react js, next js, astro js, node js, sass, fullstack developer"
+    />
+
+    <!-- SEO : Title -->
+    <title>{title}</title>
+    <meta name="og:title" content="Randy Assani RM" />
+    <meta name="twitter:title" content="Randy Assani RM" />
+
+    <!-- SEO : Description -->
+    <meta name="description" content={description} />
+    <meta name="og:description" content={description} />
+    <meta name="twitter:description" content={description} />
+
+    <!-- SEO : Social image -->
+    <meta property="og:image" content={ogImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image:src" content={ogImageUrl} />
+
+    <!--
+      Prévention FOUC (Flash Of Unstyled Content) pour le thème.
+      Ce script s'exécute de façon synchrone AVANT que React hydrate,
+      afin d'appliquer immédiatement la bonne classe de thème.
+    -->
+    <script is:inline>
+      (function () {
+        try {
+          var stored = sessionStorage.getItem("Theme store");
+          var theme = stored
+            ? (JSON.parse(stored)?.state?.themeState ?? "dark")
+            : "dark";
+          document.documentElement.className = "theme--" + theme;
+        } catch (e) {
+          document.documentElement.className = "theme--dark";
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

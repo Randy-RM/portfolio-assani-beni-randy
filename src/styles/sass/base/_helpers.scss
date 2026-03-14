@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 @use "sass:map";
 
 // -----------------------------------------------------------------------------
@@ -20,7 +22,7 @@
  * 3. Leave some space on the edges, especially valuable on small screens
  */
 .container {
-  max-width: $max-width; /* 1 */
+  max-width: variables.$max-width; /* 1 */
   margin-left: auto; /* 2 */
   margin-right: auto; /* 2 */
   padding-left: 20px; /* 3 */
@@ -89,28 +91,28 @@
 
 @-webkit-keyframes at-ripple {
   0% {
-    box-shadow: 0 4px 10px rgba($dark-grey, 0.1), 0 0 0 0 rgba($dark-grey, 0.1),
-      0 0 0 5px rgba($dark-grey, 0.1), 0 0 0 10px rgba($dark-grey, 0.1);
+    box-shadow: 0 4px 10px rgba(variables.$dark-grey, 0.1), 0 0 0 0 rgba(variables.$dark-grey, 0.1),
+      0 0 0 5px rgba(variables.$dark-grey, 0.1), 0 0 0 10px rgba(variables.$dark-grey, 0.1);
   }
   100% {
-    box-shadow: 0 4px 10px rgba($dark-grey, 0.1),
-      0 0 0 5px rgba($dark-grey, 0.1), 0 0 0 10px rgba($dark-grey, 0.1),
-      0 0 0 20px rgba($dark-grey, 0);
+    box-shadow: 0 4px 10px rgba(variables.$dark-grey, 0.1),
+      0 0 0 5px rgba(variables.$dark-grey, 0.1), 0 0 0 10px rgba(variables.$dark-grey, 0.1),
+      0 0 0 20px rgba(variables.$dark-grey, 0);
   }
 }
 @keyframes at-ripple {
   0% {
-    box-shadow: 0 4px 10px rgba($dark-grey, 0.1), 0 0 0 0 rgba($dark-grey, 0.1),
-      0 0 0 5px rgba($dark-grey, 0.1), 0 0 0 10px rgba($dark-grey, 0.1);
+    box-shadow: 0 4px 10px rgba(variables.$dark-grey, 0.1), 0 0 0 0 rgba(variables.$dark-grey, 0.1),
+      0 0 0 5px rgba(variables.$dark-grey, 0.1), 0 0 0 10px rgba(variables.$dark-grey, 0.1);
   }
   100% {
-    box-shadow: 0 4px 10px rgba($dark-grey, 0.1),
-      0 0 0 5px rgba($dark-grey, 0.1), 0 0 0 10px rgba($dark-grey, 0.1),
-      0 0 0 20px rgba($dark-grey, 0);
+    box-shadow: 0 4px 10px rgba(variables.$dark-grey, 0.1),
+      0 0 0 5px rgba(variables.$dark-grey, 0.1), 0 0 0 10px rgba(variables.$dark-grey, 0.1),
+      0 0 0 20px rgba(variables.$dark-grey, 0);
   }
 }
 
-@media (max-width: map.get($breakpoints, "tablet")) {
+@media (max-width: map.get(variables.$breakpoints, "tablet")) {
   .hide-bloc-on-mobile {
     display: none;
   }

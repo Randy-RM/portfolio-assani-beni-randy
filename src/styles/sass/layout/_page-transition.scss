@@ -1,0 +1,28 @@
+$page-leave-duration: var(--page-leave-duration, 2000ms);
+
+html.page-leaving {
+  .page-transition-root {
+    pointer-events: none;
+    animation: page-leave $page-leave-duration ease-in-out forwards;
+  }
+
+  a,
+  button,
+  .btn,
+  .nav-menu,
+  .menu-icon span {
+    transition: opacity $page-leave-duration ease-in-out;
+  }
+}
+
+@keyframes page-leave {
+  0% {
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  100% {
+    opacity: 0;
+    filter: blur(2px);
+  }
+}

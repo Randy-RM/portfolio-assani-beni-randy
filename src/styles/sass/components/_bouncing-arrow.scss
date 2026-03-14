@@ -1,6 +1,8 @@
+@use "../abstracts/variables";
+
 .bouncing-arrow-container {
   text-align: center;
-  color: $brand-color;
+  color: variables.$brand-color;
   animation: 0.8s bouncingArrows ease-out alternate infinite;
   z-index: 10;
 }

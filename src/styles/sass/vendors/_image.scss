@@ -1,3 +1,6 @@
+@use "../abstracts/variables";
+@use "../themes/themes";
+
 @use "sass:map";
 
 .hero-image,
@@ -10,18 +13,18 @@
 
 .themed-stroke-icon {
   rect {
-    @include themed {
-      stroke: t("secondary-color");
+    @include themes.themed {
+      stroke: themes.t("secondary-color");
     }
   }
   path {
-    @include themed {
-      stroke: t("secondary-color");
+    @include themes.themed {
+      stroke: themes.t("secondary-color");
     }
   }
 }
 
-@media (max-width: map.get($breakpoints, "tablet")) {
+@media (max-width: map.get(variables.$breakpoints, "tablet")) {
   .hero-image {
     width: 50%;
   }
@@ -35,7 +38,7 @@
   }
 }
 
-@media (max-width: map.get($breakpoints, "mobile large")) {
+@media (max-width: map.get(variables.$breakpoints, "mobile large")) {
   .hero-image {
     width: 100%;
   }

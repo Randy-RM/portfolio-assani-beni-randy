@@ -1,11 +1,13 @@
+@use "../themes/themes";
+
 footer {
   .logo {
     width: 7rem;
     margin: auto;
     display: block;
     rect {
-      @include themed {
-        fill: t("secondary-color");
+      @include themes.themed {
+        fill: themes.t("secondary-color");
       }
     }
   }

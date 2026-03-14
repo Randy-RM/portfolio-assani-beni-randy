@@ -1,49 +1,139 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal TypeScript Starter
-</h1>
+# Portfolio Assani Beni Randy
 
-## 🚀 Quick start
+Portfolio personnel construit avec Astro, React et TypeScript.
 
-1.  **Create a Gatsby site.**
+## Objectif du projet
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+Ce projet sert à présenter :
+- le profil du développeur,
+- ses compétences,
+- ses projets,
+- un formulaire de contact,
+- une expérience bilingue français / anglais,
+- un thème clair / sombre.
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby -- -ts
-    ```
+## Stack
 
-2.  **Start developing.**
+- Astro
+- React
+- TypeScript
+- Sass
+- Zustand
+- react-i18next
+- Framer Motion
+- EmailJS
+- react-hook-form
+- zod
 
-    Navigate into your new site’s directory and start it up.
+## Démarrage rapide
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+## 1. Installer les dépendances
 
-3.  **Open the code and start customizing!**
+```bash
+npm install
+```
 
-    Your site is now running at http://localhost:8000!
+## 2. Créer le fichier d'environnement
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+Créer un fichier `.env` à la racine à partir de `sample.env`.
 
-4.  **Learn more**
+Variables attendues :
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+- `HOME_LOCATION`
+- `PUBLIC_EMAILJS_SERVICE_ID`
+- `PUBLIC_EMAILJS_TEMPLATE_ID`
+- `PUBLIC_EMAILJS_PUBLIC_KEY`
 
-## 🚀 Quick start (Netlify)
+## 3. Lancer le projet en local
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+```bash
+npm run dev
+```
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+## 4. Vérifier le typage
+
+```bash
+npm run typecheck
+```
+
+## 5. Générer la version de production
+
+```bash
+npm run build
+```
+
+## Scripts disponibles
+
+- `npm run dev` : lance le serveur de développement
+- `npm run start` : alias de développement
+- `npm run build` : génère le site statique
+- `npm run preview` : prévisualise le build localement
+- `npm run typecheck` : lance les vérifications Astro + TypeScript
+
+## Variables d'environnement
+
+Voir [sample.env](sample.env).
+
+### Variables utilisées
+
+- `HOME_LOCATION` : URL publique du site
+- `PUBLIC_EMAILJS_SERVICE_ID` : identifiant du service EmailJS
+- `PUBLIC_EMAILJS_TEMPLATE_ID` : identifiant du template EmailJS
+- `PUBLIC_EMAILJS_PUBLIC_KEY` : clé publique EmailJS
+
+## Documentation
+
+### Déploiement sur Netlify
+
+Voir [docs/deployment-netlify.md](docs/deployment-netlify.md).
+
+Le dépôt contient aussi [netlify.toml](netlify.toml) pour préconfigurer le build Netlify.
+
+### Structure et fonctionnement du projet
+
+Voir [docs/architecture.md](docs/architecture.md).
+
+## Architecture rapide
+
+Le projet suit ce principe :
+
+```text
+Pages Astro
+  -> shell HTML global
+  -> hydratation des pages React
+  -> composants UI + stores Zustand
+  -> contenus statiques et contenus Markdown
+```
+
+## Pages principales
+
+- `/` : accueil
+- `/visit-my-works` : projets
+- `/404` : page d'erreur
+
+## Répertoires clés
+
+- [src/pages](src/pages) : routes Astro
+- [src/react-pages](src/react-pages) : pages React
+- [src/components](src/components) : composants UI
+- [src/content](src/content) : contenus Markdown
+- [src/store](src/store) : stores Zustand
+- [src/translations](src/translations) : i18n
+- [src/styles](src/styles) : styles Sass
+- [static](static) : assets statiques
+
+## Notes importantes
+
+- Le projet est généré en statique.
+- Les assets publics sont servis depuis [static](static), car `astro.config.mjs` utilise `publicDir: "./static"`.
+- Le formulaire de contact dépend d'EmailJS côté client.
+- Les projets affichés dans `/visit-my-works` proviennent des collections Astro dans [src/content](src/content).
+
+## Recommandation
+
+Avant chaque mise en production :
+
+1. vérifier les variables d'environnement,
+2. lancer `npm run typecheck`,
+3. lancer `npm run build`,
+4. tester avec `npm run preview`.

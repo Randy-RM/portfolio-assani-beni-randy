@@ -1,3 +1,5 @@
+@use "../themes/themes";
+
 .starting-loader-page {
   width: 100vw;
   height: 100vh;
@@ -5,13 +7,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  @include themed {
-    background: t("primary-color");
+  @include themes.themed {
+    background: themes.t("primary-color");
   }
 }
 .starting-loader {
-  @include themed {
-    color: t("secondary-color");
+  @include themes.themed {
+    color: themes.t("secondary-color");
   }
   //   font-family: Consolas, Menlo, Monaco, monospace;
   font-weight: bold;
@@ -21,8 +23,8 @@
 .starting-loader:before {
   // content: "{";
   //get img on public folder
-  @include themed {
-    content: t("loader-img-r");
+  @include themes.themed {
+    content: themes.t("loader-img-r");
   }
   display: inline-block;
   animation: pulse 0.4s alternate infinite ease-in-out;
@@ -30,8 +32,8 @@
 .starting-loader:after {
   // content: "}";
   //get img on public folder
-  @include themed {
-    content: t("loader-img-m");
+  @include themes.themed {
+    content: themes.t("loader-img-m");
   }
   display: inline-block;
   // animation: pulse 0.4s 0.3s alternate infinite ease-in-out;
@@ -60,8 +62,8 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  @include themed {
-    border: 2px solid t("secondary-color");
+  @include themes.themed {
+    border: 2px solid themes.t("secondary-color");
   }
   position: absolute;
   left: 0;

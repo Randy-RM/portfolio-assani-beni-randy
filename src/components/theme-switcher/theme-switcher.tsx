@@ -1,5 +1,4 @@
-import * as React from "react";
-import { ChangeEvent } from "react";
+import React from "react";
 import { useThemeStore } from "../../store";
 
 const ThemeSwitcher = () => {
@@ -7,7 +6,7 @@ const ThemeSwitcher = () => {
   const themeState = useThemeStore((state) => state.themeState);
   const setThemeState = useThemeStore((state) => state.updateTheme);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const isDarkTheme = event.target.checked;
     if (isDarkTheme && themeState == "light") {
       setThemeState({

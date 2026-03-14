@@ -1,23 +1,36 @@
 @charset "UTF-8";
 
 // 1. Configuration , helpers and themes
-@import "abstracts/variables", "themes/themes", "abstracts/functions",
-  "abstracts/mixins";
+@use "abstracts/variables";
+@use "themes/themes";
+@use "abstracts/functions";
+@use "abstracts/mixins";
 
 // 2. Vendors
-@import "vendors/normalize", "vendors/background", "vendors/width",
-  "vendors/image";
+@use "vendors/normalize";
+@use "vendors/background";
+@use "vendors/width";
+@use "vendors/image";
 
 // 3. Base stuff
-@import "base/base", "base/fonts", "base/typography", "base/helpers";
+@use "base/base";
+@use "base/fonts";
+@use "base/typography";
+@use "base/helpers";
 
 // 4. Layout-related sections
-@import "layout/header", "layout/footer";
+@use "layout/header";
+@use "layout/footer";
+@use "layout/page-transition";
 
 // 5. Components
-@import "components/button", "components/input", "components/loader",
-  "components/bouncing-arrow", "components/skeleton", "components/modal",
-  "components/theme-switcher";
+@use "components/button";
+@use "components/input";
+@use "components/loader";
+@use "components/bouncing-arrow";
+@use "components/skeleton";
+@use "components/modal";
+@use "components/theme-switcher";
 
 // 6. Page-specific styles
 // @import

@@ -1,14 +1,19 @@
+@use "sass:color";
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+@use "../themes/themes";
+
 @use "sass:map";
 
 .link {
   cursor: pointer;
   text-decoration: none;
-  color: $brand-color;
+  color: variables.$brand-color;
   transition: all ease-in-out 0.2s;
 
-  @include on-event {
+  @include mixins.on-event {
     text-decoration: none;
-    color: darken($brand-color, 15%);
+    color: color.adjust(variables.$brand-color, $lightness: -15%);
   }
 }
 
@@ -16,35 +21,35 @@
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  @include on-event {
+  @include mixins.on-event {
     text-decoration: none;
   }
 }
 
 .btn-primary {
   padding: 0.8rem 1.5rem;
-  color: $light-grey;
-  background: $brand-color;
+  color: variables.$light-grey;
+  background: variables.$brand-color;
   border: none;
   transition: all ease-in-out 0.2s;
-  @include on-event {
-    color: $light-grey !important;
-    background: darken($brand-color, 15%);
+  @include mixins.on-event {
+    color: variables.$light-grey !important;
+    background: color.adjust(variables.$brand-color, $lightness: -15%);
   }
 }
 
 .btn-outlined-secondary {
   padding: 0.8rem 1.5rem;
-  @include themed {
-    background: rgba(t("secondary-color"), 0);
-    color: t("secondary-color");
-    border: solid 2px t("secondary-color");
+  @include themes.themed {
+    background: rgba(themes.t("secondary-color"), 0);
+    color: themes.t("secondary-color");
+    border: solid 2px themes.t("secondary-color");
   }
   transition: all ease-in-out 0.2s;
-  @include on-event {
-    @include themed {
-      background: rgba(t("secondary-color"), 1);
-      color: t("primary-color");
+  @include mixins.on-event {
+    @include themes.themed {
+      background: rgba(themes.t("secondary-color"), 1);
+      color: themes.t("primary-color");
     }
   }
 }
@@ -58,10 +63,10 @@
 
 .back-to-top {
   padding: 0.2rem;
-  color: $brand-color;
-  @include themed {
-    background: rgba(t("secondary-color"), 0.1);
-    border: solid 3px rgba(t("secondary-color"), 0.5);
+  color: variables.$brand-color;
+  @include themes.themed {
+    background: rgba(themes.t("secondary-color"), 0.1);
+    border: solid 3px rgba(themes.t("secondary-color"), 0.5);
   }
 
   cursor: pointer;
@@ -73,9 +78,9 @@
   z-index: 10;
   transition: all ease-in-out 0.3s;
 
-  @include on-event {
-    @include themed {
-      background: rgba(t("primary-color"), 1);
+  @include mixins.on-event {
+    @include themes.themed {
+      background: rgba(themes.t("primary-color"), 1);
     }
   }
 }
@@ -89,7 +94,7 @@
   width: 100%;
 }
 
-@media (max-width: map.get($breakpoints, "mobile large")) {
+@media (max-width: map.get(variables.$breakpoints, "mobile large")) {
   .btn {
     font-size: 0.8rem;
   }

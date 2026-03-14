@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 @use "sass:map";
 
 .width-100 {
@@ -36,7 +38,7 @@
   }
 }
 
-@media (max-width: map.get($breakpoints, "tablet")) {
+@media (max-width: map.get(variables.$breakpoints, "tablet")) {
   .width-70,
   .width-50,
   .width-40,

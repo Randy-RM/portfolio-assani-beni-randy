@@ -1,3 +1,5 @@
+@use "variables";
+
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass functions.
 // -----------------------------------------------------------------------------
@@ -18,7 +20,7 @@
 /// @return {Url}
 /// @require $base-url
 ///
-@function image($path, $base: $base-url) {
+@function image($path, $base: variables.$base-url) {
   @return asset($base, "images/", $path);
 }
 
@@ -28,6 +30,6 @@
 /// @return {Url}
 /// @require $base-url
 ///
-@function font($path, $base: $base-url) {
+@function font($path, $base: variables.$base-url) {
   @return asset($base, "fonts/", $path);
 }

@@ -1,3 +1,7 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+@use "../themes/themes";
+
 // -----------------------------------------------------------------------------
 // This file contains very basic styles.
 // -----------------------------------------------------------------------------
@@ -22,8 +26,8 @@ body {
 }
 
 body {
-  @include themed {
-    background-color: t("primary-color") !important;
+  @include themes.themed {
+    background-color: themes.t("primary-color") !important;
     transition: background-color 0.5s, background 0.5s, color 0.5s;
   }
 }
@@ -44,13 +48,13 @@ body {
  * Basic styles for links
  */
 a {
-  color: $brand-color;
+  color: variables.$brand-color;
   text-decoration: none;
   transition: all ease-in-out 0.2s;
 
-  @include on-event {
-    @include themed {
-      color: t("secondary-color");
+  @include mixins.on-event {
+    @include themes.themed {
+      color: themes.t("secondary-color");
     }
     text-decoration: underline;
   }
