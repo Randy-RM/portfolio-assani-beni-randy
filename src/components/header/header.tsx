@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { ThemeSwitcher } from "../";
 import { GithubIcon, LinkedinIcon, LogoRm } from "../../images";
@@ -7,38 +7,40 @@ import { returnResumeInCorrectLanguage } from "../../utils";
 
 const Header = (): JSX.Element => {
   const [isDropdown, setIsDropdown] = useState<boolean>(false);
+  const headerRef = useRef<HTMLElement | null>(null);
   const { t, i18n } = useTranslation();
 
-  const handleIsDropdown = () => {
-    setIsDropdown(!isDropdown);
-    if (isDropdown) {
-      //activ scrollbar when menu is close
-      document.body.style.overflowY = "scroll";
-    } else {
-      //hide and disable scrollbar when menu is open
-      document.body.style.overflowY = "hidden";
-    }
-  };
-
-  const handleMenuButton = () => {
-    setIsDropdown(!isDropdown);
-  };
-
-  const handleMenuByLogo = () => {
-    if (isDropdown) {
-      setIsDropdown(false);
-      document.body.style.overflowY = "scroll";
-    }
-  };
+  const toggleDropdown = () => setIsDropdown((prevState) => !prevState);
+  const closeDropdown = () => setIsDropdown(false);
 
   useEffect(() => {
-    setIsDropdown(false);
-    document.body.style.overflowY = "scroll";
+    document.body.style.overflowY = isDropdown ? "hidden" : "scroll";
+
+    return () => {
+      document.body.style.overflowY = "scroll";
+    };
+  }, [isDropdown]);
+
+  useEffect(() => {
+    const updateHeaderHeight = () => {
+      const headerHeight = headerRef.current?.offsetHeight ?? 0;
+      document.documentElement.style.setProperty(
+        "--header-height",
+        `${headerHeight}px`,
+      );
+    };
+
+    updateHeaderHeight();
+    window.addEventListener("resize", updateHeaderHeight);
+
+    return () => {
+      window.removeEventListener("resize", updateHeaderHeight);
+    };
   }, []);
 
   return (
     <>
-      <header className="bg-primary-color">
+      <header ref={headerRef} className="bg-primary-color">
         <div className="container">
           <motion.div
             initial={{ opacity: 0 }}
@@ -53,11 +55,7 @@ const Header = (): JSX.Element => {
           >
             <div className="nav-bar">
               <div className="">
-                <a
-                  href="/"
-                  onClick={handleMenuByLogo}
-                  aria-label="Go to about me"
-                >
+                <a href="/" onClick={closeDropdown} aria-label="Go to about me">
                   <LogoRm className="logo" alt={t(`logoDesc`)} />
                 </a>
               </div>
@@ -68,8 +66,7 @@ const Header = (): JSX.Element => {
                     <input
                       type="checkbox"
                       id="menuButton"
-                      onClick={handleIsDropdown}
-                      onChange={handleMenuButton}
+                      onChange={toggleDropdown}
                       checked={isDropdown}
                     />
                     <span></span>
@@ -92,7 +89,7 @@ const Header = (): JSX.Element => {
           <li>
             <a
               href="/"
-              onClick={handleIsDropdown}
+              onClick={closeDropdown}
               className={
                 typeof window !== "undefined" &&
                 window.location.pathname === "/"
@@ -106,7 +103,7 @@ const Header = (): JSX.Element => {
           <li>
             <a
               href="/visit-my-works"
-              onClick={handleIsDropdown}
+              onClick={closeDropdown}
               className={
                 typeof window !== "undefined" &&
                 window.location.pathname === "/visit-my-works"
