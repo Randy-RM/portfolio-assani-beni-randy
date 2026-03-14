@@ -5,7 +5,7 @@ import "../../styles/sass/main.scss";
 import I18nProvider from "../i18n/i18n-provider";
 import FrontOfficeLayout from "./frontoffice-layout";
 
-const PAGE_LEAVE_DURATION_MS = 1500;
+const PAGE_LEAVE_DURATION_MS = 1000;
 const PAGE_LEAVE_DURATION = `${PAGE_LEAVE_DURATION_MS}ms`;
 
 type AppShellProps = {
@@ -128,11 +128,7 @@ const AppShellInner = ({ children }: AppShellProps): JSX.Element => {
         { "--page-leave-duration": PAGE_LEAVE_DURATION } as React.CSSProperties
       }
       initial={false}
-      animate={
-        isLeavingPage
-          ? { opacity: 0, y: -12, filter: "blur(2px)" }
-          : { opacity: 1, y: 0, filter: "blur(0px)" }
-      }
+      animate={isLeavingPage ? { opacity: 0 } : { opacity: 1 }}
       transition={{
         duration: PAGE_LEAVE_DURATION_MS / 1000,
         ease: "easeInOut",
