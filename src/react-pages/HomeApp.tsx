@@ -6,7 +6,10 @@ import {
   Badge,
   ContactMeForm,
   Container,
+  GsapRevealImage,
+  GsapRevealText,
   GsapScrollBanner,
+  GsapSplitText,
   Spacer,
 } from "../components";
 import { technologies } from "../constants";
@@ -40,21 +43,29 @@ const HomeApp = (): JSX.Element => {
             alignItems="center"
             flexWrap="wrap"
           >
-            <motion.div
+            {/* <motion.div
               className="width-50 text-center-on-mobile"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ type: "spring", delay: 0.3, duration: 2 }}
             >
+            </motion.div> */}
+            <div className="width-50 text-center-on-mobile">
               <h2 className="font-big-hero font-w-Black">
-                <span className="font-outlined">
-                  {t("homePage.heroSection.iAm")}
-                </span>
+                <GsapSplitText
+                  className="font-outlined"
+                  duration={0.65}
+                  content={t("homePage.heroSection.iAm")}
+                />
                 <br />
-                <span>Software</span>
+                <GsapSplitText duration={0.9} content="Software" />
                 <br />
-                <span className="font-animated-gradient-color">Engineer</span>
+                <GsapRevealText
+                  className="font-animated-gradient-color"
+                  duration={1.5}
+                  content="Engineer"
+                />
               </h2>
               <p className="font-lead-hero">
                 {t("homePage.heroSection.myPassionsP1")}
@@ -84,21 +95,15 @@ const HomeApp = (): JSX.Element => {
                   </a>
                 </p>
               </Container>
-            </motion.div>
+            </div>
 
-            <motion.div
+            <GsapRevealImage
               className="width-40 hide-bloc-on-mobile"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ type: "spring", delay: 0.3, duration: 2 }}
-            >
-              <img
-                src="/rm-hero-photo.png"
-                alt="Randy Assani Picture"
-                className="hero-image"
-              />
-            </motion.div>
+              imageClassName="hero-image"
+              src="/rm-hero-photo.png"
+              alt="Randy Assani Picture"
+              duration={1.15}
+            />
           </Container>
           <Spacer height={6} />
         </div>
@@ -114,7 +119,9 @@ const HomeApp = (): JSX.Element => {
             alignItems="center"
             flexWrap="wrap"
           >
-            <GsapScrollBanner text={t("homePage.visitWorkSection.visitWorkTitle")} />
+            <GsapScrollBanner
+              text={t("homePage.visitWorkSection.visitWorkTitle")}
+            />
           </Container>
           <Spacer height={2} />
         </div>
