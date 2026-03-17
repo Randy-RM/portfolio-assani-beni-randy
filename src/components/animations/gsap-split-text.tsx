@@ -2,10 +2,39 @@ import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+type GsapRevealDirection =
+  | "none"
+  | "bottom-to-top"
+  | "top-to-bottom"
+  | "left-to-right"
+  | "right-to-left";
+
 type GsapSplitTextProps = {
   content: string;
   className?: string;
   duration?: number;
+  delay?: number;
+  direction?: GsapRevealDirection;
+  distance?: number;
+};
+
+const getDirectionalOffset = (
+  direction: GsapRevealDirection,
+  distance: number,
+): { x: number; y: number } => {
+  switch (direction) {
+    case "none":
+      return { x: 0, y: 0 };
+    case "top-to-bottom":
+      return { x: 0, y: -distance };
+    case "left-to-right":
+      return { x: -distance, y: 0 };
+    case "right-to-left":
+      return { x: distance, y: 0 };
+    case "bottom-to-top":
+    default:
+      return { x: 0, y: distance };
+  }
 };
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,6 +43,9 @@ const GsapSplitText = ({
   content,
   className = "",
   duration = 0.65,
+  delay = 0,
+  direction = "bottom-to-top",
+  distance = 24,
 }: GsapSplitTextProps): JSX.Element => {
   const rootRef = useRef<HTMLSpanElement | null>(null);
   const usesGradientText = className.includes("gradient");
@@ -29,13 +61,16 @@ const GsapSplitText = ({
 
     const context = gsap.context(() => {
       const letters = gsap.utils.toArray<HTMLElement>(".js-gsap-split-letter");
+      const offset = getDirectionalOffset(direction, distance);
 
-      gsap.set(letters, { opacity: 0, y: 24 });
+      gsap.set(letters, { opacity: 0, ...offset });
 
       gsap.to(letters, {
         opacity: 1,
         y: 0,
+        x: 0,
         duration,
+        delay,
         ease: "power3.out",
         stagger: 0.035,
         scrollTrigger: {
@@ -49,7 +84,7 @@ const GsapSplitText = ({
     return () => {
       context.revert();
     };
-  }, [content, duration]);
+  }, [content, duration, delay, direction, distance]);
 
   return (
     <span ref={rootRef} className={className} aria-label={content}>
