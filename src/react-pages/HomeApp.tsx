@@ -1,14 +1,15 @@
 import { Icon } from "@iconify/react";
-import { motion } from "framer-motion";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import {
   Badge,
   ContactMeForm,
   Container,
+  GsapInView,
+  GsapOrigamiPop,
   GsapRevealImage,
   GsapRevealText,
-  GsapScrollBanner,
+  GsapStaggerInView,
   GsapSplitText,
   Spacer,
 } from "../components";
@@ -43,58 +44,54 @@ const HomeApp = (): JSX.Element => {
             alignItems="center"
             flexWrap="wrap"
           >
-            {/* <motion.div
-              className="width-50 text-center-on-mobile"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ type: "spring", delay: 0.3, duration: 2 }}
-            >
-            </motion.div> */}
             <div className="width-50 text-center-on-mobile">
               <h2 className="font-big-hero font-w-Black">
                 <GsapSplitText
                   className="font-outlined"
                   duration={0.65}
+                  delay={0}
                   content={t("homePage.heroSection.iAm")}
                 />
                 <br />
-                <GsapSplitText duration={0.9} content="Software" />
+                <GsapSplitText duration={0.9} delay={0.2} content="Software" />
                 <br />
                 <GsapRevealText
                   className="font-animated-gradient-color"
                   duration={1.5}
+                  delay={0.45}
                   content="Engineer"
                 />
               </h2>
-              <p className="font-lead-hero">
-                {t("homePage.heroSection.myPassionsP1")}
-                <br />
-                {t("homePage.heroSection.myPassionsP2")}
-              </p>
-              <Container
-                flexDirection="row"
-                alignItems="center"
-                flexWrap="wrap"
-              >
-                <p className="width-40 width-35-on-large">
-                  <a href="#sendMeMessage" className="btn btn-primary">
-                    {t("homePage.heroSection.contactBtn")}
-                  </a>
+              <GsapInView delay={0.3} duration={1}>
+                <p className="font-lead-hero">
+                  {t("homePage.heroSection.myPassionsP1")}
+                  <br />
+                  {t("homePage.heroSection.myPassionsP2")}
                 </p>
-                <p className="width-40 width-35-on-large">
-                  &nbsp;
-                  <a
-                    href={returnResumeInCorrectLanguage(i18n.language)}
-                    className="btn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {t("homePage.heroSection.myResume")}{" "}
-                    <Icon icon="iconoir:google-docs" />
-                  </a>
-                </p>
-              </Container>
+                <Container
+                  flexDirection="row"
+                  alignItems="center"
+                  flexWrap="wrap"
+                >
+                  <p className="width-40 width-35-on-large">
+                    <a href="#sendMeMessage" className="btn btn-primary">
+                      {t("homePage.heroSection.contactBtn")}
+                    </a>
+                  </p>
+                  <p className="width-40 width-35-on-large">
+                    &nbsp;
+                    <a
+                      href={returnResumeInCorrectLanguage(i18n.language)}
+                      className="btn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {t("homePage.heroSection.myResume")}{" "}
+                      <Icon icon="iconoir:google-docs" />
+                    </a>
+                  </p>
+                </Container>
+              </GsapInView>
             </div>
 
             <GsapRevealImage
@@ -109,24 +106,6 @@ const HomeApp = (): JSX.Element => {
         </div>
       </section>
 
-      {/* Hybrid animation sample (GSAP only on this block) */}
-      <section className="bg-primary-color">
-        <div className="container">
-          <Spacer height={2} />
-          <Container
-            flexDirection="column"
-            justifyContent="center"
-            alignItems="center"
-            flexWrap="wrap"
-          >
-            <GsapScrollBanner
-              text={t("homePage.visitWorkSection.visitWorkTitle")}
-            />
-          </Container>
-          <Spacer height={2} />
-        </div>
-      </section>
-
       {/* About me section */}
       <section className="bg-primary-color">
         <div className="container">
@@ -138,16 +117,27 @@ const HomeApp = (): JSX.Element => {
             alignItems="center"
             flexWrap="wrap"
           >
-            <motion.div
+            <GsapInView
               className="width-40 text-center-on-mobile"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ type: "spring", delay: 0.3, duration: 2 }}
+              from={{ opacity: 0 }}
+              to={{ opacity: 1 }}
+              delay={0.3}
+              duration={2}
             >
               <h2 className="font-w-Black h2 margin-0">
-                {t("homePage.aboutMeSection.aboutMeTitleP1")}{" "}
-                <span>{t("homePage.aboutMeSection.aboutMeTitleP2")}</span>
+                <GsapSplitText
+                  className=""
+                  duration={0.8}
+                  delay={0.45}
+                  content={t("homePage.aboutMeSection.aboutMeTitleP1")}
+                />{" "}
+                <br />
+                <GsapSplitText
+                  className=""
+                  duration={1}
+                  delay={0.45}
+                  content={t("homePage.aboutMeSection.aboutMeTitleP2")}
+                />
               </h2>
               <p>
                 <span className="font-w-extra-bold">{t("followMe")}</span>
@@ -176,14 +166,14 @@ const HomeApp = (): JSX.Element => {
                   />
                 </a>
               </p>
-            </motion.div>
+            </GsapInView>
 
-            <motion.div
+            <GsapInView
               className="width-50 p-2 bg-tertiary-color text-center-on-mobile"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ type: "spring", delay: 0.5, duration: 2 }}
+              from={{ opacity: 0 }}
+              to={{ opacity: 1 }}
+              delay={0.5}
+              duration={2}
             >
               <h1 className="font-h1-unstyled">
                 {t("homePage.aboutMeSection.aboutMeDescriptionP1")}
@@ -194,7 +184,7 @@ const HomeApp = (): JSX.Element => {
                 {t("homePage.aboutMeSection.aboutMeDescriptionP4")}
               </p>
               <p>{t("homePage.aboutMeSection.aboutMeDescriptionP5")}</p>
-            </motion.div>
+            </GsapInView>
           </Container>
           <Spacer height={6} />
           <Spacer height={3} />
@@ -203,12 +193,7 @@ const HomeApp = (): JSX.Element => {
 
       {/* Teaching experience section */}
       <section className="bg-primary-color">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ type: "spring", delay: 0.3, duration: 2 }}
-        >
+        <GsapInView delay={0.3} duration={2}>
           <div className="container bg-graduation-image">
             <Spacer height={6} />
             <Spacer height={6} />
@@ -232,7 +217,7 @@ const HomeApp = (): JSX.Element => {
             </Container>
             <Spacer height={2} />
           </div>
-        </motion.div>
+        </GsapInView>
       </section>
 
       {/* Technologies section */}
@@ -245,12 +230,10 @@ const HomeApp = (): JSX.Element => {
             alignItems="center"
             flexWrap="wrap"
           >
-            <motion.div
+            <GsapInView
               className="width-50 text-center"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ type: "spring", delay: 0.3, duration: 2 }}
+              delay={0.3}
+              duration={2}
             >
               <h2 className="font-w-Black h2 margin-0">
                 <span>
@@ -259,27 +242,21 @@ const HomeApp = (): JSX.Element => {
                 {t("homePage.technologiesSection.technologiesTitleP2")}
               </h2>
               <p>{t("homePage.technologiesSection.technologiesDesc")}</p>
-            </motion.div>
+            </GsapInView>
 
-            <div className="width-50 text-center">
+            <GsapStaggerInView
+              className="width-50 text-center"
+              duration={1}
+              stagger={0.2}
+            >
               <Spacer />
               {technologies.map((technology, index) => (
-                <motion.span
-                  key={`${index}-technology`}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    type: "spring",
-                    delay: 0.2 * index,
-                    duration: 1,
-                  }}
-                >
+                <span key={`${index}-technology`}>
                   <Badge badgeText={technology} />
-                </motion.span>
+                </span>
               ))}
               <Spacer />
-            </div>
+            </GsapStaggerInView>
           </Container>
           <Spacer height={6} />
         </div>
@@ -289,12 +266,7 @@ const HomeApp = (): JSX.Element => {
       <section className="bg-primary-color">
         <div className="container">
           <Spacer height={6} />
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ type: "spring", delay: 0.3, duration: 2 }}
-          >
+          <GsapOrigamiPop as="div" delay={0.5}>
             <Container
               flexDirection="column"
               justifyContent="center"
@@ -317,7 +289,7 @@ const HomeApp = (): JSX.Element => {
                 <Spacer />
               </div>
             </Container>
-          </motion.div>
+          </GsapOrigamiPop>
           <Spacer height={6} />
         </div>
       </section>
@@ -332,19 +304,17 @@ const HomeApp = (): JSX.Element => {
             alignItems="flex-start"
             flexWrap="wrap"
           >
-            <motion.div
+            <GsapInView
               className="width-100 text-center"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ type: "spring", delay: 0.3, duration: 2 }}
+              delay={0.3}
+              duration={2}
             >
               <h2 className="font-w-Black h2 margin-0">
                 <span>{t("homePage.experienceSection.experienceTitleP1")}</span>
                 {t("homePage.experienceSection.experienceTitleP2")}
               </h2>
               <Spacer height={1} />
-            </motion.div>
+            </GsapInView>
 
             <div className="width-100 text-center">
               <Container
@@ -354,13 +324,7 @@ const HomeApp = (): JSX.Element => {
                 flexWrap="wrap"
               >
                 {/* Engineering card */}
-                <motion.div
-                  className="width-100"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", delay: 0.3, duration: 2 }}
-                >
+                <GsapInView className="width-100" delay={0.3} duration={2}>
                   <Spacer height={2} />
                   <Container
                     flexDirection="column"
@@ -392,16 +356,10 @@ const HomeApp = (): JSX.Element => {
                     </div>
                   </Container>
                   <Spacer height={2} />
-                </motion.div>
+                </GsapInView>
 
                 {/* Design card */}
-                <motion.div
-                  className="width-100"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", delay: 0.3, duration: 2 }}
-                >
+                <GsapInView className="width-100" delay={0.3} duration={2}>
                   <Spacer height={6} />
                   <Container
                     flexDirection="column"
@@ -433,16 +391,10 @@ const HomeApp = (): JSX.Element => {
                     </div>
                   </Container>
                   <Spacer height={6} />
-                </motion.div>
+                </GsapInView>
 
                 {/* Project card */}
-                <motion.div
-                  className="width-100"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", delay: 0.3, duration: 2 }}
-                >
+                <GsapInView className="width-100" delay={0.3} duration={2}>
                   <Spacer height={2} />
                   <Container
                     flexDirection="column"
@@ -474,7 +426,7 @@ const HomeApp = (): JSX.Element => {
                     </div>
                   </Container>
                   <Spacer height={2} />
-                </motion.div>
+                </GsapInView>
               </Container>
             </div>
           </Container>
@@ -486,12 +438,7 @@ const HomeApp = (): JSX.Element => {
       <section className="bg-primary-color" id="sendMeMessage">
         <div className="container">
           <Spacer height={6} />
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ type: "spring", delay: 0.3, duration: 2 }}
-          >
+          <GsapInView delay={0.3} duration={2}>
             <Container
               flexDirection="column"
               justifyContent="center"
@@ -513,7 +460,7 @@ const HomeApp = (): JSX.Element => {
                 <Spacer />
               </div>
             </Container>
-          </motion.div>
+          </GsapInView>
           <Spacer height={6} />
         </div>
       </section>

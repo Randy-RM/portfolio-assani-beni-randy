@@ -1,17 +1,8 @@
 import * as React from "react";
-import { motion } from "framer-motion";
+import GsapPressButton from "../animations/gsap-press-button";
 
 const ButtonInput = (props: ButtonInputProps): JSX.Element => {
-  let {
-    label,
-    className,
-    type,
-    disabled,
-    ariaLabel,
-    tapScale,
-    tapStiffness,
-    tapDamping,
-  } = props;
+  let { label, className, type, disabled, ariaLabel, tapScale } = props;
 
   label = label || "Button";
   className = className || "btn btn-primary";
@@ -19,25 +10,17 @@ const ButtonInput = (props: ButtonInputProps): JSX.Element => {
   disabled = disabled || false;
   ariaLabel = ariaLabel || label;
   tapScale = tapScale || 0.95;
-  tapStiffness = tapStiffness || 450;
-  tapDamping = tapDamping || 24;
 
   return (
-    <motion.button
+    <GsapPressButton
       type={type}
       className={className}
       disabled={disabled}
       aria-label={ariaLabel}
-      // Press animation: scale down while clicking, then spring back up.
-      whileTap={{ scale: tapScale }}
-      transition={{
-        type: "spring",
-        stiffness: tapStiffness,
-        damping: tapDamping,
-      }}
+      tapScale={tapScale}
     >
       {label}
-    </motion.button>
+    </GsapPressButton>
   );
 };
 

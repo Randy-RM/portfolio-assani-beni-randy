@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import React from "react";
 import { useTranslation } from "react-i18next";
-import { Container, Spacer } from "../components";
+import { Container, GsapInView, Spacer } from "../components";
 import { EmojiPuzzledIcon } from "../images";
 import AppShell from "../components/layout/app-shell";
 
@@ -16,12 +15,7 @@ const NotFoundApp = (): JSX.Element => {
       <section className="bg-primary-color font-secondary-color">
         <div className="container">
           <Spacer height={6} />
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ type: "spring", delay: 0.3, duration: 2 }}
-          >
+          <GsapInView as="div" delay={0.8} duration={1}>
             <Container
               flexDirection="column"
               justifyContent="center"
@@ -46,7 +40,7 @@ const NotFoundApp = (): JSX.Element => {
                 <a href="/">{t("errorPage.goBackHome")}</a>
               </p>
             </Container>
-          </motion.div>
+          </GsapInView>
           <Spacer />
         </div>
       </section>

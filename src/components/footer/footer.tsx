@@ -1,7 +1,6 @@
-import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Container, Spacer } from "../";
+import { Container, GsapInView, Spacer } from "../";
 import { GithubIcon, LinkedinIcon, LogoRm } from "../../images";
 
 const Footer = (): JSX.Element => {
@@ -17,16 +16,12 @@ const Footer = (): JSX.Element => {
     <>
       <footer className="bg-primary-color font-secondary-color">
         <Spacer height={6} />
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{
-            type: "spring",
-            delay: 0.3,
-            easeInOut: "linear",
-            duration: 2,
-          }}
+        <GsapInView
+          from={{ opacity: 0 }}
+          to={{ opacity: 1 }}
+          delay={0}
+          duration={1}
+          ease="none"
         >
           <Container
             flexDirection="column"
@@ -83,7 +78,7 @@ const Footer = (): JSX.Element => {
               Copyright © {`${currentYear}`} Randy Assani RM
             </p>
           </Container>
-        </motion.div>
+        </GsapInView>
       </footer>
     </>
   );

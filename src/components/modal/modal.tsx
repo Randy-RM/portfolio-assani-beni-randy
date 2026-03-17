@@ -9,7 +9,7 @@ const Modal = (): JSX.Element => {
   const modalStatus = useModalStatusStore((state) => state.modalStatus);
   const modalMessage = useModalStatusStore((state) => state.modalMessage);
   const resetModalStatusStore = useModalStatusStore(
-    (state) => state.resetModalStatusStore
+    (state) => state.resetModalStatusStore,
   );
 
   const closeModal = () => {
