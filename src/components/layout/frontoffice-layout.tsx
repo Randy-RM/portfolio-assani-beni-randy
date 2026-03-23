@@ -1,5 +1,4 @@
 import * as React from "react";
-import { useEffect } from "react";
 import { Footer, Header, Loader, Modal, ScrollToTopButton } from "../";
 import { useLoaderStore } from "../../store";
 
@@ -13,18 +12,15 @@ const FrontOfficeLayout = ({
   // "select" the needed state and action
   const loaderState = useLoaderStore((state) => state.isAppLoading);
   const setLoaderState = useLoaderStore((state) => state.updateLoader);
-  useEffect(() => {
-    if (loaderState) {
-      setTimeout(() => {
-        setLoaderState(false);
-      }, 2000);
-    }
-  }, []);
+
+  const handleLoaderAnimationsComplete = React.useCallback(() => {
+    setLoaderState(false);
+  }, [setLoaderState]);
 
   if (loaderState) {
     return (
       <main className="bg-primary-color">
-        <Loader />
+        <Loader onAnimationsComplete={handleLoaderAnimationsComplete} />
       </main>
     );
   }

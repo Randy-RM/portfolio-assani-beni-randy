@@ -36,8 +36,8 @@ const useLoaderStore = create<LoaderState & LoaderAction>()(
     {
       name: "Is loading", // name of the item in the storage (must be unique)
       storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
-    }
-  )
+    },
+  ),
 );
 
 export default useLoaderStore;

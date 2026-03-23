@@ -1,5 +1,5 @@
 import { Icon } from "@iconify/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const ScrollToTopButton = (): JSX.Element => {
   const [visible, setVisible] = useState<boolean>(false);
@@ -14,7 +14,7 @@ const ScrollToTopButton = (): JSX.Element => {
   };
 
   const scrollToTop = (event: React.MouseEvent) => {
-    event.preventDefault;
+    event.preventDefault();
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -23,7 +23,17 @@ const ScrollToTopButton = (): JSX.Element => {
     });
   };
 
-  window.addEventListener("scroll", toggleVisible);
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    window.addEventListener("scroll", toggleVisible);
+
+    return () => {
+      window.removeEventListener("scroll", toggleVisible);
+    };
+  }, []);
 
   return (
     <>

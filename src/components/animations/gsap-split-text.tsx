@@ -16,6 +16,7 @@ type GsapSplitTextProps = {
   delay?: number;
   direction?: GsapRevealDirection;
   distance?: number;
+  onComplete?: () => void;
 };
 
 const getDirectionalOffset = (
@@ -46,6 +47,7 @@ const GsapSplitText = ({
   delay = 0,
   direction = "bottom-to-top",
   distance = 24,
+  onComplete,
 }: GsapSplitTextProps): JSX.Element => {
   const rootRef = useRef<HTMLSpanElement | null>(null);
   const usesGradientText = className.includes("gradient");
@@ -56,6 +58,7 @@ const GsapSplitText = ({
     }
 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      onComplete?.();
       return;
     }
 
@@ -73,6 +76,7 @@ const GsapSplitText = ({
         delay,
         ease: "power3.out",
         stagger: 0.035,
+        onComplete,
         scrollTrigger: {
           trigger: rootRef.current,
           start: "top 85%",
@@ -84,7 +88,7 @@ const GsapSplitText = ({
     return () => {
       context.revert();
     };
-  }, [content, duration, delay, direction, distance]);
+  }, [content, duration, delay, direction, distance, onComplete]);
 
   return (
     <span ref={rootRef} className={className} aria-label={content}>
