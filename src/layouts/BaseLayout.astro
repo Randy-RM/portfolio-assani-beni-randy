@@ -68,6 +68,23 @@ const ogImageUrl = `${siteUrl}/rm-landing-logo.png`;
         }
       })();
     </script>
+
+    <!--
+      Prévention du flash du Loader sur les visites suivantes.
+      Cache le HTML SSR du Loader AVANT le premier affichage,
+      pour que l'utilisateur ne voie jamais le Loader après la 1re visite.
+    -->
+    <script is:inline>
+      (function () {
+        try {
+          if (sessionStorage.getItem("loader-seen") === "1") {
+            var s = document.createElement("style");
+            s.textContent = ".js-loader-screen{display:none!important}";
+            document.head.appendChild(s);
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <slot />

@@ -113,6 +113,17 @@ const Header = (): JSX.Element => {
           </li>
           <li>
             <a
+              href="/blog"
+              onClick={closeDropdown}
+              className={
+                currentPath.startsWith("/blog") ? "active-menu-link" : ""
+              }
+            >
+              {t(`header.blogLink`)}
+            </a>
+          </li>
+          <li>
+            <a
               href={returnResumeInCorrectLanguage(i18n.language)}
               target="_blank"
             >

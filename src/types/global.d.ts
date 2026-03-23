@@ -100,6 +100,7 @@ declare interface Project {
   projectImageUrl?: string | null;
   projectType?: "personal" | "customer" | "other" | null;
   projectUrl?: string | null;
+  delay?: number | null;
 }
 
 /**

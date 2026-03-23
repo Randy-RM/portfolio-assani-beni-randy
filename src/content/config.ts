@@ -33,6 +33,8 @@ const postsCollection = defineCollection({
     contentSlug: z.string().optional(),
     date: z.string(),
     language: z.enum(["en", "fr"]),
+    featuredImage: z.string().optional(),
+    contentTags: z.array(z.string()).default([]),
     contentTitle: z.string().optional(),
     contentDescription: z.string().optional(),
   }),

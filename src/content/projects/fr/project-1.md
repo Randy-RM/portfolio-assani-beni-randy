@@ -21,6 +21,6 @@ projectSkills:
     "MongDB",
     "API",
   ]
-contentDescription: "Kadea Online est une plateforme interactive d'apprentissage en ligne pour les mÃ©tiers du numÃ©rique. C'est l'un de mes projets prÃ©fÃ©rÃ©s. J'ai dÃ©veloppÃ© et maintenu ce projet pour la sociÃ©tÃ© Kadea."
+contentDescription: "Kadea Online est une plateforme interactive d'apprentissage en ligne pour les métiers du numérique. C'est l'un de mes projets préférés. J'ai développé et maintenu ce projet pour la société Kadea."
 ---
 

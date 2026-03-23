@@ -1,9 +1,11 @@
-import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import {
   BouncingArrow,
   Container,
+  GsapInView,
+  GsapRevealText,
+  GsapSplitText,
   ProjectCardLarge,
   ProjectCardLargeSkeleton,
   Spacer,
@@ -57,8 +59,12 @@ const VisitMyWorksApp = ({ projects }: VisitMyWorksAppProps): JSX.Element => {
     return () => clearTimeout(timer);
   }, [i18n.language, projects]);
 
-  // Découpe en lettres pour l'animation hero
-  const heroText = t("projectPage.heroSection.visitMyWorks").split("");
+  const heroTitle = t("projectPage.heroSection.visitMyWorks");
+  const splitDuration = 0.65;
+  const splitStagger = 0.035;
+  const splitAnimationTotalDuration =
+    splitDuration +
+    Math.max(Array.from(heroTitle).length - 1, 0) * splitStagger;
 
   return (
     <AppShell>
@@ -74,64 +80,49 @@ const VisitMyWorksApp = ({ projects }: VisitMyWorksAppProps): JSX.Element => {
           >
             <div className="width-100">
               <h1 className="font-big-hero text-center font-w-Black">
-                {heroText.map((letter, index) => (
-                  <motion.span
-                    className="font-outlined"
-                    key={`${index}-letter-a`}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ type: "spring", delay: 0.1 * index }}
-                  >
-                    {letter}
-                  </motion.span>
-                ))}
+                <GsapRevealText
+                  className="font-outlined"
+                  duration={splitDuration}
+                  delay={splitAnimationTotalDuration}
+                  direction="bottom-to-top"
+                  content={heroTitle}
+                />
                 <br />
-                {heroText.map((letter, index) => (
-                  <motion.span
-                    key={`${index}-letter-b`}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ type: "spring", delay: 0.1 * index }}
-                  >
-                    {letter}
-                  </motion.span>
-                ))}
+                <GsapSplitText
+                  duration={splitDuration}
+                  delay={0}
+                  direction="bottom-to-top"
+                  content={heroTitle}
+                />
                 <br />
-                {heroText.map((letter, index) => (
-                  <motion.span
-                    className="font-outlined"
-                    key={`${index}-letter-c`}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ type: "spring", delay: 0.1 * index }}
-                  >
-                    {letter}
-                  </motion.span>
-                ))}
+                <GsapRevealText
+                  className="font-outlined"
+                  duration={splitDuration}
+                  delay={splitAnimationTotalDuration}
+                  direction="top-to-bottom"
+                  content={heroTitle}
+                />
               </h1>
 
               <p className="text-center">
-                <motion.span
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", delay: 0.6, duration: 3 }}
+                <GsapInView
+                  as="span"
+                  delay={0.6}
+                  duration={3}
+                  style={{ display: "inline-block" }}
                 >
                   {t("projectPage.heroSection.leadText")}
-                </motion.span>
+                </GsapInView>
               </p>
 
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ type: "spring", delay: 0.9, duration: 3 }}
+              <GsapInView
+                delay={0.9}
+                duration={3}
+                from={{ opacity: 0 }}
+                to={{ opacity: 1 }}
               >
                 <BouncingArrow />
-              </motion.div>
+              </GsapInView>
             </div>
           </Container>
           <Spacer height={6} />
