@@ -2,6 +2,7 @@ import * as React from "react";
 import { gsap } from "gsap";
 import { useTranslation } from "react-i18next";
 import GsapSplitText from "../animations/gsap-split-text";
+import { useIsomorphicLayoutEffect } from "../../hooks";
 
 type LoaderProps = {
   onAnimationsComplete?: () => void;
@@ -30,7 +31,7 @@ const Loader = ({ onAnimationsComplete }: LoaderProps): JSX.Element => {
     notifyIfAllAnimationsDone();
   }, [notifyIfAllAnimationsDone]);
 
-  React.useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (typeof window === "undefined") {
       return;
     }

@@ -1,6 +1,7 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useIsomorphicLayoutEffect } from "../../hooks";
 
 type GsapScrollBannerProps = {
   text: string;
@@ -11,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 const GsapScrollBanner = ({ text }: GsapScrollBannerProps): JSX.Element => {
   const rootRef = useRef<HTMLDivElement | null>(null);
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (typeof window === "undefined") {
       return;
     }

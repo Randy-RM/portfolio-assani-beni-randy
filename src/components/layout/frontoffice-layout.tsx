@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Footer, Header, Loader, Modal, ScrollToTopButton } from "../";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useIsomorphicLayoutEffect } from "../../hooks";
 
 const LOADER_SESSION_KEY = "loader-seen";
 
@@ -17,7 +18,7 @@ const FrontOfficeLayout = ({
   // - repeat visit → flag present → skip loader  → content mounts fresh → animations fire
   const [showLoader, setShowLoader] = React.useState(true);
 
-  React.useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (sessionStorage.getItem(LOADER_SESSION_KEY) === "1") {
       setShowLoader(false);
     }

@@ -1,6 +1,7 @@
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useIsomorphicLayoutEffect } from "../../hooks";
 
 type GsapRevealDirection =
   | "none"
@@ -49,7 +50,7 @@ const GsapRevealText = ({
 }: GsapRevealTextProps): JSX.Element => {
   const rootRef = useRef<HTMLSpanElement | null>(null);
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (typeof window === "undefined") {
       return;
     }

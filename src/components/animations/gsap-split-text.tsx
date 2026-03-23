@@ -1,6 +1,7 @@
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useIsomorphicLayoutEffect } from "../../hooks";
 
 type GsapRevealDirection =
   | "none"
@@ -52,7 +53,7 @@ const GsapSplitText = ({
   const rootRef = useRef<HTMLSpanElement | null>(null);
   const usesGradientText = className.includes("gradient");
 
-  useLayoutEffect(() => {
+  useIsomorphicLayoutEffect(() => {
     if (typeof window === "undefined") {
       return;
     }
