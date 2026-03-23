@@ -123,8 +123,10 @@ const BlogApp = ({ posts }: BlogAppProps): JSX.Element => {
           <Container>
             <GsapStaggerInView
               className="blog-grid"
-              stagger={0.12}
-              duration={0.9}
+              from={{ opacity: 0 }}
+              to={{ opacity: 1 }}
+              stagger={0.15}
+              duration={0.6}
             >
               {filteredPosts.map((post) => {
                 const linkSlug = normalizeSlug(post.contentSlug ?? post.slug);
@@ -133,40 +135,44 @@ const BlogApp = ({ posts }: BlogAppProps): JSX.Element => {
                 const cardImage = getPostImage(post.featuredImage);
 
                 return (
-                  <article className="blog-card" key={post.contentId}>
-                    <GsapScaleBounce as="div" delay={0.05} repeat={0}>
-                      <p className="blog-card-date margin-0">
-                        {formatDate(post.date, currentLanguage)}
-                      </p>
-                      <h2 className="h3 margin-t-b-1">{title}</h2>
+                  <GsapScaleBounce
+                    as="article"
+                    className="blog-card"
+                    key={post.contentId}
+                    delay={0.5}
+                    repeat={0}
+                  >
+                    <p className="blog-card-date margin-0">
+                      {formatDate(post.date, currentLanguage)}
+                    </p>
+                    <h2 className="h3 margin-t-b-1">{title}</h2>
 
-                      <img
-                        src={cardImage}
-                        alt={title}
-                        className="card-img"
-                        loading="lazy"
-                      />
+                    <img
+                      src={cardImage}
+                      alt={title}
+                      className="card-img"
+                      loading="lazy"
+                    />
 
-                      <p className="blog-card-description">{description}</p>
+                    <p className="blog-card-description">{description}</p>
 
-                      {!!post.contentTags?.length && (
-                        <div className="blog-card-tags">
-                          {post.contentTags.map((tag) => (
-                            <span
-                              key={`${post.contentId}-${tag}`}
-                              className="badge blog-tag"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
+                    {!!post.contentTags?.length && (
+                      <div className="blog-card-tags">
+                        {post.contentTags.map((tag) => (
+                          <span
+                            key={`${post.contentId}-${tag}`}
+                            className="badge blog-tag"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
 
-                      <a className="blog-read-link" href={`/blog/${linkSlug}`}>
-                        {t("blogPage.list.readArticle")}
-                      </a>
-                    </GsapScaleBounce>
-                  </article>
+                    <a className="blog-read-link" href={`/blog/${linkSlug}`}>
+                      {t("blogPage.list.readArticle")}
+                    </a>
+                  </GsapScaleBounce>
                 );
               })}
             </GsapStaggerInView>
