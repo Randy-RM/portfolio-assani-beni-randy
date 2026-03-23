@@ -15,7 +15,7 @@ type GsapInViewProps = React.HTMLAttributes<HTMLElement> & {
   ease?: string;
   once?: boolean;
   start?: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 };
 
 const GsapInView = ({
@@ -65,14 +65,14 @@ const GsapInView = ({
     };
   }, [from, to, duration, delay, ease, once, start]);
 
-  return React.createElement(
-    Tag,
-    {
-      ...(rest as React.HTMLAttributes<HTMLElement>),
-      ref: rootRef,
-    },
-    children,
-  );
+  const elementProps = {
+    ...(rest as React.HTMLAttributes<HTMLElement>),
+    ref: rootRef,
+  };
+
+  return children
+    ? React.createElement(Tag, elementProps, children)
+    : React.createElement(Tag, elementProps);
 };
 
 export default GsapInView;

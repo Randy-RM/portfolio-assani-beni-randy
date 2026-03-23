@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BlogDetailApp from "../../react-pages/BlogDetailApp";
+
+export async function getStaticPaths() {
+  const normalizeSlug = (value: string): string =>
+    value.trim().replace(/^\/+/, "").replace(/\/+$/, "");
+
+  const allPosts = await getCollection("posts");
+
+  const serializedPosts = allPosts.map((entry) => ({
+    ...entry.data,
+    slug: entry.slug,
+    body: entry.body,
+  }));
+
+  const uniqueSlugs = Array.from(
+    new Set(
+      allPosts
+        .map((entry) => normalizeSlug(entry.data.contentSlug ?? entry.slug))
+        .filter(Boolean),
+    ),
+  );
+
+  return uniqueSlugs.map((slug) => ({
+    params: { slug },
+    props: {
+      slug,
+      posts: serializedPosts,
+    },
+  }));
+}
+
+const { slug, posts } = Astro.props;
+---
+
+<BaseLayout
+  title="Blog Post | Randy Assani RM"
+  description="Detailed article from the Randy Assani RM blog."
+>
+  <BlogDetailApp client:load posts={posts} slug={slug} />
+</BaseLayout>

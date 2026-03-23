@@ -2,6 +2,7 @@
   "header": {
     "AboutMeLink": "A propos",
     "projectsLink": "Mes œuvres",
+    "blogLink": "Articles & Notes",
     "resumeLink": "Obtenir mon CV"
   },
   "greetings": "Salut !",
@@ -89,6 +90,20 @@
     "heroSection": {
       "visitMyWorks": "Mes œuvres",
       "leadText": "Voici quelques projets que j'ai réalisés récemment"
+    }
+  },
+  "blogPage": {
+    "hero": {
+      "title": "Articles & Notes",
+      "subtitle": "Un blog pratique sur la création de produits, la livraison de fonctionnalités et le perfectionnement frontend."
+    },
+    "list": {
+      "readArticle": "LIRE L'ARTICLE"
+    },
+    "detail": {
+      "backToBlog": "← Retour au blog",
+      "publishedOn": "Publié le",
+      "summaryTitle": "Resume"
     }
   },
   "errorPage": {

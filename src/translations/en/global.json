@@ -2,6 +2,7 @@
   "header": {
     "AboutMeLink": "About",
     "projectsLink": "My works",
+    "blogLink": "Articles & Notes",
     "resumeLink": "Get my resume"
   },
   "greetings": "Hello !",
@@ -89,6 +90,20 @@
     "heroSection": {
       "visitMyWorks": "Visit my works",
       "leadText": "Here are some Project I made recently"
+    }
+  },
+  "blogPage": {
+    "hero": {
+      "title": "Insights & Notes",
+      "subtitle": "A practical blog about building products, shipping features, and refining frontend craft."
+    },
+    "list": {
+      "readArticle": "READ ARTICLE"
+    },
+    "detail": {
+      "backToBlog": "← Back to blog",
+      "publishedOn": "Published on",
+      "summaryTitle": "Summary"
     }
   },
   "errorPage": {
