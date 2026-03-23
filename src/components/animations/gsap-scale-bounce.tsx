@@ -40,6 +40,11 @@ const GsapScaleBounce = ({
       return;
     }
 
+    // window.matchMedia est une API native du navigateur (Web API),
+    // disponible globalement — pas besoin de l'importer.
+    // Elle teste si une media query CSS est active côté utilisateur.
+    // Ici, on respecte le réglage d'accessibilité « prefers-reduced-motion »
+    // en désactivant l'animation si l'utilisateur l'a demandé.
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       return;
     }

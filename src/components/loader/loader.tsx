@@ -45,6 +45,12 @@ const Loader = ({ onAnimationsComplete }: LoaderProps): JSX.Element => {
       return;
     }
 
+    // window.matchMedia est une API native du navigateur (Web API),
+    // disponible globalement — pas besoin de l'importer.
+    // Elle permet de tester si une media query CSS est active.
+    // Ici, on vérifie le réglage d'accessibilité « prefers-reduced-motion »
+    // de l'OS/navigateur de l'utilisateur : si activé, on désactive
+    // les animations GSAP pour respecter sa préférence.
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       gsap.set(spinnerElement, { clearProps: "all" });
       spinnerAnimationDoneRef.current = true;
