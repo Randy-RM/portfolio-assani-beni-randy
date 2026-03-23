@@ -1,43 +1,28 @@
 import { create } from "zustand";
-import { createJSONStorage, persist } from "zustand/middleware";
+
+const SESSION_KEY = "loader-seen";
 
 type LoaderState = {
   isAppLoading: boolean;
 };
 
 type LoaderAction = {
-  updateLoader: (isAppLoading: boolean) => void;
-  resetLoaderStore: () => void;
+  markLoaderSeen: () => void;
 };
 
-// define the initial state
-const initialLoaderState: LoaderState = {
-  isAppLoading: true,
+const hasSeenLoader = (): boolean => {
+  if (typeof window === "undefined") {
+    return false;
+  }
+  return sessionStorage.getItem(SESSION_KEY) === "1";
 };
 
-// Create store, which includes both state and (optionally) actions
-const useLoaderStore = create<LoaderState & LoaderAction>()(
-  persist(
-    (set, get) => ({
-      ...initialLoaderState,
-      updateLoader: (isAppLoading) => {
-        if (get().isAppLoading) {
-          set(() => ({
-            isAppLoading: isAppLoading,
-          }));
-        }
-        return;
-      },
-      resetLoaderStore: () => {
-        set(initialLoaderState);
-        return;
-      },
-    }),
-    {
-      name: "Is loading", // name of the item in the storage (must be unique)
-      storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
-    },
-  ),
-);
+const useLoaderStore = create<LoaderState & LoaderAction>()((set) => ({
+  isAppLoading: !hasSeenLoader(),
+  markLoaderSeen: () => {
+    sessionStorage.setItem(SESSION_KEY, "1");
+    set({ isAppLoading: false });
+  },
+}));
 
 export default useLoaderStore;
