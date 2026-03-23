@@ -10,6 +10,6 @@ liveProjectPreview: "https://cameolive.netlify.app"
 contentTitle: "CAMEOLIVE"
 projectSkills:
   ["HTML", "Sass", "JavaScript", "TypeScript", "Node Js", "React Js", "API"]
-contentDescription: "Cameolive est une application qui permet de rechercher des informations sur les sÃ©ries et les films Ã  l'aide d'un appareil connectÃ© Ã  Internet. Il s'agit d'un projet personnel."
+contentDescription: "Cameolive est une application qui permet de rechercher des informations sur les séries et les films à l'aide d'un appareil connecté à Internet. Il s'agit d'un projet personnel."
 ---
 
